@@ -1,0 +1,3 @@
+pandas
+pymongo
+apache-airflow-providers-clickhouse
