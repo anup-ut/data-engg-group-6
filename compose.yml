@@ -1,0 +1,189 @@
+version: "3.9"
+
+services:
+  # --- 1. Airflow Metadata Database (PostgreSQL) ---
+  airflow-db:
+    container_name: airflow-db
+    image: postgres:16.4
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+      PGUSER: airflow
+      PGPASSWORD: airflow
+      PGDATABASE: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_airflow:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      interval: 10s
+      retries: 5
+    restart: always
+
+  # --- 2. ClickHouse Analytical Data Warehouse ---
+  clickhouse-server:
+    image: clickhouse/clickhouse-server
+    container_name: clickhouse-server
+    environment:
+      # Credentials for Airflow/dbt connection
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: ""
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    ports:
+      - "8123:8123" # HTTP interface
+      - "9000:9000" # Native client interface
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse/
+      # Shared folders for data ingestion and scripts
+      - ./data:/var/lib/clickhouse/user_files # Use 'data' for all source files
+      - ./sql:/sql
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8123/ping"]
+      interval: 5s
+      retries: 20
+    restart: always
+
+  # --- 3. Airflow DB initialization & user setup ---
+  airflow-init:
+    image: apache/airflow:2.8.1
+    container_name: airflow-init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        # Wait for the DB to be ready
+        echo "Waiting for Airflow DB..."
+        sleep 10
+        airflow db init
+        airflow users create \
+          --username airflow \
+          --password airflow \
+          --firstname Admin \
+          --lastname User \
+          --role Admin \
+          --email admin@example.com
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      # Define the ClickHouse connection for Airflow
+      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
+      # Define the MongoDB connection for Airflow (if used)
+      AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
+      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./data:/tmp/data # Shared data directory for Airflow
+    depends_on:
+      - airflow-db
+      - clickhouse-server
+      - mongodb
+    restart: "no"
+
+  # --- 4. Airflow Webserver ---
+  airflow-webserver:
+    image: apache/airflow:2.8.1
+    container_name: airflow-webserver
+    command: webserver
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth"
+      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
+      AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
+      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./data:/tmp/data # Shared data directory for Airflow
+    depends_on:
+      - airflow-init
+      - airflow-db
+      - clickhouse-server
+      - mongodb
+    restart: always
+
+  # --- 5. Airflow Scheduler ---
+  airflow-scheduler:
+    image: apache/airflow:2.8.1
+    container_name: airflow-scheduler
+    command: scheduler
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
+      AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
+      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./data:/tmp/data
+    depends_on:
+      - airflow-init
+      - airflow-db
+      - clickhouse-server
+      - mongodb
+    restart: always
+
+  # --- 6. dbt Transformation Tool ---
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dbt
+    depends_on:
+      - clickhouse-server
+    volumes:
+      - ./data:/data # Shared input data folder
+      - ./dbt_project:/dbt # Mount local dbt project directory
+    working_dir: /dbt
+    tty: true
+
+  # --- 7. MongoDB Source (Optional) ---
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./data:/data # Shared data directory for sample files
+
+  # --- 8. Mongo Express UI (Optional) ---
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+      ME_CONFIG_MONGODB_AUTH_DATABASE: admin
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'true' # <--- ADDED THIS LINE
+      # FIX: Explicitly setting the HTTP Basic Auth for the web UI login
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: password
+    depends_on:
+      - mongodb
+
+volumes:
+  pgdata_airflow:
+  clickhouse_data:
+  mongodb_data:

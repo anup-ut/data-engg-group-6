@@ -1,0 +1,14 @@
+# dbt_project/dbt_project.yml
+name: "ck_project"
+version: "1.0"
+config-version: 2
+
+profile: "ck_project"
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  ck_project:     # <- keep a neutral schema
+    +materialized: table
