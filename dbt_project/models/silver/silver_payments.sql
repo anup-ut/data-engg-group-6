@@ -5,6 +5,8 @@
 {% endif %}
 
 {{ config(
+  alias = 'payments',
+  schema = 'silver',
   materialized='incremental',
   tags=['silver','payments'],
   on_schema_change='append_new_columns',

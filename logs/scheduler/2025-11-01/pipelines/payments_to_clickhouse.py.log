@@ -3918,3 +3918,118 @@
 [2025-11-01T20:26:23.384+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:26:23.384+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
 [2025-11-01T20:26:23.407+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
 [2025-11-01T20:26:23.428+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.049 seconds
+[2025-11-01T20:26:54.199+0000] {processor.py:161} INFO - Started process (PID=2637) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:26:54.201+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:26:54.204+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:26:54.203+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:26:54.236+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:26:54.262+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.069 seconds
+[2025-11-01T20:27:24.387+0000] {processor.py:161} INFO - Started process (PID=2667) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:27:24.388+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:27:24.390+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:27:24.389+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:27:24.404+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:27:24.423+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.041 seconds
+[2025-11-01T20:27:55.098+0000] {processor.py:161} INFO - Started process (PID=2697) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:27:55.100+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:27:55.101+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:27:55.101+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:27:55.122+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:27:55.146+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.052 seconds
+[2025-11-01T20:28:25.814+0000] {processor.py:161} INFO - Started process (PID=2727) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:28:25.815+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:28:25.817+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:28:25.816+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:28:25.831+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:28:25.851+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.041 seconds
+[2025-11-01T20:28:56.492+0000] {processor.py:161} INFO - Started process (PID=2757) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:28:56.493+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:28:56.495+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:28:56.494+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:28:56.512+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:28:56.531+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.043 seconds
+[2025-11-01T20:29:27.156+0000] {processor.py:161} INFO - Started process (PID=2787) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:29:27.158+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:29:27.160+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:29:27.159+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:29:27.180+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:29:27.200+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.049 seconds
+[2025-11-01T20:29:57.835+0000] {processor.py:161} INFO - Started process (PID=2817) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:29:57.836+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:29:57.837+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:29:57.837+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:29:57.860+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:29:57.880+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.049 seconds
+[2025-11-01T20:30:28.515+0000] {processor.py:161} INFO - Started process (PID=2847) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:30:28.517+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:30:28.518+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:30:28.518+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:30:28.533+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:30:28.552+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.040 seconds
+[2025-11-01T20:30:59.188+0000] {processor.py:161} INFO - Started process (PID=2877) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:30:59.189+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:30:59.190+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:30:59.190+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:30:59.207+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:30:59.227+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.044 seconds
+[2025-11-01T20:31:29.849+0000] {processor.py:161} INFO - Started process (PID=2907) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:31:29.850+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:31:29.851+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:31:29.851+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:31:29.867+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:31:29.888+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.043 seconds
+[2025-11-01T20:32:00.520+0000] {processor.py:161} INFO - Started process (PID=2937) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:32:00.521+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:32:00.522+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:32:00.522+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:32:00.538+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:32:00.558+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.041 seconds
+[2025-11-01T20:32:31.296+0000] {processor.py:161} INFO - Started process (PID=2967) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:32:31.297+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:32:31.298+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:32:31.298+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:32:31.314+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:32:31.336+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.044 seconds
+[2025-11-01T20:33:02.051+0000] {processor.py:161} INFO - Started process (PID=2997) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:33:02.052+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:33:02.053+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:33:02.053+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:33:02.072+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:33:02.095+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.048 seconds
+[2025-11-01T20:33:32.723+0000] {processor.py:161} INFO - Started process (PID=3027) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:33:32.724+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:33:32.726+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:33:32.725+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:33:32.742+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:33:32.762+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.042 seconds
+[2025-11-01T20:34:03.404+0000] {processor.py:161} INFO - Started process (PID=3057) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:34:03.406+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:34:03.408+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:34:03.408+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:34:03.425+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:34:03.447+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.047 seconds
+[2025-11-01T20:34:34.111+0000] {processor.py:161} INFO - Started process (PID=3087) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:34:34.112+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:34:34.113+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:34:34.113+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:34:34.132+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:34:34.153+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.046 seconds
+[2025-11-01T20:35:04.842+0000] {processor.py:161} INFO - Started process (PID=3117) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:35:04.843+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:35:04.845+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:35:04.844+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:35:04.865+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:35:04.887+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.050 seconds
+[2025-11-01T20:35:35.532+0000] {processor.py:161} INFO - Started process (PID=3147) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:35:35.534+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:35:35.535+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:35:35.534+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:35:35.552+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:35:35.574+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.045 seconds
+[2025-11-01T20:36:06.212+0000] {processor.py:161} INFO - Started process (PID=3177) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:36:06.213+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:36:06.214+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:36:06.214+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:36:06.230+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:36:06.253+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.044 seconds
+[2025-11-01T20:36:36.849+0000] {processor.py:161} INFO - Started process (PID=3207) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:36:36.850+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:36:36.851+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:36:36.851+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:36:36.866+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:36:36.888+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.042 seconds
+[2025-11-01T20:37:07.512+0000] {processor.py:161} INFO - Started process (PID=3237) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:37:07.514+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:37:07.516+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:37:07.515+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:37:07.540+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:37:07.565+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.056 seconds
+[2025-11-01T20:37:38.149+0000] {processor.py:161} INFO - Started process (PID=3267) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:37:38.150+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:37:38.151+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:37:38.151+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:37:38.182+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:37:38.204+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.060 seconds
+[2025-11-01T20:38:08.981+0000] {processor.py:161} INFO - Started process (PID=3338) to work on /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:38:08.983+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/payments_to_clickhouse.py for tasks to queue
+[2025-11-01T20:38:08.984+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:38:08.983+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:38:08.999+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/payments_to_clickhouse.py
+[2025-11-01T20:38:09.019+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/payments_to_clickhouse.py took 0.041 seconds

@@ -1,5 +1,11 @@
 
-        insert into silver.silver_merchants
+        
+  
+    
+    
+    
+        
+        insert into silver.merchants
         ("merchant_id", "_snapshot_date", "acquirer_id", "merchant_name", "state", "created_at", "updated_at", "dim_fingerprint")
 
 
@@ -17,8 +23,6 @@ with day_rows as (
       _ingested_at,
       toDate(_snapshot_date)                     as _snapshot_date
   from bronze.merchants
-  
-    where toDate(_snapshot_date) = toDate('2025-10-31')
   
 ),
 agg as (
@@ -54,7 +58,6 @@ select
   ) as dim_fingerprint
 from agg
 
-where _snapshot_date = toDate('2025-10-31')
-
+  
   
     

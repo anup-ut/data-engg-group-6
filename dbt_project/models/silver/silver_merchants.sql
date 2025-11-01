@@ -6,6 +6,8 @@
 
 
 {{ config(
+  alias = 'merchants',
+  schema = 'silver',
   materialized = 'incremental',
   engine       = 'ReplacingMergeTree',
   partition_by = '_snapshot_date',

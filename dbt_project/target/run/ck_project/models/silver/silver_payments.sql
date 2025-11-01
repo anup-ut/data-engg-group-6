@@ -1,9 +1,13 @@
 
-        insert into silver.silver_payments
+        
+  
+    
+    
+    
+        
+        insert into silver.payments
         ("transaction_id", "merchant_id", "acquirer_id", "payment_state", "card_type", "reference", "order_reference", "details", "created_at", "updated_at", "_snapshot_date")
 
-
-  
 
 
 
@@ -26,8 +30,6 @@ with base as (
   from bronze.payments
   where id is not null
   
-    and _snapshot_date = toDate('2025-10-31')
-  
 ),
 
 agg_day as (
@@ -48,12 +50,8 @@ agg_day as (
 )
 
 
-select a.*
-from agg_day a
-left join silver.silver_payments s
-  on s.transaction_id = a.transaction_id
- and s._snapshot_date = a._snapshot_date
-where s.transaction_id is null
+select * from agg_day
 
+  
   
     

@@ -16,8 +16,6 @@ with base as (
   from bronze.link_transactions
   where id is not null
   
-    and _snapshot_date = toDate('2025-10-31')
-  
 ),
 
 agg_day as (
@@ -35,10 +33,5 @@ agg_day as (
 )
 
 
--- insert only rows missing in target for this (transaction_id, snapshot)
-select a.*
-from agg_day a
-left join silver.silver_link_transactions s
-  on s.transaction_id = a.transaction_id
- and s._snapshot_date = a._snapshot_date
-where s.transaction_id is null
+-- first build
+select * from agg_day

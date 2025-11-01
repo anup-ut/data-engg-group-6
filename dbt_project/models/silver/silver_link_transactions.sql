@@ -1,6 +1,8 @@
 {% set ds_lagged = var('ds_lagged', none) %}
 
 {{ config(
+  alias = 'link_transactions',
+  schema = 'silver',
   materialized = 'incremental',
   tags = ['silver','linktx'],
   on_schema_change = 'append_new_columns',
