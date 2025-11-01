@@ -5,5 +5,8 @@ sources:
     schema: bronze
     tables:
       - name: merchants
+        loaded_at_field: _snapshot_date
       - name: payments
-      - name: link_transactions
+        loaded_at_field: _snapshot_date
+      - name: link_transactions   # <-- fixed name (plural)
+        loaded_at_field: _snapshot_date

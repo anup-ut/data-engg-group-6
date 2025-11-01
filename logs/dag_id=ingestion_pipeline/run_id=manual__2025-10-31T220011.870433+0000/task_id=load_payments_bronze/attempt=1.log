@@ -1,0 +1,16 @@
+[2025-10-31T22:00:13.298+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze manual__2025-10-31T22:00:11.870433+00:00 [queued]>
+[2025-10-31T22:00:13.324+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze manual__2025-10-31T22:00:11.870433+00:00 [queued]>
+[2025-10-31T22:00:13.325+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T22:00:13.360+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-31 22:00:11.870433+00:00
+[2025-10-31T22:00:13.372+0000] {standard_task_runner.py:60} INFO - Started process 303 to run task
+[2025-10-31T22:00:13.379+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'manual__2025-10-31T22:00:11.870433+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpa0gpk9t2']
+[2025-10-31T22:00:13.388+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask load_payments_bronze
+[2025-10-31T22:00:13.548+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze manual__2025-10-31T22:00:11.870433+00:00 [running]> on host 9dbfb6fb81d8
+[2025-10-31T22:00:13.780+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-31T22:00:11.870433+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-31T22:00:11.870433+00:00'
+[2025-10-31T22:00:16.847+0000] {payments_to_clickhouse.py:90} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251031.csv
+[2025-10-31T22:00:16.898+0000] {payments_to_clickhouse.py:95} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv']
+[2025-10-31T22:00:16.900+0000] {payments_to_clickhouse.py:101} WARNING - [payments->ch] File not found. Skipping.
+[2025-10-31T22:00:16.906+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-10-31T22:00:16.969+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251031T220011, start_date=20251031T220013, end_date=20251031T220016
+[2025-10-31T22:00:17.179+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T22:00:17.289+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,1398 @@
+[2025-11-01T00:13:58.107+0000] {processor.py:161} INFO - Started process (PID=2416) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T00:13:58.112+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T00:13:58.136+0000] {logging_mixin.py:188} INFO - [2025-11-01T00:13:58.135+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T00:13:58.749+0000] {logging_mixin.py:188} INFO - [2025-11-01T00:13:58.730+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T00:13:58.756+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T00:13:58.871+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.771 seconds
+[2025-11-01T11:26:08.445+0000] {processor.py:161} INFO - Started process (PID=2453) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:26:08.447+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:26:08.452+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:26:08.451+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:26:08.668+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:26:08.655+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:26:08.671+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:26:08.738+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.299 seconds
+[2025-11-01T11:26:39.101+0000] {processor.py:161} INFO - Started process (PID=2486) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:26:39.102+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:26:39.103+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:26:39.103+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:26:39.179+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:26:39.175+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:26:39.181+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:26:39.206+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.109 seconds
+[2025-11-01T11:27:09.920+0000] {processor.py:161} INFO - Started process (PID=2508) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:27:09.922+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:27:09.923+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:27:09.923+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:27:09.994+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:27:09.991+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:27:09.995+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:27:10.017+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.101 seconds
+[2025-11-01T11:27:40.880+0000] {processor.py:161} INFO - Started process (PID=2543) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:27:40.881+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:27:40.882+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:27:40.882+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:27:40.946+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:27:40.942+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:27:40.947+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:27:40.967+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.091 seconds
+[2025-11-01T11:30:21.376+0000] {processor.py:161} INFO - Started process (PID=2580) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:30:21.378+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:30:21.389+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:30:21.386+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:30:21.759+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:30:21.740+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:30:21.761+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:30:21.815+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.475 seconds
+[2025-11-01T11:30:52.767+0000] {processor.py:161} INFO - Started process (PID=2615) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:30:52.769+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:30:52.778+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:30:52.777+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:30:52.841+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:30:52.838+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:30:52.842+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:30:52.866+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.102 seconds
+[2025-11-01T11:31:22.948+0000] {processor.py:161} INFO - Started process (PID=2655) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:31:22.949+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:31:22.950+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:31:22.950+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:31:22.999+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:31:22.997+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:31:23.001+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:31:23.021+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.077 seconds
+[2025-11-01T11:31:53.133+0000] {processor.py:161} INFO - Started process (PID=2685) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:31:53.134+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:31:53.136+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:31:53.136+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:31:53.217+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:31:53.212+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:31:53.219+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:31:53.245+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.117 seconds
+[2025-11-01T11:32:24.109+0000] {processor.py:161} INFO - Started process (PID=2720) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:32:24.110+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:32:24.112+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:32:24.111+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:32:24.179+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:32:24.175+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:32:24.180+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:32:24.203+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.098 seconds
+[2025-11-01T11:32:54.960+0000] {processor.py:161} INFO - Started process (PID=2755) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:32:54.962+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:32:54.963+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:32:54.962+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:32:55.025+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:32:55.021+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:32:55.028+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:32:55.052+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.095 seconds
+[2025-11-01T11:33:25.817+0000] {processor.py:161} INFO - Started process (PID=2790) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:33:25.819+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:33:25.821+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:33:25.820+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:33:25.888+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:33:25.883+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:33:25.896+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:33:25.921+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.108 seconds
+[2025-11-01T11:33:56.716+0000] {processor.py:161} INFO - Started process (PID=2825) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:33:56.717+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:33:56.719+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:33:56.718+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:33:56.784+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:33:56.780+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:33:56.792+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:33:56.818+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.106 seconds
+[2025-11-01T11:34:27.585+0000] {processor.py:161} INFO - Started process (PID=2860) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:34:27.586+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:34:27.588+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:34:27.587+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:34:27.669+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:34:27.664+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:34:27.671+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:34:27.693+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.112 seconds
+[2025-11-01T11:34:58.480+0000] {processor.py:161} INFO - Started process (PID=2895) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:34:58.482+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:34:58.483+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:34:58.483+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:34:58.551+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:34:58.547+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:34:58.552+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:34:58.577+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.104 seconds
+[2025-11-01T11:35:29.361+0000] {processor.py:161} INFO - Started process (PID=2930) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:35:29.363+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:35:29.364+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:35:29.364+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:35:29.431+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:35:29.428+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:35:29.433+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:35:29.459+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.103 seconds
+[2025-11-01T11:36:00.318+0000] {processor.py:161} INFO - Started process (PID=2973) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:36:00.319+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:36:00.321+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:36:00.320+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:36:00.416+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:36:00.410+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:36:00.418+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:36:00.444+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.131 seconds
+[2025-11-01T11:37:45.589+0000] {processor.py:161} INFO - Started process (PID=190) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:37:45.591+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:37:45.592+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:37:45.592+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:37:45.698+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:37:45.693+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:37:45.699+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:37:45.731+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.147 seconds
+[2025-11-01T11:38:15.796+0000] {processor.py:161} INFO - Started process (PID=225) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:38:15.798+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:38:15.799+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:38:15.799+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:38:15.870+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:38:15.866+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:38:15.871+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:38:15.903+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.111 seconds
+[2025-11-01T11:38:46.737+0000] {processor.py:161} INFO - Started process (PID=260) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:38:46.739+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:38:46.740+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:38:46.739+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:38:46.804+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:38:46.799+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:38:46.806+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:38:46.830+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.096 seconds
+[2025-11-01T11:39:17.522+0000] {processor.py:161} INFO - Started process (PID=295) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:39:17.522+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:39:17.523+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:39:17.523+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:39:17.590+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:39:17.588+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:39:17.591+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:39:17.613+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.096 seconds
+[2025-11-01T11:39:48.494+0000] {processor.py:161} INFO - Started process (PID=337) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:39:48.497+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:39:48.499+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:39:48.499+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:39:48.783+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:39:48.778+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:39:48.787+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:39:48.819+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.330 seconds
+[2025-11-01T11:40:19.601+0000] {processor.py:161} INFO - Started process (PID=377) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:40:19.602+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:40:19.603+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:19.603+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:40:19.667+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:19.663+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 172, in <module>
+    cfg_silver = SilverDbtConfig(
+TypeError: __init__() got an unexpected keyword argument 'dbt_bin'
+[2025-11-01T11:40:19.669+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:40:19.693+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.097 seconds
+[2025-11-01T11:40:37.349+0000] {processor.py:161} INFO - Started process (PID=417) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:40:37.351+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:40:37.352+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:37.352+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:40:37.528+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:40:37.732+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:37.731+0000] {override.py:1769} INFO - Created Permission View: can delete on DAG:ingestion_pipeline
+[2025-11-01T11:40:37.743+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:37.743+0000] {override.py:1769} INFO - Created Permission View: can read on DAG:ingestion_pipeline
+[2025-11-01T11:40:37.752+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:37.752+0000] {override.py:1769} INFO - Created Permission View: can edit on DAG:ingestion_pipeline
+[2025-11-01T11:40:37.753+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:37.753+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:40:37.767+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:37.767+0000] {dag.py:3058} INFO - Creating ORM DAG for ingestion_pipeline
+[2025-11-01T11:40:37.779+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:40:37.779+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-10-30 00:00:00+00:00, run_after=2025-10-31 00:00:00+00:00
+[2025-11-01T11:40:37.805+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.460 seconds
+[2025-11-01T11:41:07.887+0000] {processor.py:161} INFO - Started process (PID=584) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:41:07.889+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:41:07.891+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:41:07.890+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:41:08.029+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:41:08.094+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:41:08.093+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:41:08.144+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:41:08.144+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:41:08.193+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.312 seconds
+[2025-11-01T11:41:38.272+0000] {processor.py:161} INFO - Started process (PID=730) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:41:38.274+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:41:38.277+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:41:38.277+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:41:38.388+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:41:38.456+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:41:38.455+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:41:38.503+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:41:38.503+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:41:38.567+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.300 seconds
+[2025-11-01T11:42:09.386+0000] {processor.py:161} INFO - Started process (PID=765) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:42:09.389+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:42:09.391+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:42:09.390+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:42:09.451+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:42:09.482+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:42:09.481+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:42:09.506+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:42:09.505+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:42:09.532+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.150 seconds
+[2025-11-01T11:42:40.110+0000] {processor.py:161} INFO - Started process (PID=800) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:42:40.111+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:42:40.113+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:42:40.112+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:42:40.199+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:42:40.239+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:42:40.239+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:42:40.272+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:42:40.272+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:42:40.302+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.196 seconds
+[2025-11-01T11:43:10.898+0000] {processor.py:161} INFO - Started process (PID=835) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:43:10.899+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:43:10.900+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:43:10.900+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:43:10.963+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:43:10.995+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:43:10.994+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:43:11.018+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:43:11.018+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:43:11.051+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.159 seconds
+[2025-11-01T11:43:41.638+0000] {processor.py:161} INFO - Started process (PID=870) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:43:41.639+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:43:41.640+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:43:41.640+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:43:41.715+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:43:41.757+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:43:41.757+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:43:41.785+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:43:41.785+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:43:41.812+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.177 seconds
+[2025-11-01T11:44:12.409+0000] {processor.py:161} INFO - Started process (PID=905) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:44:12.410+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:44:12.411+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:44:12.411+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:44:12.469+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:44:12.499+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:44:12.499+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:44:12.522+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:44:12.522+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:44:12.554+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.148 seconds
+[2025-11-01T11:44:43.326+0000] {processor.py:161} INFO - Started process (PID=940) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:44:43.328+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:44:43.329+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:44:43.329+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:44:43.389+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:44:43.427+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:44:43.426+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:44:43.483+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:44:43.483+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:44:43.510+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.188 seconds
+[2025-11-01T11:45:14.342+0000] {processor.py:161} INFO - Started process (PID=980) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:45:14.343+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:45:14.345+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:45:14.344+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:45:14.401+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:45:14.520+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:45:14.520+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:45:14.540+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:45:14.540+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:45:14.568+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.230 seconds
+[2025-11-01T11:45:45.540+0000] {processor.py:161} INFO - Started process (PID=1059) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:45:45.541+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:45:45.543+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:45:45.542+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:45:45.619+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:45:45.653+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:45:45.652+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:45:45.676+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:45:45.675+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:45:45.700+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.164 seconds
+[2025-11-01T11:46:16.608+0000] {processor.py:161} INFO - Started process (PID=1153) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:46:16.610+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:46:16.611+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:46:16.611+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:46:16.717+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:46:16.765+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:46:16.764+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:46:16.802+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:46:16.802+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:46:16.858+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.256 seconds
+[2025-11-01T11:46:47.889+0000] {processor.py:161} INFO - Started process (PID=1242) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:46:47.892+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:46:47.895+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:46:47.894+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:46:48.064+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:46:48.110+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:46:48.109+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:46:48.145+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:46:48.144+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:46:48.170+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.291 seconds
+[2025-11-01T11:47:18.972+0000] {processor.py:161} INFO - Started process (PID=1277) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:47:18.974+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:47:18.975+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:47:18.975+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:47:19.037+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:47:19.067+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:47:19.067+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:47:19.091+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:47:19.091+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:47:19.116+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.147 seconds
+[2025-11-01T11:47:49.917+0000] {processor.py:161} INFO - Started process (PID=1312) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:47:49.918+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:47:49.920+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:47:49.919+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:47:49.980+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:47:50.014+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:47:50.013+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:47:50.041+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:47:50.041+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:47:50.068+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.156 seconds
+[2025-11-01T11:48:20.722+0000] {processor.py:161} INFO - Started process (PID=1352) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:48:20.724+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:48:20.725+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:48:20.725+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:48:20.784+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:48:20.901+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:48:20.900+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:48:20.923+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:48:20.923+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:48:21.176+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.458 seconds
+[2025-11-01T11:48:51.676+0000] {processor.py:161} INFO - Started process (PID=1478) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:48:51.677+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:48:51.678+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:48:51.678+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:48:51.748+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:48:51.777+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:48:51.777+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:48:51.800+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:48:51.800+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:48:51.826+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.154 seconds
+[2025-11-01T11:49:22.749+0000] {processor.py:161} INFO - Started process (PID=1513) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:49:22.750+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:49:22.751+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:49:22.751+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:49:22.815+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:49:22.849+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:49:22.848+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:49:22.872+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:49:22.872+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:49:22.907+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.162 seconds
+[2025-11-01T11:49:53.569+0000] {processor.py:161} INFO - Started process (PID=1548) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:49:53.570+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:49:53.572+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:49:53.571+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:49:53.647+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:49:53.679+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:49:53.679+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:49:53.703+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:49:53.703+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:49:53.730+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.164 seconds
+[2025-11-01T11:50:24.268+0000] {processor.py:161} INFO - Started process (PID=1583) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:50:24.270+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:50:24.271+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:50:24.271+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:50:24.344+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:50:24.376+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:50:24.376+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:50:24.401+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:50:24.401+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:50:24.438+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.173 seconds
+[2025-11-01T11:50:54.987+0000] {processor.py:161} INFO - Started process (PID=1637) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:50:54.989+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:50:54.990+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:50:54.990+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:50:55.058+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:50:55.089+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:50:55.089+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:50:55.116+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:50:55.116+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:50:55.142+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.158 seconds
+[2025-11-01T11:51:25.779+0000] {processor.py:161} INFO - Started process (PID=1672) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:51:25.781+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:51:25.784+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:51:25.783+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:51:25.863+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:51:25.900+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:51:25.900+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:51:25.929+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:51:25.929+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:51:25.963+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.188 seconds
+[2025-11-01T11:51:56.653+0000] {processor.py:161} INFO - Started process (PID=1707) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:51:56.654+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:51:56.656+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:51:56.655+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:51:56.756+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:51:56.801+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:51:56.801+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:51:56.830+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:51:56.830+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:51:56.855+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.207 seconds
+[2025-11-01T11:52:27.501+0000] {processor.py:161} INFO - Started process (PID=1742) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:52:27.502+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:52:27.504+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:52:27.503+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:52:27.560+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:52:27.590+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:52:27.590+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:52:27.749+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:52:27.749+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:52:27.783+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.286 seconds
+[2025-11-01T11:52:58.433+0000] {processor.py:161} INFO - Started process (PID=1777) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:52:58.435+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:52:58.439+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:52:58.438+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:52:58.525+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:52:58.569+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:52:58.568+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:52:58.810+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:52:58.810+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:52:58.852+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.423 seconds
+[2025-11-01T11:53:29.748+0000] {processor.py:161} INFO - Started process (PID=1812) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:53:29.749+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:53:29.750+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:53:29.750+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:53:29.807+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:53:29.840+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:53:29.840+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:53:29.863+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:53:29.863+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:53:30.036+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.292 seconds
+[2025-11-01T11:54:00.105+0000] {processor.py:161} INFO - Started process (PID=1887) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:54:00.106+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:54:00.108+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:54:00.107+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:54:00.182+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:54:00.215+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:54:00.215+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:54:00.237+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:54:00.237+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:54:00.269+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.167 seconds
+[2025-11-01T11:54:31.025+0000] {processor.py:161} INFO - Started process (PID=1922) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:54:31.027+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:54:31.028+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:54:31.028+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:54:31.126+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:54:31.162+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:54:31.161+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:54:31.184+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:54:31.184+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:54:31.216+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.197 seconds
+[2025-11-01T11:55:01.752+0000] {processor.py:161} INFO - Started process (PID=1957) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:55:01.753+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:55:01.754+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:55:01.754+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:55:01.812+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:55:01.844+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:55:01.843+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:55:01.865+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:55:01.865+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:55:01.898+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.150 seconds
+[2025-11-01T11:55:32.596+0000] {processor.py:161} INFO - Started process (PID=1992) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:55:32.597+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:55:32.598+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:55:32.598+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:55:32.655+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:55:32.682+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:55:32.682+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:55:32.703+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:55:32.703+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:55:32.735+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.143 seconds
+[2025-11-01T11:56:03.373+0000] {processor.py:161} INFO - Started process (PID=2027) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:56:03.374+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:56:03.375+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:56:03.375+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:56:03.431+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:56:03.459+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:56:03.459+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:56:03.481+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:56:03.481+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:56:03.507+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.138 seconds
+[2025-11-01T11:56:34.195+0000] {processor.py:161} INFO - Started process (PID=2062) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:56:34.196+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:56:34.197+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:56:34.197+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:56:34.257+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:56:34.289+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:56:34.289+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:56:34.312+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:56:34.312+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:56:34.337+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.146 seconds
+[2025-11-01T11:57:04.938+0000] {processor.py:161} INFO - Started process (PID=2097) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:04.939+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:57:04.940+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:04.940+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:05.000+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:05.033+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:05.033+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:57:05.057+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:05.056+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:57:05.090+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.155 seconds
+[2025-11-01T11:57:35.763+0000] {processor.py:161} INFO - Started process (PID=2132) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:35.764+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:57:35.766+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:35.765+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:35.829+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:35.873+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:35.872+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:57:35.925+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:35.924+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:57:35.947+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.189 seconds
+[2025-11-01T11:57:46.896+0000] {processor.py:161} INFO - Started process (PID=2180) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:46.897+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:57:46.899+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:46.898+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:47.020+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:57:47.183+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:47.182+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:57:47.214+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:57:47.213+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:57:47.270+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.379 seconds
+[2025-11-01T11:58:17.853+0000] {processor.py:161} INFO - Started process (PID=2215) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:58:17.854+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:58:17.856+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:58:17.855+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:58:17.959+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:58:17.994+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:58:17.994+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:58:18.022+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:58:18.022+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:58:18.047+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.199 seconds
+[2025-11-01T11:58:48.126+0000] {processor.py:161} INFO - Started process (PID=2252) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:58:48.128+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:58:48.129+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:58:48.128+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:58:48.204+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:58:48.272+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:58:48.272+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:58:48.335+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:58:48.335+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:58:48.413+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.292 seconds
+[2025-11-01T11:59:19.404+0000] {processor.py:161} INFO - Started process (PID=2287) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:59:19.406+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:59:19.407+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:59:19.407+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:59:19.471+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:59:19.500+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:59:19.500+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:59:19.524+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:59:19.524+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:59:19.561+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.160 seconds
+[2025-11-01T11:59:50.248+0000] {processor.py:161} INFO - Started process (PID=2322) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:59:50.250+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T11:59:50.251+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:59:50.251+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:59:50.305+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T11:59:50.334+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:59:50.334+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T11:59:50.356+0000] {logging_mixin.py:188} INFO - [2025-11-01T11:59:50.356+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T11:59:50.391+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.147 seconds
+[2025-11-01T12:00:21.158+0000] {processor.py:161} INFO - Started process (PID=2357) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:00:21.159+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:00:21.161+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:00:21.160+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:00:21.267+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:00:21.318+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:00:21.318+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:00:21.347+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:00:21.347+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:00:21.379+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.224 seconds
+[2025-11-01T12:00:51.945+0000] {processor.py:161} INFO - Started process (PID=2392) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:00:51.947+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:00:51.948+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:00:51.948+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:00:52.021+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:00:52.080+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:00:52.079+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:00:52.137+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:00:52.137+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:00:52.172+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.230 seconds
+[2025-11-01T12:01:22.743+0000] {processor.py:161} INFO - Started process (PID=2427) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:01:22.744+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:01:22.745+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:01:22.745+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:01:22.801+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:01:22.831+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:01:22.831+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:01:22.854+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:01:22.854+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:01:22.880+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.141 seconds
+[2025-11-01T12:01:53.578+0000] {processor.py:161} INFO - Started process (PID=2467) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:01:53.579+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:01:53.581+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:01:53.580+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:01:53.638+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:01:53.667+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:01:53.667+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:01:53.691+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:01:53.691+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:01:53.720+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.146 seconds
+[2025-11-01T12:02:24.410+0000] {processor.py:161} INFO - Started process (PID=2502) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:02:24.411+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:02:24.412+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:02:24.412+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:02:24.465+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:02:24.494+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:02:24.493+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:02:24.516+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:02:24.515+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:02:24.540+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.134 seconds
+[2025-11-01T12:02:55.297+0000] {processor.py:161} INFO - Started process (PID=2537) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:02:55.298+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:02:55.300+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:02:55.299+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:02:55.352+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:02:55.380+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:02:55.380+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:02:55.403+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:02:55.403+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:02:55.432+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.138 seconds
+[2025-11-01T12:03:26.232+0000] {processor.py:161} INFO - Started process (PID=2572) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:03:26.233+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:03:26.234+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:03:26.234+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:03:26.293+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:03:26.326+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:03:26.326+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:03:26.354+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:03:26.354+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:03:26.382+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.153 seconds
+[2025-11-01T12:03:57.113+0000] {processor.py:161} INFO - Started process (PID=2607) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:03:57.115+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:03:57.116+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:03:57.115+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:03:57.172+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:03:57.205+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:03:57.205+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:03:57.229+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:03:57.229+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:03:57.257+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.147 seconds
+[2025-11-01T12:04:28.019+0000] {processor.py:161} INFO - Started process (PID=2642) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:04:28.022+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:04:28.024+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:04:28.024+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:04:28.116+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:04:28.167+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:04:28.166+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:04:28.211+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:04:28.211+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:04:28.247+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.234 seconds
+[2025-11-01T12:23:08.165+0000] {processor.py:161} INFO - Started process (PID=210) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:23:08.167+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:23:08.169+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:23:08.168+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:23:08.260+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:23:08.256+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 123, in <module>
+    cfg_payments = PaymentsToCHConfig(
+TypeError: __init__() got an unexpected keyword argument 'delete_strategy'
+[2025-11-01T12:23:08.262+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:23:08.289+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.128 seconds
+[2025-11-01T12:23:39.030+0000] {processor.py:161} INFO - Started process (PID=240) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:23:39.031+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:23:39.032+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:23:39.032+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:23:39.091+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:23:39.088+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 123, in <module>
+    cfg_payments = PaymentsToCHConfig(
+TypeError: __init__() got an unexpected keyword argument 'delete_strategy'
+[2025-11-01T12:23:39.093+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:23:39.114+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.090 seconds
+[2025-11-01T12:24:09.839+0000] {processor.py:161} INFO - Started process (PID=270) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:24:09.840+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:24:09.842+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:24:09.841+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:24:09.896+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:24:09.892+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 123, in <module>
+    cfg_payments = PaymentsToCHConfig(
+TypeError: __init__() got an unexpected keyword argument 'delete_strategy'
+[2025-11-01T12:24:09.897+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:24:09.919+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.085 seconds
+[2025-11-01T12:24:40.585+0000] {processor.py:161} INFO - Started process (PID=300) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:24:40.587+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:24:40.589+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:24:40.588+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:24:40.649+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:24:40.645+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 123, in <module>
+    cfg_payments = PaymentsToCHConfig(
+TypeError: __init__() got an unexpected keyword argument 'delete_strategy'
+[2025-11-01T12:24:40.650+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:24:40.674+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.093 seconds
+[2025-11-01T12:25:11.408+0000] {processor.py:161} INFO - Started process (PID=330) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:25:11.409+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:25:11.410+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:11.410+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:25:11.468+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:11.465+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ingestion_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ingestion_dag.py", line 123, in <module>
+    cfg_payments = PaymentsToCHConfig(
+TypeError: __init__() got an unexpected keyword argument 'delete_strategy'
+[2025-11-01T12:25:11.470+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:25:11.491+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.087 seconds
+[2025-11-01T12:25:35.847+0000] {processor.py:161} INFO - Started process (PID=337) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:25:35.848+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:25:35.849+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:35.849+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:25:35.916+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:25:36.023+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:36.022+0000] {override.py:1769} INFO - Created Permission View: can edit on DAG:ingestion_pipeline
+[2025-11-01T12:25:36.036+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:36.036+0000] {override.py:1769} INFO - Created Permission View: can delete on DAG:ingestion_pipeline
+[2025-11-01T12:25:36.046+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:36.045+0000] {override.py:1769} INFO - Created Permission View: can read on DAG:ingestion_pipeline
+[2025-11-01T12:25:36.046+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:36.046+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:25:36.058+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:36.058+0000] {dag.py:3058} INFO - Creating ORM DAG for ingestion_pipeline
+[2025-11-01T12:25:36.068+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:25:36.068+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-10-30 00:00:00+00:00, run_after=2025-10-31 00:00:00+00:00
+[2025-11-01T12:25:36.094+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.249 seconds
+[2025-11-01T12:26:06.766+0000] {processor.py:161} INFO - Started process (PID=421) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:26:06.768+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:26:06.770+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:26:06.769+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:26:06.858+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:26:06.913+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:26:06.912+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:26:06.961+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:26:06.960+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:26:06.996+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.234 seconds
+[2025-11-01T12:26:37.861+0000] {processor.py:161} INFO - Started process (PID=451) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:26:37.863+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:26:37.864+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:26:37.864+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:26:37.926+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:26:37.960+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:26:37.960+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:26:37.989+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:26:37.989+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:26:38.016+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.158 seconds
+[2025-11-01T12:27:08.620+0000] {processor.py:161} INFO - Started process (PID=481) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:27:08.623+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:27:08.625+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:27:08.625+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:27:08.712+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:27:08.761+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:27:08.761+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:27:08.833+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:27:08.832+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:27:08.867+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.254 seconds
+[2025-11-01T12:27:39.365+0000] {processor.py:161} INFO - Started process (PID=511) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:27:39.366+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:27:39.367+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:27:39.367+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:27:39.418+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:27:39.447+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:27:39.446+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:27:39.470+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:27:39.470+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:27:39.502+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.142 seconds
+[2025-11-01T12:28:10.213+0000] {processor.py:161} INFO - Started process (PID=541) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:28:10.214+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:28:10.216+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:28:10.215+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:28:10.278+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:28:10.318+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:28:10.318+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:28:10.344+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:28:10.344+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:28:10.373+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.163 seconds
+[2025-11-01T12:28:41.041+0000] {processor.py:161} INFO - Started process (PID=571) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:28:41.044+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:28:41.045+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:28:41.045+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:28:41.152+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:28:41.195+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:28:41.195+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:28:41.228+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:28:41.227+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:28:41.273+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.236 seconds
+[2025-11-01T12:29:11.741+0000] {processor.py:161} INFO - Started process (PID=624) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:29:11.742+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:29:11.743+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:29:11.743+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:29:11.796+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:29:11.823+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:29:11.823+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:29:11.848+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:29:11.848+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:29:11.872+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.135 seconds
+[2025-11-01T12:29:42.095+0000] {processor.py:161} INFO - Started process (PID=654) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:29:42.096+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:29:42.097+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:29:42.097+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:29:42.150+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:29:42.180+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:29:42.180+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:29:42.206+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:29:42.205+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:29:42.238+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.147 seconds
+[2025-11-01T12:30:12.877+0000] {processor.py:161} INFO - Started process (PID=684) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:30:12.879+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:30:12.881+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:30:12.880+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:30:12.934+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:30:12.965+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:30:12.965+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:30:12.988+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:30:12.987+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:30:13.015+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.141 seconds
+[2025-11-01T12:30:43.594+0000] {processor.py:161} INFO - Started process (PID=714) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:30:43.596+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:30:43.597+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:30:43.596+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:30:43.659+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:30:43.694+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:30:43.694+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:30:43.721+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:30:43.721+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:30:43.750+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.160 seconds
+[2025-11-01T12:31:14.344+0000] {processor.py:161} INFO - Started process (PID=758) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:31:14.346+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:31:14.347+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:31:14.346+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:31:14.401+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:31:14.436+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:31:14.436+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:31:14.458+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:31:14.457+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:31:14.481+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.140 seconds
+[2025-11-01T12:31:45.186+0000] {processor.py:161} INFO - Started process (PID=806) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:31:45.187+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:31:45.188+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:31:45.188+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:31:45.256+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:31:45.288+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:31:45.288+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:31:45.316+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:31:45.316+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:31:45.343+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.160 seconds
+[2025-11-01T12:32:16.085+0000] {processor.py:161} INFO - Started process (PID=836) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:32:16.086+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:32:16.087+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:32:16.087+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:32:16.137+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:32:16.166+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:32:16.166+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:32:16.188+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:32:16.188+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:32:16.215+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.134 seconds
+[2025-11-01T12:32:46.804+0000] {processor.py:161} INFO - Started process (PID=866) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:32:46.805+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:32:46.806+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:32:46.806+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:32:46.864+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:32:46.894+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:32:46.893+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:32:46.918+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:32:46.918+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-10-30 00:00:00+00:00, run_after=2025-10-31 00:00:00+00:00
+[2025-11-01T12:32:46.942+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.143 seconds
+[2025-11-01T12:33:17.842+0000] {processor.py:161} INFO - Started process (PID=932) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:33:17.843+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:33:17.845+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:33:17.844+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:33:17.910+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:33:17.945+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:33:17.945+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:33:17.977+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:33:17.977+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:33:18.006+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.168 seconds
+[2025-11-01T12:33:48.568+0000] {processor.py:161} INFO - Started process (PID=962) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:33:48.570+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:33:48.571+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:33:48.571+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:33:48.625+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:33:48.658+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:33:48.658+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:33:48.695+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:33:48.695+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:33:48.725+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.160 seconds
+[2025-11-01T12:34:19.373+0000] {processor.py:161} INFO - Started process (PID=1010) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:34:19.375+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:34:19.376+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:34:19.376+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:34:19.446+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:34:19.476+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:34:19.476+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:34:19.498+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:34:19.498+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:34:19.530+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.160 seconds
+[2025-11-01T12:34:50.108+0000] {processor.py:161} INFO - Started process (PID=1040) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:34:50.110+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:34:50.111+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:34:50.111+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:34:50.174+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:34:50.205+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:34:50.205+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:34:50.228+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:34:50.228+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:34:50.261+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.156 seconds
+[2025-11-01T12:35:20.757+0000] {processor.py:161} INFO - Started process (PID=1070) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:35:20.759+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:35:20.761+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:35:20.761+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:35:20.836+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:35:20.882+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:35:20.882+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:35:20.917+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:35:20.917+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:35:20.959+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.205 seconds
+[2025-11-01T12:35:51.438+0000] {processor.py:161} INFO - Started process (PID=1100) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:35:51.439+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:35:51.440+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:35:51.440+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:35:51.500+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:35:51.532+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:35:51.532+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:35:51.558+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:35:51.557+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:35:51.586+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.152 seconds
+[2025-11-01T12:36:22.072+0000] {processor.py:161} INFO - Started process (PID=1148) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:36:22.074+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:36:22.075+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:36:22.075+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:36:22.132+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:36:22.161+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:36:22.161+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:36:22.187+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:36:22.186+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:36:22.215+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.146 seconds
+[2025-11-01T12:36:52.906+0000] {processor.py:161} INFO - Started process (PID=1178) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:36:52.907+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:36:52.909+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:36:52.908+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:36:52.958+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:36:52.991+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:36:52.991+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:36:53.016+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:36:53.016+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:36:53.045+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.142 seconds
+[2025-11-01T12:37:23.624+0000] {processor.py:161} INFO - Started process (PID=1208) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:37:23.626+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:37:23.627+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:37:23.626+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:37:23.680+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:37:23.712+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:37:23.712+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:37:23.738+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:37:23.737+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:37:23.772+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.152 seconds
+[2025-11-01T12:37:54.400+0000] {processor.py:161} INFO - Started process (PID=1238) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:37:54.401+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:37:54.403+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:37:54.402+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:37:54.479+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:37:54.516+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:37:54.515+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:37:54.541+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:37:54.540+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:37:54.569+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.174 seconds
+[2025-11-01T12:38:25.177+0000] {processor.py:161} INFO - Started process (PID=1268) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:38:25.178+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:38:25.179+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:38:25.179+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:38:25.230+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:38:25.259+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:38:25.259+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:38:25.284+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:38:25.284+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:38:25.309+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.136 seconds
+[2025-11-01T12:38:55.899+0000] {processor.py:161} INFO - Started process (PID=1298) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:38:55.901+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:38:55.902+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:38:55.902+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:38:55.990+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:38:56.042+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:38:56.042+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:38:56.086+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:38:56.086+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:38:56.120+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.225 seconds
+[2025-11-01T12:39:26.641+0000] {processor.py:161} INFO - Started process (PID=1328) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:39:26.643+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:39:26.645+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:39:26.644+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:39:26.720+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:39:26.765+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:39:26.764+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:39:26.801+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:39:26.799+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:39:26.847+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.210 seconds
+[2025-11-01T12:39:57.368+0000] {processor.py:161} INFO - Started process (PID=1358) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:39:57.370+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:39:57.371+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:39:57.370+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:39:57.423+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:39:57.453+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:39:57.453+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:39:57.478+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:39:57.478+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:39:57.514+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.149 seconds
+[2025-11-01T12:40:27.987+0000] {processor.py:161} INFO - Started process (PID=1388) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:40:27.989+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:40:27.990+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:40:27.990+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:40:28.053+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:40:28.084+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:40:28.084+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:40:28.109+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:40:28.109+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:40:28.144+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.161 seconds
+[2025-11-01T12:40:58.682+0000] {processor.py:161} INFO - Started process (PID=1418) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:40:58.683+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:40:58.684+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:40:58.684+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:40:58.741+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:40:58.769+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:40:58.769+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:40:58.793+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:40:58.793+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:40:58.827+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.148 seconds
+[2025-11-01T12:41:29.463+0000] {processor.py:161} INFO - Started process (PID=1448) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:41:29.464+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:41:29.466+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:41:29.465+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:41:29.550+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:41:29.579+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:41:29.579+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:41:29.608+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:41:29.607+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:41:29.647+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.188 seconds
+[2025-11-01T12:42:00.134+0000] {processor.py:161} INFO - Started process (PID=1478) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:42:00.135+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:42:00.136+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:42:00.135+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:42:00.197+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:42:00.226+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:42:00.226+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:42:00.248+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:42:00.247+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:42:00.282+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.151 seconds
+[2025-11-01T12:42:30.888+0000] {processor.py:161} INFO - Started process (PID=1508) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:42:30.889+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:42:30.890+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:42:30.890+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:42:30.949+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:42:30.979+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:42:30.979+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:42:31.000+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:42:31.000+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:42:31.037+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.152 seconds
+[2025-11-01T12:43:01.607+0000] {processor.py:161} INFO - Started process (PID=1538) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:43:01.608+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:43:01.609+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:43:01.609+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:43:01.659+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:43:01.687+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:43:01.687+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:43:01.710+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:43:01.709+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:43:01.747+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.144 seconds
+[2025-11-01T12:43:32.443+0000] {processor.py:161} INFO - Started process (PID=1568) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:43:32.444+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:43:32.445+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:43:32.445+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:43:32.511+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:43:32.541+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:43:32.541+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:43:32.563+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:43:32.562+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:43:32.597+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.157 seconds
+[2025-11-01T12:44:03.148+0000] {processor.py:161} INFO - Started process (PID=1598) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:44:03.150+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:44:03.151+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:44:03.151+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:44:03.201+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:44:03.233+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:44:03.233+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:44:03.255+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:44:03.254+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:44:03.283+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.138 seconds
+[2025-11-01T12:44:33.922+0000] {processor.py:161} INFO - Started process (PID=1628) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:44:33.923+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:44:33.925+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:44:33.924+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:44:33.985+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:44:34.013+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:44:34.013+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:44:34.036+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:44:34.036+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:44:34.061+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.142 seconds
+[2025-11-01T12:45:04.595+0000] {processor.py:161} INFO - Started process (PID=1658) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:45:04.596+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:45:04.598+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:45:04.597+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:45:04.647+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:45:04.675+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:45:04.674+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:45:04.695+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:45:04.695+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:45:04.720+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.129 seconds
+[2025-11-01T12:45:35.301+0000] {processor.py:161} INFO - Started process (PID=1688) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:45:35.302+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:45:35.303+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:45:35.303+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:45:35.353+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:45:35.383+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:45:35.383+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:45:35.406+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:45:35.406+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:45:35.430+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.134 seconds
+[2025-11-01T12:46:06.002+0000] {processor.py:161} INFO - Started process (PID=1718) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:46:06.003+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:46:06.004+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:46:06.004+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:46:06.056+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:46:06.088+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:46:06.088+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:46:06.113+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:46:06.112+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:46:06.140+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.141 seconds
+[2025-11-01T12:46:36.758+0000] {processor.py:161} INFO - Started process (PID=1748) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:46:36.759+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:46:36.760+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:46:36.760+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:46:36.812+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:46:36.841+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:46:36.841+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:46:36.865+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:46:36.864+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:46:36.898+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.143 seconds
+[2025-11-01T12:47:07.591+0000] {processor.py:161} INFO - Started process (PID=1778) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:47:07.593+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:47:07.594+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:47:07.594+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:47:07.669+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:47:07.702+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:47:07.702+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:47:07.726+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:47:07.726+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:47:07.754+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.166 seconds
+[2025-11-01T12:47:38.463+0000] {processor.py:161} INFO - Started process (PID=1808) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:47:38.465+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:47:38.467+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:47:38.466+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:47:38.613+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:47:38.649+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:47:38.649+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:47:38.678+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:47:38.678+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:47:38.713+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.253 seconds
+[2025-11-01T12:48:09.793+0000] {processor.py:161} INFO - Started process (PID=1838) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:48:09.794+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:48:09.795+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:48:09.795+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:48:09.862+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:48:09.890+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:48:09.890+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:48:09.912+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:48:09.912+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:48:09.935+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.146 seconds
+[2025-11-01T12:50:43.562+0000] {processor.py:161} INFO - Started process (PID=1873) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:50:43.582+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:50:43.591+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:50:43.591+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:50:44.468+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:50:44.684+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:50:44.684+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:50:44.806+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:50:44.805+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:50:44.906+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 1.370 seconds
+[2025-11-01T12:51:45.629+0000] {processor.py:161} INFO - Started process (PID=1904) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:51:45.631+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:51:45.633+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:51:45.632+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:51:45.733+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:51:45.777+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:51:45.776+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:51:45.811+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:51:45.810+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:51:45.843+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.220 seconds
+[2025-11-01T12:52:15.902+0000] {processor.py:161} INFO - Started process (PID=1937) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:52:15.903+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:52:15.905+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:52:15.904+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:52:15.967+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:52:16.003+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:52:16.002+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:52:16.031+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:52:16.031+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:52:16.058+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.160 seconds
+[2025-11-01T12:52:46.984+0000] {processor.py:161} INFO - Started process (PID=2000) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:52:46.986+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:52:46.988+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:52:46.987+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:52:47.067+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:52:47.097+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:52:47.097+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:52:47.122+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:52:47.121+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:52:47.146+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.166 seconds
+[2025-11-01T12:53:17.774+0000] {processor.py:161} INFO - Started process (PID=2030) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:53:17.776+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:53:17.778+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:53:17.778+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:53:17.854+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:53:17.886+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:53:17.885+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:53:17.910+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:53:17.910+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:53:17.936+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.165 seconds
+[2025-11-01T12:53:48.660+0000] {processor.py:161} INFO - Started process (PID=2060) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:53:48.662+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:53:48.663+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:53:48.662+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:53:48.722+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:53:48.763+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:53:48.763+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:53:48.796+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:53:48.796+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:53:48.836+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.180 seconds
+[2025-11-01T12:54:19.479+0000] {processor.py:161} INFO - Started process (PID=2090) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:54:19.480+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:54:19.481+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:54:19.481+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:54:19.544+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:54:19.581+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:54:19.581+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:54:19.606+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:54:19.606+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:54:19.635+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.162 seconds
+[2025-11-01T12:54:50.315+0000] {processor.py:161} INFO - Started process (PID=2120) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:54:50.316+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:54:50.318+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:54:50.317+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:54:50.383+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:54:50.418+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:54:50.418+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:54:50.446+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:54:50.445+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:54:50.475+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.164 seconds
+[2025-11-01T12:55:21.139+0000] {processor.py:161} INFO - Started process (PID=2150) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:55:21.141+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:55:21.142+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:55:21.142+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:55:21.247+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:55:21.303+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:55:21.303+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:55:21.358+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:55:21.357+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:55:21.401+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.269 seconds
+[2025-11-01T12:55:52.000+0000] {processor.py:161} INFO - Started process (PID=2180) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:55:52.001+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:55:52.003+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:55:52.002+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:55:52.063+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:55:52.098+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:55:52.098+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:55:52.124+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:55:52.124+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:55:52.152+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.156 seconds
+[2025-11-01T12:56:22.777+0000] {processor.py:161} INFO - Started process (PID=2210) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:56:22.778+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:56:22.779+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:56:22.779+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:56:22.842+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:56:22.878+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:56:22.878+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:56:22.907+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:56:22.906+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:56:22.935+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.162 seconds
+[2025-11-01T12:56:53.558+0000] {processor.py:161} INFO - Started process (PID=2240) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:56:53.559+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:56:53.560+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:56:53.560+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:56:53.622+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:56:53.655+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:56:53.655+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:56:53.682+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:56:53.682+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:56:53.711+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.157 seconds
+[2025-11-01T12:57:24.502+0000] {processor.py:161} INFO - Started process (PID=2270) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:57:24.506+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:57:24.509+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:57:24.508+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:57:24.580+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:57:24.617+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:57:24.617+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:57:24.647+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:57:24.647+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:57:24.674+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.177 seconds
+[2025-11-01T12:57:55.449+0000] {processor.py:161} INFO - Started process (PID=2310) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:57:55.451+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:57:55.452+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:57:55.451+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:57:55.518+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:57:55.554+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:57:55.554+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:57:55.583+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:57:55.583+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:57:55.614+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.170 seconds
+[2025-11-01T12:58:26.403+0000] {processor.py:161} INFO - Started process (PID=2358) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:58:26.404+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:58:26.405+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:58:26.405+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:58:26.492+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:58:26.527+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:58:26.526+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:58:26.556+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:58:26.555+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:58:26.582+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.184 seconds
+[2025-11-01T12:58:57.215+0000] {processor.py:161} INFO - Started process (PID=2406) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:58:57.216+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:58:57.218+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:58:57.217+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:58:57.281+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:58:57.315+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:58:57.314+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:58:57.341+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:58:57.341+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:58:57.367+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.156 seconds
+[2025-11-01T12:59:27.972+0000] {processor.py:161} INFO - Started process (PID=2454) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:59:27.974+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T12:59:27.975+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:59:27.975+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:59:28.079+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T12:59:28.132+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:59:28.132+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T12:59:28.173+0000] {logging_mixin.py:188} INFO - [2025-11-01T12:59:28.172+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T12:59:28.217+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.248 seconds
+[2025-11-01T13:04:33.028+0000] {processor.py:161} INFO - Started process (PID=204) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:04:33.029+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:04:33.031+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:04:33.030+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:04:33.131+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:04:33.448+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:04:33.447+0000] {override.py:1769} INFO - Created Permission View: can read on DAG:ingestion_pipeline
+[2025-11-01T13:04:33.472+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:04:33.471+0000] {override.py:1769} INFO - Created Permission View: can edit on DAG:ingestion_pipeline
+[2025-11-01T13:04:33.484+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:04:33.484+0000] {override.py:1769} INFO - Created Permission View: can delete on DAG:ingestion_pipeline
+[2025-11-01T13:04:33.485+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:04:33.485+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:04:33.501+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:04:33.501+0000] {dag.py:3058} INFO - Creating ORM DAG for ingestion_pipeline
+[2025-11-01T13:04:33.518+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:04:33.518+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-10-30 00:00:00+00:00, run_after=2025-10-31 00:00:00+00:00
+[2025-11-01T13:04:33.556+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.532 seconds
+[2025-11-01T13:05:04.249+0000] {processor.py:161} INFO - Started process (PID=236) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:05:04.251+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:05:04.253+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:05:04.253+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:05:04.319+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:05:04.359+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:05:04.359+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:05:04.414+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:05:04.413+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-10-30 00:00:00+00:00, run_after=2025-10-31 00:00:00+00:00
+[2025-11-01T13:05:04.465+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.221 seconds
+[2025-11-01T13:05:35.072+0000] {processor.py:161} INFO - Started process (PID=266) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:05:35.074+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:05:35.075+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:05:35.074+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:05:35.137+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:05:35.175+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:05:35.174+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:05:35.201+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:05:35.201+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-10-30 00:00:00+00:00, run_after=2025-10-31 00:00:00+00:00
+[2025-11-01T13:05:35.232+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.163 seconds
+[2025-11-01T13:06:06.000+0000] {processor.py:161} INFO - Started process (PID=337) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:06:06.002+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:06:06.006+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:06:06.005+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:06:06.090+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:06:06.129+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:06:06.128+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:06:06.164+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:06:06.163+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:06:06.198+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.202 seconds
+[2025-11-01T13:06:37.015+0000] {processor.py:161} INFO - Started process (PID=379) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:06:37.016+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:06:37.018+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:06:37.017+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:06:37.096+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:06:37.131+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:06:37.130+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:06:37.160+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:06:37.160+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:06:37.187+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.178 seconds
+[2025-11-01T13:07:07.774+0000] {processor.py:161} INFO - Started process (PID=415) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:07:07.776+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:07:07.778+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:07:07.777+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:07:07.853+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:07:07.896+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:07:07.896+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:07:07.929+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:07:07.929+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:07:07.959+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.190 seconds
+[2025-11-01T13:07:38.670+0000] {processor.py:161} INFO - Started process (PID=463) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:07:38.671+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:07:38.673+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:07:38.673+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:07:38.780+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:07:38.825+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:07:38.825+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:07:38.860+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:07:38.860+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:07:38.887+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.220 seconds
+[2025-11-01T13:08:09.587+0000] {processor.py:161} INFO - Started process (PID=493) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:08:09.588+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:08:09.590+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:08:09.589+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:08:09.670+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:08:09.712+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:08:09.711+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:08:09.740+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:08:09.740+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:08:09.761+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.178 seconds
+[2025-11-01T13:08:40.338+0000] {processor.py:161} INFO - Started process (PID=523) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:08:40.339+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:08:40.340+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:08:40.340+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:08:40.414+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:08:40.454+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:08:40.454+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:08:40.500+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:08:40.499+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:08:40.545+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.211 seconds
+[2025-11-01T13:09:11.136+0000] {processor.py:161} INFO - Started process (PID=553) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:09:11.137+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:09:11.138+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:09:11.138+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:09:11.196+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:09:11.236+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:09:11.236+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:09:11.269+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:09:11.268+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:09:11.298+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.165 seconds
+[2025-11-01T13:09:42.046+0000] {processor.py:161} INFO - Started process (PID=583) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:09:42.047+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:09:42.048+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:09:42.048+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:09:42.106+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:09:42.149+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:09:42.149+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:09:42.183+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:09:42.183+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:09:42.209+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.168 seconds
+[2025-11-01T13:10:12.804+0000] {processor.py:161} INFO - Started process (PID=613) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:10:12.806+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:10:12.807+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:10:12.807+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:10:12.869+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:10:12.908+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:10:12.908+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:10:12.938+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:10:12.938+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:10:12.968+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.167 seconds
+[2025-11-01T13:10:43.590+0000] {processor.py:161} INFO - Started process (PID=643) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:10:43.592+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:10:43.594+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:10:43.594+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:10:43.680+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:10:43.713+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:10:43.713+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:10:43.756+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:10:43.756+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:10:43.789+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.204 seconds
+[2025-11-01T13:11:14.388+0000] {processor.py:161} INFO - Started process (PID=673) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:11:14.389+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:11:14.391+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:11:14.390+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:11:14.447+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:11:14.479+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:11:14.479+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:11:14.506+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:11:14.505+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:11:14.533+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.148 seconds
+[2025-11-01T13:11:45.138+0000] {processor.py:161} INFO - Started process (PID=703) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:11:45.139+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:11:45.140+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:11:45.140+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:11:45.219+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:11:45.280+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:11:45.280+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:11:45.338+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:11:45.338+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:11:45.385+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.250 seconds
+[2025-11-01T13:12:15.967+0000] {processor.py:161} INFO - Started process (PID=733) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:12:15.968+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:12:15.969+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:12:15.969+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:12:16.042+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:12:16.080+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:12:16.079+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:12:16.106+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:12:16.105+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:12:16.129+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.165 seconds
+[2025-11-01T13:12:46.736+0000] {processor.py:161} INFO - Started process (PID=763) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:12:46.737+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:12:46.739+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:12:46.738+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:12:46.797+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:12:46.839+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:12:46.839+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:12:46.866+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:12:46.866+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:12:46.892+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.160 seconds
+[2025-11-01T13:13:17.512+0000] {processor.py:161} INFO - Started process (PID=793) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:13:17.514+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:13:17.515+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:13:17.514+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:13:17.579+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:13:17.610+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:13:17.610+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:13:17.639+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:13:17.639+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:13:17.667+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.159 seconds
+[2025-11-01T13:13:48.267+0000] {processor.py:161} INFO - Started process (PID=823) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:13:48.268+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:13:48.269+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:13:48.269+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:13:48.326+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:13:48.361+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:13:48.360+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:13:48.396+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:13:48.396+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:13:48.426+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.162 seconds
+[2025-11-01T13:14:19.099+0000] {processor.py:161} INFO - Started process (PID=853) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:14:19.102+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:14:19.107+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:14:19.106+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:14:19.187+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:14:19.222+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:14:19.221+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:14:19.249+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:14:19.248+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:14:19.281+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.187 seconds
+[2025-11-01T13:14:49.967+0000] {processor.py:161} INFO - Started process (PID=883) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:14:49.969+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:14:49.971+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:14:49.970+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:14:50.040+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:14:50.076+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:14:50.075+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:14:50.105+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:14:50.104+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:14:50.134+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.169 seconds
+[2025-11-01T13:15:20.761+0000] {processor.py:161} INFO - Started process (PID=913) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:15:20.763+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:15:20.765+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:15:20.764+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:15:20.839+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:15:20.877+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:15:20.877+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:15:20.909+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:15:20.909+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:15:20.938+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.183 seconds
+[2025-11-01T13:15:51.690+0000] {processor.py:161} INFO - Started process (PID=943) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:15:51.693+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:15:51.695+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:15:51.695+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:15:51.778+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:15:51.837+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:15:51.836+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:15:51.906+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:15:51.906+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:15:51.963+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.282 seconds
+[2025-11-01T13:16:22.816+0000] {processor.py:161} INFO - Started process (PID=973) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:16:22.817+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:16:22.819+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:16:22.819+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:16:22.885+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:16:22.918+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:16:22.918+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:16:22.944+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:16:22.944+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:16:22.971+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.158 seconds
+[2025-11-01T13:16:53.565+0000] {processor.py:161} INFO - Started process (PID=1003) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:16:53.566+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:16:53.567+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:16:53.567+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:16:53.624+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:16:53.654+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:16:53.654+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:16:53.678+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:16:53.678+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:16:53.704+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.143 seconds
+[2025-11-01T13:17:24.300+0000] {processor.py:161} INFO - Started process (PID=1033) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:17:24.301+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:17:24.302+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:17:24.302+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:17:24.365+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:17:24.406+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:17:24.405+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:17:24.432+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:17:24.432+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:17:24.457+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.161 seconds
+[2025-11-01T13:17:55.094+0000] {processor.py:161} INFO - Started process (PID=1063) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:17:55.095+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:17:55.099+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:17:55.099+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:17:55.165+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:17:55.196+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:17:55.196+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:17:55.221+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:17:55.221+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:17:55.248+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.158 seconds
+[2025-11-01T13:18:25.876+0000] {processor.py:161} INFO - Started process (PID=1093) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:18:25.877+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:18:25.878+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:18:25.878+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:18:25.958+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:18:26.101+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:18:26.100+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:18:26.166+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:18:26.166+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:18:26.210+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.337 seconds
+[2025-11-01T13:18:56.847+0000] {processor.py:161} INFO - Started process (PID=1123) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:18:56.848+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:18:56.850+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:18:56.849+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:18:56.910+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:18:56.943+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:18:56.943+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:18:56.972+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:18:56.972+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:18:56.997+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.154 seconds
+[2025-11-01T13:19:27.569+0000] {processor.py:161} INFO - Started process (PID=1153) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:19:27.571+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:19:27.572+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:19:27.572+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:19:27.635+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:19:27.673+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:19:27.672+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:19:27.700+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:19:27.700+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:19:27.727+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.161 seconds
+[2025-11-01T13:19:58.450+0000] {processor.py:161} INFO - Started process (PID=1183) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:19:58.452+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:19:58.453+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:19:58.453+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:19:58.543+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:19:58.582+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:19:58.582+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:19:58.612+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:19:58.612+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:19:58.633+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.189 seconds
+[2025-11-01T13:20:29.234+0000] {processor.py:161} INFO - Started process (PID=1213) to work on /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:20:29.235+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingestion_dag.py for tasks to queue
+[2025-11-01T13:20:29.236+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:20:29.236+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:20:29.304+0000] {processor.py:840} INFO - DAG(s) 'ingestion_pipeline' retrieved from /opt/airflow/dags/ingestion_dag.py
+[2025-11-01T13:20:29.343+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:20:29.342+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-01T13:20:29.377+0000] {logging_mixin.py:188} INFO - [2025-11-01T13:20:29.377+0000] {dag.py:3823} INFO - Setting next_dagrun for ingestion_pipeline to 2025-11-01 00:00:00+00:00, run_after=2025-11-02 00:00:00+00:00
+[2025-11-01T13:20:29.406+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingestion_dag.py took 0.176 seconds

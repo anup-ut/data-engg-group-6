@@ -129,7 +129,6 @@ with DAG(
         file_prefix="payments",
         lag_days=LAG_DAYS,
         task_id="load_payments_bronze",
-        delete_strategy="both",  # "source_file" | "snapshot_date" | "both"
     )
 
     t_payments_bronze = build_payments_to_ch_task(dag=dag, cfg=cfg_payments)

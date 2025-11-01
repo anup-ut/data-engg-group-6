@@ -1,0 +1,296 @@
+[2025-10-31T19:01:43.044+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:01:43.061+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:01:43.062+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T19:01:43.080+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T19:01:43.088+0000] {standard_task_runner.py:60} INFO - Started process 319 to run task
+[2025-10-31T19:01:43.093+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpnr1fdxeh']
+[2025-10-31T19:01:43.097+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask silver_dbt.dbt_deps
+[2025-10-31T19:01:43.199+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host fe1087a1e328
+[2025-10-31T19:01:43.316+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T19:01:43.319+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T19:01:43.321+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T19:01:43.332+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T19:01:45.794+0000] {subprocess.py:93} INFO - 19:01:45  Running with dbt=1.10.13
+[2025-10-31T19:01:45.967+0000] {subprocess.py:93} INFO - 19:01:45  Warning: No packages were found in packages.yml
+[2025-10-31T19:01:45.973+0000] {subprocess.py:93} INFO - 19:01:45  Encountered an error:
+[2025-10-31T19:01:45.974+0000] {subprocess.py:93} INFO - [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T19:01:45.978+0000] {subprocess.py:93} INFO - 19:01:45  Traceback (most recent call last):
+[2025-10-31T19:01:45.978+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 178, in wrapper
+[2025-10-31T19:01:45.979+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-10-31T19:01:45.979+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:01:45.980+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+[2025-10-31T19:01:45.981+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T19:01:45.981+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:01:45.981+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 254, in wrapper
+[2025-10-31T19:01:45.982+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T19:01:45.982+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:01:45.983+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 303, in wrapper
+[2025-10-31T19:01:45.984+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T19:01:45.984+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:01:45.984+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/main.py", line 461, in deps
+[2025-10-31T19:01:45.985+0000] {subprocess.py:93} INFO -     results = task.run()
+[2025-10-31T19:01:45.985+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^
+[2025-10-31T19:01:45.986+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/task/deps.py", line 231, in run
+[2025-10-31T19:01:45.986+0000] {subprocess.py:93} INFO -     system.rmtree(self.project.packages_install_path)
+[2025-10-31T19:01:45.987+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt_common/clients/system.py", line 723, in rmtree
+[2025-10-31T19:01:45.987+0000] {subprocess.py:93} INFO -     return shutil.rmtree(path, onerror=chmod_and_retry)
+[2025-10-31T19:01:45.988+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:01:45.989+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 763, in rmtree
+[2025-10-31T19:01:45.989+0000] {subprocess.py:93} INFO -     onerror(os.rmdir, path, sys.exc_info())
+[2025-10-31T19:01:45.990+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 761, in rmtree
+[2025-10-31T19:01:45.991+0000] {subprocess.py:93} INFO -     os.rmdir(path, dir_fd=dir_fd)
+[2025-10-31T19:01:45.991+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T19:01:45.991+0000] {subprocess.py:93} INFO - 
+[2025-10-31T19:01:47.062+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-10-31T19:01:47.077+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-10-31T19:01:47.081+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T190143, end_date=20251031T190147
+[2025-10-31T19:01:47.100+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 13 for task silver_dbt.dbt_deps (Bash command failed. The command returned a non-zero exit code 2.; 319)
+[2025-10-31T19:01:47.131+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-10-31T19:01:47.163+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T19:34:35.139+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:34:35.154+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:34:35.155+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T19:34:35.174+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T19:34:35.181+0000] {standard_task_runner.py:60} INFO - Started process 455 to run task
+[2025-10-31T19:34:35.186+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpvve25lo4']
+[2025-10-31T19:34:35.189+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask silver_dbt.dbt_deps
+[2025-10-31T19:34:35.293+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host 3ff65ab69399
+[2025-10-31T19:34:35.414+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T19:34:35.416+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T19:34:35.417+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T19:34:35.428+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T19:34:37.492+0000] {subprocess.py:93} INFO - 19:34:37  Running with dbt=1.10.13
+[2025-10-31T19:34:37.622+0000] {subprocess.py:93} INFO - 19:34:37  Warning: No packages were found in packages.yml
+[2025-10-31T19:34:37.628+0000] {subprocess.py:93} INFO - 19:34:37  Encountered an error:
+[2025-10-31T19:34:37.628+0000] {subprocess.py:93} INFO - [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T19:34:37.631+0000] {subprocess.py:93} INFO - 19:34:37  Traceback (most recent call last):
+[2025-10-31T19:34:37.631+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 178, in wrapper
+[2025-10-31T19:34:37.632+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-10-31T19:34:37.632+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:34:37.633+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+[2025-10-31T19:34:37.634+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T19:34:37.634+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:34:37.634+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 254, in wrapper
+[2025-10-31T19:34:37.635+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T19:34:37.635+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:34:37.635+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 303, in wrapper
+[2025-10-31T19:34:37.636+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T19:34:37.636+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:34:37.637+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/main.py", line 461, in deps
+[2025-10-31T19:34:37.637+0000] {subprocess.py:93} INFO -     results = task.run()
+[2025-10-31T19:34:37.638+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^
+[2025-10-31T19:34:37.638+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/task/deps.py", line 231, in run
+[2025-10-31T19:34:37.639+0000] {subprocess.py:93} INFO -     system.rmtree(self.project.packages_install_path)
+[2025-10-31T19:34:37.639+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt_common/clients/system.py", line 723, in rmtree
+[2025-10-31T19:34:37.640+0000] {subprocess.py:93} INFO -     return shutil.rmtree(path, onerror=chmod_and_retry)
+[2025-10-31T19:34:37.641+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T19:34:37.642+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 763, in rmtree
+[2025-10-31T19:34:37.642+0000] {subprocess.py:93} INFO -     onerror(os.rmdir, path, sys.exc_info())
+[2025-10-31T19:34:37.642+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 761, in rmtree
+[2025-10-31T19:34:37.643+0000] {subprocess.py:93} INFO -     os.rmdir(path, dir_fd=dir_fd)
+[2025-10-31T19:34:37.643+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T19:34:37.643+0000] {subprocess.py:93} INFO - 
+[2025-10-31T19:34:38.560+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-10-31T19:34:38.577+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-10-31T19:34:38.581+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T193435, end_date=20251031T193438
+[2025-10-31T19:34:38.606+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 13 for task silver_dbt.dbt_deps (Bash command failed. The command returned a non-zero exit code 2.; 455)
+[2025-10-31T19:34:38.655+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-10-31T19:34:38.684+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T20:06:25.772+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:06:25.792+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:06:25.793+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T20:06:25.814+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T20:06:25.820+0000] {standard_task_runner.py:60} INFO - Started process 422 to run task
+[2025-10-31T20:06:25.825+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp2k0bmauf']
+[2025-10-31T20:06:25.828+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask silver_dbt.dbt_deps
+[2025-10-31T20:06:25.936+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host c2d20b09a38d
+[2025-10-31T20:06:26.049+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T20:06:26.051+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:06:26.052+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T20:06:26.064+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:06:28.040+0000] {subprocess.py:93} INFO - 20:06:28  Running with dbt=1.10.13
+[2025-10-31T20:06:28.205+0000] {subprocess.py:93} INFO - 20:06:28  Warning: No packages were found in packages.yml
+[2025-10-31T20:06:28.213+0000] {subprocess.py:93} INFO - 20:06:28  Warning: No packages were found in packages.yml
+[2025-10-31T20:06:29.218+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T20:06:29.254+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T200625, end_date=20251031T200629
+[2025-10-31T20:06:29.293+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T20:06:29.318+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T20:14:11.009+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:14:11.019+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:14:11.020+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T20:14:11.033+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T20:14:11.038+0000] {standard_task_runner.py:60} INFO - Started process 321 to run task
+[2025-10-31T20:14:11.042+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmplcbmi378']
+[2025-10-31T20:14:11.044+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask silver_dbt.dbt_deps
+[2025-10-31T20:14:11.134+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host ee75c7088485
+[2025-10-31T20:14:11.245+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T20:14:11.247+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:14:11.250+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T20:14:11.261+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:14:12.807+0000] {subprocess.py:93} INFO - 20:14:12  Running with dbt=1.10.13
+[2025-10-31T20:14:12.917+0000] {subprocess.py:93} INFO - 20:14:12  Warning: No packages were found in packages.yml
+[2025-10-31T20:14:12.924+0000] {subprocess.py:93} INFO - 20:14:12  Warning: No packages were found in packages.yml
+[2025-10-31T20:14:13.794+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T20:14:13.823+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T201411, end_date=20251031T201413
+[2025-10-31T20:14:13.869+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T20:14:13.896+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T20:31:57.817+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:31:57.828+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:31:57.829+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T20:31:57.843+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T20:31:57.848+0000] {standard_task_runner.py:60} INFO - Started process 286 to run task
+[2025-10-31T20:31:57.851+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmps5q22nmh']
+[2025-10-31T20:31:57.853+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask silver_dbt.dbt_deps
+[2025-10-31T20:31:57.930+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host f865f80ec1e7
+[2025-10-31T20:31:58.015+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T20:31:58.018+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:31:58.019+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T20:31:58.028+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:31:59.614+0000] {subprocess.py:93} INFO - 20:31:59  Running with dbt=1.10.13
+[2025-10-31T20:31:59.726+0000] {subprocess.py:93} INFO - 20:31:59  Warning: No packages were found in packages.yml
+[2025-10-31T20:31:59.735+0000] {subprocess.py:93} INFO - 20:31:59  Warning: No packages were found in packages.yml
+[2025-10-31T20:32:00.637+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T20:32:00.665+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T203157, end_date=20251031T203200
+[2025-10-31T20:32:00.719+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T20:32:00.749+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T21:05:54.507+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:05:54.522+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:05:54.523+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T21:05:54.540+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T21:05:54.544+0000] {standard_task_runner.py:60} INFO - Started process 350 to run task
+[2025-10-31T21:05:54.550+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp3515gvc6']
+[2025-10-31T21:05:54.553+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask silver_dbt.dbt_deps
+[2025-10-31T21:05:54.659+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host c45a3ec2f76e
+[2025-10-31T21:05:54.786+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T21:05:54.789+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T21:05:54.790+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T21:05:54.801+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T21:05:56.822+0000] {subprocess.py:93} INFO - 21:05:56  Running with dbt=1.10.13
+[2025-10-31T21:05:56.969+0000] {subprocess.py:93} INFO - 21:05:56  Warning: No packages were found in packages.yml
+[2025-10-31T21:05:56.973+0000] {subprocess.py:93} INFO - 21:05:56  Encountered an error:
+[2025-10-31T21:05:56.974+0000] {subprocess.py:93} INFO - [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T21:05:56.978+0000] {subprocess.py:93} INFO - 21:05:56  Traceback (most recent call last):
+[2025-10-31T21:05:56.978+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 178, in wrapper
+[2025-10-31T21:05:56.979+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-10-31T21:05:56.979+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:05:56.980+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+[2025-10-31T21:05:56.980+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T21:05:56.980+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:05:56.981+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 254, in wrapper
+[2025-10-31T21:05:56.981+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T21:05:56.982+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:05:56.982+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 303, in wrapper
+[2025-10-31T21:05:56.982+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T21:05:56.983+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:05:56.983+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/main.py", line 461, in deps
+[2025-10-31T21:05:56.984+0000] {subprocess.py:93} INFO -     results = task.run()
+[2025-10-31T21:05:56.984+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^
+[2025-10-31T21:05:56.985+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/task/deps.py", line 231, in run
+[2025-10-31T21:05:56.985+0000] {subprocess.py:93} INFO -     system.rmtree(self.project.packages_install_path)
+[2025-10-31T21:05:56.986+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt_common/clients/system.py", line 723, in rmtree
+[2025-10-31T21:05:56.986+0000] {subprocess.py:93} INFO -     return shutil.rmtree(path, onerror=chmod_and_retry)
+[2025-10-31T21:05:56.987+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:05:56.987+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 763, in rmtree
+[2025-10-31T21:05:56.988+0000] {subprocess.py:93} INFO -     onerror(os.rmdir, path, sys.exc_info())
+[2025-10-31T21:05:56.988+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 761, in rmtree
+[2025-10-31T21:05:56.989+0000] {subprocess.py:93} INFO -     os.rmdir(path, dir_fd=dir_fd)
+[2025-10-31T21:05:56.989+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T21:05:56.989+0000] {subprocess.py:93} INFO - 
+[2025-10-31T21:05:57.938+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-10-31T21:05:57.952+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-10-31T21:05:57.956+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T210554, end_date=20251031T210557
+[2025-10-31T21:05:57.970+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 13 for task silver_dbt.dbt_deps (Bash command failed. The command returned a non-zero exit code 2.; 350)
+[2025-10-31T21:05:58.018+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-10-31T21:05:58.048+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T21:48:47.570+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:48:47.579+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:48:47.580+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T21:48:47.599+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T21:48:47.606+0000] {standard_task_runner.py:60} INFO - Started process 351 to run task
+[2025-10-31T21:48:47.609+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpli6k3y1k']
+[2025-10-31T21:48:47.612+0000] {standard_task_runner.py:88} INFO - Job 12: Subtask silver_dbt.dbt_deps
+[2025-10-31T21:48:47.705+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host 4e388d324cfc
+[2025-10-31T21:48:47.804+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T21:48:47.806+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T21:48:47.807+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T21:48:47.818+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T21:48:50.250+0000] {subprocess.py:93} INFO - 21:48:50  Running with dbt=1.10.13
+[2025-10-31T21:48:50.427+0000] {subprocess.py:93} INFO - 21:48:50  Warning: No packages were found in packages.yml
+[2025-10-31T21:48:50.432+0000] {subprocess.py:93} INFO - 21:48:50  Encountered an error:
+[2025-10-31T21:48:50.433+0000] {subprocess.py:93} INFO - [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T21:48:50.436+0000] {subprocess.py:93} INFO - 21:48:50  Traceback (most recent call last):
+[2025-10-31T21:48:50.437+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 178, in wrapper
+[2025-10-31T21:48:50.437+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-10-31T21:48:50.438+0000] {subprocess.py:93} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:48:50.438+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+[2025-10-31T21:48:50.438+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T21:48:50.439+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:48:50.439+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 254, in wrapper
+[2025-10-31T21:48:50.439+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T21:48:50.440+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:48:50.440+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/requires.py", line 303, in wrapper
+[2025-10-31T21:48:50.441+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-10-31T21:48:50.441+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:48:50.442+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/cli/main.py", line 461, in deps
+[2025-10-31T21:48:50.442+0000] {subprocess.py:93} INFO -     results = task.run()
+[2025-10-31T21:48:50.443+0000] {subprocess.py:93} INFO -               ^^^^^^^^^^
+[2025-10-31T21:48:50.443+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt/task/deps.py", line 231, in run
+[2025-10-31T21:48:50.443+0000] {subprocess.py:93} INFO -     system.rmtree(self.project.packages_install_path)
+[2025-10-31T21:48:50.444+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/site-packages/dbt_common/clients/system.py", line 723, in rmtree
+[2025-10-31T21:48:50.444+0000] {subprocess.py:93} INFO -     return shutil.rmtree(path, onerror=chmod_and_retry)
+[2025-10-31T21:48:50.445+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-10-31T21:48:50.445+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 763, in rmtree
+[2025-10-31T21:48:50.446+0000] {subprocess.py:93} INFO -     onerror(os.rmdir, path, sys.exc_info())
+[2025-10-31T21:48:50.446+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.11/shutil.py", line 761, in rmtree
+[2025-10-31T21:48:50.447+0000] {subprocess.py:93} INFO -     os.rmdir(path, dir_fd=dir_fd)
+[2025-10-31T21:48:50.447+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: 'dbt_packages'
+[2025-10-31T21:48:50.447+0000] {subprocess.py:93} INFO - 
+[2025-10-31T21:48:51.526+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-10-31T21:48:51.560+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-10-31T21:48:51.565+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T214847, end_date=20251031T214851
+[2025-10-31T21:48:51.603+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 12 for task silver_dbt.dbt_deps (Bash command failed. The command returned a non-zero exit code 2.; 351)
+[2025-10-31T21:48:51.642+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-10-31T21:48:51.692+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T22:00:19.619+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:00:19.629+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:00:19.630+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T22:00:19.646+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_deps> on 2025-10-30 00:00:00+00:00
+[2025-10-31T22:00:19.654+0000] {standard_task_runner.py:60} INFO - Started process 345 to run task
+[2025-10-31T22:00:19.658+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_deps', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpwoqcbkn3']
+[2025-10-31T22:00:19.661+0000] {standard_task_runner.py:88} INFO - Job 13: Subtask silver_dbt.dbt_deps
+[2025-10-31T22:00:19.758+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_deps scheduled__2025-10-30T00:00:00+00:00 [running]> on host 9dbfb6fb81d8
+[2025-10-31T22:00:19.872+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T22:00:19.875+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T22:00:19.876+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors deps --profiles-dir /dbt'"]
+[2025-10-31T22:00:19.887+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T22:00:22.266+0000] {subprocess.py:93} INFO - 22:00:22  Running with dbt=1.10.13
+[2025-10-31T22:00:22.426+0000] {subprocess.py:93} INFO - 22:00:22  Warning: No packages were found in packages.yml
+[2025-10-31T22:00:22.434+0000] {subprocess.py:93} INFO - 22:00:22  Warning: No packages were found in packages.yml
+[2025-10-31T22:00:23.428+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T22:00:23.479+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_deps, execution_date=20251030T000000, start_date=20251031T220019, end_date=20251031T220023
+[2025-10-31T22:00:23.528+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T22:00:23.560+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check
