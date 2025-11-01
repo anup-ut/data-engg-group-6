@@ -13,3 +13,17 @@ models:
     +on_schema_change: append_new_columns
     silver:
       +materialized: incremental
+      
+    gold:
+      +schema: gold
+      +on-run-start:
+        - "CREATE DATABASE IF NOT EXISTS gold"
+
+      dim:
+        +materialized: table
+        +engine: "MergeTree()"
+
+      fact:
+        +materialized: incremental
+        +incremental_strategy: "delete+insert"
+        +engine: "MergeTree()"

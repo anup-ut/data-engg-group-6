@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: link_transactions
+    description: "Silver: cleaned link transactions"
+    columns:
+      - name: tx_id
+        tests: [not_null, unique]
+      - name: event_date
+        tests: [not_null]
+
+  - name: payments
+    description: "Silver: cleaned payments"
+    columns:
+      - name: payment_id
+        tests: [not_null, unique]
+      - name: event_date
+        tests: [not_null]
+
+  - name: merchants
+    description: "Silver: SCD2 merchants"
+    columns:
+      - name: merchant_sk
+        tests: [not_null, unique]
+      - name: merchant_id
+        tests: [not_null]

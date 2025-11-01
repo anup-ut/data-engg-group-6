@@ -4023,3 +4023,223 @@
 [2025-11-01T20:38:05.675+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:38:05.675+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
 [2025-11-01T20:38:05.698+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
 [2025-11-01T20:38:05.715+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.047 seconds
+[2025-11-01T20:38:36.490+0000] {processor.py:161} INFO - Started process (PID=3353) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:38:36.492+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:38:36.494+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:38:36.493+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:38:36.510+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:38:36.532+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.046 seconds
+[2025-11-01T20:39:06.671+0000] {processor.py:161} INFO - Started process (PID=3380) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:39:06.673+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:39:06.674+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:39:06.674+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:39:06.688+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:39:06.704+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.037 seconds
+[2025-11-01T20:39:36.802+0000] {processor.py:161} INFO - Started process (PID=3410) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:39:36.803+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:39:36.805+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:39:36.804+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:39:36.821+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:39:36.839+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.041 seconds
+[2025-11-01T20:40:07.495+0000] {processor.py:161} INFO - Started process (PID=3440) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:40:07.497+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:40:07.498+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:40:07.498+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:40:07.518+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:40:07.535+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.044 seconds
+[2025-11-01T20:40:38.214+0000] {processor.py:161} INFO - Started process (PID=3470) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:40:38.215+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:40:38.217+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:40:38.216+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:40:38.239+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:40:38.258+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.048 seconds
+[2025-11-01T20:41:08.884+0000] {processor.py:161} INFO - Started process (PID=3500) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:41:08.886+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:41:08.887+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:41:08.887+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:41:08.909+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:41:08.929+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.050 seconds
+[2025-11-01T20:41:39.564+0000] {processor.py:161} INFO - Started process (PID=3530) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:41:39.565+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:41:39.566+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:41:39.566+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:41:39.581+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:41:39.598+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.038 seconds
+[2025-11-01T20:42:10.256+0000] {processor.py:161} INFO - Started process (PID=3560) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:42:10.257+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:42:10.258+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:42:10.258+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:42:10.272+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:42:10.290+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.038 seconds
+[2025-11-01T20:42:41.059+0000] {processor.py:161} INFO - Started process (PID=3590) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:42:41.060+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:42:41.061+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:42:41.061+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:42:41.079+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:42:41.097+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.042 seconds
+[2025-11-01T20:43:11.795+0000] {processor.py:161} INFO - Started process (PID=3620) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:43:11.797+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:43:11.798+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:43:11.798+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:43:11.815+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:43:11.834+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.043 seconds
+[2025-11-01T20:43:42.488+0000] {processor.py:161} INFO - Started process (PID=3650) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:43:42.490+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:43:42.491+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:43:42.490+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:43:42.510+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:43:42.528+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.043 seconds
+[2025-11-01T20:44:13.205+0000] {processor.py:161} INFO - Started process (PID=3680) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:44:13.206+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:44:13.207+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:44:13.207+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:44:13.220+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:44:13.239+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.039 seconds
+[2025-11-01T20:44:43.872+0000] {processor.py:161} INFO - Started process (PID=3710) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:44:43.874+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:44:43.875+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:44:43.874+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:44:43.889+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:44:43.907+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.039 seconds
+[2025-11-01T20:45:14.566+0000] {processor.py:161} INFO - Started process (PID=3740) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:45:14.567+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:45:14.568+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:45:14.568+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:45:14.582+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:45:14.599+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.037 seconds
+[2025-11-01T20:45:45.272+0000] {processor.py:161} INFO - Started process (PID=3770) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:45:45.274+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:45:45.275+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:45:45.275+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:45:45.293+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:45:45.318+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.050 seconds
+[2025-11-01T20:46:15.954+0000] {processor.py:161} INFO - Started process (PID=3800) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:46:15.956+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:46:15.957+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:46:15.957+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:46:15.973+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:46:15.990+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.040 seconds
+[2025-11-01T20:46:46.680+0000] {processor.py:161} INFO - Started process (PID=3830) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:46:46.681+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:46:46.683+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:46:46.683+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:46:46.697+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:46:46.715+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.038 seconds
+[2025-11-01T20:47:17.727+0000] {processor.py:161} INFO - Started process (PID=3860) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:47:17.730+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:47:17.732+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:47:17.732+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:47:17.765+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:47:17.800+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.077 seconds
+[2025-11-01T20:47:48.534+0000] {processor.py:161} INFO - Started process (PID=3890) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:47:48.536+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:47:48.537+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:47:48.536+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:47:48.562+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:47:48.582+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.053 seconds
+[2025-11-01T20:48:19.203+0000] {processor.py:161} INFO - Started process (PID=3920) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:48:19.205+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:48:19.206+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:48:19.206+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:48:19.221+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:48:19.238+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.039 seconds
+[2025-11-01T20:48:49.871+0000] {processor.py:161} INFO - Started process (PID=3950) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:48:49.873+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:48:49.874+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:48:49.873+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:48:49.888+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:48:49.905+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.037 seconds
+[2025-11-01T20:49:20.529+0000] {processor.py:161} INFO - Started process (PID=3980) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:49:20.530+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:49:20.532+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:49:20.531+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:49:20.547+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:49:20.566+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.040 seconds
+[2025-11-01T20:49:51.209+0000] {processor.py:161} INFO - Started process (PID=4010) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:49:51.211+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:49:51.212+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:49:51.212+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:49:51.226+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:49:51.246+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.040 seconds
+[2025-11-01T20:50:21.894+0000] {processor.py:161} INFO - Started process (PID=4040) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:50:21.895+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:50:21.896+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:50:21.896+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:50:21.910+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:50:21.928+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.037 seconds
+[2025-11-01T20:50:52.527+0000] {processor.py:161} INFO - Started process (PID=4070) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:50:52.528+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:50:52.529+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:50:52.529+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:50:52.543+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:50:52.561+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.037 seconds
+[2025-11-01T20:51:23.203+0000] {processor.py:161} INFO - Started process (PID=4100) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:51:23.204+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:51:23.206+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:51:23.205+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:51:23.220+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:51:23.238+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.039 seconds
+[2025-11-01T20:51:53.849+0000] {processor.py:161} INFO - Started process (PID=4130) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:51:53.850+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:51:53.851+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:51:53.851+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:51:53.866+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:51:53.883+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.038 seconds
+[2025-11-01T20:52:24.481+0000] {processor.py:161} INFO - Started process (PID=4160) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:52:24.482+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:52:24.483+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:52:24.483+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:52:24.497+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:52:24.516+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.039 seconds
+[2025-11-01T20:52:55.153+0000] {processor.py:161} INFO - Started process (PID=4190) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:52:55.154+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:52:55.156+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:52:55.155+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:52:55.169+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:52:55.186+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.037 seconds
+[2025-11-01T20:53:25.831+0000] {processor.py:161} INFO - Started process (PID=4220) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:53:25.832+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:53:25.833+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:53:25.833+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:53:25.848+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:53:25.867+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.040 seconds
+[2025-11-01T20:53:56.622+0000] {processor.py:161} INFO - Started process (PID=4250) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:53:56.624+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:53:56.625+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:53:56.624+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:53:56.650+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:53:56.672+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.055 seconds
+[2025-11-01T20:54:27.326+0000] {processor.py:161} INFO - Started process (PID=4280) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:54:27.327+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:54:27.328+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:54:27.328+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:54:27.343+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:54:27.363+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.040 seconds
+[2025-11-01T20:54:58.001+0000] {processor.py:161} INFO - Started process (PID=4310) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:54:58.003+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:54:58.004+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:54:58.003+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:54:58.020+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:54:58.040+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.044 seconds
+[2025-11-01T20:55:28.705+0000] {processor.py:161} INFO - Started process (PID=4340) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:55:28.707+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:55:28.709+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:55:28.709+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:55:28.740+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:55:28.763+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.062 seconds
+[2025-11-01T20:55:59.350+0000] {processor.py:161} INFO - Started process (PID=4370) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:55:59.352+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:55:59.353+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:55:59.353+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:55:59.368+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:55:59.386+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.039 seconds
+[2025-11-01T20:56:30.049+0000] {processor.py:161} INFO - Started process (PID=4414) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:56:30.051+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:56:30.052+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:56:30.051+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:56:30.068+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:56:30.085+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.040 seconds
+[2025-11-01T20:57:00.717+0000] {processor.py:161} INFO - Started process (PID=4444) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:57:00.719+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:57:00.720+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:57:00.720+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:57:00.737+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:57:00.760+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.048 seconds
+[2025-11-01T20:57:31.452+0000] {processor.py:161} INFO - Started process (PID=4474) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:57:31.453+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:57:31.454+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:57:31.454+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:57:31.473+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:57:31.491+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.043 seconds
+[2025-11-01T20:58:02.125+0000] {processor.py:161} INFO - Started process (PID=4504) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:58:02.126+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:58:02.127+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:58:02.127+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:58:02.141+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:58:02.158+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.037 seconds
+[2025-11-01T20:58:32.798+0000] {processor.py:161} INFO - Started process (PID=4534) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:58:32.800+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:58:32.801+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:58:32.801+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:58:32.831+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:58:32.852+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.058 seconds
+[2025-11-01T20:59:03.542+0000] {processor.py:161} INFO - Started process (PID=4564) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:59:03.544+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:59:03.545+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:59:03.544+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:59:03.560+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:59:03.577+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.038 seconds
+[2025-11-01T20:59:34.233+0000] {processor.py:161} INFO - Started process (PID=4606) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:59:34.234+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T20:59:34.236+0000] {logging_mixin.py:188} INFO - [2025-11-01T20:59:34.235+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:59:34.252+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T20:59:34.278+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.050 seconds
+[2025-11-01T21:00:04.941+0000] {processor.py:161} INFO - Started process (PID=4663) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T21:00:04.942+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T21:00:04.943+0000] {logging_mixin.py:188} INFO - [2025-11-01T21:00:04.943+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T21:00:04.958+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T21:00:04.974+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.036 seconds
+[2025-11-01T21:00:35.632+0000] {processor.py:161} INFO - Started process (PID=4693) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T21:00:35.634+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
+[2025-11-01T21:00:35.635+0000] {logging_mixin.py:188} INFO - [2025-11-01T21:00:35.634+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T21:00:35.649+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
+[2025-11-01T21:00:35.667+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.039 seconds
