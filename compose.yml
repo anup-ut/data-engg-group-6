@@ -76,11 +76,12 @@ services:
       AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
       # Define the MongoDB connection for Airflow (if used)
       AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
-      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver
+      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./data:/tmp/data # Shared data directory for Airflow
+      - ./dbt_project:/opt/airflow/dbt_project
     depends_on:
       - airflow-db
       - clickhouse-server
@@ -93,19 +94,21 @@ services:
     container_name: airflow-webserver
     command: webserver
     environment:
+      PATH: /home/airflow/.local/bin:/usr/local/bin:/usr/bin:/bin
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth"
       AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
       AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
-      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver
+      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
     ports:
       - "8080:8080"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./data:/tmp/data # Shared data directory for Airflow
+      - ./dbt_project:/opt/airflow/dbt_project
     depends_on:
       - airflow-init
       - airflow-db
@@ -119,16 +122,19 @@ services:
     container_name: airflow-scheduler
     command: scheduler
     environment:
+      PATH: /home/airflow/.local/bin:/usr/local/bin:/usr/bin:/bin
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
       AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
-      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver
-    volumes:
+      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
+    # --- FIX APPLIED HERE: Moved volumes out of environment ---
+    volumes: 
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./data:/tmp/data
+      - ./dbt_project:/opt/airflow/dbt_project
     depends_on:
       - airflow-init
       - airflow-db
@@ -176,7 +182,7 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
       ME_CONFIG_MONGODB_AUTH_DATABASE: admin
-      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'true' # <--- ADDED THIS LINE
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'true'
       # FIX: Explicitly setting the HTTP Basic Auth for the web UI login
       ME_CONFIG_BASICAUTH_USERNAME: admin
       ME_CONFIG_BASICAUTH_PASSWORD: password

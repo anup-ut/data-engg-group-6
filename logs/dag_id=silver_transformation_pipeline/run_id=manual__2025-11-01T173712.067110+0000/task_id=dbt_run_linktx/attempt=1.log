@@ -1,0 +1,134 @@
+[2025-11-01T17:37:14.162+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T17:37:12.067110+00:00 [queued]>
+[2025-11-01T17:37:14.176+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T17:37:12.067110+00:00 [queued]>
+[2025-11-01T17:37:14.180+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T17:37:14.202+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-11-01 17:37:12.067110+00:00
+[2025-11-01T17:37:14.212+0000] {standard_task_runner.py:60} INFO - Started process 3221 to run task
+[2025-11-01T17:37:14.217+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'manual__2025-11-01T17:37:12.067110+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp70q2fu04']
+[2025-11-01T17:37:14.222+0000] {standard_task_runner.py:88} INFO - Job 73: Subtask dbt_run_linktx
+[2025-11-01T17:37:14.330+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T17:37:12.067110+00:00 [running]> on host 69cecc54c654
+[2025-11-01T17:37:14.468+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T17:37:12.067110+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T17:37:12.067110+00:00'
+[2025-11-01T17:37:20.424+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/silver_dag.py", line 176, in <lambda>
+    python_callable=lambda ds, **_: _run_dbt("silver_link_transactions", ds=ds, full_refresh=False, pass_ds_lagged=True),
+  File "/opt/airflow/dags/silver_dag.py", line 149, in _run_dbt
+    raise RuntimeError(f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}")
+RuntimeError: dbt failed (1).
+STDOUT:
+17:37:17  Running with dbt=1.5.9
+17:37:17  Registered adapter: clickhouse=1.5.2
+17:37:17  Unable to do partial parsing because config vars, config profile, or config target have changed
+17:37:19  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+17:37:19  
+17:37:19  Concurrency: 4 threads (target='dev')
+17:37:19  
+17:37:19  1 of 1 START sql incremental model silver.silver_link_transactions ............. [RUN]
+17:37:19  1 of 1 ERROR creating sql incremental model silver.silver_link_transactions .... [ERROR in 0.13s]
+17:37:19  
+17:37:19  Finished running 1 incremental model in 0 hours 0 minutes and 0.41 seconds (0.41s).
+17:37:19  
+17:37:19  Completed with 1 error and 0 warnings:
+17:37:19  
+17:37:19  Database Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+17:37:19    Code: 184.
+17:37:19    DB::Exception: Aggregate function max(_snapshot_date) AS _snapshot_date is found in WHERE in query. Stack trace:
+17:37:19    
+17:37:19    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+17:37:19    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+17:37:19    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+17:37:19    3. DB::Exception::Exception<String, String&>(int, FormatStringHelperImpl<std::type_identity<String>::type, std::type_identity<String&>::type>, String&&, String&) @ 0x000000000e71c46b
+17:37:19    4. DB::InDepthQueryTreeVisitor<DB::(anonymous namespace)::CollectAggregateFunctionNodesVisitor, true>::visit(std::shared_ptr<DB::IQueryTreeNode> const&) (.llvm.16839561911307405599) @ 0x00000000178763b0
+17:37:19    5. DB::InDepthQueryTreeVisitor<DB::(anonymous namespace)::CollectAggregateFunctionNodesVisitor, true>::visit(std::shared_ptr<DB::IQueryTreeNode> const&) (.llvm.16839561911307405599) @ 0x000000001787633a
+17:37:19    6. DB::InDepthQueryTreeVisitor<DB::(anonymous namespace)::CollectAggregateFunctionNodesVisitor, true>::visit(std::shared_ptr<DB::IQueryTreeNode> const&) (.llvm.16839561911307405599) @ 0x000000001787633a
+17:37:19    7. DB::validateAggregates(std::shared_ptr<DB::IQueryTreeNode> const&, DB::AggregatesValidationParams) @ 0x000000001787129a
+17:37:19    8. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782fd13
+17:37:19    9. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+17:37:19    10. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+17:37:19    11. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+17:37:19    12. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+17:37:19    13. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+17:37:19    14. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+17:37:19    15. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+17:37:19    16. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+17:37:19    17. DB::InterpreterInsertQuery::execute() @ 0x000000001833dbe5
+17:37:19    18. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+17:37:19    19. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+17:37:19    20. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+17:37:19    21. DB::TCPHandler::run() @ 0x0000000019e4f119
+17:37:19    22. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+17:37:19    23. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+17:37:19    24. Poco::PooledThread::run() @ 0x000000001ef15b87
+17:37:19    25. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+17:37:19    26. ? @ 0x0000000000094ac3
+17:37:19    27. ? @ 0x0000000000125a74
+17:37:19    compiled Code at target/run/ck_project/models/silver/silver_link_transactions.sql
+17:37:19  
+17:37:19  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+
+[2025-11-01T17:37:20.443+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251101T173712, start_date=20251101T173714, end_date=20251101T173720
+[2025-11-01T17:37:20.461+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 73 for task dbt_run_linktx (dbt failed (1).
+STDOUT:
+17:37:17  Running with dbt=1.5.9
+17:37:17  Registered adapter: clickhouse=1.5.2
+17:37:17  Unable to do partial parsing because config vars, config profile, or config target have changed
+17:37:19  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+17:37:19  
+17:37:19  Concurrency: 4 threads (target='dev')
+17:37:19  
+17:37:19  1 of 1 START sql incremental model silver.silver_link_transactions ............. [RUN]
+17:37:19  1 of 1 ERROR creating sql incremental model silver.silver_link_transactions .... [ERROR in 0.13s]
+17:37:19  
+17:37:19  Finished running 1 incremental model in 0 hours 0 minutes and 0.41 seconds (0.41s).
+17:37:19  
+17:37:19  Completed with 1 error and 0 warnings:
+17:37:19  
+17:37:19  Database Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+17:37:19    Code: 184.
+17:37:19    DB::Exception: Aggregate function max(_snapshot_date) AS _snapshot_date is found in WHERE in query. Stack trace:
+17:37:19    
+17:37:19    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+17:37:19    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+17:37:19    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+17:37:19    3. DB::Exception::Exception<String, String&>(int, FormatStringHelperImpl<std::type_identity<String>::type, std::type_identity<String&>::type>, String&&, String&) @ 0x000000000e71c46b
+17:37:19    4. DB::InDepthQueryTreeVisitor<DB::(anonymous namespace)::CollectAggregateFunctionNodesVisitor, true>::visit(std::shared_ptr<DB::IQueryTreeNode> const&) (.llvm.16839561911307405599) @ 0x00000000178763b0
+17:37:19    5. DB::InDepthQueryTreeVisitor<DB::(anonymous namespace)::CollectAggregateFunctionNodesVisitor, true>::visit(std::shared_ptr<DB::IQueryTreeNode> const&) (.llvm.16839561911307405599) @ 0x000000001787633a
+17:37:19    6. DB::InDepthQueryTreeVisitor<DB::(anonymous namespace)::CollectAggregateFunctionNodesVisitor, true>::visit(std::shared_ptr<DB::IQueryTreeNode> const&) (.llvm.16839561911307405599) @ 0x000000001787633a
+17:37:19    7. DB::validateAggregates(std::shared_ptr<DB::IQueryTreeNode> const&, DB::AggregatesValidationParams) @ 0x000000001787129a
+17:37:19    8. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782fd13
+17:37:19    9. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+17:37:19    10. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+17:37:19    11. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+17:37:19    12. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+17:37:19    13. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+17:37:19    14. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+17:37:19    15. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+17:37:19    16. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+17:37:19    17. DB::InterpreterInsertQuery::execute() @ 0x000000001833dbe5
+17:37:19    18. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+17:37:19    19. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+17:37:19    20. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+17:37:19    21. DB::TCPHandler::run() @ 0x0000000019e4f119
+17:37:19    22. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+17:37:19    23. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+17:37:19    24. Poco::PooledThread::run() @ 0x000000001ef15b87
+17:37:19    25. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+17:37:19    26. ? @ 0x0000000000094ac3
+17:37:19    27. ? @ 0x0000000000125a74
+17:37:19    compiled Code at target/run/ck_project/models/silver/silver_link_transactions.sql
+17:37:19  
+17:37:19  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+; 3221)
+[2025-11-01T17:37:20.483+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T17:37:20.507+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

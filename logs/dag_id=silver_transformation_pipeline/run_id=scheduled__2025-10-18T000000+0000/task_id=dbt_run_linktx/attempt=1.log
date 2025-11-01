@@ -1,0 +1,13 @@
+[2025-11-01T20:22:27.200+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-18T00:00:00+00:00 [queued]>
+[2025-11-01T20:22:27.222+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-18T00:00:00+00:00 [queued]>
+[2025-11-01T20:22:27.223+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:22:27.238+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-10-18 00:00:00+00:00
+[2025-11-01T20:22:27.248+0000] {standard_task_runner.py:60} INFO - Started process 1810 to run task
+[2025-11-01T20:22:27.253+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-18T00:00:00+00:00', '--job-id', '196', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpdztfh3f7']
+[2025-11-01T20:22:27.256+0000] {standard_task_runner.py:88} INFO - Job 196: Subtask dbt_run_linktx
+[2025-11-01T20:22:27.340+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-18T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:22:27.452+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-18T00:00:00+00:00'
+[2025-11-01T20:22:33.185+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:22:33.201+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251018T000000, start_date=20251101T202227, end_date=20251101T202233
+[2025-11-01T20:22:33.229+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:22:33.255+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

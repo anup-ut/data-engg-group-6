@@ -41,7 +41,7 @@ from pipelines.payments_to_clickhouse import (
 # Global Config
 # -----------------------------
 BASE_DATA_DIR = "/tmp/data"
-LAG_DAYS = 29
+LAG_DAYS = 0
 
 
 # Mongo
@@ -91,7 +91,7 @@ with DAG(
         "Merchants(daily lag) & payments(29d lag) -> ClickHouse bronze; "
         "link_transactions(29d lag) CSV -> Mongo; Mongo -> CH bronze."
     ),
-    start_date=timezone.datetime(2025, 10, 30),
+    start_date=timezone.datetime(2025, 10, 1),
     schedule_interval="@daily",
     catchup=True,
     tags=["bronze", "clickhouse", "mongodb", "ingestion"],

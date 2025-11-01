@@ -412,3 +412,130 @@ DB::Exception: Cannot add column _source_file: column with this name already exi
 [2025-11-01T13:06:02.536+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T130559, end_date=20251101T130602
 [2025-11-01T13:06:02.624+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
 [2025-11-01T13:06:02.665+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T14:10:47.811+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:10:47.828+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:10:47.829+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T14:10:47.860+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-30 00:00:00+00:00
+[2025-11-01T14:10:47.879+0000] {standard_task_runner.py:60} INFO - Started process 289 to run task
+[2025-11-01T14:10:47.905+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp9_4fe7dm']
+[2025-11-01T14:10:47.912+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask load_payments_bronze
+[2025-11-01T14:10:48.116+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [running]> on host b977057f5fed
+[2025-11-01T14:10:48.355+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T14:10:51.034+0000] {payments_to_clickhouse.py:89} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251001.csv
+[2025-11-01T14:10:51.039+0000] {payments_to_clickhouse.py:94} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv']
+[2025-11-01T14:10:51.197+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T14:10:51.201+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T14:10:51.268+0000] {payments_to_clickhouse.py:217} INFO - [payments->ch] Dropped partition for _snapshot_date=2025-10-01.
+[2025-11-01T14:10:51.323+0000] {payments_to_clickhouse.py:255} INFO - [payments->ch] Inserted 1092 rows into bronze.payments.
+[2025-11-01T14:10:51.324+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T14:10:51.348+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T141047, end_date=20251101T141051
+[2025-11-01T14:10:51.465+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T14:10:51.503+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T14:21:04.247+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:21:04.273+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:21:04.277+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T14:21:04.312+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-30 00:00:00+00:00
+[2025-11-01T14:21:04.325+0000] {standard_task_runner.py:60} INFO - Started process 286 to run task
+[2025-11-01T14:21:04.339+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp8de52dux']
+[2025-11-01T14:21:04.343+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask load_payments_bronze
+[2025-11-01T14:21:04.509+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [running]> on host 8c60c1c29b68
+[2025-11-01T14:21:04.722+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T14:21:07.661+0000] {payments_to_clickhouse.py:89} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251001.csv
+[2025-11-01T14:21:07.667+0000] {payments_to_clickhouse.py:94} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv']
+[2025-11-01T14:21:07.744+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T14:21:07.747+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T14:21:07.779+0000] {payments_to_clickhouse.py:217} INFO - [payments->ch] Dropped partition for _snapshot_date=2025-10-01.
+[2025-11-01T14:21:07.829+0000] {payments_to_clickhouse.py:255} INFO - [payments->ch] Inserted 1092 rows into bronze.payments.
+[2025-11-01T14:21:07.838+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T14:21:07.860+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T142104, end_date=20251101T142107
+[2025-11-01T14:21:07.947+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T14:21:08.051+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T14:30:35.447+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:30:35.471+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:30:35.472+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T14:30:35.499+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-30 00:00:00+00:00
+[2025-11-01T14:30:35.511+0000] {standard_task_runner.py:60} INFO - Started process 280 to run task
+[2025-11-01T14:30:35.516+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmprerr1tvz']
+[2025-11-01T14:30:35.520+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask load_payments_bronze
+[2025-11-01T14:30:35.696+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [running]> on host f19166223143
+[2025-11-01T14:30:36.020+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T14:30:39.156+0000] {payments_to_clickhouse.py:89} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251001.csv
+[2025-11-01T14:30:39.165+0000] {payments_to_clickhouse.py:94} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv']
+[2025-11-01T14:30:39.262+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T14:30:39.265+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T14:30:39.333+0000] {payments_to_clickhouse.py:217} INFO - [payments->ch] Dropped partition for _snapshot_date=2025-10-01.
+[2025-11-01T14:30:39.409+0000] {payments_to_clickhouse.py:255} INFO - [payments->ch] Inserted 1092 rows into bronze.payments.
+[2025-11-01T14:30:39.416+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T14:30:39.472+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T143035, end_date=20251101T143039
+[2025-11-01T14:30:39.654+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T14:30:39.692+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T15:01:01.952+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T15:01:02.007+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T15:01:02.014+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T15:01:02.096+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-30 00:00:00+00:00
+[2025-11-01T15:01:02.124+0000] {standard_task_runner.py:60} INFO - Started process 259 to run task
+[2025-11-01T15:01:02.140+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp_psp3isn']
+[2025-11-01T15:01:02.158+0000] {standard_task_runner.py:88} INFO - Job 3: Subtask load_payments_bronze
+[2025-11-01T15:01:02.482+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [running]> on host 7f2b5a16b237
+[2025-11-01T15:01:02.846+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T15:01:08.405+0000] {payments_to_clickhouse.py:89} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251001.csv
+[2025-11-01T15:01:08.417+0000] {payments_to_clickhouse.py:94} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv']
+[2025-11-01T15:01:08.583+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T15:01:08.586+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T15:01:08.627+0000] {payments_to_clickhouse.py:217} INFO - [payments->ch] Dropped partition for _snapshot_date=2025-10-01.
+[2025-11-01T15:01:08.802+0000] {payments_to_clickhouse.py:255} INFO - [payments->ch] Inserted 1092 rows into bronze.payments.
+[2025-11-01T15:01:08.811+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T15:01:08.874+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T150101, end_date=20251101T150108
+[2025-11-01T15:01:08.999+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T15:01:09.049+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T16:52:38.648+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T16:52:38.685+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T16:52:38.686+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T16:52:38.724+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-30 00:00:00+00:00
+[2025-11-01T16:52:38.748+0000] {standard_task_runner.py:60} INFO - Started process 287 to run task
+[2025-11-01T16:52:38.760+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpkw2hj2cn']
+[2025-11-01T16:52:38.770+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask load_payments_bronze
+[2025-11-01T16:52:39.009+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [running]> on host 69cecc54c654
+[2025-11-01T16:52:39.310+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T16:52:43.422+0000] {payments_to_clickhouse.py:89} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251001.csv
+[2025-11-01T16:52:43.491+0000] {payments_to_clickhouse.py:94} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv']
+[2025-11-01T16:52:43.808+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T16:52:43.829+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T16:52:44.142+0000] {payments_to_clickhouse.py:217} INFO - [payments->ch] Dropped partition for _snapshot_date=2025-10-01.
+[2025-11-01T16:52:44.320+0000] {payments_to_clickhouse.py:255} INFO - [payments->ch] Inserted 1092 rows into bronze.payments.
+[2025-11-01T16:52:44.357+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T16:52:44.410+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T165238, end_date=20251101T165244
+[2025-11-01T16:52:44.545+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T16:52:44.594+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T20:07:20.440+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T20:07:20.479+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T20:07:20.482+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:07:20.608+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-30 00:00:00+00:00
+[2025-11-01T20:07:20.624+0000] {standard_task_runner.py:60} INFO - Started process 853 to run task
+[2025-11-01T20:07:20.651+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpvfj9s00p']
+[2025-11-01T20:07:20.670+0000] {standard_task_runner.py:88} INFO - Job 121: Subtask load_payments_bronze
+[2025-11-01T20:07:21.007+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [running]> on host 1a955fda0cfd
+[2025-11-01T20:07:21.656+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T20:07:23.962+0000] {payments_to_clickhouse.py:89} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251030.csv
+[2025-11-01T20:07:23.977+0000] {payments_to_clickhouse.py:94} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv']
+[2025-11-01T20:07:23.980+0000] {payments_to_clickhouse.py:100} WARNING - [payments->ch] File not found. Skipping.
+[2025-11-01T20:07:23.981+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:07:24.053+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T200720, end_date=20251101T200724
+[2025-11-01T20:07:24.170+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:07:24.215+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T20:18:46.195+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T20:18:46.226+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T20:18:46.228+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:18:46.273+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-10-30 00:00:00+00:00
+[2025-11-01T20:18:46.285+0000] {standard_task_runner.py:60} INFO - Started process 875 to run task
+[2025-11-01T20:18:46.296+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '123', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmptyd63_u8']
+[2025-11-01T20:18:46.304+0000] {standard_task_runner.py:88} INFO - Job 123: Subtask load_payments_bronze
+[2025-11-01T20:18:46.477+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-10-30T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:18:46.734+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T20:18:48.481+0000] {payments_to_clickhouse.py:89} INFO - [payments->ch] Target CSV: /tmp/data/payments/payments-20251030.csv
+[2025-11-01T20:18:48.489+0000] {payments_to_clickhouse.py:94} INFO - [payments->ch] Folder listing: ['payments-20251001.csv', 'payments-20251002.csv', 'payments-20251003.csv', 'payments-20251004.csv']
+[2025-11-01T20:18:48.492+0000] {payments_to_clickhouse.py:100} WARNING - [payments->ch] File not found. Skipping.
+[2025-11-01T20:18:48.493+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:18:48.517+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251030T000000, start_date=20251101T201846, end_date=20251101T201848
+[2025-11-01T20:18:48.586+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:18:48.627+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

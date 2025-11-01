@@ -1,0 +1,74 @@
+[2025-11-01T15:23:09.892+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants manual__2025-11-01T15:18:00.362977+00:00 [queued]>
+[2025-11-01T15:23:09.902+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants manual__2025-11-01T15:18:00.362977+00:00 [queued]>
+[2025-11-01T15:23:09.903+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-11-01T15:23:09.918+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-11-01 15:18:00.362977+00:00
+[2025-11-01T15:23:09.924+0000] {standard_task_runner.py:60} INFO - Started process 1740 to run task
+[2025-11-01T15:23:09.928+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'manual__2025-11-01T15:18:00.362977+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpjze4i9rr']
+[2025-11-01T15:23:09.931+0000] {standard_task_runner.py:88} INFO - Job 42: Subtask dbt_run_merchants
+[2025-11-01T15:23:10.019+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants manual__2025-11-01T15:18:00.362977+00:00 [running]> on host 7f2b5a16b237
+[2025-11-01T15:23:10.131+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T15:18:00.362977+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T15:18:00.362977+00:00'
+[2025-11-01T15:23:15.186+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/silver_dag.py", line 129, in <lambda>
+    python_callable=lambda ds, **_: _run_dbt("silver_merchants", ds=ds, full_refresh=True, pass_ds_lagged=False),
+  File "/opt/airflow/dags/silver_dag.py", line 92, in _run_dbt
+    raise RuntimeError(f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}")
+RuntimeError: dbt failed (1).
+STDOUT:
+15:23:12  Running with dbt=1.5.9
+15:23:12  Registered adapter: clickhouse=1.5.2
+15:23:12  Unable to do partial parsing because config vars, config profile, or config target have changed
+15:23:14  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+15:23:14  
+15:23:14  Concurrency: 4 threads (target='dev')
+15:23:14  
+15:23:14  1 of 1 START sql incremental model silver.silver_merchants ..................... [RUN]
+15:23:14  1 of 1 ERROR creating sql incremental model silver.silver_merchants ............ [ERROR in 0.02s]
+15:23:14  
+15:23:14  Finished running 1 incremental model in 0 hours 0 minutes and 0.27 seconds (0.27s).
+15:23:14  
+15:23:14  Completed with 1 error and 0 warnings:
+15:23:14  
+15:23:14  Compilation Error in model silver_merchants (models/silver/silver_merchants.sql)
+15:23:14    Required var 'ds_lagged' not found in config:
+15:23:14    Vars supplied to silver_merchants = {}
+15:23:14  
+15:23:14  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+
+[2025-11-01T15:23:15.204+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251101T151800, start_date=20251101T152309, end_date=20251101T152315
+[2025-11-01T15:23:15.220+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 42 for task dbt_run_merchants (dbt failed (1).
+STDOUT:
+15:23:12  Running with dbt=1.5.9
+15:23:12  Registered adapter: clickhouse=1.5.2
+15:23:12  Unable to do partial parsing because config vars, config profile, or config target have changed
+15:23:14  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+15:23:14  
+15:23:14  Concurrency: 4 threads (target='dev')
+15:23:14  
+15:23:14  1 of 1 START sql incremental model silver.silver_merchants ..................... [RUN]
+15:23:14  1 of 1 ERROR creating sql incremental model silver.silver_merchants ............ [ERROR in 0.02s]
+15:23:14  
+15:23:14  Finished running 1 incremental model in 0 hours 0 minutes and 0.27 seconds (0.27s).
+15:23:14  
+15:23:14  Completed with 1 error and 0 warnings:
+15:23:14  
+15:23:14  Compilation Error in model silver_merchants (models/silver/silver_merchants.sql)
+15:23:14    Required var 'ds_lagged' not found in config:
+15:23:14    Vars supplied to silver_merchants = {}
+15:23:14  
+15:23:14  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+; 1740)
+[2025-11-01T15:23:15.257+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T15:23:15.276+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

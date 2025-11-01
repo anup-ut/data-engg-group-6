@@ -1,57 +1,55 @@
--- dbt_project/models/silver/silver_link_transactions.sql
+{% set ds_lagged = var('ds_lagged', none) %}
 
 {{ config(
-    materialized='incremental',
-    unique_key='link_id',
-    incremental_strategy='delete+insert',
-    on_schema_change='sync_all_columns',
+  materialized = 'incremental',
+  tags = ['silver','linktx'],
+  on_schema_change = 'append_new_columns',
+  engine = 'ReplacingMergeTree',
+  order_by = '(transaction_id, _snapshot_date)',   
+  partition_by = 'toDate(_snapshot_date)'
 ) }}
 
-WITH src AS (
-  SELECT
-      id,
-      state,
-      linkpay_reference,
-      payment_details,
-      created_at,
-      updated_at
-  FROM {{ source('bronze', 'link_transactions') }}
+with base as (
+  select
+    -- make key non-nullable in the schema; also exclude null id upstream
+    assumeNotNull(toUInt64OrNull(id))                      as transaction_id,
+    state,
+    linkpay_reference                                      as reference,
+    payment_details                                        as details,
+    created_at,
+    updated_at,
+    _ingested_at,
+    toDate(_snapshot_date)                                 as _snapshot_date
+  from {{ source('bronze','link_transactions') }}
+  where id is not null
+  {% if is_incremental() and ds_lagged is not none %}
+    and _snapshot_date = toDate('{{ ds_lagged }}')
+  {% endif %}
 ),
-norm AS (
-  SELECT
-      CAST(id AS UInt64)                                      AS link_id,
-      /* Normalize created_at / updated_at to DateTime64(6) */
-      IF(like(toTypeName(created_at), 'String%'),
-         parseDateTime64BestEffortOrNull(replaceRegexpAll(created_at, ' UTC$', ''), 6),
-         toDateTime64(created_at, 6)
-      )                                                       AS created_at_dt,
 
-      IF(like(toTypeName(updated_at), 'String%'),
-         parseDateTime64BestEffortOrNull(replaceRegexpAll(updated_at, ' UTC$', ''), 6),
-         toDateTime64(updated_at, 6)
-      )                                                       AS updated_at_dt,
-
-      state,
-      linkpay_reference,
-      payment_details
-  FROM src
+agg_day as (
+  select
+    transaction_id,
+    -- pick latest by ingestion time
+    argMax(state, _ingested_at)                                     as state,
+    argMax(reference, _ingested_at)                                  as reference,
+    argMax(details, _ingested_at)                                    as details,
+    parseDateTimeBestEffortOrNull(argMax(created_at, _ingested_at))  as created_at,
+    parseDateTimeBestEffortOrNull(argMax(updated_at, _ingested_at))  as updated_at,
+    _snapshot_date
+  from base
+  group by transaction_id, _snapshot_date
 )
 
-SELECT
-    link_id,
-    created_at_dt                                             AS created_at,
-    updated_at_dt                                             AS completed_at,
-    state,
-    linkpay_reference                                         AS reference,
-
-    /* JSON extraction (ClickHouse 23+): prefer JSON_VALUE; fallback to JSONExtractString if needed */
-    JSON_VALUE(payment_details, '$.payment_reference')        AS payment_ref,
-    JSON_VALUE(payment_details, '$.order_reference')          AS order_ref,
-
-    CAST(state = 'completed' AS UInt8)                        AS is_completed,
-    toDate(created_at_dt)                                     AS data_date
-FROM norm
-
-{% if is_incremental() %}
-WHERE toDate(created_at_dt) = toDate('{{ var("ds_lagged") }}')
+{% if is_incremental() and ds_lagged is not none %}
+-- insert only rows missing in target for this (transaction_id, snapshot)
+select a.*
+from agg_day a
+left join {{ this }} s
+  on s.transaction_id = a.transaction_id
+ and s._snapshot_date = a._snapshot_date
+where s.transaction_id is null
+{% else %}
+-- first build
+select * from agg_day
 {% endif %}

@@ -1,0 +1,38 @@
+[2025-11-01T20:06:34.060+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:06:34.149+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:06:34.156+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:06:34.386+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_link_transactions_bronze_from_mongo> on 2025-10-01 00:00:00+00:00
+[2025-11-01T20:06:34.423+0000] {standard_task_runner.py:60} INFO - Started process 362 to run task
+[2025-11-01T20:06:34.439+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_link_transactions_bronze_from_mongo', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpovj313pe']
+[2025-11-01T20:06:34.451+0000] {standard_task_runner.py:88} INFO - Job 22: Subtask load_link_transactions_bronze_from_mongo
+[2025-11-01T20:06:34.920+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-10-01T00:00:00+00:00 [running]> on host 1a955fda0cfd
+[2025-11-01T20:06:35.394+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_link_transactions_bronze_from_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-01T20:06:39.706+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T20:06:39.708+0000] {base.py:83} INFO - Using connection ID 'mongo_default' for task execution.
+[2025-11-01T20:06:39.786+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T20:06:39.850+0000] {mongo_to_clickhouse.py:241} INFO - [mongo->ch] Mongo query: {'_snapshot_date': {'$gte': datetime.datetime(2025, 10, 1, 0, 0), '$lte': datetime.datetime(2025, 10, 1, 23, 59, 59, 999000)}}
+[2025-11-01T20:06:39.863+0000] {mongo_to_clickhouse.py:172} INFO - [mongo->ch] Dropped partition for _snapshot_date=2025-10-01.
+[2025-11-01T20:06:40.247+0000] {mongo_to_clickhouse.py:275} INFO - [mongo->ch] Inserted 477 rows into bronze.link_transactions.
+[2025-11-01T20:06:40.278+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:06:40.335+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_link_transactions_bronze_from_mongo, execution_date=20251001T000000, start_date=20251101T200634, end_date=20251101T200640
+[2025-11-01T20:06:40.570+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:06:40.814+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T20:18:00.427+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:18:00.487+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:18:00.488+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:18:00.601+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_link_transactions_bronze_from_mongo> on 2025-10-01 00:00:00+00:00
+[2025-11-01T20:18:00.647+0000] {standard_task_runner.py:60} INFO - Started process 367 to run task
+[2025-11-01T20:18:00.721+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_link_transactions_bronze_from_mongo', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmplv0wuhdd']
+[2025-11-01T20:18:00.728+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask load_link_transactions_bronze_from_mongo
+[2025-11-01T20:18:01.214+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-10-01T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:18:01.979+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_link_transactions_bronze_from_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-01T20:18:06.411+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T20:18:06.428+0000] {base.py:83} INFO - Using connection ID 'mongo_default' for task execution.
+[2025-11-01T20:18:06.489+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T20:18:06.519+0000] {mongo_to_clickhouse.py:241} INFO - [mongo->ch] Mongo query: {'_snapshot_date': {'$gte': datetime.datetime(2025, 10, 1, 0, 0), '$lte': datetime.datetime(2025, 10, 1, 23, 59, 59, 999000)}}
+[2025-11-01T20:18:06.522+0000] {mongo_to_clickhouse.py:172} INFO - [mongo->ch] Dropped partition for _snapshot_date=2025-10-01.
+[2025-11-01T20:18:06.757+0000] {mongo_to_clickhouse.py:275} INFO - [mongo->ch] Inserted 477 rows into bronze.link_transactions.
+[2025-11-01T20:18:06.762+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:18:06.817+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_link_transactions_bronze_from_mongo, execution_date=20251001T000000, start_date=20251101T201800, end_date=20251101T201806
+[2025-11-01T20:18:07.116+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:18:07.186+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

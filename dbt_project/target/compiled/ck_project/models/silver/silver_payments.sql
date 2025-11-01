@@ -1,57 +1,54 @@
--- dbt_project/models/silver/silver_payments.sql
--- NOTE: If your bronze 'payments' JSON column is named something else,
--- adjust JSONExtractString(details, ...) accordingly.
 
 
 
-WITH raw AS (
-    SELECT
-        -- Cast IDs
-        toUInt64OrNull(id)           AS payment_id,
-        toUInt64OrNull(merchant_id)  AS merchant_id,
-        toUInt64OrNull(acquirer_id)  AS acquirer_id,
+  
 
-        -- Dimensions
-        toLowCardinality(state)      AS state,
-        toLowCardinality(card_type)  AS card_type,
-        reference,
-        order_reference,
-        details,
 
-        -- Normalize to string first to avoid mixed types
-        /* created */
-        CASE
-            WHEN toTypeName(created_at) LIKE 'String%'
-                THEN replaceRegexpAll(created_at, '\\s+UTC$', '')
-            ELSE toString(created_at)
-        END AS created_at_str,
 
-        /* updated */
-        CASE
-            WHEN toTypeName(updated_at) LIKE 'String%'
-                THEN replaceRegexpAll(updated_at, '\\s+UTC$', '')
-            ELSE toString(updated_at)
-        END AS updated_at_str
 
-    FROM `bronze`.`payments`
+with base as (
+  select
+    /* make sort key non-nullable */
+    cast(assumeNotNull(toUInt64OrNull(id)) as UInt64)                 as transaction_id,
+    toUInt64OrNull(merchant_id)                                        as merchant_id,
+    toUInt64OrNull(acquirer_id)                                        as acquirer_id,
+    state,
+    card_type,
+    reference,
+    order_reference,
+    details,
+    created_at,
+    updated_at,
+    _ingested_at,
+    toDate(_snapshot_date)                                             as _snapshot_date
+  from bronze.payments
+  where id is not null
+  
+    and _snapshot_date = toDate('2025-10-31')
+  
 ),
 
-src AS (
-    SELECT
-        payment_id,
-        merchant_id,
-        acquirer_id,
-        state,
-        card_type,
-        reference,
-        order_reference,
-        details,
-
-        -- Single parser => uniform type
-        parseDateTime64BestEffortOrNull(created_at_str, 6, 'UTC') AS created_at,
-        parseDateTime64BestEffortOrNull(updated_at_str, 6, 'UTC') AS updated_at
-    FROM raw
+agg_day as (
+  select
+    transaction_id,
+    anyHeavy(merchant_id)                                              as merchant_id,      -- stable enough; not in sort key
+    anyHeavy(acquirer_id)                                              as acquirer_id,
+    toLowCardinality(argMax(state, _ingested_at))                      as payment_state,
+    toLowCardinality(argMax(card_type, _ingested_at))                  as card_type,
+    argMax(reference, _ingested_at)                                    as reference,
+    argMax(order_reference, _ingested_at)                              as order_reference,
+    argMax(details, _ingested_at)                                      as details,
+    parseDateTimeBestEffortOrNull(argMax(created_at, _ingested_at))    as created_at,
+    parseDateTimeBestEffortOrNull(argMax(updated_at, _ingested_at))    as updated_at,
+    _snapshot_date
+  from base
+  group by transaction_id, _snapshot_date
 )
 
-SELECT *
-FROM src
+
+select a.*
+from agg_day a
+left join silver.silver_payments s
+  on s.transaction_id = a.transaction_id
+ and s._snapshot_date = a._snapshot_date
+where s.transaction_id is null

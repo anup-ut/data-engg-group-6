@@ -1,0 +1,68 @@
+[2025-11-01T14:38:31.171+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments manual__2025-11-01T14:38:29.385590+00:00 [queued]>
+[2025-11-01T14:38:31.183+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments manual__2025-11-01T14:38:29.385590+00:00 [queued]>
+[2025-11-01T14:38:31.184+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T14:38:31.198+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_payments> on 2025-11-01 14:38:29.385590+00:00
+[2025-11-01T14:38:31.211+0000] {standard_task_runner.py:60} INFO - Started process 820 to run task
+[2025-11-01T14:38:31.216+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_payments', 'manual__2025-11-01T14:38:29.385590+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp300tv48c']
+[2025-11-01T14:38:31.222+0000] {standard_task_runner.py:88} INFO - Job 23: Subtask dbt_run_payments
+[2025-11-01T14:38:31.322+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_payments manual__2025-11-01T14:38:29.385590+00:00 [running]> on host f19166223143
+[2025-11-01T14:38:31.432+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_payments' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T14:38:29.385590+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T14:38:29.385590+00:00'
+[2025-11-01T14:38:31.434+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T14:38:31.436+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'set -euo pipefail; DBT_BIN=/home/***/.local/bin/dbt; if [ -x "$DBT_BIN" ]; then   EXEC="$DBT_BIN"; elif command -v dbt >/dev/null 2>&1; then   EXEC="$(command -v dbt)"; else   EXEC="python -m dbt.cli.main"; fi; $EXEC --no-use-colors run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project --select silver_payments --vars \'{"ds_lagged":"$DS_LAGGED"}\'']
+[2025-11-01T14:38:31.447+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T14:38:33.190+0000] {subprocess.py:93} INFO - 14:38:33  Running with dbt=1.8.6
+[2025-11-01T14:38:33.205+0000] {subprocess.py:93} INFO - 14:38:33  Encountered an error:
+[2025-11-01T14:38:33.205+0000] {subprocess.py:93} INFO - 'type' object is not subscriptable
+[2025-11-01T14:38:33.207+0000] {subprocess.py:93} INFO - 14:38:33  Traceback (most recent call last):
+[2025-11-01T14:38:33.208+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 138, in wrapper
+[2025-11-01T14:38:33.208+0000] {subprocess.py:93} INFO -     result, success = func(*args, **kwargs)
+[2025-11-01T14:38:33.210+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 101, in wrapper
+[2025-11-01T14:38:33.210+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-11-01T14:38:33.211+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 215, in wrapper
+[2025-11-01T14:38:33.211+0000] {subprocess.py:93} INFO -     profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+[2025-11-01T14:38:33.211+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/config/runtime.py", line 71, in load_profile
+[2025-11-01T14:38:33.212+0000] {subprocess.py:93} INFO -     profile = Profile.render(
+[2025-11-01T14:38:33.212+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 403, in render
+[2025-11-01T14:38:33.213+0000] {subprocess.py:93} INFO -     return cls.from_raw_profiles(
+[2025-11-01T14:38:33.213+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+[2025-11-01T14:38:33.213+0000] {subprocess.py:93} INFO -     return cls.from_raw_profile_info(
+[2025-11-01T14:38:33.214+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+[2025-11-01T14:38:33.214+0000] {subprocess.py:93} INFO -     credentials: Credentials = cls._credentials_from_profile(
+[2025-11-01T14:38:33.215+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+[2025-11-01T14:38:33.215+0000] {subprocess.py:93} INFO -     cls = load_plugin(typename)
+[2025-11-01T14:38:33.216+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+[2025-11-01T14:38:33.217+0000] {subprocess.py:93} INFO -     return FACTORY.load_plugin(name)
+[2025-11-01T14:38:33.218+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+[2025-11-01T14:38:33.219+0000] {subprocess.py:93} INFO -     mod: Any = import_module("." + name, "dbt.adapters")
+[2025-11-01T14:38:33.220+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+[2025-11-01T14:38:33.220+0000] {subprocess.py:93} INFO -     return _bootstrap._gcd_import(name[level:], package, level)
+[2025-11-01T14:38:33.220+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+[2025-11-01T14:38:33.221+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+[2025-11-01T14:38:33.221+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+[2025-11-01T14:38:33.221+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+[2025-11-01T14:38:33.221+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+[2025-11-01T14:38:33.222+0000] {subprocess.py:93} INFO -   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+[2025-11-01T14:38:33.222+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/__init__.py", line 4, in <module>
+[2025-11-01T14:38:33.222+0000] {subprocess.py:93} INFO -     from dbt.adapters.clickhouse.connections import ClickHouseConnectionManager  # noqa
+[2025-11-01T14:38:33.223+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/connections.py", line 10, in <module>
+[2025-11-01T14:38:33.223+0000] {subprocess.py:93} INFO -     from dbt.adapters.clickhouse.dbclient import ChRetryableException, get_db_client
+[2025-11-01T14:38:33.223+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/dbclient.py", line 9, in <module>
+[2025-11-01T14:38:33.224+0000] {subprocess.py:93} INFO -     from dbt.adapters.clickhouse.credentials import ClickHouseCredentials
+[2025-11-01T14:38:33.224+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/credentials.py", line 9, in <module>
+[2025-11-01T14:38:33.224+0000] {subprocess.py:93} INFO -     class ClickHouseCredentials(Credentials):
+[2025-11-01T14:38:33.225+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/dbt/adapters/clickhouse/credentials.py", line 38, in ClickHouseCredentials
+[2025-11-01T14:38:33.225+0000] {subprocess.py:93} INFO -     tcp_keepalive: Union[bool, tuple[int, int, int], list[int]] = False
+[2025-11-01T14:38:33.225+0000] {subprocess.py:93} INFO - TypeError: 'type' object is not subscriptable
+[2025-11-01T14:38:33.225+0000] {subprocess.py:93} INFO - 
+[2025-11-01T14:38:34.020+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-11-01T14:38:34.036+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-11-01T14:38:34.039+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_payments, execution_date=20251101T143829, start_date=20251101T143831, end_date=20251101T143834
+[2025-11-01T14:38:34.056+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 23 for task dbt_run_payments (Bash command failed. The command returned a non-zero exit code 2.; 820)
+[2025-11-01T14:38:34.081+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T14:38:34.110+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

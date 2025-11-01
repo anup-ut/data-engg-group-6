@@ -1,0 +1,50 @@
+[2025-11-01T14:16:24.218+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:16:24.229+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:16:24.230+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-11-01T14:16:24.244+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_payments> on 2025-10-30 00:00:00+00:00
+[2025-11-01T14:16:24.251+0000] {standard_task_runner.py:60} INFO - Started process 682 to run task
+[2025-11-01T14:16:24.257+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_payments', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpcw6it_9f']
+[2025-11-01T14:16:24.261+0000] {standard_task_runner.py:88} INFO - Job 19: Subtask dbt_run_payments
+[2025-11-01T14:16:24.363+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_payments scheduled__2025-10-30T00:00:00+00:00 [running]> on host b977057f5fed
+[2025-11-01T14:16:24.473+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_payments' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T14:16:24.476+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T14:16:24.479+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt --no-use-colors run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project --select silver_payments --vars \'{"ds_lagged":"$DS_LAGGED"}\'']
+[2025-11-01T14:16:24.491+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T14:16:24.493+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: dbt: command not found
+[2025-11-01T14:16:24.494+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2025-11-01T14:16:24.513+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2025-11-01T14:16:24.517+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=silver_transformation_pipeline, task_id=dbt_run_payments, execution_date=20251030T000000, start_date=20251101T141624, end_date=20251101T141624
+[2025-11-01T14:16:24.533+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 19 for task dbt_run_payments (Bash command failed. The command returned a non-zero exit code 127.; 682)
+[2025-11-01T14:16:24.550+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T14:16:24.580+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T14:26:30.817+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:26:30.827+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:26:30.828+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-11-01T14:26:30.843+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_payments> on 2025-10-30 00:00:00+00:00
+[2025-11-01T14:26:30.849+0000] {standard_task_runner.py:60} INFO - Started process 643 to run task
+[2025-11-01T14:26:30.853+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_payments', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpknf9hl_t']
+[2025-11-01T14:26:30.856+0000] {standard_task_runner.py:88} INFO - Job 18: Subtask dbt_run_payments
+[2025-11-01T14:26:30.951+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_payments scheduled__2025-10-30T00:00:00+00:00 [running]> on host 8c60c1c29b68
+[2025-11-01T14:26:31.048+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_payments' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T14:26:31.049+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T14:26:31.052+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt --no-use-colors run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project --select silver_payments --vars \'{"ds_lagged":"$DS_LAGGED"}\'']
+[2025-11-01T14:26:31.063+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T14:26:31.064+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: dbt: command not found
+[2025-11-01T14:26:31.065+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2025-11-01T14:26:31.077+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2025-11-01T14:26:31.080+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=silver_transformation_pipeline, task_id=dbt_run_payments, execution_date=20251030T000000, start_date=20251101T142630, end_date=20251101T142631
+[2025-11-01T14:26:31.094+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 18 for task dbt_run_payments (Bash command failed. The command returned a non-zero exit code 127.; 643)
+[2025-11-01T14:26:31.108+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T14:26:31.134+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

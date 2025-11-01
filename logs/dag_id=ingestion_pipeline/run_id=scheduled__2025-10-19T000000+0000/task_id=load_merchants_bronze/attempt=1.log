@@ -1,0 +1,36 @@
+[2025-11-01T20:07:01.494+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_merchants_bronze scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-01T20:07:01.524+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_merchants_bronze scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-01T20:07:01.525+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:07:01.585+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_merchants_bronze> on 2025-10-19 00:00:00+00:00
+[2025-11-01T20:07:01.604+0000] {standard_task_runner.py:60} INFO - Started process 642 to run task
+[2025-11-01T20:07:01.614+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_merchants_bronze', 'scheduled__2025-10-19T00:00:00+00:00', '--job-id', '75', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpdxnjhseo']
+[2025-11-01T20:07:01.634+0000] {standard_task_runner.py:88} INFO - Job 75: Subtask load_merchants_bronze
+[2025-11-01T20:07:02.037+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_merchants_bronze scheduled__2025-10-19T00:00:00+00:00 [running]> on host 1a955fda0cfd
+[2025-11-01T20:07:02.381+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_merchants_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-19T00:00:00+00:00'
+[2025-11-01T20:07:07.131+0000] {merchants_to_clickhouse.py:86} INFO - [merchants->ch] Target CSV: /tmp/data/merchants/merchants-20251019.csv
+[2025-11-01T20:07:07.135+0000] {merchants_to_clickhouse.py:91} INFO - [merchants->ch] Folder listing: ['merchants-20251029.csv']
+[2025-11-01T20:07:07.148+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T20:07:07.154+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T20:07:07.184+0000] {merchants_to_clickhouse.py:134} WARNING - [merchants->ch] File not found. Table ensured. Skipping insert.
+[2025-11-01T20:07:07.186+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:07:07.229+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_merchants_bronze, execution_date=20251019T000000, start_date=20251101T200701, end_date=20251101T200707
+[2025-11-01T20:07:07.669+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:07:07.765+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T20:18:25.381+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_merchants_bronze scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-01T20:18:25.406+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_merchants_bronze scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-01T20:18:25.407+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:18:25.454+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_merchants_bronze> on 2025-10-19 00:00:00+00:00
+[2025-11-01T20:18:25.466+0000] {standard_task_runner.py:60} INFO - Started process 623 to run task
+[2025-11-01T20:18:25.479+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_merchants_bronze', 'scheduled__2025-10-19T00:00:00+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpp0npo0mz']
+[2025-11-01T20:18:25.491+0000] {standard_task_runner.py:88} INFO - Job 73: Subtask load_merchants_bronze
+[2025-11-01T20:18:25.810+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_merchants_bronze scheduled__2025-10-19T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:18:26.686+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_merchants_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-10-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-19T00:00:00+00:00'
+[2025-11-01T20:18:30.221+0000] {merchants_to_clickhouse.py:86} INFO - [merchants->ch] Target CSV: /tmp/data/merchants/merchants-20251019.csv
+[2025-11-01T20:18:30.237+0000] {merchants_to_clickhouse.py:91} INFO - [merchants->ch] Folder listing: ['merchants-20251029.csv', 'merchants-20251030.csv']
+[2025-11-01T20:18:30.243+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T20:18:30.246+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T20:18:30.277+0000] {merchants_to_clickhouse.py:134} WARNING - [merchants->ch] File not found. Table ensured. Skipping insert.
+[2025-11-01T20:18:30.279+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:18:30.314+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_merchants_bronze, execution_date=20251019T000000, start_date=20251101T201825, end_date=20251101T201830
+[2025-11-01T20:18:30.524+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:18:30.767+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

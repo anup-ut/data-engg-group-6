@@ -1,0 +1,112 @@
+[2025-11-01T15:31:38.917+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments manual__2025-11-01T15:30:03.658229+00:00 [queued]>
+[2025-11-01T15:31:38.935+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_payments manual__2025-11-01T15:30:03.658229+00:00 [queued]>
+[2025-11-01T15:31:38.936+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2025-11-01T15:31:38.963+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_payments> on 2025-11-01 15:30:03.658229+00:00
+[2025-11-01T15:31:38.973+0000] {standard_task_runner.py:60} INFO - Started process 2357 to run task
+[2025-11-01T15:31:38.978+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_payments', 'manual__2025-11-01T15:30:03.658229+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp8zilcj50']
+[2025-11-01T15:31:38.998+0000] {standard_task_runner.py:88} INFO - Job 55: Subtask dbt_run_payments
+[2025-11-01T15:31:39.171+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_payments manual__2025-11-01T15:30:03.658229+00:00 [running]> on host 7f2b5a16b237
+[2025-11-01T15:31:39.405+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_payments' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T15:30:03.658229+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T15:30:03.658229+00:00'
+[2025-11-01T15:31:45.755+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/silver_dag.py", line 186, in <lambda>
+    python_callable=lambda ds, **_: _run_dbt("silver_payments", ds=ds, full_refresh=False, pass_ds_lagged=True),
+  File "/opt/airflow/dags/silver_dag.py", line 149, in _run_dbt
+    raise RuntimeError(f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}")
+RuntimeError: dbt failed (1).
+STDOUT:
+15:31:42  Running with dbt=1.5.9
+15:31:42  Registered adapter: clickhouse=1.5.2
+15:31:42  Unable to do partial parsing because config vars, config profile, or config target have changed
+15:31:44  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+15:31:44  
+15:31:44  Concurrency: 4 threads (target='dev')
+15:31:44  
+15:31:44  1 of 1 START sql incremental model silver.silver_payments ...................... [RUN]
+15:31:44  1 of 1 ERROR creating sql incremental model silver.silver_payments ............. [ERROR in 0.09s]
+15:31:44  
+15:31:44  Finished running 1 incremental model in 0 hours 0 minutes and 0.40 seconds (0.40s).
+15:31:44  
+15:31:44  Completed with 1 error and 0 warnings:
+15:31:44  
+15:31:44  Database Error in model silver_payments (models/silver/silver_payments.sql)
+15:31:44    Code: 248.
+15:31:44    DB::Exception: Wrong number of fields in the partition expression: 1, must be: 0. Stack trace:
+15:31:44    
+15:31:44    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+15:31:44    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+15:31:44    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+15:31:44    3. DB::Exception::Exception<unsigned long&, unsigned long&>(int, FormatStringHelperImpl<std::type_identity<unsigned long&>::type, std::type_identity<unsigned long&>::type>, unsigned long&, unsigned long&) @ 0x000000000df676eb
+15:31:44    4. DB::MergeTreeData::getPartitionIDFromQuery(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const>, DB::DataPartsLock*) const @ 0x0000000019628a32
+15:31:44    5. DB::MergeTreeData::checkAlterPartitionIsPossible(std::vector<DB::PartitionCommand, std::allocator<DB::PartitionCommand>> const&, std::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::Settings const&, std::shared_ptr<DB::Context const>) const @ 0x0000000019649a69
+15:31:44    6. DB::InterpreterAlterQuery::executeToTable(DB::ASTAlterQuery const&) @ 0x00000000182cc906
+15:31:44    7. DB::InterpreterAlterQuery::execute() @ 0x00000000182c938d
+15:31:44    8. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+15:31:44    9. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+15:31:44    10. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+15:31:44    11. DB::TCPHandler::run() @ 0x0000000019e4f119
+15:31:44    12. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+15:31:44    13. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+15:31:44    14. Poco::PooledThread::run() @ 0x000000001ef15b87
+15:31:44    15. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+15:31:44    16. ? @ 0x0000000000094ac3
+15:31:44    17. ? @ 0x0000000000125a74
+15:31:44  
+15:31:44  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+
+[2025-11-01T15:31:45.774+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_payments, execution_date=20251101T153003, start_date=20251101T153138, end_date=20251101T153145
+[2025-11-01T15:31:45.801+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 55 for task dbt_run_payments (dbt failed (1).
+STDOUT:
+15:31:42  Running with dbt=1.5.9
+15:31:42  Registered adapter: clickhouse=1.5.2
+15:31:42  Unable to do partial parsing because config vars, config profile, or config target have changed
+15:31:44  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+15:31:44  
+15:31:44  Concurrency: 4 threads (target='dev')
+15:31:44  
+15:31:44  1 of 1 START sql incremental model silver.silver_payments ...................... [RUN]
+15:31:44  1 of 1 ERROR creating sql incremental model silver.silver_payments ............. [ERROR in 0.09s]
+15:31:44  
+15:31:44  Finished running 1 incremental model in 0 hours 0 minutes and 0.40 seconds (0.40s).
+15:31:44  
+15:31:44  Completed with 1 error and 0 warnings:
+15:31:44  
+15:31:44  Database Error in model silver_payments (models/silver/silver_payments.sql)
+15:31:44    Code: 248.
+15:31:44    DB::Exception: Wrong number of fields in the partition expression: 1, must be: 0. Stack trace:
+15:31:44    
+15:31:44    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+15:31:44    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+15:31:44    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+15:31:44    3. DB::Exception::Exception<unsigned long&, unsigned long&>(int, FormatStringHelperImpl<std::type_identity<unsigned long&>::type, std::type_identity<unsigned long&>::type>, unsigned long&, unsigned long&) @ 0x000000000df676eb
+15:31:44    4. DB::MergeTreeData::getPartitionIDFromQuery(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const>, DB::DataPartsLock*) const @ 0x0000000019628a32
+15:31:44    5. DB::MergeTreeData::checkAlterPartitionIsPossible(std::vector<DB::PartitionCommand, std::allocator<DB::PartitionCommand>> const&, std::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::Settings const&, std::shared_ptr<DB::Context const>) const @ 0x0000000019649a69
+15:31:44    6. DB::InterpreterAlterQuery::executeToTable(DB::ASTAlterQuery const&) @ 0x00000000182cc906
+15:31:44    7. DB::InterpreterAlterQuery::execute() @ 0x00000000182c938d
+15:31:44    8. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+15:31:44    9. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+15:31:44    10. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+15:31:44    11. DB::TCPHandler::run() @ 0x0000000019e4f119
+15:31:44    12. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+15:31:44    13. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+15:31:44    14. Poco::PooledThread::run() @ 0x000000001ef15b87
+15:31:44    15. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+15:31:44    16. ? @ 0x0000000000094ac3
+15:31:44    17. ? @ 0x0000000000125a74
+15:31:44  
+15:31:44  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+; 2357)
+[2025-11-01T15:31:45.854+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T15:31:45.877+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
