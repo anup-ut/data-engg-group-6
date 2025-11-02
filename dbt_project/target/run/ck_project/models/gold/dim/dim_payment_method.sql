@@ -4,7 +4,7 @@
     
     
         
-        insert into gold.dim_payment_method__dbt_backup
+        insert into gold.dim_payment_method
         ("payment_method_sk", "original_value", "payment_method_name")
 
 

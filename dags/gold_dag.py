@@ -57,11 +57,11 @@ def _resolve_dbt_exec() -> list[str]:
 
 def _run_dbt(select_expr: str, full_refresh: bool = False) -> None:
     """
-    Run `dbt run` with the given selection expression.
-    Raises RuntimeError on non-zero exit so Airflow marks task as failed.
+    Run dbt with live log streaming so the scheduler sees activity.
     """
     args = _resolve_dbt_exec() + [
         "--no-use-colors",
+        "--no-partial-parse",     # be extra explicit
         "run",
         "--project-dir", DBT_PROJECT_DIR,
         "--profiles-dir", DBT_PROFILES_DIR,
@@ -70,21 +70,24 @@ def _run_dbt(select_expr: str, full_refresh: bool = False) -> None:
     if full_refresh:
         args.append("--full-refresh")
 
+    # Stream logs live
+    proc = subprocess.Popen(
+        args,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+        universal_newlines=True,
+    )
+    try:
+        assert proc.stdout is not None
+        for line in proc.stdout:
+            print(line, end="")   # stream into task logs
+    finally:
+        ret = proc.wait()
 
-    proc = subprocess.run(args, text=True, capture_output=True)
-
-
-    # Always print stdout/stderr to task logs for easier debugging
-    print("==== DBT STDOUT ====")
-    print(proc.stdout)
-    print("==== DBT STDERR ====")
-    print(proc.stderr)
-
-
-    if proc.returncode != 0:
-        raise RuntimeError(
-            f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}"
-        )
+    if ret != 0:
+        raise RuntimeError(f"dbt failed (exit {ret}). See logs above.")
 
 
 
@@ -127,11 +130,20 @@ with DAG(
     )
 
 
+
     dbt_dim_merchants = PythonOperator(
         task_id="dbt_dim_merchants",
         python_callable=lambda **_: _run_dbt("dim_merchants"),
     )
 
+    # ---- Fact tasks ----
+    # Use "+fact_transactions" so dbt includes upstream parents if referenced via ref()
+    dbt_fact_transactions = PythonOperator(
+        task_id="dbt_fact_transactions",
+        python_callable=lambda **_: _run_dbt("+fact_transactions"),
+    )
+
+
 
     # Optional: run dim_date first, then the rest in parallel (good for FK availability)
-    dbt_dim_date >> [dbt_dim_payment_method, dbt_dim_payment_state, dbt_dim_merchants]
+    [dbt_dim_payment_method, dbt_dim_payment_state, dbt_dim_merchants, dbt_dim_date] >> dbt_fact_transactions

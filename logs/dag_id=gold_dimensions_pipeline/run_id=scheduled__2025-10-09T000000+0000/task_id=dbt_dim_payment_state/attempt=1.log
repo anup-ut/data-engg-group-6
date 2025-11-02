@@ -11,3 +11,36 @@
 [2025-11-02T00:26:38.871+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=gold_dimensions_pipeline, task_id=dbt_dim_payment_state, execution_date=20251009T000000, start_date=20251102T002627, end_date=20251102T002638
 [2025-11-02T00:26:38.917+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
 [2025-11-02T00:26:38.950+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T11:42:40.029+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state scheduled__2025-10-09T00:00:00+00:00 [queued]>
+[2025-11-02T11:42:40.040+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state scheduled__2025-10-09T00:00:00+00:00 [queued]>
+[2025-11-02T11:42:40.041+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-11-02T11:42:40.060+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_dim_payment_state> on 2025-10-09 00:00:00+00:00
+[2025-11-02T11:42:40.068+0000] {standard_task_runner.py:60} INFO - Started process 4997 to run task
+[2025-11-02T11:42:40.072+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_dim_payment_state', 'scheduled__2025-10-09T00:00:00+00:00', '--job-id', '306', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpz0vd26fg']
+[2025-11-02T11:42:40.075+0000] {standard_task_runner.py:88} INFO - Job 306: Subtask dbt_dim_payment_state
+[2025-11-02T11:42:40.175+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state scheduled__2025-10-09T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T11:42:40.295+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_dim_payment_state' AIRFLOW_CTX_EXECUTION_DATE='2025-10-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-09T00:00:00+00:00'
+[2025-11-02T11:42:47.002+0000] {logging_mixin.py:188} INFO - ==== DBT STDOUT ====
+[2025-11-02T11:42:47.003+0000] {logging_mixin.py:188} INFO - 11:42:44  Running with dbt=1.5.9
+11:42:44  Registered adapter: clickhouse=1.5.2
+11:42:45  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ck_project.bronze
+- models.ck_project.gold.fact
+11:42:45  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+11:42:45  
+11:42:45  Concurrency: 4 threads (target='dev')
+11:42:45  
+11:42:45  1 of 1 START sql table model gold.dim_payment_state ............................ [RUN]
+11:42:45  1 of 1 OK created sql table model gold.dim_payment_state ....................... [OK in 0.30s]
+11:42:45  
+11:42:45  Finished running 1 table model in 0 hours 0 minutes and 0.78 seconds (0.78s).
+11:42:45  
+11:42:45  Completed successfully
+11:42:45  
+11:42:45  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2025-11-02T11:42:47.004+0000] {logging_mixin.py:188} INFO - ==== DBT STDERR ====
+[2025-11-02T11:42:47.005+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T11:42:47.023+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=gold_dimensions_pipeline, task_id=dbt_dim_payment_state, execution_date=20251009T000000, start_date=20251102T114240, end_date=20251102T114247
+[2025-11-02T11:42:47.079+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T11:42:47.110+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

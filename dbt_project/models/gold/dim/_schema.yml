@@ -16,7 +16,7 @@ models:
 
   - name: dim_payment_state
     columns:
-      - name: link_state_sk
+      - name: payment_state_sk
         tests: [not_null, unique]
 
 

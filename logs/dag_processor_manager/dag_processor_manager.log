@@ -25793,3 +25793,536 @@ File Path                                               PID    Runtime      # DA
 /opt/airflow/dags/silver_dag.py                                                  1           0  0.28s           2025-11-02T10:18:18
 ================================================================================
 [2025-11-02T10:18:56.258+0000] {manager.py:451} INFO - Exiting gracefully upon receiving signal 15
+[2025-11-02T10:29:24.328+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2025-11-02T10:29:24.329+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2025-11-02T10:29:24.330+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-11-02T10:29:24.331+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2025-11-02T10:29:24.808+0000] {manager.py:741} INFO - There are 7 files in /opt/airflow/dags
+[2025-11-02T10:29:25.085+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/gold_dag.py                             215  0.13s             0           0
+/opt/airflow/dags/ingestion_dag.py                                               0           0
+/opt/airflow/dags/silver_dag.py                           218  0.09s             0           0
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0
+================================================================================
+[2025-11-02T10:29:55.693+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.13s           2025-11-02T10:29:26
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.13s           2025-11-02T10:29:26
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.14s           2025-11-02T10:29:25
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.13s           2025-11-02T10:29:26
+/opt/airflow/dags/gold_dag.py                             250  0.01s             1           0  0.67s           2025-11-02T10:29:25
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.48s           2025-11-02T10:29:26
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.71s           2025-11-02T10:29:25
+================================================================================
+[2025-11-02T10:30:25.961+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.08s           2025-11-02T10:29:56
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.09s           2025-11-02T10:29:56
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.08s           2025-11-02T10:29:55
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.09s           2025-11-02T10:29:56
+/opt/airflow/dags/gold_dag.py                             285  0.00s             1           0  0.19s           2025-11-02T10:29:55
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.26s           2025-11-02T10:29:56
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.34s           2025-11-02T10:29:56
+================================================================================
+[2025-11-02T10:30:56.439+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.11s           2025-11-02T10:30:26
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.10s           2025-11-02T10:30:26
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py        323  0.01s             0           0  0.09s           2025-11-02T10:30:26
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.10s           2025-11-02T10:30:26
+/opt/airflow/dags/gold_dag.py                             320  0.03s             1           0  0.15s           2025-11-02T10:30:26
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.23s           2025-11-02T10:30:26
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.32s           2025-11-02T10:30:26
+================================================================================
+[2025-11-02T10:31:26.862+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.12s           2025-11-02T10:30:57
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.10s           2025-11-02T10:30:57
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py        358  0.01s             0           0  0.10s           2025-11-02T10:30:56
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.11s           2025-11-02T10:30:57
+/opt/airflow/dags/gold_dag.py                             355  0.02s             1           0  0.18s           2025-11-02T10:30:56
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.24s           2025-11-02T10:30:57
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.33s           2025-11-02T10:30:56
+================================================================================
+[2025-11-02T10:31:57.145+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.08s           2025-11-02T10:31:27
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.09s           2025-11-02T10:31:27
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py        393  0.00s             0           0  0.10s           2025-11-02T10:31:26
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.08s           2025-11-02T10:31:27
+/opt/airflow/dags/gold_dag.py                             390  0.03s             1           0  0.19s           2025-11-02T10:31:27
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.24s           2025-11-02T10:31:27
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.35s           2025-11-02T10:31:27
+================================================================================
+[2025-11-02T11:10:23.017+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2025-11-02T11:25:49.996+0000] {manager.py:741} INFO - There are 7 files in /opt/airflow/dags
+[2025-11-02T11:25:51.045+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2025-11-02T11:25:52.333+0000] {manager.py:741} INFO - There are 7 files in /opt/airflow/dags
+[2025-11-02T11:26:06.333+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.17s           2025-11-02T11:25:53
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.19s           2025-11-02T11:25:53
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.17s           2025-11-02T11:25:53
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.19s           2025-11-02T11:25:53
+/opt/airflow/dags/gold_dag.py                                                    1           0  1.75s           2025-11-02T11:25:52
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.46s           2025-11-02T11:25:52
+/opt/airflow/dags/silver_dag.py                                                  1           0  1.41s           2025-11-02T11:25:52
+================================================================================
+[2025-11-02T11:26:36.825+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.09s           2025-11-02T11:26:23
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.11s           2025-11-02T11:26:23
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.09s           2025-11-02T11:26:23
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.09s           2025-11-02T11:26:23
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.16s           2025-11-02T11:26:22
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.25s           2025-11-02T11:26:23
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.32s           2025-11-02T11:26:23
+================================================================================
+[2025-11-02T11:27:07.228+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  1.48s           2025-11-02T11:27:04
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  1.73s           2025-11-02T11:27:02
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  2.55s           2025-11-02T11:27:02
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.89s           2025-11-02T11:27:04
+/opt/airflow/dags/gold_dag.py                                                    1           0  1.71s           2025-11-02T11:26:55
+/opt/airflow/dags/ingestion_dag.py                                               1           0  4.29s           2025-11-02T11:26:59
+/opt/airflow/dags/silver_dag.py                                                  1           0  6.02s           2025-11-02T11:26:59
+================================================================================
+[2025-11-02T11:27:37.609+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  1.28s           2025-11-02T11:27:35
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.63s           2025-11-02T11:27:33
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  1.02s           2025-11-02T11:27:34
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.56s           2025-11-02T11:27:35
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.98s           2025-11-02T11:27:26
+/opt/airflow/dags/ingestion_dag.py                                               1           0  1.75s           2025-11-02T11:27:32
+/opt/airflow/dags/silver_dag.py                                                  1           0  3.10s           2025-11-02T11:27:33
+================================================================================
+[2025-11-02T11:28:07.939+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.66s           2025-11-02T11:28:07
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.56s           2025-11-02T11:28:04
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.64s           2025-11-02T11:28:06
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.68s           2025-11-02T11:28:07
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.61s           2025-11-02T11:27:57
+/opt/airflow/dags/ingestion_dag.py                                               1           0  1.51s           2025-11-02T11:28:05
+/opt/airflow/dags/silver_dag.py                                                  1           0  2.34s           2025-11-02T11:28:06
+================================================================================
+[2025-11-02T11:28:38.535+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.08s           2025-11-02T11:28:37
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.13s           2025-11-02T11:28:35
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.10s           2025-11-02T11:28:37
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py    1228  0.00s             0           0  0.68s           2025-11-02T11:28:07
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.17s           2025-11-02T11:28:27
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.23s           2025-11-02T11:28:35
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.33s           2025-11-02T11:28:37
+================================================================================
+[2025-11-02T11:29:08.671+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.13s           2025-11-02T11:29:07
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.11s           2025-11-02T11:29:05
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.10s           2025-11-02T11:29:07
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.14s           2025-11-02T11:28:38
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.26s           2025-11-02T11:28:58
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.23s           2025-11-02T11:29:05
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.35s           2025-11-02T11:29:07
+================================================================================
+[2025-11-02T11:29:38.736+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.11s           2025-11-02T11:29:38
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.13s           2025-11-02T11:29:36
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.14s           2025-11-02T11:29:38
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.13s           2025-11-02T11:29:09
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.31s           2025-11-02T11:29:28
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.33s           2025-11-02T11:29:36
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.51s           2025-11-02T11:29:38
+================================================================================
+[2025-11-02T11:30:08.814+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.14s           2025-11-02T11:30:08
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.11s           2025-11-02T11:30:06
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.14s           2025-11-02T11:30:08
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.12s           2025-11-02T11:29:39
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.24s           2025-11-02T11:29:59
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.26s           2025-11-02T11:30:06
+/opt/airflow/dags/silver_dag.py                          1614  0.01s             1           0  0.51s           2025-11-02T11:29:38
+================================================================================
+[2025-11-02T11:30:38.955+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py   1778  0.01s             0           0  0.14s           2025-11-02T11:30:08
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.14s           2025-11-02T11:30:36
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py       1775  0.05s             0           0  0.14s           2025-11-02T11:30:08
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.11s           2025-11-02T11:30:09
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.23s           2025-11-02T11:30:29
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.51s           2025-11-02T11:30:37
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.50s           2025-11-02T11:30:09
+================================================================================
+[2025-11-02T11:30:51.123+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2025-11-02T11:30:51.342+0000] {manager.py:741} INFO - There are 7 files in /opt/airflow/dags
+[2025-11-02T11:31:09.468+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py   2003  0.01s             0           0  0.19s           2025-11-02T11:30:39
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.11s           2025-11-02T11:31:07
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py       2000  0.04s             0           0  0.18s           2025-11-02T11:30:39
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.14s           2025-11-02T11:30:40
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.24s           2025-11-02T11:30:59
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.28s           2025-11-02T11:31:07
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.73s           2025-11-02T11:30:40
+================================================================================
+[2025-11-02T11:31:39.538+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.11s           2025-11-02T11:31:09
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.10s           2025-11-02T11:31:37
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.12s           2025-11-02T11:31:09
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.12s           2025-11-02T11:31:10
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.33s           2025-11-02T11:31:30
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.44s           2025-11-02T11:31:38
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.51s           2025-11-02T11:31:12
+================================================================================
+[2025-11-02T11:32:09.732+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.34s           2025-11-02T11:31:40
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.10s           2025-11-02T11:32:08
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.33s           2025-11-02T11:31:40
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.33s           2025-11-02T11:31:41
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.21s           2025-11-02T11:32:01
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.27s           2025-11-02T11:32:09
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.99s           2025-11-02T11:31:43
+================================================================================
+[2025-11-02T11:32:40.003+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.12s           2025-11-02T11:32:10
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.12s           2025-11-02T11:32:39
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.13s           2025-11-02T11:32:10
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.13s           2025-11-02T11:32:11
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.19s           2025-11-02T11:32:31
+/opt/airflow/dags/ingestion_dag.py                       2586  0.01s             1           0  0.27s           2025-11-02T11:32:09
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.63s           2025-11-02T11:32:14
+================================================================================
+[2025-11-02T11:33:10.378+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.16s           2025-11-02T11:32:41
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.18s           2025-11-02T11:33:09
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.17s           2025-11-02T11:32:41
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.16s           2025-11-02T11:32:42
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.22s           2025-11-02T11:33:02
+/opt/airflow/dags/ingestion_dag.py                       2819  0.01s             1           0  0.26s           2025-11-02T11:32:40
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.38s           2025-11-02T11:32:44
+================================================================================
+[2025-11-02T11:33:40.964+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.13s           2025-11-02T11:33:11
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.13s           2025-11-02T11:33:40
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.13s           2025-11-02T11:33:11
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.13s           2025-11-02T11:33:12
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.16s           2025-11-02T11:33:32
+/opt/airflow/dags/ingestion_dag.py                       2996  0.01s             1           0  0.27s           2025-11-02T11:33:10
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.50s           2025-11-02T11:33:15
+================================================================================
+[2025-11-02T11:34:11.365+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.17s           2025-11-02T11:33:42
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.12s           2025-11-02T11:34:10
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.16s           2025-11-02T11:33:42
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.17s           2025-11-02T11:33:43
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.20s           2025-11-02T11:34:03
+/opt/airflow/dags/ingestion_dag.py                       3221  0.01s             1           0  0.34s           2025-11-02T11:33:41
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.38s           2025-11-02T11:33:45
+================================================================================
+[2025-11-02T11:34:41.913+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.10s           2025-11-02T11:34:12
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.15s           2025-11-02T11:34:41
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.11s           2025-11-02T11:34:12
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.11s           2025-11-02T11:34:13
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.22s           2025-11-02T11:34:33
+/opt/airflow/dags/ingestion_dag.py                       3406  0.01s             1           0  0.25s           2025-11-02T11:34:11
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.57s           2025-11-02T11:34:17
+================================================================================
+[2025-11-02T11:35:12.400+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.17s           2025-11-02T11:34:43
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.13s           2025-11-02T11:35:11
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.17s           2025-11-02T11:34:43
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.25s           2025-11-02T11:34:44
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.29s           2025-11-02T11:35:04
+/opt/airflow/dags/ingestion_dag.py                       3631  0.01s             1           0  0.27s           2025-11-02T11:34:42
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.38s           2025-11-02T11:34:47
+================================================================================
+[2025-11-02T11:35:43.140+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.11s           2025-11-02T11:35:13
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.14s           2025-11-02T11:35:42
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.11s           2025-11-02T11:35:13
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.10s           2025-11-02T11:35:14
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.28s           2025-11-02T11:35:34
+/opt/airflow/dags/ingestion_dag.py                       3804  0.01s             1           0  0.29s           2025-11-02T11:35:12
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.53s           2025-11-02T11:35:19
+================================================================================
+[2025-11-02T11:35:51.415+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2025-11-02T11:35:51.726+0000] {manager.py:741} INFO - There are 7 files in /opt/airflow/dags
+[2025-11-02T11:36:13.390+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.29s           2025-11-02T11:35:44
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.13s           2025-11-02T11:36:12
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.29s           2025-11-02T11:35:44
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.15s           2025-11-02T11:35:45
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.27s           2025-11-02T11:36:05
+/opt/airflow/dags/ingestion_dag.py                                               1           0  0.29s           2025-11-02T11:35:43
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.71s           2025-11-02T11:35:50
+================================================================================
+[2025-11-02T11:36:44.072+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.14s           2025-11-02T11:36:14
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.13s           2025-11-02T11:36:43
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.14s           2025-11-02T11:36:14
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.12s           2025-11-02T11:36:16
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.18s           2025-11-02T11:36:36
+/opt/airflow/dags/ingestion_dag.py                       4076  0.01s             1           0  0.23s           2025-11-02T11:36:13
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.57s           2025-11-02T11:36:21
+================================================================================
+[2025-11-02T11:37:14.513+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.11s           2025-11-02T11:36:45
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.11s           2025-11-02T11:37:13
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.12s           2025-11-02T11:36:45
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.12s           2025-11-02T11:36:46
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.20s           2025-11-02T11:37:06
+/opt/airflow/dags/ingestion_dag.py                       4133  0.00s             1           0  0.23s           2025-11-02T11:36:44
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.35s           2025-11-02T11:36:51
+================================================================================
+[2025-11-02T11:37:44.942+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.09s           2025-11-02T11:37:15
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.14s           2025-11-02T11:37:44
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.10s           2025-11-02T11:37:15
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.11s           2025-11-02T11:37:16
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.19s           2025-11-02T11:37:36
+/opt/airflow/dags/ingestion_dag.py                       4168  0.01s             1           0  0.20s           2025-11-02T11:37:14
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.33s           2025-11-02T11:37:22
+================================================================================
+[2025-11-02T11:38:15.284+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.13s           2025-11-02T11:37:46
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.11s           2025-11-02T11:38:14
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.15s           2025-11-02T11:37:46
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.10s           2025-11-02T11:37:47
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.18s           2025-11-02T11:38:07
+/opt/airflow/dags/ingestion_dag.py                       4203  0.01s             1           0  0.28s           2025-11-02T11:37:45
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.33s           2025-11-02T11:37:52
+================================================================================
+[2025-11-02T11:38:45.845+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.12s           2025-11-02T11:38:16
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.14s           2025-11-02T11:38:44
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.13s           2025-11-02T11:38:16
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.13s           2025-11-02T11:38:17
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.23s           2025-11-02T11:38:37
+/opt/airflow/dags/ingestion_dag.py                       4302  0.00s             1           0  0.26s           2025-11-02T11:38:15
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.37s           2025-11-02T11:38:23
+================================================================================
+[2025-11-02T11:39:16.258+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.11s           2025-11-02T11:38:47
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.11s           2025-11-02T11:39:15
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.12s           2025-11-02T11:38:47
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.12s           2025-11-02T11:38:48
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.20s           2025-11-02T11:39:08
+/opt/airflow/dags/ingestion_dag.py                       4337  0.01s             1           0  0.25s           2025-11-02T11:38:46
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.33s           2025-11-02T11:38:53
+================================================================================
+[2025-11-02T11:39:46.858+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.10s           2025-11-02T11:39:17
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.10s           2025-11-02T11:39:45
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.11s           2025-11-02T11:39:17
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.12s           2025-11-02T11:39:18
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.17s           2025-11-02T11:39:38
+/opt/airflow/dags/ingestion_dag.py                       4372  0.00s             1           0  0.27s           2025-11-02T11:39:16
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.60s           2025-11-02T11:39:25
+================================================================================
+[2025-11-02T11:40:17.319+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.10s           2025-11-02T11:39:48
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.10s           2025-11-02T11:40:16
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.10s           2025-11-02T11:39:48
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.11s           2025-11-02T11:39:49
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.19s           2025-11-02T11:40:09
+/opt/airflow/dags/ingestion_dag.py                       4407  0.01s             1           0  0.28s           2025-11-02T11:39:47
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.54s           2025-11-02T11:39:56
+================================================================================
+[2025-11-02T11:40:47.974+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.15s           2025-11-02T11:40:18
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.09s           2025-11-02T11:40:47
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.21s           2025-11-02T11:40:18
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.11s           2025-11-02T11:40:19
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.18s           2025-11-02T11:40:39
+/opt/airflow/dags/ingestion_dag.py                       4482  0.01s             1           0  0.25s           2025-11-02T11:40:17
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.58s           2025-11-02T11:40:27
+================================================================================
+[2025-11-02T11:40:52.293+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2025-11-02T11:40:52.535+0000] {manager.py:741} INFO - There are 7 files in /opt/airflow/dags
+[2025-11-02T11:41:18.536+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/pipelines/merchants_to_clickhouse.py                           0           0  0.10s           2025-11-02T11:40:49
+/opt/airflow/dags/pipelines/mongo_ingestion.py                                   0           0  0.15s           2025-11-02T11:41:17
+/opt/airflow/dags/pipelines/mongo_to_clickhouse.py                               0           0  0.11s           2025-11-02T11:40:49
+/opt/airflow/dags/pipelines/payments_to_clickhouse.py                            0           0  0.13s           2025-11-02T11:40:50
+/opt/airflow/dags/gold_dag.py                                                    1           0  0.18s           2025-11-02T11:41:10
+/opt/airflow/dags/ingestion_dag.py                       4629  0.01s             1           0  0.29s           2025-11-02T11:40:48
+/opt/airflow/dags/silver_dag.py                                                  1           0  0.42s           2025-11-02T11:40:58
+================================================================================

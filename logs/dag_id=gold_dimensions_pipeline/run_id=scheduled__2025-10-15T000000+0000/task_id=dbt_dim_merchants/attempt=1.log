@@ -1,0 +1,33 @@
+[2025-11-02T11:44:06.148+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_merchants scheduled__2025-10-15T00:00:00+00:00 [queued]>
+[2025-11-02T11:44:06.160+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_merchants scheduled__2025-10-15T00:00:00+00:00 [queued]>
+[2025-11-02T11:44:06.161+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-11-02T11:44:06.180+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_dim_merchants> on 2025-10-15 00:00:00+00:00
+[2025-11-02T11:44:06.188+0000] {standard_task_runner.py:60} INFO - Started process 5436 to run task
+[2025-11-02T11:44:06.193+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_dim_merchants', 'scheduled__2025-10-15T00:00:00+00:00', '--job-id', '329', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpodv1vmps']
+[2025-11-02T11:44:06.196+0000] {standard_task_runner.py:88} INFO - Job 329: Subtask dbt_dim_merchants
+[2025-11-02T11:44:06.298+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_dim_merchants scheduled__2025-10-15T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T11:44:06.415+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_dim_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-15T00:00:00+00:00'
+[2025-11-02T11:44:12.488+0000] {logging_mixin.py:188} INFO - ==== DBT STDOUT ====
+[2025-11-02T11:44:12.489+0000] {logging_mixin.py:188} INFO - 11:44:10  Running with dbt=1.5.9
+11:44:10  Registered adapter: clickhouse=1.5.2
+11:44:10  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ck_project.bronze
+- models.ck_project.gold.fact
+11:44:10  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+11:44:10  
+11:44:11  Concurrency: 4 threads (target='dev')
+11:44:11  
+11:44:11  1 of 1 START sql table model gold.dim_merchants ................................ [RUN]
+11:44:11  1 of 1 OK created sql table model gold.dim_merchants ........................... [OK in 0.32s]
+11:44:11  
+11:44:11  Finished running 1 table model in 0 hours 0 minutes and 0.80 seconds (0.80s).
+11:44:11  
+11:44:11  Completed successfully
+11:44:11  
+11:44:11  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2025-11-02T11:44:12.490+0000] {logging_mixin.py:188} INFO - ==== DBT STDERR ====
+[2025-11-02T11:44:12.490+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T11:44:12.510+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=gold_dimensions_pipeline, task_id=dbt_dim_merchants, execution_date=20251015T000000, start_date=20251102T114406, end_date=20251102T114412
+[2025-11-02T11:44:12.580+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T11:44:12.598+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

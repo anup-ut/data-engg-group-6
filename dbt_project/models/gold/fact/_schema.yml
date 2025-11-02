@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_transactions
+    description: "Transaction ↔ Payment fact, joining on payment_reference parsed from transactions.details (fallback to reference column)."
+    columns:
+      - name: sk
+        tests: [not_null, unique]
+      - name: transaction_id
+        tests: [not_null]
+      - name: payment_reference
+        description: "Nullable. Parsed from JSON details; may be null when not present."
+      - name: hasPayment
+      - name: wasSuccessful
+      - name: state
+      - name: merchant_sk
+      - name: method
+      - name: TimeFromStartToEndMinutes
