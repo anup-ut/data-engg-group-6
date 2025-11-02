@@ -57,6 +57,7 @@ This project aims to **join the IGW initial payment data with the main DataLake 
 ---
 
 ## 🧱 Data Architecture
+![architecture diagram](https://github.com/user-attachments/assets/ba6a8007-5d32-4fda-8c03-ba2edd1f1d3a)
 
 ### **Data Flow**
 
