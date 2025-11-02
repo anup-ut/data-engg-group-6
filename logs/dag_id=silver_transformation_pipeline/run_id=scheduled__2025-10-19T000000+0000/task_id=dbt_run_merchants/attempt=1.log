@@ -1,0 +1,39 @@
+[2025-11-01T20:22:35.198+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-01T20:22:35.212+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-01T20:22:35.213+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:22:35.230+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-10-19 00:00:00+00:00
+[2025-11-01T20:22:35.236+0000] {standard_task_runner.py:60} INFO - Started process 1853 to run task
+[2025-11-01T20:22:35.242+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'scheduled__2025-10-19T00:00:00+00:00', '--job-id', '201', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpktqwauay']
+[2025-11-01T20:22:35.246+0000] {standard_task_runner.py:88} INFO - Job 201: Subtask dbt_run_merchants
+[2025-11-01T20:22:35.340+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:22:35.453+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-19T00:00:00+00:00'
+[2025-11-01T20:22:42.168+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:22:42.186+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251019T000000, start_date=20251101T202235, end_date=20251101T202242
+[2025-11-01T20:22:42.226+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:22:42.244+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T01:37:50.993+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-02T01:37:51.023+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-02T01:37:51.026+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T01:37:51.049+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-10-19 00:00:00+00:00
+[2025-11-02T01:37:51.066+0000] {standard_task_runner.py:60} INFO - Started process 2741 to run task
+[2025-11-02T01:37:51.072+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'scheduled__2025-10-19T00:00:00+00:00', '--job-id', '203', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp1gx53yi6']
+[2025-11-02T01:37:51.074+0000] {standard_task_runner.py:88} INFO - Job 203: Subtask dbt_run_merchants
+[2025-11-02T01:37:51.168+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [running]> on host 3b0074fa0b5e
+[2025-11-02T01:37:51.276+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-19T00:00:00+00:00'
+[2025-11-02T01:37:58.173+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T01:37:58.190+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251019T000000, start_date=20251102T013750, end_date=20251102T013758
+[2025-11-02T01:37:58.244+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T01:37:58.273+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T11:33:21.901+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-02T11:33:21.914+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [queued]>
+[2025-11-02T11:33:21.914+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T11:33:21.933+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-10-19 00:00:00+00:00
+[2025-11-02T11:33:21.943+0000] {standard_task_runner.py:60} INFO - Started process 2910 to run task
+[2025-11-02T11:33:21.948+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'scheduled__2025-10-19T00:00:00+00:00', '--job-id', '216', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmphuzudsf0']
+[2025-11-02T11:33:21.951+0000] {standard_task_runner.py:88} INFO - Job 216: Subtask dbt_run_merchants
+[2025-11-02T11:33:22.059+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-19T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T11:33:22.201+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-19T00:00:00+00:00'
+[2025-11-02T11:33:31.524+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T11:33:31.547+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251019T000000, start_date=20251102T113321, end_date=20251102T113331
+[2025-11-02T11:33:31.586+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T11:33:31.608+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

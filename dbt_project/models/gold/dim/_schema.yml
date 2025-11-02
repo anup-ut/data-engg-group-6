@@ -1,0 +1,26 @@
+version: 2
+
+
+models:
+  - name: dim_date
+    columns:
+      - name: date_key
+        tests: [not_null, unique]
+
+
+  - name: dim_payment_method
+    columns:
+      - name: payment_method_sk
+        tests: [not_null, unique]
+
+
+  - name: dim_payment_state
+    columns:
+      - name: payment_state_sk
+        tests: [not_null, unique]
+
+
+  - name: dim_merchants
+    columns:
+      - name: merchant_sk
+        tests: [not_null, unique]

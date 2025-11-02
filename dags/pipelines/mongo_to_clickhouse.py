@@ -1,26 +1,25 @@
 # dags/pipelines/mongo_to_clickhouse.py
 #
-# Reusable task factory: MongoDB -> ClickHouse (bronze) for link_transactions.
-# - Lazy third-party imports so Airflow can parse the DAG without those libs installed.
-# - Python 3.8 compatible typing (no list[str]).
+# MongoDB -> ClickHouse bronze for link_transactions
+# - Filters by Mongo `_snapshot_date` (Date) to match CSV->Mongo loader
+# - Idempotent: CH table PARTITION BY _snapshot_date (Date); DROP PARTITION before insert
+# - Schema drift safe and robust string/None coercion
 
 
 from __future__ import annotations
 from dataclasses import dataclass, field
-from typing import List, Optional
-
-
+from typing import List, Dict
 
 
 @dataclass
 class LinkTxMongoToCHConfig:
-    # Mongo side
+    # Mongo
     mongo_conn_id: str = "mongo_default"
     database: str = "projectdb"
     collection: str = "link_transactions_raw"
 
 
-    # ClickHouse side
+    # ClickHouse
     ch_conn_id: str = "clickhouse_default"
     ch_database: str = "bronze"
     ch_table: str = "link_transactions"
@@ -33,12 +32,12 @@ class LinkTxMongoToCHConfig:
         "updated_at",
         "state",
         "linkpay_reference",
-        "payment_details",  # JSON/dict will be stringified
+        "payment_details",  # dict/list will be stringified
     ])
     fetch_batch: int = 10_000
 
 
-    # Windowing (same semantics as your CSV→Mongo job)
+    # Windowing
     lag_days: int = 29
 
 
@@ -46,37 +45,75 @@ class LinkTxMongoToCHConfig:
     task_id: str = "load_link_transactions_bronze_from_mongo"
 
 
-    # Bronze table metadata
+    # Bronze metadata & partitioning
     add_metadata: bool = True
-    metadata_cols: dict = field(default_factory=lambda: {
+    snapshot_col: str = "_snapshot_date"  # ClickHouse Date partition; read from Mongo field of same name
+    metadata_cols: Dict[str, str] = field(default_factory=lambda: {
         "_ingested_at": "DateTime DEFAULT now()",
-        "_source_file": "String",  # we'll put "mongo:<collection>"
+        "_source_file": "String",  # we'll set "mongo:<collection>:YYYY-MM-DD"
     })
 
 
-
-
 def build_mongo_to_ch_task(dag, cfg: LinkTxMongoToCHConfig):
-    """Create a PythonOperator that streams Mongo -> ClickHouse bronze."""
     from airflow.operators.python import PythonOperator
 
 
     def _callable(**context):
-        # Lazy imports (Airflow parser-friendly)
+        # Lazy imports
         import json
         import logging
-        from datetime import datetime, timedelta
-
-
+        from datetime import date
         import pendulum
         import pandas as pd
         from airflow.hooks.base import BaseHook
-        from bson import ObjectId
         from pymongo import MongoClient
         from clickhouse_driver import Client as CHClient
+        from bson import ObjectId
+        from datetime import datetime
 
 
-        # ---------- helpers (local) ----------
+        logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+
+        # ---------- target day (by _snapshot_date) ----------
+        ds = context["ds"]
+        dagrun = context.get("dag_run")
+        conf = dagrun.conf if dagrun else {}
+
+
+        target_dt = pendulum.parse(ds).subtract(days=cfg.lag_days).date()
+        if conf.get("override_ds_nodash"):
+            target_dt = pendulum.from_format(conf["override_ds_nodash"], "YYYYMMDD").date()
+
+
+        snap_date_py = date(target_dt.year, target_dt.month, target_dt.day)  # Python date
+        snap_date_str = snap_date_py.isoformat()
+
+
+        # Full load?
+        full_load = bool(conf.get("full_load", False))
+
+
+        # ---------- connections ----------
+        # Mongo
+        m_conn = BaseHook.get_connection(cfg.mongo_conn_id)
+        mclient = MongoClient(m_conn.get_uri(), connect=False)
+        mcoll = mclient[cfg.database][cfg.collection]
+
+
+        # CH
+        ch_conn = BaseHook.get_connection(cfg.ch_conn_id)
+        ch = CHClient(
+            host=ch_conn.host or "clickhouse-server",
+            port=ch_conn.port or 9000,
+            user=ch_conn.login or "default",
+            password=ch_conn.password or "",
+            database=(ch_conn.schema or "default"),
+            settings=(ch_conn.extra_dejson.get("settings", {}) if isinstance(ch_conn.extra_dejson.get("settings", {}), dict) else {}),
+        )
+
+
+        # ---------- helpers ----------
         def _object_to_string(val):
             if val is None:
                 return None
@@ -87,146 +124,162 @@ def build_mongo_to_ch_task(dag, cfg: LinkTxMongoToCHConfig):
                     return json.dumps(val, ensure_ascii=False)
                 except Exception:
                     return str(val)
-            if isinstance(val, datetime):
-                # keep ISO; silver will cast as needed
+            if isinstance(val, (datetime,)):
+                # keep ISO; silver can cast later
                 return val.isoformat()
             return str(val)
 
 
-        def _ensure_database(ch: CHClient, db: str):
-            ch.execute(f"CREATE DATABASE IF NOT EXISTS {db}")
-
-
-        def _ensure_table_from_df(ch: CHClient, db: str, table: str, df: pd.DataFrame):
-            cols = []
-            for c in df.columns:
-                safe = c.replace("`", "")
-                cols.append(f"`{safe}` Nullable(String)")
+        def _ensure_db_and_table_base():
+            ch.execute(f"CREATE DATABASE IF NOT EXISTS {cfg.ch_database}")
+            # Base table with only metadata + snapshot date; CSV/Mongo fields added on demand
+            ddl_cols = []
             if cfg.add_metadata:
                 for k, v in cfg.metadata_cols.items():
-                    cols.append(f"`{k}` {v}")
+                    ddl_cols.append(f"`{k}` {v}")
+            ddl_cols.append(f"`{cfg.snapshot_col}` Date")
             ddl = f"""
-            CREATE TABLE IF NOT EXISTS {db}.{table} (
-              {", ".join(cols)}
+            CREATE TABLE IF NOT EXISTS {cfg.ch_database}.{cfg.ch_table} (
+                {", ".join(ddl_cols)}
             )
             ENGINE = MergeTree
+            PARTITION BY `{cfg.snapshot_col}`
             ORDER BY tuple()
             """
             ch.execute(ddl)
 
 
-        def _insert_df(ch: CHClient, db: str, table: str, df: pd.DataFrame, source_label: str):
-            # add metadata columns if needed
-            if cfg.add_metadata and "_source_file" in cfg.metadata_cols:
-                if "_source_file" not in df.columns:
-                    df["_source_file"] = source_label
-                else:
-                    df["_source_file"] = source_label
-
-
-            cols = list(df.columns)
-            if not len(df):
-                return
-            data = [tuple(row.get(c) for c in cols) for _, row in df.iterrows()]
-            col_list = ", ".join(f"`{c.replace('`','')}`" for c in cols)
-            ch.execute(f"INSERT INTO {db}.{table} ({col_list}) VALUES", data)
-
-
-        def _ensure_columns(df: pd.DataFrame, cols: List[str]) -> pd.DataFrame:
+        def _add_missing_columns(cols: List[str]):
+            existing = {r[0] for r in ch.execute(f"DESCRIBE TABLE {cfg.ch_database}.{cfg.ch_table}")}
+            reserved = set(cfg.metadata_cols.keys()) if cfg.add_metadata else set()
+            reserved.add(cfg.snapshot_col)
             for c in cols:
+                safe = c.replace("`", "")
+                if safe in existing or safe in reserved:
+                    continue
+                ch.execute(
+                    f"ALTER TABLE {cfg.ch_database}.{cfg.ch_table} "
+                    f"ADD COLUMN IF NOT EXISTS `{safe}` Nullable(String)"
+                )
+
+
+        def _drop_partition_for_day():
+            try:
+                ch.execute(
+                    f"ALTER TABLE {cfg.ch_database}.{cfg.ch_table} DROP PARTITION %(p)s",
+                    {"p": snap_date_str},
+                )
+                logging.info(f"[mongo->ch] Dropped partition for {cfg.snapshot_col}={snap_date_str}.")
+            except Exception as e:
+                logging.info(f"[mongo->ch] DROP PARTITION (likely none yet): {e}")
+
+
+        def _insert_rows(rows: List[dict], source_label: str):
+            if not rows:
+                return
+            df = pd.DataFrame(rows)
+
+
+            # Ensure all configured columns exist (order) + we’ll add snapshot later
+            for c in cfg.columns:
                 if c not in df.columns:
                     df[c] = None
-            return df[cols]
+            df = df[cfg.columns]
 
 
-        # ---------- window selection (29-day lag by default) ----------
-        ds = context["ds"]
-        dagrun_conf = (context.get("dag_run") or {}).conf or {}
-        full_load = bool(dagrun_conf.get("full_load", False))
+            # Coerce every value to str/None
+            for c in df.columns:
+                df[c] = df[c].map(lambda v: None if v is None else str(v))
 
 
-        if full_load:
-            created_at_filter = None
-            window_label = "ALL"
-        else:
-            target_day = pendulum.parse(ds).subtract(days=cfg.lag_days)
-            override = dagrun_conf.get("override_ds_nodash")
-            if override:
-                target_day = pendulum.from_format(override, "YYYYMMDD")
-            start_dt = datetime(target_day.year, target_day.month, target_day.day, 0, 0, 0)
-            end_dt = start_dt + timedelta(days=1)
-            created_at_filter = {"created_at": {"$gte": start_dt, "$lt": end_dt}}
-            window_label = f"{start_dt}..{end_dt}"
+            # Metadata + snapshot
+            if cfg.add_metadata:
+                df["_source_file"] = source_label
+            df[cfg.snapshot_col] = snap_date_str  # string in DF; we pass Python date at emit time
 
 
-        logging.info(f"[mongo->ch] Query window: {window_label}")
+            # Add any missing columns in CH (drift)
+            _add_missing_columns(list(df.columns))
 
 
-        # ---------- connections ----------
-        # Mongo
-        m_conn = BaseHook.get_connection(cfg.mongo_conn_id)
-        m_uri = m_conn.get_uri()
-        mclient = MongoClient(m_uri, connect=False)
+            # Build data and insert (coerce snapshot col to Python date)
+            cols = list(df.columns)
+            snap_col = cfg.snapshot_col
 
 
-        # ClickHouse
-        ch_conn = BaseHook.get_connection(cfg.ch_conn_id)
-        ch_host = ch_conn.host or "clickhouse-server"
-        ch_port = ch_conn.port or 9000
-        ch_user = ch_conn.login or "default"
-        ch_pw = ch_conn.password or ""
-        ch_db_default = ch_conn.schema or "default"
-        # NOTE: we still create/use cfg.ch_database for bronze
-        ch = CHClient(host=ch_host, port=ch_port, user=ch_user, password=ch_pw, database=ch_db_default)
+            def coerce_val(col_name, v):
+                if col_name == snap_col:
+                    return snap_date_py
+                return None if v is None else str(v)
+
+
+            data = [
+                tuple(coerce_val(col, val) for col, val in zip(cols, row))
+                for row in df.itertuples(index=False, name=None)
+            ]
+            col_list = ", ".join(f"`{c.replace('`','')}`" for c in cols)
+            ch.execute(f"INSERT INTO {cfg.ch_database}.{cfg.ch_table} ({col_list}) VALUES", data)
 
 
         try:
-            # query mongo
-            coll = mclient[cfg.database][cfg.collection]
-            projection = {k: 1 for k in cfg.columns}
-            cursor = coll.find(created_at_filter or {}, projection=projection, batch_size=cfg.fetch_batch)
+            # Ensure DB/table regardless of data presence
+            _ensure_db_and_table_base()
 
 
-            # ensure bronze db and table
-            _ensure_database(ch, cfg.ch_database)
+            # Build Mongo query
+            if full_load:
+                query = {}
+                source_label = f"mongo:{cfg.collection}:ALL"
+            else:
+                # filter by _snapshot_date (Mongo Date) equals the target day
+                start = datetime(snap_date_py.year, snap_date_py.month, snap_date_py.day)
+                end = datetime(snap_date_py.year, snap_date_py.month, snap_date_py.day, 23, 59, 59, 999000)
+                query = {cfg.snapshot_col: {"$gte": start, "$lte": end}}
+                source_label = f"mongo:{cfg.collection}:{snap_date_str}"
 
 
+            logging.info(f"[mongo->ch] Mongo query: {query}")
+
+
+            # Idempotency in CH: drop the day's partition (or whole table partition) first (only for non-full-load);
+            # for full_load you may want a different strategy (e.g., truncate then reload), but we keep insert-only.
+            if not full_load:
+                _drop_partition_for_day()
+
+
+            # Stream from Mongo in batches
             total = 0
             batch = []
-            for doc in cursor:
+            for doc in mcoll.find(query, projection={k: 1 for k in cfg.columns}, batch_size=cfg.fetch_batch):
                 row = {}
                 for key in cfg.columns:
-                    val = doc.get(key)
-                    if key == "payment_details" and isinstance(val, (dict, list)):
-                        # stringify; keep structure for silver parsing later
-                        row[key] = json.dumps(val, ensure_ascii=False)
+                    v = doc.get(key)
+                    if key == "payment_details" and isinstance(v, (dict, list)):
+                        row[key] = json.dumps(v, ensure_ascii=False)
                     else:
-                        row[key] = _object_to_string(val)
+                        row[key] = _object_to_string(v)
                 batch.append(row)
 
 
                 if len(batch) >= cfg.fetch_batch:
-                    df = pd.DataFrame(batch)
-                    df = _ensure_columns(df, cfg.columns)
-                    _ensure_table_from_df(ch, cfg.ch_database, cfg.ch_table, df)
-                    _insert_df(ch, cfg.ch_database, cfg.ch_table, df, f"mongo:{cfg.collection}")
-                    total += len(df)
+                    _insert_rows(batch, source_label)
+                    total += len(batch)
                     batch = []
 
 
             if batch:
-                df = pd.DataFrame(batch)
-                df = _ensure_columns(df, cfg.columns)
-                _ensure_table_from_df(ch, cfg.ch_database, cfg.ch_table, df)
-                _insert_df(ch, cfg.ch_database, cfg.ch_table, df, f"mongo:{cfg.collection}")
-                total += len(df)
+                _insert_rows(batch, source_label)
+                total += len(batch)
 
 
             logging.info(f"[mongo->ch] Inserted {total} rows into {cfg.ch_database}.{cfg.ch_table}.")
             if total == 0:
                 logging.info("[mongo->ch] No matching docs found for given filter.")
         finally:
-            mclient.close()
+            try:
+                mclient.close()
+            except Exception:
+                pass
 
 
     return PythonOperator(

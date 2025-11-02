@@ -1,0 +1,16 @@
+[2025-11-01T13:45:24.682+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.maybe_run_deps manual__2025-11-01T13:45:23.710559+00:00 [queued]>
+[2025-11-01T13:45:24.700+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.maybe_run_deps manual__2025-11-01T13:45:23.710559+00:00 [queued]>
+[2025-11-01T13:45:24.702+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T13:45:24.732+0000] {taskinstance.py:2191} INFO - Executing <Task(ShortCircuitOperator): maybe_run_deps> on 2025-11-01 13:45:23.710559+00:00
+[2025-11-01T13:45:24.746+0000] {standard_task_runner.py:60} INFO - Started process 2719 to run task
+[2025-11-01T13:45:24.755+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'maybe_run_deps', 'manual__2025-11-01T13:45:23.710559+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpe9cubucd']
+[2025-11-01T13:45:24.766+0000] {standard_task_runner.py:88} INFO - Job 24: Subtask maybe_run_deps
+[2025-11-01T13:45:24.943+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.maybe_run_deps manual__2025-11-01T13:45:23.710559+00:00 [running]> on host 0e882971ff2e
+[2025-11-01T13:45:25.137+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='maybe_run_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T13:45:23.710559+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T13:45:23.710559+00:00'
+[2025-11-01T13:45:25.142+0000] {python.py:201} INFO - Done. Returned value was: False
+[2025-11-01T13:45:25.143+0000] {python.py:268} INFO - Condition result is False
+[2025-11-01T13:45:25.144+0000] {python.py:295} INFO - Skipping downstream tasks
+[2025-11-01T13:45:25.195+0000] {python.py:303} INFO - Done.
+[2025-11-01T13:45:25.239+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=maybe_run_deps, execution_date=20251101T134523, start_date=20251101T134524, end_date=20251101T134525
+[2025-11-01T13:45:25.291+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T13:45:25.351+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

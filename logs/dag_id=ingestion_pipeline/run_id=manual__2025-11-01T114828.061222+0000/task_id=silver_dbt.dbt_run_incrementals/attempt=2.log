@@ -1,0 +1,600 @@
+[2025-11-01T11:53:45.853+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-11-01T11:48:28.061222+00:00 [queued]>
+[2025-11-01T11:53:45.865+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-11-01T11:48:28.061222+00:00 [queued]>
+[2025-11-01T11:53:45.866+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-11-01T11:53:45.881+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_run_incrementals> on 2025-11-01 11:48:28.061222+00:00
+[2025-11-01T11:53:45.885+0000] {standard_task_runner.py:60} INFO - Started process 1873 to run task
+[2025-11-01T11:53:45.888+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_run_incrementals', 'manual__2025-11-01T11:48:28.061222+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpp7lhjnbf']
+[2025-11-01T11:53:45.891+0000] {standard_task_runner.py:88} INFO - Job 73: Subtask silver_dbt.dbt_run_incrementals
+[2025-11-01T11:53:45.969+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-11-01T11:48:28.061222+00:00 [running]> on host 6ac9b46937d1
+[2025-11-01T11:53:46.071+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_run_incrementals' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T11:48:28.061222+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T11:48:28.061222+00:00'
+[2025-11-01T11:53:46.074+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T11:53:46.105+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i dbt bash -lc \'set -euo pipefail\ncd /dbt\n\n# Build vars JSON deterministically via here-doc (avoids subshell quoting issues)\ncat > /tmp/dbt_vars.py <<"PY"\nfrom datetime import datetime, timedelta\nimport json\nds = "2025-11-01"\nlagged = (datetime.strptime(ds, "%Y-%m-%d") - timedelta(days=0)).strftime("%Y-%m-%d")\nprint(json.dumps({"ds_lagged": lagged}))\nPY\npython /tmp/dbt_vars.py > /tmp/dbt_vars.json\necho "dbt vars => $(cat /tmp/dbt_vars.json)"\n\n# 1) Compile so we always have files to inspect\ndbt --no-use-colors compile --profiles-dir /dbt --select silver_payments silver_link_transactions --vars "$(cat /tmp/dbt_vars.json)"\n\n# 2) Run; on error, print compiled SQL and log tail\nset +e\ndbt --no-use-colors run --profiles-dir /dbt --select silver_payments silver_link_transactions --vars "$(cat /tmp/dbt_vars.json)" --debug\nstatus=$?\nif [ $status -ne 0 ]; then\n  echo "---- COMPILED SQL: silver_payments ----";   cat target/compiled/*/models/silver/silver_payments.sql 2>/dev/null || true;   echo "---- COMPILED SQL: silver_link_transactions ----";   cat target/compiled/*/models/silver/silver_link_transactions.sql 2>/dev/null || true;   echo "---- LAST 200 LINES OF logs/dbt.log ----";   tail -n 200 logs/dbt.log 2>/dev/null || true; fi\nexit $status\n\'']
+[2025-11-01T11:53:46.118+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T11:53:46.253+0000] {subprocess.py:93} INFO - dbt vars => {"ds_lagged": "2025-11-01"}
+[2025-11-01T11:53:47.808+0000] {subprocess.py:93} INFO - 11:53:47  Running with dbt=1.10.13
+[2025-11-01T11:53:48.155+0000] {subprocess.py:93} INFO - 11:53:48  Registered adapter: clickhouse=1.9.5
+[2025-11-01T11:53:48.593+0000] {subprocess.py:93} INFO - 11:53:48  Found 3 models, 3 sources, 491 macros
+[2025-11-01T11:53:48.597+0000] {subprocess.py:93} INFO - 11:53:48
+[2025-11-01T11:53:48.599+0000] {subprocess.py:93} INFO - 11:53:48  Concurrency: 4 threads (target='dev')
+[2025-11-01T11:53:48.600+0000] {subprocess.py:93} INFO - 11:53:48
+[2025-11-01T11:53:49.058+0000] {subprocess.py:93} INFO - Compiled node 'silver_payments' is:
+[2025-11-01T11:53:49.059+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.060+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.061+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.062+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.062+0000] {subprocess.py:93} INFO - with raw as (
+[2025-11-01T11:53:49.063+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:49.063+0000] {subprocess.py:93} INFO -         -- Cast IDs defensively
+[2025-11-01T11:53:49.064+0000] {subprocess.py:93} INFO -         toUInt64OrNull(id)           as payment_id,
+[2025-11-01T11:53:49.064+0000] {subprocess.py:93} INFO -         toUInt64OrNull(merchant_id)  as merchant_id,
+[2025-11-01T11:53:49.064+0000] {subprocess.py:93} INFO -         toUInt64OrNull(acquirer_id)  as acquirer_id,
+[2025-11-01T11:53:49.065+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.065+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.066+0000] {subprocess.py:93} INFO -         -- Strings only; avoid optional JSON columns for now
+[2025-11-01T11:53:49.066+0000] {subprocess.py:93} INFO -         toLowCardinality(state)      as state,
+[2025-11-01T11:53:49.066+0000] {subprocess.py:93} INFO -         toLowCardinality(card_type)  as card_type,
+[2025-11-01T11:53:49.067+0000] {subprocess.py:93} INFO -         reference,
+[2025-11-01T11:53:49.067+0000] {subprocess.py:93} INFO -         order_reference,
+[2025-11-01T11:53:49.068+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.068+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.069+0000] {subprocess.py:93} INFO -         -- Normalize timestamps to string first
+[2025-11-01T11:53:49.069+0000] {subprocess.py:93} INFO -         case
+[2025-11-01T11:53:49.070+0000] {subprocess.py:93} INFO -             when toTypeName(created_at) like 'String%' then replaceRegexpAll(created_at, '\\s+UTC$', '')
+[2025-11-01T11:53:49.070+0000] {subprocess.py:93} INFO -             else toString(created_at)
+[2025-11-01T11:53:49.071+0000] {subprocess.py:93} INFO -         end as created_at_str,
+[2025-11-01T11:53:49.072+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.073+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.073+0000] {subprocess.py:93} INFO -         case
+[2025-11-01T11:53:49.074+0000] {subprocess.py:93} INFO -             when toTypeName(updated_at) like 'String%' then replaceRegexpAll(updated_at, '\\s+UTC$', '')
+[2025-11-01T11:53:49.074+0000] {subprocess.py:93} INFO -             else toString(updated_at)
+[2025-11-01T11:53:49.075+0000] {subprocess.py:93} INFO -         end as updated_at_str
+[2025-11-01T11:53:49.076+0000] {subprocess.py:93} INFO -     from `bronze`.`payments`
+[2025-11-01T11:53:49.076+0000] {subprocess.py:93} INFO - ),
+[2025-11-01T11:53:49.076+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.077+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.077+0000] {subprocess.py:93} INFO - src as (
+[2025-11-01T11:53:49.078+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:49.078+0000] {subprocess.py:93} INFO -         payment_id,
+[2025-11-01T11:53:49.078+0000] {subprocess.py:93} INFO -         merchant_id,
+[2025-11-01T11:53:49.079+0000] {subprocess.py:93} INFO -         acquirer_id,
+[2025-11-01T11:53:49.082+0000] {subprocess.py:93} INFO -         state,
+[2025-11-01T11:53:49.083+0000] {subprocess.py:93} INFO -         card_type,
+[2025-11-01T11:53:49.083+0000] {subprocess.py:93} INFO -         reference,
+[2025-11-01T11:53:49.084+0000] {subprocess.py:93} INFO -         order_reference,
+[2025-11-01T11:53:49.084+0000] {subprocess.py:93} INFO -         parseDateTime64BestEffortOrNull(created_at_str, 6, 'UTC') as created_at,
+[2025-11-01T11:53:49.085+0000] {subprocess.py:93} INFO -         parseDateTime64BestEffortOrNull(updated_at_str, 6, 'UTC') as updated_at
+[2025-11-01T11:53:49.085+0000] {subprocess.py:93} INFO -     from raw
+[2025-11-01T11:53:49.086+0000] {subprocess.py:93} INFO - ),
+[2025-11-01T11:53:49.086+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.086+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.087+0000] {subprocess.py:93} INFO - ranked as (
+[2025-11-01T11:53:49.087+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:49.088+0000] {subprocess.py:93} INFO -         *,
+[2025-11-01T11:53:49.088+0000] {subprocess.py:93} INFO -         row_number() over (
+[2025-11-01T11:53:49.088+0000] {subprocess.py:93} INFO -             partition by payment_id
+[2025-11-01T11:53:49.089+0000] {subprocess.py:93} INFO -             order by
+[2025-11-01T11:53:49.089+0000] {subprocess.py:93} INFO -                 coalesce(updated_at, toDateTime64('1970-01-01 00:00:00', 6, 'UTC')) desc,
+[2025-11-01T11:53:49.090+0000] {subprocess.py:93} INFO -                 coalesce(created_at, toDateTime64('1970-01-01 00:00:00', 6, 'UTC')) desc
+[2025-11-01T11:53:49.090+0000] {subprocess.py:93} INFO -         ) as rn
+[2025-11-01T11:53:49.091+0000] {subprocess.py:93} INFO -     from src
+[2025-11-01T11:53:49.091+0000] {subprocess.py:93} INFO - )
+[2025-11-01T11:53:49.092+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.092+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:49.093+0000] {subprocess.py:93} INFO - select
+[2025-11-01T11:53:49.093+0000] {subprocess.py:93} INFO -     payment_id,
+[2025-11-01T11:53:49.093+0000] {subprocess.py:93} INFO -     merchant_id,
+[2025-11-01T11:53:49.094+0000] {subprocess.py:93} INFO -     acquirer_id,
+[2025-11-01T11:53:49.094+0000] {subprocess.py:93} INFO -     state,
+[2025-11-01T11:53:49.094+0000] {subprocess.py:93} INFO -     card_type,
+[2025-11-01T11:53:49.095+0000] {subprocess.py:93} INFO -     reference,
+[2025-11-01T11:53:49.095+0000] {subprocess.py:93} INFO -     order_reference,
+[2025-11-01T11:53:49.095+0000] {subprocess.py:93} INFO -     created_at,
+[2025-11-01T11:53:49.096+0000] {subprocess.py:93} INFO -     updated_at,
+[2025-11-01T11:53:49.096+0000] {subprocess.py:93} INFO -     toDate(created_at) as data_date
+[2025-11-01T11:53:49.096+0000] {subprocess.py:93} INFO - from ranked
+[2025-11-01T11:53:49.096+0000] {subprocess.py:93} INFO - where rn = 1
+[2025-11-01T11:53:49.097+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:51.375+0000] {subprocess.py:93} INFO - 11:53:51  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e613ba50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e6139590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e630d390>]}
+[2025-11-01T11:53:51.377+0000] {subprocess.py:93} INFO - 11:53:51  Running with dbt=1.10.13
+[2025-11-01T11:53:51.379+0000] {subprocess.py:93} INFO - 11:53:51  running dbt with arguments {'log_format': 'default', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'write_json': 'True', 'introspect': 'True', 'partial_parse': 'True', 'empty': 'False', 'invocation_command': 'dbt --no-use-colors run --profiles-dir /dbt --select silver_payments silver_link_transactions --vars {"ds_lagged": "2025-11-01"} --debug', 'use_colors': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'profiles_dir': '/dbt', 'warn_error': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'debug': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'version_check': 'True', 'log_path': '/dbt/logs', 'printer_width': '80', 'cache_selected_only': 'False'}
+[2025-11-01T11:53:51.545+0000] {subprocess.py:93} INFO - 11:53:51  Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e60ae710>]}
+[2025-11-01T11:53:51.600+0000] {subprocess.py:93} INFO - 11:53:51  Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e6849010>]}
+[2025-11-01T11:53:51.602+0000] {subprocess.py:93} INFO - 11:53:51  Registered adapter: clickhouse=1.9.5
+[2025-11-01T11:53:51.672+0000] {subprocess.py:93} INFO - 11:53:51  checksum: df5618d293beeb6c481662c8f5b2c62e47cd82e3c2287fb14558bc1db743e452, vars: {'ds_lagged': '2025-11-01'}, profile: , target: , version: 1.10.13
+[2025-11-01T11:53:51.831+0000] {subprocess.py:93} INFO - 11:53:51  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[2025-11-01T11:53:51.832+0000] {subprocess.py:93} INFO - 11:53:51  Partial parsing enabled, no changes found, skipping parsing
+[2025-11-01T11:53:51.865+0000] {subprocess.py:93} INFO - 11:53:51  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e647a050>]}
+[2025-11-01T11:53:51.969+0000] {subprocess.py:93} INFO - 11:53:51  Wrote artifact WritableManifest to /dbt/target/manifest.json
+[2025-11-01T11:53:51.977+0000] {subprocess.py:93} INFO - 11:53:51  Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[2025-11-01T11:53:52.005+0000] {subprocess.py:93} INFO - 11:53:52  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e5ecd110>]}
+[2025-11-01T11:53:52.007+0000] {subprocess.py:93} INFO - 11:53:52  Found 3 models, 3 sources, 491 macros
+[2025-11-01T11:53:52.008+0000] {subprocess.py:93} INFO - 11:53:52  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e5d2bd50>]}
+[2025-11-01T11:53:52.012+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.014+0000] {subprocess.py:93} INFO - 11:53:52  Concurrency: 4 threads (target='dev')
+[2025-11-01T11:53:52.015+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.017+0000] {subprocess.py:93} INFO - 11:53:52  Acquiring new clickhouse connection 'master'
+[2025-11-01T11:53:52.027+0000] {subprocess.py:93} INFO - 11:53:52  Acquiring new clickhouse connection 'list_'
+[2025-11-01T11:53:52.040+0000] {subprocess.py:93} INFO - 11:53:52  Opening a new connection, currently in state init
+[2025-11-01T11:53:52.224+0000] {subprocess.py:93} INFO - 11:53:52  dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "ck_project", "target_name": "dev", "connection_name": "list_"} */
+[2025-11-01T11:53:52.225+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.225+0000] {subprocess.py:93} INFO -     select name from system.databases
+[2025-11-01T11:53:52.225+0000] {subprocess.py:93} INFO -   ...
+[2025-11-01T11:53:52.228+0000] {subprocess.py:93} INFO - 11:53:52  dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[2025-11-01T11:53:52.255+0000] {subprocess.py:93} INFO - 11:53:52  Re-using an available connection from the pool (formerly list_, now list__silver)
+[2025-11-01T11:53:52.262+0000] {subprocess.py:93} INFO - 11:53:52  dbt_clickhouse adapter: On list__silver: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "ck_project", "target_name": "dev", "connection_name": "list__silver"} */
+[2025-11-01T11:53:52.263+0000] {subprocess.py:93} INFO - select
+[2025-11-01T11:53:52.263+0000] {subprocess.py:93} INFO -       t.name as name,
+[2025-11-01T11:53:52.264+0000] {subprocess.py:93} INFO -       t.database as schema,
+[2025-11-01T11:53:52.264+0000] {subprocess.py:93} INFO -       multiIf(
+[2025-11-01T11:53:52.264+0000] {subprocess.py:93} INFO -         engine in ('MaterializedView', 'View'), 'view',
+[2025-11-01T11:53:52.265+0000] {subprocess.py:93} INFO -         engine = 'Dictionary', 'dictionary',
+[2025-11-01T11:53:52.265+0000] {subprocess.py:93} INFO -         'table'
+[2025-11-01T11:53:52.265+0000] {subprocess.py:93} INFO -       ) as type,
+[2025-11-01T11:53:52.266+0000] {subprocess.py:93} INFO -       db.engine as db_engine,0 as is_on_cluster
+[2025-11-01T11:53:52.266+0000] {subprocess.py:93} INFO -           from system.tables as t join system.databases as db on t.database = db.name
+[2025-11-01T11:53:52.267+0000] {subprocess.py:93} INFO -         where schema = 'silver'
+[2025-11-01T11:53:52.267+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.268+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.269+0000] {subprocess.py:93} INFO -   ...
+[2025-11-01T11:53:52.269+0000] {subprocess.py:93} INFO - 11:53:52  dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[2025-11-01T11:53:52.271+0000] {subprocess.py:93} INFO - 11:53:52  Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e61bd6d0>]}
+[2025-11-01T11:53:52.276+0000] {subprocess.py:93} INFO - 11:53:52  Began running node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:52.277+0000] {subprocess.py:93} INFO - 11:53:52  Began running node model.ck_project.silver_payments
+[2025-11-01T11:53:52.278+0000] {subprocess.py:93} INFO - 11:53:52  1 of 2 START sql incremental model `silver`.`silver_link_transactions` ......... [RUN]
+[2025-11-01T11:53:52.279+0000] {subprocess.py:93} INFO - 11:53:52  2 of 2 START sql incremental model `silver`.`silver_payments` .................. [RUN]
+[2025-11-01T11:53:52.281+0000] {subprocess.py:93} INFO - 11:53:52  Re-using an available connection from the pool (formerly list__silver, now model.ck_project.silver_link_transactions)
+[2025-11-01T11:53:52.283+0000] {subprocess.py:93} INFO - 11:53:52  Acquiring new clickhouse connection 'model.ck_project.silver_payments'
+[2025-11-01T11:53:52.283+0000] {subprocess.py:93} INFO - 11:53:52  Began compiling node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:52.284+0000] {subprocess.py:93} INFO - 11:53:52  Began compiling node model.ck_project.silver_payments
+[2025-11-01T11:53:52.297+0000] {subprocess.py:93} INFO - 11:53:52  Writing injected SQL for node "model.ck_project.silver_link_transactions"
+[2025-11-01T11:53:52.303+0000] {subprocess.py:93} INFO - 11:53:52  Writing injected SQL for node "model.ck_project.silver_payments"
+[2025-11-01T11:53:52.310+0000] {subprocess.py:93} INFO - 11:53:52  Began executing node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:52.311+0000] {subprocess.py:93} INFO - 11:53:52  Began executing node model.ck_project.silver_payments
+[2025-11-01T11:53:52.519+0000] {subprocess.py:93} INFO - 11:53:52  Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:52.520+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:52.521+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.521+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.522+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.522+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.522+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:52.523+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:52.523+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:52.524+0000] {subprocess.py:93} INFO - 11:53:52  Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:52.524+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:52.524+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.525+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.525+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.525+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.526+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:52.526+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:52.527+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:52.527+0000] {subprocess.py:93} INFO - 11:53:52  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e62d1e10>]}
+[2025-11-01T11:53:52.528+0000] {subprocess.py:93} INFO - 11:53:52  Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e62dc210>]}
+[2025-11-01T11:53:52.528+0000] {subprocess.py:93} INFO - 11:53:52  1 of 2 ERROR creating sql incremental model `silver`.`silver_link_transactions`  [ERROR in 0.24s]
+[2025-11-01T11:53:52.528+0000] {subprocess.py:93} INFO - 11:53:52  2 of 2 ERROR creating sql incremental model `silver`.`silver_payments` ......... [ERROR in 0.24s]
+[2025-11-01T11:53:52.529+0000] {subprocess.py:93} INFO - 11:53:52  Finished running node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:52.531+0000] {subprocess.py:93} INFO - 11:53:52  Finished running node model.ck_project.silver_payments
+[2025-11-01T11:53:52.533+0000] {subprocess.py:93} INFO - 11:53:52  Marking all children of 'model.ck_project.silver_link_transactions' to be skipped because of status 'error'.  Reason: Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:52.533+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:52.533+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.534+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.534+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.534+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.534+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:52.535+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:52.535+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql).
+[2025-11-01T11:53:52.536+0000] {subprocess.py:93} INFO - 11:53:52  Marking all children of 'model.ck_project.silver_payments' to be skipped because of status 'error'.  Reason: Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:52.536+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:52.536+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.537+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.537+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.537+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.538+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:52.538+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:52.539+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql).
+[2025-11-01T11:53:52.539+0000] {subprocess.py:93} INFO - 11:53:52  Connection 'master' was properly closed.
+[2025-11-01T11:53:52.539+0000] {subprocess.py:93} INFO - 11:53:52  Connection 'model.ck_project.silver_link_transactions' was left open.
+[2025-11-01T11:53:52.540+0000] {subprocess.py:93} INFO - 11:53:52  On model.ck_project.silver_link_transactions: Close
+[2025-11-01T11:53:52.541+0000] {subprocess.py:93} INFO - 11:53:52  Connection 'model.ck_project.silver_payments' was properly closed.
+[2025-11-01T11:53:52.543+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.544+0000] {subprocess.py:93} INFO - 11:53:52  Finished running 2 incremental models in 0 hours 0 minutes and 0.53 seconds (0.53s).
+[2025-11-01T11:53:52.545+0000] {subprocess.py:93} INFO - 11:53:52  Command end result
+[2025-11-01T11:53:52.578+0000] {subprocess.py:93} INFO - 11:53:52  Wrote artifact WritableManifest to /dbt/target/manifest.json
+[2025-11-01T11:53:52.584+0000] {subprocess.py:93} INFO - 11:53:52  Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[2025-11-01T11:53:52.598+0000] {subprocess.py:93} INFO - 11:53:52  Wrote artifact RunExecutionResult to /dbt/target/run_results.json
+[2025-11-01T11:53:52.599+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.600+0000] {subprocess.py:93} INFO - 11:53:52  Completed with 2 errors, 0 partial successes, and 0 warnings:
+[2025-11-01T11:53:52.602+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.603+0000] {subprocess.py:93} INFO - 11:53:52  Failure in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:52.605+0000] {subprocess.py:93} INFO - 11:53:52    Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:52.605+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:52.606+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.606+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.607+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.607+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.608+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:52.608+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:52.609+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:52.609+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.610+0000] {subprocess.py:93} INFO - 11:53:52    compiled code at target/compiled/ck_project/models/silver/silver_link_transactions.sql
+[2025-11-01T11:53:52.610+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.611+0000] {subprocess.py:93} INFO - 11:53:52  Failure in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:52.613+0000] {subprocess.py:93} INFO - 11:53:52    Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:52.613+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:52.614+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:52.615+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.615+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.616+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:52.616+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:52.616+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:52.617+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:52.618+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.618+0000] {subprocess.py:93} INFO - 11:53:52    compiled code at target/compiled/ck_project/models/silver/silver_payments.sql
+[2025-11-01T11:53:52.619+0000] {subprocess.py:93} INFO - 11:53:52
+[2025-11-01T11:53:52.619+0000] {subprocess.py:93} INFO - 11:53:52  Done. PASS=0 WARN=0 ERROR=2 SKIP=0 NO-OP=0 TOTAL=2
+[2025-11-01T11:53:52.620+0000] {subprocess.py:93} INFO - 11:53:52  Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.3238393, "process_in_blocks": "0", "process_kernel_time": 0.288692, "process_mem_max_rss": "143692", "process_out_blocks": "0", "process_user_time": 2.195686}
+[2025-11-01T11:53:52.622+0000] {subprocess.py:93} INFO - 11:53:52  Command `dbt run` failed at 11:53:52.620697 after 1.33 seconds
+[2025-11-01T11:53:52.624+0000] {subprocess.py:93} INFO - 11:53:52  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144dca66c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e40e4c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e40e4350>]}
+[2025-11-01T11:53:52.625+0000] {subprocess.py:93} INFO - 11:53:52  Flushing usage events
+[2025-11-01T11:53:53.107+0000] {subprocess.py:93} INFO - 11:53:53  An error was encountered while trying to flush usage events
+[2025-11-01T11:53:53.469+0000] {subprocess.py:93} INFO - ---- COMPILED SQL: silver_payments ----
+[2025-11-01T11:53:53.492+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.493+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.493+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.494+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.494+0000] {subprocess.py:93} INFO - with raw as (
+[2025-11-01T11:53:53.495+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:53.495+0000] {subprocess.py:93} INFO -         -- Cast IDs defensively
+[2025-11-01T11:53:53.495+0000] {subprocess.py:93} INFO -         toUInt64OrNull(id)           as payment_id,
+[2025-11-01T11:53:53.496+0000] {subprocess.py:93} INFO -         toUInt64OrNull(merchant_id)  as merchant_id,
+[2025-11-01T11:53:53.496+0000] {subprocess.py:93} INFO -         toUInt64OrNull(acquirer_id)  as acquirer_id,
+[2025-11-01T11:53:53.496+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.497+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.497+0000] {subprocess.py:93} INFO -         -- Strings only; avoid optional JSON columns for now
+[2025-11-01T11:53:53.498+0000] {subprocess.py:93} INFO -         toLowCardinality(state)      as state,
+[2025-11-01T11:53:53.498+0000] {subprocess.py:93} INFO -         toLowCardinality(card_type)  as card_type,
+[2025-11-01T11:53:53.499+0000] {subprocess.py:93} INFO -         reference,
+[2025-11-01T11:53:53.499+0000] {subprocess.py:93} INFO -         order_reference,
+[2025-11-01T11:53:53.499+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.500+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.500+0000] {subprocess.py:93} INFO -         -- Normalize timestamps to string first
+[2025-11-01T11:53:53.500+0000] {subprocess.py:93} INFO -         case
+[2025-11-01T11:53:53.501+0000] {subprocess.py:93} INFO -             when toTypeName(created_at) like 'String%' then replaceRegexpAll(created_at, '\\s+UTC$', '')
+[2025-11-01T11:53:53.501+0000] {subprocess.py:93} INFO -             else toString(created_at)
+[2025-11-01T11:53:53.502+0000] {subprocess.py:93} INFO -         end as created_at_str,
+[2025-11-01T11:53:53.502+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.502+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.503+0000] {subprocess.py:93} INFO -         case
+[2025-11-01T11:53:53.503+0000] {subprocess.py:93} INFO -             when toTypeName(updated_at) like 'String%' then replaceRegexpAll(updated_at, '\\s+UTC$', '')
+[2025-11-01T11:53:53.503+0000] {subprocess.py:93} INFO -             else toString(updated_at)
+[2025-11-01T11:53:53.504+0000] {subprocess.py:93} INFO -         end as updated_at_str
+[2025-11-01T11:53:53.504+0000] {subprocess.py:93} INFO -     from `bronze`.`payments`
+[2025-11-01T11:53:53.504+0000] {subprocess.py:93} INFO - ),
+[2025-11-01T11:53:53.505+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.505+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.505+0000] {subprocess.py:93} INFO - src as (
+[2025-11-01T11:53:53.506+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:53.507+0000] {subprocess.py:93} INFO -         payment_id,
+[2025-11-01T11:53:53.507+0000] {subprocess.py:93} INFO -         merchant_id,
+[2025-11-01T11:53:53.508+0000] {subprocess.py:93} INFO -         acquirer_id,
+[2025-11-01T11:53:53.508+0000] {subprocess.py:93} INFO -         state,
+[2025-11-01T11:53:53.508+0000] {subprocess.py:93} INFO -         card_type,
+[2025-11-01T11:53:53.508+0000] {subprocess.py:93} INFO -         reference,
+[2025-11-01T11:53:53.509+0000] {subprocess.py:93} INFO -         order_reference,
+[2025-11-01T11:53:53.509+0000] {subprocess.py:93} INFO -         parseDateTime64BestEffortOrNull(created_at_str, 6, 'UTC') as created_at,
+[2025-11-01T11:53:53.509+0000] {subprocess.py:93} INFO -         parseDateTime64BestEffortOrNull(updated_at_str, 6, 'UTC') as updated_at
+[2025-11-01T11:53:53.510+0000] {subprocess.py:93} INFO -     from raw
+[2025-11-01T11:53:53.510+0000] {subprocess.py:93} INFO - ),
+[2025-11-01T11:53:53.511+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.511+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.512+0000] {subprocess.py:93} INFO - ranked as (
+[2025-11-01T11:53:53.512+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:53.512+0000] {subprocess.py:93} INFO -         *,
+[2025-11-01T11:53:53.513+0000] {subprocess.py:93} INFO -         row_number() over (
+[2025-11-01T11:53:53.513+0000] {subprocess.py:93} INFO -             partition by payment_id
+[2025-11-01T11:53:53.514+0000] {subprocess.py:93} INFO -             order by
+[2025-11-01T11:53:53.514+0000] {subprocess.py:93} INFO -                 coalesce(updated_at, toDateTime64('1970-01-01 00:00:00', 6, 'UTC')) desc,
+[2025-11-01T11:53:53.515+0000] {subprocess.py:93} INFO -                 coalesce(created_at, toDateTime64('1970-01-01 00:00:00', 6, 'UTC')) desc
+[2025-11-01T11:53:53.515+0000] {subprocess.py:93} INFO -         ) as rn
+[2025-11-01T11:53:53.516+0000] {subprocess.py:93} INFO -     from src
+[2025-11-01T11:53:53.516+0000] {subprocess.py:93} INFO - )
+[2025-11-01T11:53:53.517+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.517+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.517+0000] {subprocess.py:93} INFO - select
+[2025-11-01T11:53:53.518+0000] {subprocess.py:93} INFO -     payment_id,
+[2025-11-01T11:53:53.518+0000] {subprocess.py:93} INFO -     merchant_id,
+[2025-11-01T11:53:53.518+0000] {subprocess.py:93} INFO -     acquirer_id,
+[2025-11-01T11:53:53.519+0000] {subprocess.py:93} INFO -     state,
+[2025-11-01T11:53:53.519+0000] {subprocess.py:93} INFO -     card_type,
+[2025-11-01T11:53:53.520+0000] {subprocess.py:93} INFO -     reference,
+[2025-11-01T11:53:53.521+0000] {subprocess.py:93} INFO -     order_reference,
+[2025-11-01T11:53:53.522+0000] {subprocess.py:93} INFO -     created_at,
+[2025-11-01T11:53:53.523+0000] {subprocess.py:93} INFO -     updated_at,
+[2025-11-01T11:53:53.524+0000] {subprocess.py:93} INFO -     toDate(created_at) as data_date
+[2025-11-01T11:53:53.524+0000] {subprocess.py:93} INFO - from ranked
+[2025-11-01T11:53:53.525+0000] {subprocess.py:93} INFO - where rn = 1
+[2025-11-01T11:53:53.526+0000] {subprocess.py:93} INFO - ---- COMPILED SQL: silver_link_transactions ----
+[2025-11-01T11:53:53.526+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.527+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.528+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.529+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.529+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.530+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.530+0000] {subprocess.py:93} INFO - with src as (
+[2025-11-01T11:53:53.531+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:53.532+0000] {subprocess.py:93} INFO -         id,
+[2025-11-01T11:53:53.532+0000] {subprocess.py:93} INFO -         state,
+[2025-11-01T11:53:53.533+0000] {subprocess.py:93} INFO -         linkpay_reference,
+[2025-11-01T11:53:53.533+0000] {subprocess.py:93} INFO -         payment_details,         -- keep raw; parse later if stable
+[2025-11-01T11:53:53.534+0000] {subprocess.py:93} INFO -         created_at,
+[2025-11-01T11:53:53.534+0000] {subprocess.py:93} INFO -         updated_at,
+[2025-11-01T11:53:53.535+0000] {subprocess.py:93} INFO -         _ingested_at,
+[2025-11-01T11:53:53.535+0000] {subprocess.py:93} INFO -         _source_file
+[2025-11-01T11:53:53.535+0000] {subprocess.py:93} INFO -     from `bronze`.`link_transactions`
+[2025-11-01T11:53:53.536+0000] {subprocess.py:93} INFO - ),
+[2025-11-01T11:53:53.536+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.537+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.537+0000] {subprocess.py:93} INFO - norm as (
+[2025-11-01T11:53:53.537+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:53.538+0000] {subprocess.py:93} INFO -         toUInt64OrNull(id) as link_id,
+[2025-11-01T11:53:53.538+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.538+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.539+0000] {subprocess.py:93} INFO -         if(like(toTypeName(created_at), 'String%'),
+[2025-11-01T11:53:53.539+0000] {subprocess.py:93} INFO -            parseDateTime64BestEffortOrNull(replaceRegexpAll(created_at, ' UTC$', ''), 6),
+[2025-11-01T11:53:53.539+0000] {subprocess.py:93} INFO -            toDateTime64(created_at, 6)
+[2025-11-01T11:53:53.540+0000] {subprocess.py:93} INFO -         ) as created_at_dt,
+[2025-11-01T11:53:53.540+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.540+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.541+0000] {subprocess.py:93} INFO -         if(like(toTypeName(updated_at), 'String%'),
+[2025-11-01T11:53:53.541+0000] {subprocess.py:93} INFO -            parseDateTime64BestEffortOrNull(replaceRegexpAll(updated_at, ' UTC$', ''), 6),
+[2025-11-01T11:53:53.541+0000] {subprocess.py:93} INFO -            toDateTime64(updated_at, 6)
+[2025-11-01T11:53:53.542+0000] {subprocess.py:93} INFO -         ) as updated_at_dt,
+[2025-11-01T11:53:53.542+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.542+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.543+0000] {subprocess.py:93} INFO -         state,
+[2025-11-01T11:53:53.543+0000] {subprocess.py:93} INFO -         linkpay_reference,
+[2025-11-01T11:53:53.543+0000] {subprocess.py:93} INFO -         payment_details,
+[2025-11-01T11:53:53.543+0000] {subprocess.py:93} INFO -         toDateTime64(_ingested_at, 6) as ingested_at_dt,
+[2025-11-01T11:53:53.544+0000] {subprocess.py:93} INFO -         _source_file
+[2025-11-01T11:53:53.544+0000] {subprocess.py:93} INFO -     from src
+[2025-11-01T11:53:53.544+0000] {subprocess.py:93} INFO - ),
+[2025-11-01T11:53:53.544+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.544+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.545+0000] {subprocess.py:93} INFO - ranked as (
+[2025-11-01T11:53:53.545+0000] {subprocess.py:93} INFO -     select
+[2025-11-01T11:53:53.545+0000] {subprocess.py:93} INFO -         *,
+[2025-11-01T11:53:53.545+0000] {subprocess.py:93} INFO -         row_number() over (
+[2025-11-01T11:53:53.545+0000] {subprocess.py:93} INFO -             partition by link_id
+[2025-11-01T11:53:53.546+0000] {subprocess.py:93} INFO -             order by
+[2025-11-01T11:53:53.546+0000] {subprocess.py:93} INFO -                 coalesce(updated_at_dt, toDateTime64('1970-01-01 00:00:00', 6)) desc,
+[2025-11-01T11:53:53.546+0000] {subprocess.py:93} INFO -                 coalesce(created_at_dt, toDateTime64('1970-01-01 00:00:00', 6)) desc,
+[2025-11-01T11:53:53.546+0000] {subprocess.py:93} INFO -                 coalesce(ingested_at_dt, toDateTime64('1970-01-01 00:00:00', 6)) desc,
+[2025-11-01T11:53:53.547+0000] {subprocess.py:93} INFO -                 toString(_source_file) desc
+[2025-11-01T11:53:53.547+0000] {subprocess.py:93} INFO -         ) as rn
+[2025-11-01T11:53:53.547+0000] {subprocess.py:93} INFO -     from norm
+[2025-11-01T11:53:53.548+0000] {subprocess.py:93} INFO - )
+[2025-11-01T11:53:53.548+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.548+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.549+0000] {subprocess.py:93} INFO - select
+[2025-11-01T11:53:53.549+0000] {subprocess.py:93} INFO -     link_id,
+[2025-11-01T11:53:53.550+0000] {subprocess.py:93} INFO -     created_at_dt as created_at,
+[2025-11-01T11:53:53.550+0000] {subprocess.py:93} INFO -     updated_at_dt as completed_at,
+[2025-11-01T11:53:53.551+0000] {subprocess.py:93} INFO -     state,
+[2025-11-01T11:53:53.551+0000] {subprocess.py:93} INFO -     linkpay_reference as reference,
+[2025-11-01T11:53:53.551+0000] {subprocess.py:93} INFO -     payment_details,
+[2025-11-01T11:53:53.551+0000] {subprocess.py:93} INFO -     toDate(created_at_dt) as data_date
+[2025-11-01T11:53:53.551+0000] {subprocess.py:93} INFO - from ranked
+[2025-11-01T11:53:53.552+0000] {subprocess.py:93} INFO - where rn = 1
+[2025-11-01T11:53:53.552+0000] {subprocess.py:93} INFO - ---- LAST 200 LINES OF logs/dbt.log ----
+[2025-11-01T11:53:53.552+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.552+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.552+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.553+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.553+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.553+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.553+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.554+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql).
+[2025-11-01T11:53:53.554+0000] {subprocess.py:93} INFO - 11:53:49.325432 [debug] [MainThread]: Connection 'master' was properly closed.
+[2025-11-01T11:53:53.554+0000] {subprocess.py:93} INFO - 11:53:49.326593 [debug] [MainThread]: Connection 'model.ck_project.silver_link_transactions' was left open.
+[2025-11-01T11:53:53.554+0000] {subprocess.py:93} INFO - 11:53:49.327924 [debug] [MainThread]: On model.ck_project.silver_link_transactions: Close
+[2025-11-01T11:53:53.555+0000] {subprocess.py:93} INFO - 11:53:49.329183 [debug] [MainThread]: Connection 'model.ck_project.silver_payments' was properly closed.
+[2025-11-01T11:53:53.555+0000] {subprocess.py:93} INFO - 11:53:49.330686 [info ] [MainThread]:
+[2025-11-01T11:53:53.555+0000] {subprocess.py:93} INFO - 11:53:49.332245 [info ] [MainThread]: Finished running 2 incremental models in 0 hours 0 minutes and 0.50 seconds (0.50s).
+[2025-11-01T11:53:53.555+0000] {subprocess.py:93} INFO - 11:53:49.334277 [debug] [MainThread]: Command end result
+[2025-11-01T11:53:53.556+0000] {subprocess.py:93} INFO - 11:53:49.371990 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[2025-11-01T11:53:53.556+0000] {subprocess.py:93} INFO - 11:53:49.377939 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[2025-11-01T11:53:53.556+0000] {subprocess.py:93} INFO - 11:53:49.389828 [debug] [MainThread]: Wrote artifact RunExecutionResult to /dbt/target/run_results.json
+[2025-11-01T11:53:53.557+0000] {subprocess.py:93} INFO - 11:53:49.391744 [info ] [MainThread]:
+[2025-11-01T11:53:53.557+0000] {subprocess.py:93} INFO - 11:53:49.393182 [info ] [MainThread]: Completed with 2 errors, 0 partial successes, and 0 warnings:
+[2025-11-01T11:53:53.557+0000] {subprocess.py:93} INFO - 11:53:49.395310 [info ] [MainThread]:
+[2025-11-01T11:53:53.558+0000] {subprocess.py:93} INFO - 11:53:49.397023 [error] [MainThread]: Failure in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.558+0000] {subprocess.py:93} INFO - 11:53:49.398395 [error] [MainThread]:   Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.558+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.559+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.559+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.559+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.560+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.560+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.560+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.560+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.561+0000] {subprocess.py:93} INFO - 11:53:49.399546 [info ] [MainThread]:
+[2025-11-01T11:53:53.561+0000] {subprocess.py:93} INFO - 11:53:49.400917 [info ] [MainThread]:   compiled code at target/compiled/ck_project/models/silver/silver_link_transactions.sql
+[2025-11-01T11:53:53.561+0000] {subprocess.py:93} INFO - 11:53:49.402388 [info ] [MainThread]:
+[2025-11-01T11:53:53.561+0000] {subprocess.py:93} INFO - 11:53:49.403645 [error] [MainThread]: Failure in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.562+0000] {subprocess.py:93} INFO - 11:53:49.404765 [error] [MainThread]:   Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.562+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.562+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.562+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.562+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.563+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.563+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.563+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.563+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.563+0000] {subprocess.py:93} INFO - 11:53:49.406129 [info ] [MainThread]:
+[2025-11-01T11:53:53.564+0000] {subprocess.py:93} INFO - 11:53:49.407794 [info ] [MainThread]:   compiled code at target/compiled/ck_project/models/silver/silver_payments.sql
+[2025-11-01T11:53:53.564+0000] {subprocess.py:93} INFO - 11:53:49.409607 [info ] [MainThread]:
+[2025-11-01T11:53:53.564+0000] {subprocess.py:93} INFO - 11:53:49.411320 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=0 NO-OP=0 TOTAL=2
+[2025-11-01T11:53:53.564+0000] {subprocess.py:93} INFO - 11:53:49.413339 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.487542, "process_in_blocks": "0", "process_kernel_time": 0.31956, "process_mem_max_rss": "143448", "process_out_blocks": "0", "process_user_time": 2.352764}
+[2025-11-01T11:53:53.565+0000] {subprocess.py:93} INFO - 11:53:49.414693 [debug] [MainThread]: Command `dbt run` failed at 11:53:49.414545 after 1.49 seconds
+[2025-11-01T11:53:53.565+0000] {subprocess.py:93} INFO - 11:53:49.415803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff5304d2e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff532e930d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff531948c50>]}
+[2025-11-01T11:53:53.565+0000] {subprocess.py:93} INFO - 11:53:49.416962 [debug] [MainThread]: Flushing usage events
+[2025-11-01T11:53:53.565+0000] {subprocess.py:93} INFO - 11:53:49.546651 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[2025-11-01T11:53:53.565+0000] {subprocess.py:93} INFO - 11:53:49.898892 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[2025-11-01T11:53:53.566+0000] {subprocess.py:93} INFO - 11:53:51.370026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e613ba50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e6139590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e630d390>]}
+[2025-11-01T11:53:53.566+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.566+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.566+0000] {subprocess.py:93} INFO - ============================== 11:53:51.375536 | 201d645b-bc53-48bc-995f-433840b9c496 ==============================
+[2025-11-01T11:53:53.567+0000] {subprocess.py:93} INFO - 11:53:51.375536 [info ] [MainThread]: Running with dbt=1.10.13
+[2025-11-01T11:53:53.567+0000] {subprocess.py:93} INFO - 11:53:51.377608 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'write_json': 'True', 'introspect': 'True', 'partial_parse': 'True', 'empty': 'False', 'invocation_command': 'dbt --no-use-colors run --profiles-dir /dbt --select silver_payments silver_link_transactions --vars {"ds_lagged": "2025-11-01"} --debug', 'use_colors': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'profiles_dir': '/dbt', 'warn_error': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'debug': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'version_check': 'True', 'log_path': '/dbt/logs', 'printer_width': '80', 'cache_selected_only': 'False'}
+[2025-11-01T11:53:53.567+0000] {subprocess.py:93} INFO - 11:53:51.543032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e60ae710>]}
+[2025-11-01T11:53:53.567+0000] {subprocess.py:93} INFO - 11:53:51.598314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e6849010>]}
+[2025-11-01T11:53:53.567+0000] {subprocess.py:93} INFO - 11:53:51.600611 [info ] [MainThread]: Registered adapter: clickhouse=1.9.5
+[2025-11-01T11:53:53.568+0000] {subprocess.py:93} INFO - 11:53:51.670644 [debug] [MainThread]: checksum: df5618d293beeb6c481662c8f5b2c62e47cd82e3c2287fb14558bc1db743e452, vars: {'ds_lagged': '2025-11-01'}, profile: , target: , version: 1.10.13
+[2025-11-01T11:53:53.568+0000] {subprocess.py:93} INFO - 11:53:51.829879 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[2025-11-01T11:53:53.568+0000] {subprocess.py:93} INFO - 11:53:51.831365 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[2025-11-01T11:53:53.569+0000] {subprocess.py:93} INFO - 11:53:51.863517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e647a050>]}
+[2025-11-01T11:53:53.569+0000] {subprocess.py:93} INFO - 11:53:51.968247 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[2025-11-01T11:53:53.569+0000] {subprocess.py:93} INFO - 11:53:51.975618 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[2025-11-01T11:53:53.569+0000] {subprocess.py:93} INFO - 11:53:52.002980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e5ecd110>]}
+[2025-11-01T11:53:53.569+0000] {subprocess.py:93} INFO - 11:53:52.005292 [info ] [MainThread]: Found 3 models, 3 sources, 491 macros
+[2025-11-01T11:53:53.570+0000] {subprocess.py:93} INFO - 11:53:52.007064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e5d2bd50>]}
+[2025-11-01T11:53:53.570+0000] {subprocess.py:93} INFO - 11:53:52.010572 [info ] [MainThread]:
+[2025-11-01T11:53:53.570+0000] {subprocess.py:93} INFO - 11:53:52.012475 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[2025-11-01T11:53:53.571+0000] {subprocess.py:93} INFO - 11:53:52.014078 [info ] [MainThread]:
+[2025-11-01T11:53:53.571+0000] {subprocess.py:93} INFO - 11:53:52.015830 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[2025-11-01T11:53:53.571+0000] {subprocess.py:93} INFO - 11:53:52.025500 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_'
+[2025-11-01T11:53:53.571+0000] {subprocess.py:93} INFO - 11:53:52.038673 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[2025-11-01T11:53:53.572+0000] {subprocess.py:93} INFO - 11:53:52.222721 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "ck_project", "target_name": "dev", "connection_name": "list_"} */
+[2025-11-01T11:53:53.572+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.572+0000] {subprocess.py:93} INFO -     select name from system.databases
+[2025-11-01T11:53:53.572+0000] {subprocess.py:93} INFO -   ...
+[2025-11-01T11:53:53.572+0000] {subprocess.py:93} INFO - 11:53:52.227535 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[2025-11-01T11:53:53.573+0000] {subprocess.py:93} INFO - 11:53:52.253600 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_, now list__silver)
+[2025-11-01T11:53:53.573+0000] {subprocess.py:93} INFO - 11:53:52.260252 [debug] [ThreadPool]: dbt_clickhouse adapter: On list__silver: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "ck_project", "target_name": "dev", "connection_name": "list__silver"} */
+[2025-11-01T11:53:53.573+0000] {subprocess.py:93} INFO - select
+[2025-11-01T11:53:53.574+0000] {subprocess.py:93} INFO -       t.name as name,
+[2025-11-01T11:53:53.574+0000] {subprocess.py:93} INFO -       t.database as schema,
+[2025-11-01T11:53:53.574+0000] {subprocess.py:93} INFO -       multiIf(
+[2025-11-01T11:53:53.575+0000] {subprocess.py:93} INFO -         engine in ('MaterializedView', 'View'), 'view',
+[2025-11-01T11:53:53.575+0000] {subprocess.py:93} INFO -         engine = 'Dictionary', 'dictionary',
+[2025-11-01T11:53:53.575+0000] {subprocess.py:93} INFO -         'table'
+[2025-11-01T11:53:53.575+0000] {subprocess.py:93} INFO -       ) as type,
+[2025-11-01T11:53:53.576+0000] {subprocess.py:93} INFO -       db.engine as db_engine,0 as is_on_cluster
+[2025-11-01T11:53:53.576+0000] {subprocess.py:93} INFO -           from system.tables as t join system.databases as db on t.database = db.name
+[2025-11-01T11:53:53.576+0000] {subprocess.py:93} INFO -         where schema = 'silver'
+[2025-11-01T11:53:53.576+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.576+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.577+0000] {subprocess.py:93} INFO -   ...
+[2025-11-01T11:53:53.577+0000] {subprocess.py:93} INFO - 11:53:52.267254 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[2025-11-01T11:53:53.577+0000] {subprocess.py:93} INFO - 11:53:52.270080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e61bd6d0>]}
+[2025-11-01T11:53:53.577+0000] {subprocess.py:93} INFO - 11:53:52.275399 [debug] [Thread-1 (]: Began running node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:53.578+0000] {subprocess.py:93} INFO - 11:53:52.275970 [debug] [Thread-2 (]: Began running node model.ck_project.silver_payments
+[2025-11-01T11:53:53.578+0000] {subprocess.py:93} INFO - 11:53:52.277485 [info ] [Thread-1 (]: 1 of 2 START sql incremental model `silver`.`silver_link_transactions` ......... [RUN]
+[2025-11-01T11:53:53.578+0000] {subprocess.py:93} INFO - 11:53:52.278575 [info ] [Thread-2 (]: 2 of 2 START sql incremental model `silver`.`silver_payments` .................. [RUN]
+[2025-11-01T11:53:53.578+0000] {subprocess.py:93} INFO - 11:53:52.279826 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list__silver, now model.ck_project.silver_link_transactions)
+[2025-11-01T11:53:53.579+0000] {subprocess.py:93} INFO - 11:53:52.281203 [debug] [Thread-2 (]: Acquiring new clickhouse connection 'model.ck_project.silver_payments'
+[2025-11-01T11:53:53.579+0000] {subprocess.py:93} INFO - 11:53:52.282842 [debug] [Thread-1 (]: Began compiling node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:53.579+0000] {subprocess.py:93} INFO - 11:53:52.283862 [debug] [Thread-2 (]: Began compiling node model.ck_project.silver_payments
+[2025-11-01T11:53:53.579+0000] {subprocess.py:93} INFO - 11:53:52.295660 [debug] [Thread-1 (]: Writing injected SQL for node "model.ck_project.silver_link_transactions"
+[2025-11-01T11:53:53.580+0000] {subprocess.py:93} INFO - 11:53:52.301323 [debug] [Thread-2 (]: Writing injected SQL for node "model.ck_project.silver_payments"
+[2025-11-01T11:53:53.580+0000] {subprocess.py:93} INFO - 11:53:52.308119 [debug] [Thread-1 (]: Began executing node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:53.580+0000] {subprocess.py:93} INFO - 11:53:52.309370 [debug] [Thread-2 (]: Began executing node model.ck_project.silver_payments
+[2025-11-01T11:53:53.581+0000] {subprocess.py:93} INFO - 11:53:52.517945 [debug] [Thread-1 (]: Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.581+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.581+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.581+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.581+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.582+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.582+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.582+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.582+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.583+0000] {subprocess.py:93} INFO - 11:53:52.519560 [debug] [Thread-2 (]: Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.583+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.583+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.583+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.583+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.584+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.584+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.584+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.584+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.585+0000] {subprocess.py:93} INFO - 11:53:52.522893 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e62d1e10>]}
+[2025-11-01T11:53:53.585+0000] {subprocess.py:93} INFO - 11:53:52.524391 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '201d645b-bc53-48bc-995f-433840b9c496', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e62dc210>]}
+[2025-11-01T11:53:53.585+0000] {subprocess.py:93} INFO - 11:53:52.525814 [error] [Thread-1 (]: 1 of 2 ERROR creating sql incremental model `silver`.`silver_link_transactions`  [ERROR in 0.24s]
+[2025-11-01T11:53:53.585+0000] {subprocess.py:93} INFO - 11:53:52.527234 [error] [Thread-2 (]: 2 of 2 ERROR creating sql incremental model `silver`.`silver_payments` ......... [ERROR in 0.24s]
+[2025-11-01T11:53:53.585+0000] {subprocess.py:93} INFO - 11:53:52.528799 [debug] [Thread-1 (]: Finished running node model.ck_project.silver_link_transactions
+[2025-11-01T11:53:53.586+0000] {subprocess.py:93} INFO - 11:53:52.530012 [debug] [Thread-2 (]: Finished running node model.ck_project.silver_payments
+[2025-11-01T11:53:53.586+0000] {subprocess.py:93} INFO - 11:53:52.531651 [debug] [Thread-7 (]: Marking all children of 'model.ck_project.silver_link_transactions' to be skipped because of status 'error'.  Reason: Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.586+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.586+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.587+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.587+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.587+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.588+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.588+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.588+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql).
+[2025-11-01T11:53:53.588+0000] {subprocess.py:93} INFO - 11:53:52.534063 [debug] [Thread-7 (]: Marking all children of 'model.ck_project.silver_payments' to be skipped because of status 'error'.  Reason: Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.589+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.589+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.589+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.590+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.590+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.590+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.591+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.591+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql).
+[2025-11-01T11:53:53.592+0000] {subprocess.py:93} INFO - 11:53:52.536631 [debug] [MainThread]: Connection 'master' was properly closed.
+[2025-11-01T11:53:53.592+0000] {subprocess.py:93} INFO - 11:53:52.537698 [debug] [MainThread]: Connection 'model.ck_project.silver_link_transactions' was left open.
+[2025-11-01T11:53:53.592+0000] {subprocess.py:93} INFO - 11:53:52.538872 [debug] [MainThread]: On model.ck_project.silver_link_transactions: Close
+[2025-11-01T11:53:53.592+0000] {subprocess.py:93} INFO - 11:53:52.540148 [debug] [MainThread]: Connection 'model.ck_project.silver_payments' was properly closed.
+[2025-11-01T11:53:53.592+0000] {subprocess.py:93} INFO - 11:53:52.542105 [info ] [MainThread]:
+[2025-11-01T11:53:53.593+0000] {subprocess.py:93} INFO - 11:53:52.543415 [info ] [MainThread]: Finished running 2 incremental models in 0 hours 0 minutes and 0.53 seconds (0.53s).
+[2025-11-01T11:53:53.593+0000] {subprocess.py:93} INFO - 11:53:52.544768 [debug] [MainThread]: Command end result
+[2025-11-01T11:53:53.593+0000] {subprocess.py:93} INFO - 11:53:52.576846 [debug] [MainThread]: Wrote artifact WritableManifest to /dbt/target/manifest.json
+[2025-11-01T11:53:53.593+0000] {subprocess.py:93} INFO - 11:53:52.583475 [debug] [MainThread]: Wrote artifact SemanticManifest to /dbt/target/semantic_manifest.json
+[2025-11-01T11:53:53.593+0000] {subprocess.py:93} INFO - 11:53:52.596430 [debug] [MainThread]: Wrote artifact RunExecutionResult to /dbt/target/run_results.json
+[2025-11-01T11:53:53.594+0000] {subprocess.py:93} INFO - 11:53:52.597671 [info ] [MainThread]:
+[2025-11-01T11:53:53.594+0000] {subprocess.py:93} INFO - 11:53:52.599079 [info ] [MainThread]: Completed with 2 errors, 0 partial successes, and 0 warnings:
+[2025-11-01T11:53:53.594+0000] {subprocess.py:93} INFO - 11:53:52.600477 [info ] [MainThread]:
+[2025-11-01T11:53:53.594+0000] {subprocess.py:93} INFO - 11:53:52.602506 [error] [MainThread]: Failure in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.595+0000] {subprocess.py:93} INFO - 11:53:52.603879 [error] [MainThread]:   Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.595+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.595+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.595+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.596+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.596+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.596+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.596+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.597+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-11-01T11:53:53.597+0000] {subprocess.py:93} INFO - 11:53:52.605064 [info ] [MainThread]:
+[2025-11-01T11:53:53.597+0000] {subprocess.py:93} INFO - 11:53:52.606313 [info ] [MainThread]:   compiled code at target/compiled/ck_project/models/silver/silver_link_transactions.sql
+[2025-11-01T11:53:53.597+0000] {subprocess.py:93} INFO - 11:53:52.607908 [info ] [MainThread]:
+[2025-11-01T11:53:53.597+0000] {subprocess.py:93} INFO - 11:53:52.609865 [error] [MainThread]: Failure in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.598+0000] {subprocess.py:93} INFO - 11:53:52.611588 [error] [MainThread]:   Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.598+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:53:53.598+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:53:53.599+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.599+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.599+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:53:53.599+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:53:53.600+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-11-01T11:53:53.600+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql)
+[2025-11-01T11:53:53.600+0000] {subprocess.py:93} INFO - 11:53:52.612996 [info ] [MainThread]:
+[2025-11-01T11:53:53.600+0000] {subprocess.py:93} INFO - 11:53:52.614437 [info ] [MainThread]:   compiled code at target/compiled/ck_project/models/silver/silver_payments.sql
+[2025-11-01T11:53:53.601+0000] {subprocess.py:93} INFO - 11:53:52.615849 [info ] [MainThread]:
+[2025-11-01T11:53:53.601+0000] {subprocess.py:93} INFO - 11:53:52.617152 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=0 NO-OP=0 TOTAL=2
+[2025-11-01T11:53:53.601+0000] {subprocess.py:93} INFO - 11:53:52.619377 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.3238393, "process_in_blocks": "0", "process_kernel_time": 0.288692, "process_mem_max_rss": "143692", "process_out_blocks": "0", "process_user_time": 2.195686}
+[2025-11-01T11:53:53.601+0000] {subprocess.py:93} INFO - 11:53:52.620960 [debug] [MainThread]: Command `dbt run` failed at 11:53:52.620697 after 1.33 seconds
+[2025-11-01T11:53:53.601+0000] {subprocess.py:93} INFO - 11:53:52.622547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144dca66c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e40e4c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7144e40e4350>]}
+[2025-11-01T11:53:53.602+0000] {subprocess.py:93} INFO - 11:53:52.624111 [debug] [MainThread]: Flushing usage events
+[2025-11-01T11:53:53.602+0000] {subprocess.py:93} INFO - 11:53:53.105388 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[2025-11-01T11:53:53.602+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-01T11:53:53.613+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-01T11:53:53.616+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_run_incrementals, execution_date=20251101T114828, start_date=20251101T115345, end_date=20251101T115353
+[2025-11-01T11:53:53.631+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 73 for task silver_dbt.dbt_run_incrementals (Bash command failed. The command returned a non-zero exit code 1.; 1873)
+[2025-11-01T11:53:53.671+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T11:53:53.688+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

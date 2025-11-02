@@ -1,0 +1,166 @@
+[2025-11-01T14:11:23.502+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:11:23.512+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:11:23.513+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T14:11:23.528+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_linktx> on 2025-10-30 00:00:00+00:00
+[2025-11-01T14:11:23.536+0000] {standard_task_runner.py:60} INFO - Started process 364 to run task
+[2025-11-01T14:11:23.540+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp6exrzl4l']
+[2025-11-01T14:11:23.543+0000] {standard_task_runner.py:88} INFO - Job 15: Subtask dbt_run_linktx
+[2025-11-01T14:11:23.633+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [running]> on host b977057f5fed
+[2025-11-01T14:11:23.739+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T14:11:23.743+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T14:11:23.744+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt --no-use-colors run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project --select silver_link_transactions --vars \'{"ds_lagged":"$DS_LAGGED"}\'']
+[2025-11-01T14:11:23.756+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T14:11:23.758+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: dbt: command not found
+[2025-11-01T14:11:23.759+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2025-11-01T14:11:23.774+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2025-11-01T14:11:23.778+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251030T000000, start_date=20251101T141123, end_date=20251101T141123
+[2025-11-01T14:11:23.794+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 15 for task dbt_run_linktx (Bash command failed. The command returned a non-zero exit code 127.; 364)
+[2025-11-01T14:11:23.835+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T14:11:23.862+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T14:21:30.210+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:21:30.221+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T14:21:30.222+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T14:21:30.239+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_linktx> on 2025-10-30 00:00:00+00:00
+[2025-11-01T14:21:30.244+0000] {standard_task_runner.py:60} INFO - Started process 336 to run task
+[2025-11-01T14:21:30.249+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp8ltdqm2h']
+[2025-11-01T14:21:30.251+0000] {standard_task_runner.py:88} INFO - Job 16: Subtask dbt_run_linktx
+[2025-11-01T14:21:30.329+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [running]> on host 8c60c1c29b68
+[2025-11-01T14:21:30.431+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T14:21:30.433+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T14:21:30.435+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt --no-use-colors run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project --select silver_link_transactions --vars \'{"ds_lagged":"$DS_LAGGED"}\'']
+[2025-11-01T14:21:30.444+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T14:21:30.445+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: dbt: command not found
+[2025-11-01T14:21:30.446+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2025-11-01T14:21:30.458+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2025-11-01T14:21:30.462+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251030T000000, start_date=20251101T142130, end_date=20251101T142130
+[2025-11-01T14:21:30.476+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 16 for task dbt_run_linktx (Bash command failed. The command returned a non-zero exit code 127.; 336)
+[2025-11-01T14:21:30.501+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T14:21:30.526+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T15:01:49.613+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T15:01:49.625+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T15:01:49.625+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T15:01:49.640+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_linktx> on 2025-10-30 00:00:00+00:00
+[2025-11-01T15:01:49.647+0000] {standard_task_runner.py:60} INFO - Started process 364 to run task
+[2025-11-01T15:01:49.650+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpli5dfwk2']
+[2025-11-01T15:01:49.654+0000] {standard_task_runner.py:88} INFO - Job 16: Subtask dbt_run_linktx
+[2025-11-01T15:01:49.756+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [running]> on host 7f2b5a16b237
+[2025-11-01T15:01:49.872+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T15:01:49.876+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T15:01:49.878+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'set -euo pipefail; DBT_BIN=/home/***/.local/bin/dbt; if [ -x "$DBT_BIN" ]; then   EXEC="$DBT_BIN"; elif command -v dbt >/dev/null 2>&1; then   EXEC="$(command -v dbt)"; else   # Try dbt 1.5 style first, then 1.8 style module path  if python -c \'import runpy; runpy.run_module("dbt", run_name="__main__")\' -- --version >/dev/null 2>&1; then     EXEC="python -m dbt";   else     EXEC="python -m dbt.cli.main";   fi; fi; $EXEC --no-use-colors run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project --select silver_link_transactions --vars \'{"ds_lagged":"$DS_LAGGED"}\'']
+[2025-11-01T15:01:49.896+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T15:01:49.900+0000] {subprocess.py:93} INFO - /usr/bin/bash: -c: line 2: syntax error: unexpected end of file
+[2025-11-01T15:01:49.901+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-11-01T15:01:49.918+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-11-01T15:01:49.921+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251030T000000, start_date=20251101T150149, end_date=20251101T150149
+[2025-11-01T15:01:49.936+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 16 for task dbt_run_linktx (Bash command failed. The command returned a non-zero exit code 2.; 364)
+[2025-11-01T15:01:49.986+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T15:01:50.014+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T16:53:27.190+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T16:53:27.201+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T16:53:27.201+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T16:53:27.221+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-10-30 00:00:00+00:00
+[2025-11-01T16:53:27.229+0000] {standard_task_runner.py:60} INFO - Started process 365 to run task
+[2025-11-01T16:53:27.234+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp2g4yh7t0']
+[2025-11-01T16:53:27.238+0000] {standard_task_runner.py:88} INFO - Job 15: Subtask dbt_run_linktx
+[2025-11-01T16:53:27.335+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [running]> on host 69cecc54c654
+[2025-11-01T16:53:27.433+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T16:53:32.811+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/silver_dag.py", line 176, in <lambda>
+    python_callable=lambda ds, **_: _run_dbt("silver_link_transactions", ds=ds, full_refresh=False, pass_ds_lagged=True),
+  File "/opt/airflow/dags/silver_dag.py", line 149, in _run_dbt
+    raise RuntimeError(f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}")
+RuntimeError: dbt failed (2).
+STDOUT:
+16:53:30  Running with dbt=1.5.9
+16:53:30  Registered adapter: clickhouse=1.5.2
+16:53:30  Unable to do partial parsing because config vars, config profile, or config target have changed
+16:53:31  Encountered an error:
+Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+  invalid syntax for function call expression
+    line 1
+      {{ config(
+
+
+STDERR:
+
+[2025-11-01T16:53:32.825+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251030T000000, start_date=20251101T165327, end_date=20251101T165332
+[2025-11-01T16:53:32.839+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 15 for task dbt_run_linktx (dbt failed (2).
+STDOUT:
+16:53:30  Running with dbt=1.5.9
+16:53:30  Registered adapter: clickhouse=1.5.2
+16:53:30  Unable to do partial parsing because config vars, config profile, or config target have changed
+16:53:31  Encountered an error:
+Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+  invalid syntax for function call expression
+    line 1
+      {{ config(
+
+
+STDERR:
+; 365)
+[2025-11-01T16:53:32.885+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T16:53:32.908+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T20:24:24.814+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T20:24:24.828+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T20:24:24.829+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:24:24.847+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-10-30 00:00:00+00:00
+[2025-11-01T20:24:24.855+0000] {standard_task_runner.py:60} INFO - Started process 2423 to run task
+[2025-11-01T20:24:24.861+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '244', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpny_wp6ks']
+[2025-11-01T20:24:24.867+0000] {standard_task_runner.py:88} INFO - Job 244: Subtask dbt_run_linktx
+[2025-11-01T20:24:24.986+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:24:25.126+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T20:24:31.785+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:24:31.805+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251030T000000, start_date=20251101T202424, end_date=20251101T202431
+[2025-11-01T20:24:31.846+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:24:31.876+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T01:39:44.925+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-02T01:39:44.935+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-02T01:39:44.936+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T01:39:44.952+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-10-30 00:00:00+00:00
+[2025-11-02T01:39:44.961+0000] {standard_task_runner.py:60} INFO - Started process 3594 to run task
+[2025-11-02T01:39:44.965+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '248', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp75it3zgp']
+[2025-11-02T01:39:44.968+0000] {standard_task_runner.py:88} INFO - Job 248: Subtask dbt_run_linktx
+[2025-11-02T01:39:45.053+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [running]> on host 3b0074fa0b5e
+[2025-11-02T01:39:45.174+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-02T01:39:51.682+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T01:39:51.697+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251030T000000, start_date=20251102T013944, end_date=20251102T013951
+[2025-11-02T01:39:51.765+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T01:39:51.791+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T11:35:44.819+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-02T11:35:44.845+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-02T11:35:44.846+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T11:35:44.877+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-10-30 00:00:00+00:00
+[2025-11-02T11:35:44.888+0000] {standard_task_runner.py:60} INFO - Started process 3822 to run task
+[2025-11-02T11:35:44.895+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '259', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp9sykey9l']
+[2025-11-02T11:35:44.900+0000] {standard_task_runner.py:88} INFO - Job 259: Subtask dbt_run_linktx
+[2025-11-02T11:35:45.069+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-10-30T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T11:35:45.252+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-02T11:35:56.341+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T11:35:56.366+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251030T000000, start_date=20251102T113544, end_date=20251102T113556
+[2025-11-02T11:35:56.439+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T11:35:56.481+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

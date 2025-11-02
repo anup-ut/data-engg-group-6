@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: silver_link_transactions
+    description: "Link transactions cleaned"
+    columns:
+      - name: tx_id
+        tests: [not_null, unique]
+      - name: event_date
+        tests: [not_null]
+
+  - name: silver_payments
+    description: "Payments cleaned"
+    columns:
+      - name: payment_id
+        tests: [not_null, unique]
+      - name: event_date
+        tests: [not_null]
+
+  - name: silver_merchants
+    description: "Merchants deduped"
+    columns:
+      - name: merchant_sk
+        tests: [not_null, unique]
+      - name: merchant_id
+        tests: [not_null]

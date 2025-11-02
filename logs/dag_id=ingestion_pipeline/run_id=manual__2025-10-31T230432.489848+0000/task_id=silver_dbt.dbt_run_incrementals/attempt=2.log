@@ -1,0 +1,68 @@
+[2025-10-31T23:09:42.485+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T23:04:32.489848+00:00 [queued]>
+[2025-10-31T23:09:42.495+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T23:04:32.489848+00:00 [queued]>
+[2025-10-31T23:09:42.496+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-10-31T23:09:42.510+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_run_incrementals> on 2025-10-31 23:04:32.489848+00:00
+[2025-10-31T23:09:42.516+0000] {standard_task_runner.py:60} INFO - Started process 1273 to run task
+[2025-10-31T23:09:42.519+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_run_incrementals', 'manual__2025-10-31T23:04:32.489848+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp_5o5lexw']
+[2025-10-31T23:09:42.523+0000] {standard_task_runner.py:88} INFO - Job 28: Subtask silver_dbt.dbt_run_incrementals
+[2025-10-31T23:09:42.610+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T23:04:32.489848+00:00 [running]> on host ad620feb6bee
+[2025-10-31T23:09:42.707+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_run_incrementals' AIRFLOW_CTX_EXECUTION_DATE='2025-10-31T23:04:32.489848+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-31T23:04:32.489848+00:00'
+[2025-10-31T23:09:42.709+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T23:09:42.710+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i dbt bash -lc \'\nset -e\ncd /dbt\nDBT_VARS=$(python - <<"PY"\nfrom datetime import datetime, timedelta\nimport json\nds = "2025-10-31"\nlag_days = 0\nlagged = (datetime.strptime(ds, "%Y-%m-%d") - timedelta(days=lag_days)).strftime("%Y-%m-%d")\nprint(json.dumps({"ds_lagged": lagged}))\nPY\n)\necho "dbt vars => ${DBT_VARS}"\ndbt --no-use-colors run --profiles-dir /dbt --select silver_payments silver_link_transactions --vars "${DBT_VARS}"\n\'']
+[2025-10-31T23:09:42.721+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T23:09:42.872+0000] {subprocess.py:93} INFO - dbt vars => {"ds_lagged": "2025-10-31"}
+[2025-10-31T23:09:44.474+0000] {subprocess.py:93} INFO - 23:09:44  Running with dbt=1.10.13
+[2025-10-31T23:09:44.718+0000] {subprocess.py:93} INFO - 23:09:44  Registered adapter: clickhouse=1.9.5
+[2025-10-31T23:09:44.884+0000] {subprocess.py:93} INFO - 23:09:44  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2025-10-31T23:09:46.357+0000] {subprocess.py:93} INFO - 23:09:46  Found 3 models, 3 sources, 491 macros
+[2025-10-31T23:09:46.360+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.362+0000] {subprocess.py:93} INFO - 23:09:46  Concurrency: 4 threads (target='dev')
+[2025-10-31T23:09:46.364+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.626+0000] {subprocess.py:93} INFO - 23:09:46  1 of 2 START sql incremental model `silver`.`silver_link_transactions` ......... [RUN]
+[2025-10-31T23:09:46.627+0000] {subprocess.py:93} INFO - 23:09:46  2 of 2 START sql incremental model `silver`.`silver_payments` .................. [RUN]
+[2025-10-31T23:09:46.765+0000] {subprocess.py:93} INFO - 23:09:46  2 of 2 ERROR creating sql incremental model `silver`.`silver_payments` ......... [ERROR in 0.13s]
+[2025-10-31T23:09:46.767+0000] {subprocess.py:93} INFO - 23:09:46  1 of 2 ERROR creating sql incremental model `silver`.`silver_link_transactions`  [ERROR in 0.13s]
+[2025-10-31T23:09:46.786+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.787+0000] {subprocess.py:93} INFO - 23:09:46  Finished running 2 incremental models in 0 hours 0 minutes and 0.42 seconds (0.42s).
+[2025-10-31T23:09:46.857+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.859+0000] {subprocess.py:93} INFO - 23:09:46  Completed with 2 errors, 0 partial successes, and 0 warnings:
+[2025-10-31T23:09:46.860+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.862+0000] {subprocess.py:93} INFO - 23:09:46  Failure in model silver_payments (models/silver/silver_payments.sql)
+[2025-10-31T23:09:46.864+0000] {subprocess.py:93} INFO - 23:09:46    Compilation Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-10-31T23:09:46.865+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-10-31T23:09:46.866+0000] {subprocess.py:93} INFO - 
+[2025-10-31T23:09:46.866+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-10-31T23:09:46.867+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-10-31T23:09:46.868+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-10-31T23:09:46.868+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-10-31T23:09:46.869+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-10-31T23:09:46.869+0000] {subprocess.py:93} INFO -   > called by model silver_payments (models/silver/silver_payments.sql)
+[2025-10-31T23:09:46.870+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.870+0000] {subprocess.py:93} INFO - 23:09:46    compiled code at target/compiled/ck_project/models/silver/silver_payments.sql
+[2025-10-31T23:09:46.871+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.872+0000] {subprocess.py:93} INFO - 23:09:46  Failure in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-10-31T23:09:46.874+0000] {subprocess.py:93} INFO - 23:09:46    Compilation Error in model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-10-31T23:09:46.875+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-10-31T23:09:46.875+0000] {subprocess.py:93} INFO - 
+[2025-10-31T23:09:46.876+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-10-31T23:09:46.876+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-10-31T23:09:46.877+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-10-31T23:09:46.877+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-10-31T23:09:46.878+0000] {subprocess.py:93} INFO -   > called by macro materialization_incremental_clickhouse (macros/materializations/incremental/incremental.sql)
+[2025-10-31T23:09:46.878+0000] {subprocess.py:93} INFO -   > called by model silver_link_transactions (models/silver/silver_link_transactions.sql)
+[2025-10-31T23:09:46.879+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.879+0000] {subprocess.py:93} INFO - 23:09:46    compiled code at target/compiled/ck_project/models/silver/silver_link_transactions.sql
+[2025-10-31T23:09:46.880+0000] {subprocess.py:93} INFO - 23:09:46
+[2025-10-31T23:09:46.880+0000] {subprocess.py:93} INFO - 23:09:46  Done. PASS=0 WARN=0 ERROR=2 SKIP=0 NO-OP=0 TOTAL=2
+[2025-10-31T23:09:47.686+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-10-31T23:09:47.699+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-10-31T23:09:47.705+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_run_incrementals, execution_date=20251031T230432, start_date=20251031T230942, end_date=20251031T230947
+[2025-10-31T23:09:47.719+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 28 for task silver_dbt.dbt_run_incrementals (Bash command failed. The command returned a non-zero exit code 1.; 1273)
+[2025-10-31T23:09:47.730+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-10-31T23:09:47.748+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,63 @@
+[2025-10-31T20:38:03.398+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_merchants manual__2025-10-31T20:32:49.873726+00:00 [queued]>
+[2025-10-31T20:38:03.408+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_merchants manual__2025-10-31T20:32:49.873726+00:00 [queued]>
+[2025-10-31T20:38:03.409+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-10-31T20:38:03.423+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_run_merchants> on 2025-10-31 20:32:49.873726+00:00
+[2025-10-31T20:38:03.427+0000] {standard_task_runner.py:60} INFO - Started process 919 to run task
+[2025-10-31T20:38:03.431+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_run_merchants', 'manual__2025-10-31T20:32:49.873726+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp_bnlcglu']
+[2025-10-31T20:38:03.433+0000] {standard_task_runner.py:88} INFO - Job 35: Subtask silver_dbt.dbt_run_merchants
+[2025-10-31T20:38:03.505+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_merchants manual__2025-10-31T20:32:49.873726+00:00 [running]> on host f865f80ec1e7
+[2025-10-31T20:38:03.590+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-31T20:32:49.873726+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-31T20:32:49.873726+00:00'
+[2025-10-31T20:38:03.591+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:38:03.593+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors run --profiles-dir /dbt --select silver_merchants --full-refresh'"]
+[2025-10-31T20:38:03.602+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:38:04.984+0000] {subprocess.py:93} INFO - 20:38:04  Running with dbt=1.10.13
+[2025-10-31T20:38:05.197+0000] {subprocess.py:93} INFO - 20:38:05  Registered adapter: clickhouse=1.9.5
+[2025-10-31T20:38:05.576+0000] {subprocess.py:93} INFO - 20:38:05  Found 3 models, 3 sources, 488 macros
+[2025-10-31T20:38:05.580+0000] {subprocess.py:93} INFO - 20:38:05
+[2025-10-31T20:38:05.581+0000] {subprocess.py:93} INFO - 20:38:05  Concurrency: 4 threads (target='dev')
+[2025-10-31T20:38:05.582+0000] {subprocess.py:93} INFO - 20:38:05
+[2025-10-31T20:38:05.823+0000] {subprocess.py:93} INFO - 20:38:05  1 of 1 START sql table model `silver`.`silver_merchants` ....................... [RUN]
+[2025-10-31T20:38:05.988+0000] {subprocess.py:93} INFO - 20:38:05  1 of 1 ERROR creating sql table model `silver`.`silver_merchants` .............. [ERROR in 0.16s]
+[2025-10-31T20:38:05.999+0000] {subprocess.py:93} INFO - 20:38:05
+[2025-10-31T20:38:06.000+0000] {subprocess.py:93} INFO - 20:38:05  Finished running 1 table model in 0 hours 0 minutes and 0.41 seconds (0.41s).
+[2025-10-31T20:38:06.062+0000] {subprocess.py:93} INFO - 20:38:06
+[2025-10-31T20:38:06.063+0000] {subprocess.py:93} INFO - 20:38:06  Completed with 1 error, 0 partial successes, and 0 warnings:
+[2025-10-31T20:38:06.065+0000] {subprocess.py:93} INFO - 20:38:06
+[2025-10-31T20:38:06.067+0000] {subprocess.py:93} INFO - 20:38:06  Failure in model silver_merchants (models/silver/silver_merchants.sql)
+[2025-10-31T20:38:06.069+0000] {subprocess.py:93} INFO - 20:38:06    Database Error in model silver_merchants (models/silver/silver_merchants.sql)
+[2025-10-31T20:38:06.070+0000] {subprocess.py:93} INFO -   Code: 62.
+[2025-10-31T20:38:06.071+0000] {subprocess.py:93} INFO -   DB::Exception: Syntax error: failed at position 1187 (end of query) (line 42, col 30): ;
+[2025-10-31T20:38:06.071+0000] {subprocess.py:93} INFO -             )
+[2025-10-31T20:38:06.072+0000] {subprocess.py:93} INFO - 
+[2025-10-31T20:38:06.073+0000] {subprocess.py:93} INFO -           . Expected one of: OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, GROUP BY, WITH, HAVING, WINDOW, QUALIFY, ORDER BY, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+[2025-10-31T20:38:06.073+0000] {subprocess.py:93} INFO - 
+[2025-10-31T20:38:06.074+0000] {subprocess.py:93} INFO -   0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+[2025-10-31T20:38:06.075+0000] {subprocess.py:93} INFO -   1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+[2025-10-31T20:38:06.075+0000] {subprocess.py:93} INFO -   2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+[2025-10-31T20:38:06.076+0000] {subprocess.py:93} INFO -   3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+[2025-10-31T20:38:06.077+0000] {subprocess.py:93} INFO -   4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+[2025-10-31T20:38:06.077+0000] {subprocess.py:93} INFO -   5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+[2025-10-31T20:38:06.078+0000] {subprocess.py:93} INFO -   6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+[2025-10-31T20:38:06.078+0000] {subprocess.py:93} INFO -   7. DB::TCPHandler::run() @ 0x0000000019e4f119
+[2025-10-31T20:38:06.079+0000] {subprocess.py:93} INFO -   8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+[2025-10-31T20:38:06.079+0000] {subprocess.py:93} INFO -   9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+[2025-10-31T20:38:06.080+0000] {subprocess.py:93} INFO -   10. Poco::PooledThread::run() @ 0x000000001ef15b87
+[2025-10-31T20:38:06.080+0000] {subprocess.py:93} INFO -   11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+[2025-10-31T20:38:06.081+0000] {subprocess.py:93} INFO -   12. ? @ 0x0000000000094ac3
+[2025-10-31T20:38:06.081+0000] {subprocess.py:93} INFO -   13. ? @ 0x0000000000125a74
+[2025-10-31T20:38:06.082+0000] {subprocess.py:93} INFO - 20:38:06
+[2025-10-31T20:38:06.082+0000] {subprocess.py:93} INFO - 20:38:06    compiled code at target/compiled/ck_project/models/silver/silver_merchants.sql
+[2025-10-31T20:38:06.083+0000] {subprocess.py:93} INFO - 20:38:06
+[2025-10-31T20:38:06.084+0000] {subprocess.py:93} INFO - 20:38:06  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[2025-10-31T20:38:06.917+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-10-31T20:38:06.931+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-10-31T20:38:06.936+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_run_merchants, execution_date=20251031T203249, start_date=20251031T203803, end_date=20251031T203806
+[2025-10-31T20:38:06.953+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 35 for task silver_dbt.dbt_run_merchants (Bash command failed. The command returned a non-zero exit code 1.; 919)
+[2025-10-31T20:38:06.984+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-10-31T20:38:07.007+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

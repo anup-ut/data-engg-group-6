@@ -1,0 +1,76 @@
+[2025-11-02T13:08:18.323+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T13:07:50.725059+00:00 [queued]>
+[2025-11-02T13:08:18.361+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T13:07:50.725059+00:00 [queued]>
+[2025-11-02T13:08:18.363+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-11-02T13:08:18.407+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_fact_transactions> on 2025-11-02 13:07:50.725059+00:00
+[2025-11-02T13:08:18.422+0000] {standard_task_runner.py:60} INFO - Started process 11657 to run task
+[2025-11-02T13:08:18.432+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_fact_transactions', 'manual__2025-11-02T13:07:50.725059+00:00', '--job-id', '412', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpd7gcuk5_']
+[2025-11-02T13:08:18.439+0000] {standard_task_runner.py:88} INFO - Job 412: Subtask dbt_fact_transactions
+[2025-11-02T13:08:18.633+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T13:07:50.725059+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T13:08:18.881+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_fact_transactions' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T13:07:50.725059+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-02T13:07:50.725059+00:00'
+[2025-11-02T13:08:26.475+0000] {logging_mixin.py:188} INFO - 13:08:26  Running with dbt=1.5.9
+[2025-11-02T13:08:26.893+0000] {logging_mixin.py:188} INFO - 13:08:26  Registered adapter: clickhouse=1.5.2
+[2025-11-02T13:08:31.232+0000] {logging_mixin.py:188} INFO - 13:08:31  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-11-02T13:08:31.233+0000] {logging_mixin.py:188} INFO - There are 1 unused configuration paths:
+[2025-11-02T13:08:31.234+0000] {logging_mixin.py:188} INFO - - models.ck_project.bronze
+[2025-11-02T13:08:31.316+0000] {logging_mixin.py:188} INFO - 13:08:31  Found 8 models, 21 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+[2025-11-02T13:08:31.323+0000] {logging_mixin.py:188} INFO - 13:08:31
+[2025-11-02T13:08:31.935+0000] {logging_mixin.py:188} INFO - 13:08:31  Concurrency: 4 threads (target='dev')
+[2025-11-02T13:08:31.937+0000] {logging_mixin.py:188} INFO - 13:08:31
+[2025-11-02T13:08:31.994+0000] {logging_mixin.py:188} INFO - 13:08:31  1 of 7 START sql table model gold.dim_payment_method ........................... [RUN]
+[2025-11-02T13:08:31.998+0000] {logging_mixin.py:188} INFO - 13:08:31  2 of 7 START sql table model gold.dim_payment_state ............................ [RUN]
+[2025-11-02T13:08:32.002+0000] {logging_mixin.py:188} INFO - 13:08:32  3 of 7 START sql incremental model silver.link_transactions .................... [RUN]
+[2025-11-02T13:08:32.015+0000] {logging_mixin.py:188} INFO - 13:08:32  4 of 7 START sql incremental model silver.merchants ............................ [RUN]
+[2025-11-02T13:08:33.340+0000] {logging_mixin.py:188} INFO - 13:08:33  2 of 7 OK created sql table model gold.dim_payment_state ....................... [OK in 1.31s]
+[2025-11-02T13:08:33.349+0000] {logging_mixin.py:188} INFO - 13:08:33  1 of 7 OK created sql table model gold.dim_payment_method ...................... [OK in 1.33s]
+[2025-11-02T13:08:33.365+0000] {logging_mixin.py:188} INFO - 13:08:33  5 of 7 START sql incremental model silver.payments ............................. [RUN]
+[2025-11-02T13:08:33.846+0000] {logging_mixin.py:188} INFO - 13:08:33  3 of 7 OK created sql incremental model silver.link_transactions ............... [OK in 1.81s]
+[2025-11-02T13:08:33.885+0000] {logging_mixin.py:188} INFO - 13:08:33  4 of 7 OK created sql incremental model silver.merchants ....................... [OK in 1.82s]
+[2025-11-02T13:08:33.912+0000] {logging_mixin.py:188} INFO - 13:08:33  6 of 7 START sql table model gold.dim_merchants ................................ [RUN]
+[2025-11-02T13:08:34.265+0000] {logging_mixin.py:188} INFO - 13:08:34  5 of 7 OK created sql incremental model silver.payments ........................ [OK in 0.89s]
+[2025-11-02T13:08:34.415+0000] {logging_mixin.py:188} INFO - 13:08:34  6 of 7 OK created sql table model gold.dim_merchants ........................... [OK in 0.49s]
+[2025-11-02T13:08:34.428+0000] {logging_mixin.py:188} INFO - 13:08:34  7 of 7 START sql incremental model gold.fact_transactions ...................... [RUN]
+[2025-11-02T13:08:34.550+0000] {logging_mixin.py:188} INFO - 13:08:34  7 of 7 ERROR creating sql incremental model gold.fact_transactions ............. [ERROR in 0.12s]
+[2025-11-02T13:08:34.577+0000] {logging_mixin.py:188} INFO - 13:08:34
+[2025-11-02T13:08:34.580+0000] {logging_mixin.py:188} INFO - 13:08:34  Finished running 3 table models, 4 incremental models in 0 hours 0 minutes and 3.25 seconds (3.25s).
+[2025-11-02T13:08:34.635+0000] {logging_mixin.py:188} INFO - 13:08:34
+[2025-11-02T13:08:34.638+0000] {logging_mixin.py:188} INFO - 13:08:34  Completed with 1 error and 0 warnings:
+[2025-11-02T13:08:34.640+0000] {logging_mixin.py:188} INFO - 13:08:34
+[2025-11-02T13:08:34.643+0000] {logging_mixin.py:188} INFO - 13:08:34  Database Error in model fact_transactions (models/gold/fact/fact_transactions.sql)
+[2025-11-02T13:08:34.646+0000] {logging_mixin.py:188} INFO - 13:08:34    Code: 62.
+[2025-11-02T13:08:34.648+0000] {logging_mixin.py:188} INFO - 13:08:34    DB::Exception: Syntax error: failed at position 3328 (end of query) (line 134, col 1): ;
+[2025-11-02T13:08:34.652+0000] {logging_mixin.py:188} INFO - 13:08:34              )
+[2025-11-02T13:08:34.655+0000] {logging_mixin.py:188} INFO - 13:08:34            . Expected one of: token, OpeningRoundBracket, FILTER, RESPECT NULLS, IGNORE NULLS, OVER, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, table, table function, subquery or list of joined tables, array join, LEFT ARRAY JOIN, INNER, ARRAY JOIN, GLOBAL, LOCAL, ANY, ALL, ASOF, SEMI, ANTI, ONLY, LEFT, RIGHT, FULL, CROSS, PASTE, JOIN, PREWHERE, WHERE, GROUP BY, WITH, HAVING, WINDOW, QUALIFY, ORDER BY, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+[2025-11-02T13:08:34.657+0000] {logging_mixin.py:188} INFO - 13:08:34
+[2025-11-02T13:08:34.659+0000] {logging_mixin.py:188} INFO - 13:08:34    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+[2025-11-02T13:08:34.661+0000] {logging_mixin.py:188} INFO - 13:08:34    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+[2025-11-02T13:08:34.664+0000] {logging_mixin.py:188} INFO - 13:08:34    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+[2025-11-02T13:08:34.666+0000] {logging_mixin.py:188} INFO - 13:08:34    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+[2025-11-02T13:08:34.669+0000] {logging_mixin.py:188} INFO - 13:08:34    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+[2025-11-02T13:08:34.671+0000] {logging_mixin.py:188} INFO - 13:08:34    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+[2025-11-02T13:08:34.674+0000] {logging_mixin.py:188} INFO - 13:08:34    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+[2025-11-02T13:08:34.676+0000] {logging_mixin.py:188} INFO - 13:08:34    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+[2025-11-02T13:08:34.679+0000] {logging_mixin.py:188} INFO - 13:08:34    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+[2025-11-02T13:08:34.681+0000] {logging_mixin.py:188} INFO - 13:08:34    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+[2025-11-02T13:08:34.682+0000] {logging_mixin.py:188} INFO - 13:08:34    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+[2025-11-02T13:08:34.685+0000] {logging_mixin.py:188} INFO - 13:08:34    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+[2025-11-02T13:08:34.688+0000] {logging_mixin.py:188} INFO - 13:08:34    12. ? @ 0x0000000000094ac3
+[2025-11-02T13:08:34.690+0000] {logging_mixin.py:188} INFO - 13:08:34    13. ? @ 0x0000000000125a74
+[2025-11-02T13:08:34.692+0000] {logging_mixin.py:188} INFO - 13:08:34
+[2025-11-02T13:08:34.694+0000] {logging_mixin.py:188} INFO - 13:08:34  Done. PASS=6 WARN=0 ERROR=1 SKIP=0 TOTAL=7
+[2025-11-02T13:08:36.319+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 143, in <lambda>
+    python_callable=lambda **_: _run_dbt("+fact_transactions"),
+  File "/opt/airflow/dags/gold_dag.py", line 90, in _run_dbt
+    raise RuntimeError(f"dbt failed (exit {ret}). See logs above.")
+RuntimeError: dbt failed (exit 1). See logs above.
+[2025-11-02T13:08:36.371+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=gold_dimensions_pipeline, task_id=dbt_fact_transactions, execution_date=20251102T130750, start_date=20251102T130818, end_date=20251102T130836
+[2025-11-02T13:08:36.407+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 412 for task dbt_fact_transactions (dbt failed (exit 1). See logs above.; 11657)
+[2025-11-02T13:08:36.461+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-02T13:08:36.508+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

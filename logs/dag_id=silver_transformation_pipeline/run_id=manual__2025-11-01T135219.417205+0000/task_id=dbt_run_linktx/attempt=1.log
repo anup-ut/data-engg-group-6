@@ -1,0 +1,50 @@
+[2025-11-01T13:52:21.925+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T13:52:19.417205+00:00 [queued]>
+[2025-11-01T13:52:21.938+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T13:52:19.417205+00:00 [queued]>
+[2025-11-01T13:52:21.938+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T13:52:21.956+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_run_linktx> on 2025-11-01 13:52:19.417205+00:00
+[2025-11-01T13:52:21.965+0000] {standard_task_runner.py:60} INFO - Started process 3173 to run task
+[2025-11-01T13:52:21.969+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'manual__2025-11-01T13:52:19.417205+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmps58_mkei']
+[2025-11-01T13:52:21.974+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask dbt_run_linktx
+[2025-11-01T13:52:22.068+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T13:52:19.417205+00:00 [running]> on host 0e882971ff2e
+[2025-11-01T13:52:22.134+0000] {abstractoperator.py:707} ERROR - Exception rendering Jinja template for task 'dbt_run_linktx', field 'bash_command'. Template: 'cd /dbt && dbt --no-use-colors run --profiles-dir /dbt --select silver_link_transactions --vars "{{ \'ds_lagged\': \'{{ macros.ds_add(ds, -29) }}\' }}"'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/abstractoperator.py", line 699, in _do_render_template_fields
+    rendered_content = self.render_template(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 173, in render_template
+    template = jinja_env.from_string(value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/environment.py", line 1105, in from_string
+    return cls.from_code(self, self.compile(source), gs, None)
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<unknown>", line 1, in template
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got ':'
+[2025-11-01T13:52:22.136+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2334, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2465, in _execute_task_with_callbacks
+    task_orig = self.render_templates(context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2877, in render_templates
+    original_task.render_template_fields(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 1241, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/abstractoperator.py", line 699, in _do_render_template_fields
+    rendered_content = self.render_template(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/template/templater.py", line 173, in render_template
+    template = jinja_env.from_string(value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/environment.py", line 1105, in from_string
+    return cls.from_code(self, self.compile(source), gs, None)
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/airflow/.local/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<unknown>", line 1, in template
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got ':'
+[2025-11-01T13:52:22.149+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251101T135219, start_date=20251101T135221, end_date=20251101T135222
+[2025-11-01T13:52:22.165+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 30 for task dbt_run_linktx (expected token 'end of print statement', got ':'; 3173)
+[2025-11-01T13:52:22.183+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T13:52:22.218+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
