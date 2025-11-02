@@ -91,4 +91,3 @@ This project aims to **join the IGW initial payment data with the main DataLake 
 | **Anup Kumar**       | Tooling & Data Architecture             |
 | **Bekarys Toleshov** | Data Model & Data Dictionary            |
 | **Hardi Teder**      | Business Brief & Dataset Documentation  |
-| **Robert Sarnet**    | Demo Queries & Documentation Formatting |
