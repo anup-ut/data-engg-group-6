@@ -1,0 +1,60 @@
+[2025-11-01T20:56:19.164+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T20:56:16.387960+00:00 [queued]>
+[2025-11-01T20:56:19.174+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T20:56:16.387960+00:00 [queued]>
+[2025-11-01T20:56:19.174+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:56:19.189+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-11-01 20:56:16.387960+00:00
+[2025-11-01T20:56:19.200+0000] {standard_task_runner.py:60} INFO - Started process 4407 to run task
+[2025-11-01T20:56:19.206+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'manual__2025-11-01T20:56:16.387960+00:00', '--job-id', '257', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp7vt83ykv']
+[2025-11-01T20:56:19.210+0000] {standard_task_runner.py:88} INFO - Job 257: Subtask dbt_run_linktx
+[2025-11-01T20:56:19.316+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx manual__2025-11-01T20:56:16.387960+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:56:19.437+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T20:56:16.387960+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T20:56:16.387960+00:00'
+[2025-11-01T20:56:24.594+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/silver_dag.py", line 150, in _run_dbt
+    raise RuntimeError(f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}")
+RuntimeError: dbt failed (2).
+STDOUT:
+20:56:22  Running with dbt=1.5.9
+20:56:22  Registered adapter: clickhouse=1.5.2
+20:56:22  Unable to do partial parsing because a project config has changed
+20:56:23  Encountered an error:
+Compilation Error
+  dbt found two sources with the name "bronze_merchants".
+  
+  Since these resources have the same name, dbt will be unable to find the correct resource
+  when looking for source("bronze", "merchants").
+  
+  To fix this, change the name of one of these resources:
+  - source.ck_project.bronze.merchants (models/silver/_schema.yml)
+  - source.ck_project.bronze.merchants (models/bronze/_source.yml)
+
+
+STDERR:
+
+[2025-11-01T20:56:24.618+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251101T205616, start_date=20251101T205619, end_date=20251101T205624
+[2025-11-01T20:56:24.640+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 257 for task dbt_run_linktx (dbt failed (2).
+STDOUT:
+20:56:22  Running with dbt=1.5.9
+20:56:22  Registered adapter: clickhouse=1.5.2
+20:56:22  Unable to do partial parsing because a project config has changed
+20:56:23  Encountered an error:
+Compilation Error
+  dbt found two sources with the name "bronze_merchants".
+  
+  Since these resources have the same name, dbt will be unable to find the correct resource
+  when looking for source("bronze", "merchants").
+  
+  To fix this, change the name of one of these resources:
+  - source.ck_project.bronze.merchants (models/silver/_schema.yml)
+  - source.ck_project.bronze.merchants (models/bronze/_source.yml)
+
+
+STDERR:
+; 4407)
+[2025-11-01T20:56:24.670+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T20:56:24.698+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

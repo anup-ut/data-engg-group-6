@@ -9,5 +9,6 @@ ck_project:
       user: default
       password: ""
       secure: False
-      schema: silver         # <- neutral; adapter may concatenate, so keep it simple
+      database: default
+      schema: default         # <- neutral; adapter may concatenate, so keep it simple
       threads: 4

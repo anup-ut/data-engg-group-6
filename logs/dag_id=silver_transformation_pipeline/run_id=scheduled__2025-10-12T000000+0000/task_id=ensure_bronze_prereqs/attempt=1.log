@@ -1,0 +1,45 @@
+[2025-11-01T20:21:25.514+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [queued]>
+[2025-11-01T20:21:25.526+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [queued]>
+[2025-11-01T20:21:25.527+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:21:25.544+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ensure_bronze_prereqs> on 2025-10-12 00:00:00+00:00
+[2025-11-01T20:21:25.552+0000] {standard_task_runner.py:60} INFO - Started process 1500 to run task
+[2025-11-01T20:21:25.556+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'ensure_bronze_prereqs', 'scheduled__2025-10-12T00:00:00+00:00', '--job-id', '170', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmp4c45e4x8']
+[2025-11-01T20:21:25.558+0000] {standard_task_runner.py:88} INFO - Job 170: Subtask ensure_bronze_prereqs
+[2025-11-01T20:21:25.640+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:21:25.744+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='ensure_bronze_prereqs' AIRFLOW_CTX_EXECUTION_DATE='2025-10-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-12T00:00:00+00:00'
+[2025-11-01T20:21:25.747+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T20:21:25.748+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-01T20:21:25.758+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:21:25.771+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=ensure_bronze_prereqs, execution_date=20251012T000000, start_date=20251101T202125, end_date=20251101T202125
+[2025-11-01T20:21:25.809+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:21:25.847+0000] {taskinstance.py:3280} INFO - 3 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T01:36:38.807+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [queued]>
+[2025-11-02T01:36:38.817+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [queued]>
+[2025-11-02T01:36:38.818+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T01:36:38.836+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ensure_bronze_prereqs> on 2025-10-12 00:00:00+00:00
+[2025-11-02T01:36:38.842+0000] {standard_task_runner.py:60} INFO - Started process 2210 to run task
+[2025-11-02T01:36:38.845+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'ensure_bronze_prereqs', 'scheduled__2025-10-12T00:00:00+00:00', '--job-id', '174', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpnz0ygbdt']
+[2025-11-02T01:36:38.848+0000] {standard_task_runner.py:88} INFO - Job 174: Subtask ensure_bronze_prereqs
+[2025-11-02T01:36:38.924+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [running]> on host 3b0074fa0b5e
+[2025-11-02T01:36:39.038+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='ensure_bronze_prereqs' AIRFLOW_CTX_EXECUTION_DATE='2025-10-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-12T00:00:00+00:00'
+[2025-11-02T01:36:39.041+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-02T01:36:39.042+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-02T01:36:39.053+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T01:36:39.066+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=ensure_bronze_prereqs, execution_date=20251012T000000, start_date=20251102T013638, end_date=20251102T013639
+[2025-11-02T01:36:39.099+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T01:36:39.123+0000] {taskinstance.py:3280} INFO - 3 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T11:31:55.783+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [queued]>
+[2025-11-02T11:31:55.800+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [queued]>
+[2025-11-02T11:31:55.801+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T11:31:55.828+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ensure_bronze_prereqs> on 2025-10-12 00:00:00+00:00
+[2025-11-02T11:31:55.833+0000] {standard_task_runner.py:60} INFO - Started process 2324 to run task
+[2025-11-02T11:31:55.839+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'ensure_bronze_prereqs', 'scheduled__2025-10-12T00:00:00+00:00', '--job-id', '186', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpcb95uyfh']
+[2025-11-02T11:31:55.842+0000] {standard_task_runner.py:88} INFO - Job 186: Subtask ensure_bronze_prereqs
+[2025-11-02T11:31:55.934+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.ensure_bronze_prereqs scheduled__2025-10-12T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T11:31:56.038+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='ensure_bronze_prereqs' AIRFLOW_CTX_EXECUTION_DATE='2025-10-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-12T00:00:00+00:00'
+[2025-11-02T11:31:56.041+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-02T11:31:56.042+0000] {base.py:83} INFO - Using connection ID 'clickhouse_default' for task execution.
+[2025-11-02T11:31:56.053+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T11:31:56.069+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=ensure_bronze_prereqs, execution_date=20251012T000000, start_date=20251102T113155, end_date=20251102T113156
+[2025-11-02T11:31:56.092+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T11:31:56.119+0000] {taskinstance.py:3280} INFO - 3 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,80 @@
+[2025-11-02T14:55:18.745+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T14:42:52.499830+00:00 [queued]>
+[2025-11-02T14:55:18.774+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T14:42:52.499830+00:00 [queued]>
+[2025-11-02T14:55:18.777+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 4
+[2025-11-02T14:55:18.816+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_fact_transactions> on 2025-11-02 14:42:52.499830+00:00
+[2025-11-02T14:55:18.829+0000] {standard_task_runner.py:60} INFO - Started process 17886 to run task
+[2025-11-02T14:55:18.839+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_fact_transactions', 'manual__2025-11-02T14:42:52.499830+00:00', '--job-id', '438', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpf_ousttd']
+[2025-11-02T14:55:18.849+0000] {standard_task_runner.py:88} INFO - Job 438: Subtask dbt_fact_transactions
+[2025-11-02T14:55:19.050+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T14:42:52.499830+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T14:55:19.301+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_fact_transactions' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T14:42:52.499830+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-02T14:42:52.499830+00:00'
+[2025-11-02T14:55:25.101+0000] {logging_mixin.py:188} INFO - 14:55:25  Running with dbt=1.5.9
+[2025-11-02T14:55:25.425+0000] {logging_mixin.py:188} INFO - 14:55:25  Registered adapter: clickhouse=1.5.2
+[2025-11-02T14:55:29.155+0000] {logging_mixin.py:188} INFO - 14:55:29  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-11-02T14:55:29.157+0000] {logging_mixin.py:188} INFO - There are 1 unused configuration paths:
+[2025-11-02T14:55:29.158+0000] {logging_mixin.py:188} INFO - - models.ck_project.bronze
+[2025-11-02T14:55:29.227+0000] {logging_mixin.py:188} INFO - 14:55:29  Found 8 models, 20 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+[2025-11-02T14:55:29.233+0000] {logging_mixin.py:188} INFO - 14:55:29
+[2025-11-02T14:55:29.844+0000] {logging_mixin.py:188} INFO - 14:55:29  Concurrency: 4 threads (target='dev')
+[2025-11-02T14:55:29.846+0000] {logging_mixin.py:188} INFO - 14:55:29
+[2025-11-02T14:55:29.894+0000] {logging_mixin.py:188} INFO - 14:55:29  1 of 1 START sql incremental model gold.fact_transactions ...................... [RUN]
+[2025-11-02T14:55:30.187+0000] {logging_mixin.py:188} INFO - 14:55:30  1 of 1 ERROR creating sql incremental model gold.fact_transactions ............. [ERROR in 0.29s]
+[2025-11-02T14:55:30.207+0000] {logging_mixin.py:188} INFO - 14:55:30
+[2025-11-02T14:55:30.209+0000] {logging_mixin.py:188} INFO - 14:55:30  Finished running 1 incremental model in 0 hours 0 minutes and 0.97 seconds (0.97s).
+[2025-11-02T14:55:30.258+0000] {logging_mixin.py:188} INFO - 14:55:30
+[2025-11-02T14:55:30.261+0000] {logging_mixin.py:188} INFO - 14:55:30  Completed with 1 error and 0 warnings:
+[2025-11-02T14:55:30.264+0000] {logging_mixin.py:188} INFO - 14:55:30
+[2025-11-02T14:55:30.266+0000] {logging_mixin.py:188} INFO - 14:55:30  Database Error in model fact_transactions (models/gold/fact/fact_transactions.sql)
+[2025-11-02T14:55:30.268+0000] {logging_mixin.py:188} INFO - 14:55:30    Code: 47.
+[2025-11-02T14:55:30.270+0000] {logging_mixin.py:188} INFO - 14:55:30    DB::Exception: Unknown expression or function identifier `method_name` in scope  d_method AS dpm. Maybe you meant: ['method_name_l']. Stack trace:
+[2025-11-02T14:55:30.273+0000] {logging_mixin.py:188} INFO - 14:55:30
+[2025-11-02T14:55:30.277+0000] {logging_mixin.py:188} INFO - 14:55:30    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+[2025-11-02T14:55:30.282+0000] {logging_mixin.py:188} INFO - 14:55:30    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+[2025-11-02T14:55:30.289+0000] {logging_mixin.py:188} INFO - 14:55:30    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+[2025-11-02T14:55:30.294+0000] {logging_mixin.py:188} INFO - 14:55:30    3. DB::Exception::Exception<char const*, String&, String, String, String>(int, FormatStringHelperImpl<std::type_identity<char const*>::type, std::type_identity<String&>::type, std::type_identity<String>::type, std::type_identity<String>::type, std::type_identity<String>::type>, char const*&&, String&, String&&, String&&, String&&) @ 0x0000000017859102
+[2025-11-02T14:55:30.300+0000] {logging_mixin.py:188} INFO - 14:55:30    4. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x00000000178395e5
+[2025-11-02T14:55:30.303+0000] {logging_mixin.py:188} INFO - 14:55:30    5. DB::QueryAnalyzer::resolveExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool) @ 0x00000000178366c0
+[2025-11-02T14:55:30.305+0000] {logging_mixin.py:188} INFO - 14:55:30    6. DB::QueryAnalyzer::resolveFunction(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017aa66c7
+[2025-11-02T14:55:30.307+0000] {logging_mixin.py:188} INFO - 14:55:30    7. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x00000000178372f3
+[2025-11-02T14:55:30.309+0000] {logging_mixin.py:188} INFO - 14:55:30    8. DB::QueryAnalyzer::resolveExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool) @ 0x00000000178366c0
+[2025-11-02T14:55:30.311+0000] {logging_mixin.py:188} INFO - 14:55:30    9. DB::QueryAnalyzer::resolveProjectionExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017859ea7
+[2025-11-02T14:55:30.313+0000] {logging_mixin.py:188} INFO - 14:55:30    10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d06b
+[2025-11-02T14:55:30.315+0000] {logging_mixin.py:188} INFO - 14:55:30    11. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+[2025-11-02T14:55:30.317+0000] {logging_mixin.py:188} INFO - 14:55:30    12. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+[2025-11-02T14:55:30.318+0000] {logging_mixin.py:188} INFO - 14:55:30    13. DB::QueryAnalyzer::resolveJoin(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785c6a7
+[2025-11-02T14:55:30.320+0000] {logging_mixin.py:188} INFO - 14:55:30    14. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785a8f8
+[2025-11-02T14:55:30.321+0000] {logging_mixin.py:188} INFO - 14:55:30    15. DB::QueryAnalyzer::resolveJoin(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785c67a
+[2025-11-02T14:55:30.323+0000] {logging_mixin.py:188} INFO - 14:55:30    16. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785a8f8
+[2025-11-02T14:55:30.325+0000] {logging_mixin.py:188} INFO - 14:55:30    17. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+[2025-11-02T14:55:30.328+0000] {logging_mixin.py:188} INFO - 14:55:30    18. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+[2025-11-02T14:55:30.331+0000] {logging_mixin.py:188} INFO - 14:55:30    19. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+[2025-11-02T14:55:30.332+0000] {logging_mixin.py:188} INFO - 14:55:30    20. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+[2025-11-02T14:55:30.333+0000] {logging_mixin.py:188} INFO - 14:55:30    21. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+[2025-11-02T14:55:30.335+0000] {logging_mixin.py:188} INFO - 14:55:30    22. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+[2025-11-02T14:55:30.336+0000] {logging_mixin.py:188} INFO - 14:55:30    23. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+[2025-11-02T14:55:30.338+0000] {logging_mixin.py:188} INFO - 14:55:30    24. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+[2025-11-02T14:55:30.340+0000] {logging_mixin.py:188} INFO - 14:55:30    25. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+[2025-11-02T14:55:30.342+0000] {logging_mixin.py:188} INFO - 14:55:30    26. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+[2025-11-02T14:55:30.344+0000] {logging_mixin.py:188} INFO - 14:55:30    27. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+[2025-11-02T14:55:30.346+0000] {logging_mixin.py:188} INFO - 14:55:30    28. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+[2025-11-02T14:55:30.348+0000] {logging_mixin.py:188} INFO - 14:55:30    29. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+[2025-11-02T14:55:30.350+0000] {logging_mixin.py:188} INFO - 14:55:30    30. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+[2025-11-02T14:55:30.351+0000] {logging_mixin.py:188} INFO - 14:55:30    31. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+[2025-11-02T14:55:30.352+0000] {logging_mixin.py:188} INFO - 14:55:30
+[2025-11-02T14:55:30.354+0000] {logging_mixin.py:188} INFO - 14:55:30  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2025-11-02T14:55:31.686+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 143, in <lambda>
+    python_callable=lambda **_: _run_dbt("+fact_transactions"),
+  File "/opt/airflow/dags/gold_dag.py", line 90, in _run_dbt
+    raise RuntimeError(f"dbt failed (exit {ret}). See logs above.")
+RuntimeError: dbt failed (exit 1). See logs above.
+[2025-11-02T14:55:31.721+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=gold_dimensions_pipeline, task_id=dbt_fact_transactions, execution_date=20251102T144252, start_date=20251102T145518, end_date=20251102T145531
+[2025-11-02T14:55:31.760+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 438 for task dbt_fact_transactions (dbt failed (exit 1). See logs above.; 17886)
+[2025-11-02T14:55:31.795+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-02T14:55:31.837+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

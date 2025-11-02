@@ -1,0 +1,20 @@
+[2025-11-01T12:59:15.492+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_to_mongo manual__2025-11-01T12:59:14.546750+00:00 [queued]>
+[2025-11-01T12:59:15.508+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_to_mongo manual__2025-11-01T12:59:14.546750+00:00 [queued]>
+[2025-11-01T12:59:15.509+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T12:59:15.532+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_link_transactions_to_mongo> on 2025-11-01 12:59:14.546750+00:00
+[2025-11-01T12:59:15.541+0000] {standard_task_runner.py:60} INFO - Started process 2435 to run task
+[2025-11-01T12:59:15.549+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_link_transactions_to_mongo', 'manual__2025-11-01T12:59:14.546750+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmph4lk4dtt']
+[2025-11-01T12:59:15.555+0000] {standard_task_runner.py:88} INFO - Job 54: Subtask load_link_transactions_to_mongo
+[2025-11-01T12:59:15.692+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_link_transactions_to_mongo manual__2025-11-01T12:59:14.546750+00:00 [running]> on host dfaa589643e1
+[2025-11-01T12:59:15.862+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_link_transactions_to_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T12:59:14.546750+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T12:59:14.546750+00:00'
+[2025-11-01T12:59:16.662+0000] {mongo_ingestion.py:59} INFO - [mongo/link_tx] Target CSV: /tmp/data/link_transactions/link_transactions-20251003.csv
+[2025-11-01T12:59:16.666+0000] {mongo_ingestion.py:62} INFO - [mongo/link_tx] Directory listing: ['link_transactions-20251001.csv', 'link_transactions-20251002.csv', 'link_transactions-20251003.csv', 'link_transactions-20251004.csv']
+[2025-11-01T12:59:16.667+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-11-01T12:59:16.668+0000] {base.py:83} INFO - Using connection ID 'mongo_default' for task execution.
+[2025-11-01T12:59:16.795+0000] {mongo_ingestion.py:136} INFO - [mongo/link_tx] Deleted 583 docs for _source_file=link_transactions-20251003.csv (idempotency).
+[2025-11-01T12:59:16.828+0000] {mongo_ingestion.py:146} INFO - [mongo/link_tx] Inserted 583 docs into link_transactions_raw for 2025-10-03.
+[2025-11-01T12:59:16.830+0000] {mongo_ingestion.py:154} INFO - [mongo/link_tx] MongoDB connection closed.
+[2025-11-01T12:59:16.833+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T12:59:16.856+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=load_link_transactions_to_mongo, execution_date=20251101T125914, start_date=20251101T125915, end_date=20251101T125916
+[2025-11-01T12:59:16.930+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T12:59:16.972+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

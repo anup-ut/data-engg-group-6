@@ -1,0 +1,192 @@
+[2025-10-31T19:01:40.857+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:01:40.877+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:01:40.879+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T19:01:40.911+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T19:01:40.922+0000] {standard_task_runner.py:60} INFO - Started process 296 to run task
+[2025-10-31T19:01:40.928+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpbjvycs43']
+[2025-10-31T19:01:40.936+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask silver_dbt.create_silver_db
+[2025-10-31T19:01:41.082+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host fe1087a1e328
+[2025-10-31T19:01:41.266+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T19:01:41.275+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T19:01:41.282+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T19:01:41.352+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T19:01:41.732+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T19:01:41.795+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T190140, end_date=20251031T190141
+[2025-10-31T19:01:41.832+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T19:01:41.908+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T19:34:33.201+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:34:33.211+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T19:34:33.212+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T19:34:33.226+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T19:34:33.233+0000] {standard_task_runner.py:60} INFO - Started process 435 to run task
+[2025-10-31T19:34:33.237+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp4_d2w7pp']
+[2025-10-31T19:34:33.239+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask silver_dbt.create_silver_db
+[2025-10-31T19:34:33.322+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host 3ff65ab69399
+[2025-10-31T19:34:33.412+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T19:34:33.415+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T19:34:33.417+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T19:34:33.434+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T19:34:33.658+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T19:34:33.693+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T193433, end_date=20251031T193433
+[2025-10-31T19:34:33.733+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T19:34:33.763+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T20:06:24.612+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:06:24.626+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:06:24.627+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T20:06:24.645+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T20:06:24.652+0000] {standard_task_runner.py:60} INFO - Started process 402 to run task
+[2025-10-31T20:06:24.656+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpdk67ifhg']
+[2025-10-31T20:06:24.661+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask silver_dbt.create_silver_db
+[2025-10-31T20:06:24.746+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host c2d20b09a38d
+[2025-10-31T20:06:24.851+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T20:06:24.853+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:06:24.855+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T20:06:24.866+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:06:24.993+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T20:06:25.024+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T200624, end_date=20251031T200625
+[2025-10-31T20:06:25.070+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T20:06:25.101+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T20:14:09.187+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:14:09.199+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:14:09.201+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T20:14:09.215+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T20:14:09.222+0000] {standard_task_runner.py:60} INFO - Started process 311 to run task
+[2025-10-31T20:14:09.225+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmprqphb5pp']
+[2025-10-31T20:14:09.228+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask silver_dbt.create_silver_db
+[2025-10-31T20:14:09.313+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host ee75c7088485
+[2025-10-31T20:14:09.402+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T20:14:09.404+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:14:09.405+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T20:14:09.415+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:14:09.596+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T20:14:09.632+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T201409, end_date=20251031T201409
+[2025-10-31T20:14:09.683+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T20:14:09.711+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T20:31:56.624+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:31:56.636+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T20:31:56.637+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T20:31:56.653+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T20:31:56.660+0000] {standard_task_runner.py:60} INFO - Started process 276 to run task
+[2025-10-31T20:31:56.663+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp5jz8uxbo']
+[2025-10-31T20:31:56.666+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask silver_dbt.create_silver_db
+[2025-10-31T20:31:56.742+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host f865f80ec1e7
+[2025-10-31T20:31:56.831+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T20:31:56.832+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:31:56.834+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T20:31:56.843+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:31:57.042+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T20:31:57.071+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T203156, end_date=20251031T203157
+[2025-10-31T20:31:57.118+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T20:31:57.147+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T21:05:53.197+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:05:53.209+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:05:53.210+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T21:05:53.224+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T21:05:53.231+0000] {standard_task_runner.py:60} INFO - Started process 329 to run task
+[2025-10-31T21:05:53.236+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpwapc7552']
+[2025-10-31T21:05:53.243+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask silver_dbt.create_silver_db
+[2025-10-31T21:05:53.341+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host c45a3ec2f76e
+[2025-10-31T21:05:53.442+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T21:05:53.446+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T21:05:53.453+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T21:05:53.464+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T21:05:53.618+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T21:05:53.651+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T210553, end_date=20251031T210553
+[2025-10-31T21:05:53.690+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T21:05:53.718+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T21:48:46.018+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:48:46.031+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T21:48:46.031+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T21:48:46.046+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T21:48:46.053+0000] {standard_task_runner.py:60} INFO - Started process 330 to run task
+[2025-10-31T21:48:46.058+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpunrh0h22']
+[2025-10-31T21:48:46.061+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask silver_dbt.create_silver_db
+[2025-10-31T21:48:46.161+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host 4e388d324cfc
+[2025-10-31T21:48:46.264+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T21:48:46.267+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T21:48:46.268+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T21:48:46.280+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T21:48:46.523+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T21:48:46.556+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T214846, end_date=20251031T214846
+[2025-10-31T21:48:46.595+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T21:48:46.624+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T22:00:18.489+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:00:18.512+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:00:18.514+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T22:00:18.539+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T22:00:18.547+0000] {standard_task_runner.py:60} INFO - Started process 324 to run task
+[2025-10-31T22:00:18.553+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpheyv4pqo']
+[2025-10-31T22:00:18.556+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask silver_dbt.create_silver_db
+[2025-10-31T22:00:18.649+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host 9dbfb6fb81d8
+[2025-10-31T22:00:18.766+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T22:00:18.769+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T22:00:18.771+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T22:00:18.784+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T22:00:19.024+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T22:00:19.063+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T220018, end_date=20251031T220019
+[2025-10-31T22:00:19.128+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T22:00:19.172+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T22:13:39.628+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:13:39.640+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:13:39.641+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T22:13:39.656+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T22:13:39.666+0000] {standard_task_runner.py:60} INFO - Started process 289 to run task
+[2025-10-31T22:13:39.671+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpfhom5nhe']
+[2025-10-31T22:13:39.674+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask silver_dbt.create_silver_db
+[2025-10-31T22:13:39.779+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host 68d81e27198f
+[2025-10-31T22:13:39.891+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T22:13:39.893+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T22:13:39.895+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T22:13:39.911+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T22:13:40.108+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T22:13:40.143+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T221339, end_date=20251031T221340
+[2025-10-31T22:13:40.206+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T22:13:40.250+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T22:47:07.322+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:47:07.336+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:47:07.337+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T22:47:07.354+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T22:47:07.362+0000] {standard_task_runner.py:60} INFO - Started process 380 to run task
+[2025-10-31T22:47:07.366+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp2273ihsr']
+[2025-10-31T22:47:07.370+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask silver_dbt.create_silver_db
+[2025-10-31T22:47:07.457+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host d335ca5d7801
+[2025-10-31T22:47:07.558+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T22:47:07.560+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T22:47:07.561+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T22:47:07.575+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T22:47:07.831+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T22:47:07.870+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T224707, end_date=20251031T224707
+[2025-10-31T22:47:07.901+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T22:47:07.932+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-10-31T22:58:44.060+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:58:44.072+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-10-31T22:58:44.073+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T22:58:44.091+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-10-31T22:58:44.100+0000] {standard_task_runner.py:60} INFO - Started process 363 to run task
+[2025-10-31T22:58:44.106+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp54lix9ed']
+[2025-10-31T22:58:44.109+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask silver_dbt.create_silver_db
+[2025-10-31T22:58:44.198+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host ad620feb6bee
+[2025-10-31T22:58:44.286+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-10-31T22:58:44.289+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T22:58:44.291+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-10-31T22:58:44.299+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T22:58:44.453+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T22:58:44.487+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251031T225844, end_date=20251031T225844
+[2025-10-31T22:58:44.518+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T22:58:44.551+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T11:40:52.593+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T11:40:52.607+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [queued]>
+[2025-11-01T11:40:52.611+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T11:40:52.634+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.create_silver_db> on 2025-10-30 00:00:00+00:00
+[2025-11-01T11:40:52.641+0000] {standard_task_runner.py:60} INFO - Started process 497 to run task
+[2025-11-01T11:40:52.646+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.create_silver_db', 'scheduled__2025-10-30T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpifc6xot9']
+[2025-11-01T11:40:52.649+0000] {standard_task_runner.py:88} INFO - Job 16: Subtask silver_dbt.create_silver_db
+[2025-11-01T11:40:52.758+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.create_silver_db scheduled__2025-10-30T00:00:00+00:00 [running]> on host 6ac9b46937d1
+[2025-11-01T11:40:52.876+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.create_silver_db' AIRFLOW_CTX_EXECUTION_DATE='2025-10-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-30T00:00:00+00:00'
+[2025-11-01T11:40:52.878+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T11:40:52.879+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i clickhouse-server clickhouse-client -q "CREATE DATABASE IF NOT EXISTS silver;"']
+[2025-11-01T11:40:52.890+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T11:40:53.352+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-01T11:40:53.393+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.create_silver_db, execution_date=20251030T000000, start_date=20251101T114052, end_date=20251101T114053
+[2025-11-01T11:40:53.462+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T11:40:53.502+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

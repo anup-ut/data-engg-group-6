@@ -1,0 +1,69 @@
+[2025-11-02T14:42:54.144+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state manual__2025-11-02T14:42:52.499830+00:00 [queued]>
+[2025-11-02T14:42:54.165+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state manual__2025-11-02T14:42:52.499830+00:00 [queued]>
+[2025-11-02T14:42:54.166+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-11-02T14:42:54.212+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_dim_payment_state> on 2025-11-02 14:42:52.499830+00:00
+[2025-11-02T14:42:54.227+0000] {standard_task_runner.py:60} INFO - Started process 16838 to run task
+[2025-11-02T14:42:54.239+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_dim_payment_state', 'manual__2025-11-02T14:42:52.499830+00:00', '--job-id', '430', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpy_pn0urr']
+[2025-11-02T14:42:54.245+0000] {standard_task_runner.py:88} INFO - Job 430: Subtask dbt_dim_payment_state
+[2025-11-02T14:42:54.364+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state manual__2025-11-02T14:42:52.499830+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T14:42:54.490+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_dim_payment_state' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T14:42:52.499830+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-02T14:42:52.499830+00:00'
+[2025-11-02T14:42:58.661+0000] {logging_mixin.py:188} INFO - 14:42:58  Running with dbt=1.5.9
+[2025-11-02T14:42:58.816+0000] {logging_mixin.py:188} INFO - 14:42:58  Registered adapter: clickhouse=1.5.2
+[2025-11-02T14:43:01.216+0000] {logging_mixin.py:188} INFO - 14:43:01  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-11-02T14:43:01.218+0000] {logging_mixin.py:188} INFO - There are 1 unused configuration paths:
+[2025-11-02T14:43:01.219+0000] {logging_mixin.py:188} INFO - - models.ck_project.bronze
+[2025-11-02T14:43:01.279+0000] {logging_mixin.py:188} INFO - 14:43:01  Found 8 models, 20 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+[2025-11-02T14:43:01.284+0000] {logging_mixin.py:188} INFO - 14:43:01
+[2025-11-02T14:43:01.773+0000] {logging_mixin.py:188} INFO - 14:43:01  Concurrency: 4 threads (target='dev')
+[2025-11-02T14:43:01.775+0000] {logging_mixin.py:188} INFO - 14:43:01
+[2025-11-02T14:43:01.813+0000] {logging_mixin.py:188} INFO - 14:43:01  1 of 1 START sql table model gold.dim_payment_state ............................ [RUN]
+[2025-11-02T14:43:02.033+0000] {logging_mixin.py:188} INFO - 14:43:02  1 of 1 ERROR creating sql table model gold.dim_payment_state ................... [ERROR in 0.22s]
+[2025-11-02T14:43:02.042+0000] {logging_mixin.py:188} INFO - 14:43:02
+[2025-11-02T14:43:02.043+0000] {logging_mixin.py:188} INFO - 14:43:02  Finished running 1 table model in 0 hours 0 minutes and 0.76 seconds (0.76s).
+[2025-11-02T14:43:02.076+0000] {logging_mixin.py:188} INFO - 14:43:02
+[2025-11-02T14:43:02.079+0000] {logging_mixin.py:188} INFO - 14:43:02  Completed with 1 error and 0 warnings:
+[2025-11-02T14:43:02.086+0000] {logging_mixin.py:188} INFO - 14:43:02
+[2025-11-02T14:43:02.093+0000] {logging_mixin.py:188} INFO - 14:43:02  Database Error in model dim_payment_state (models/gold/dim/dim_payment_state.sql)
+[2025-11-02T14:43:02.094+0000] {logging_mixin.py:188} INFO - 14:43:02    Code: 47.
+[2025-11-02T14:43:02.104+0000] {logging_mixin.py:188} INFO - 14:43:02    DB::Exception: Missing columns: 'link_state_sk' while processing: 'link_state_sk', required columns: 'link_state_sk', available columns: 'is_payment_reached_provider' 'payment_state_name' 'is_final_state' 'payment_state_sk'. Stack trace:
+[2025-11-02T14:43:02.105+0000] {logging_mixin.py:188} INFO - 14:43:02
+[2025-11-02T14:43:02.107+0000] {logging_mixin.py:188} INFO - 14:43:02    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+[2025-11-02T14:43:02.109+0000] {logging_mixin.py:188} INFO - 14:43:02    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+[2025-11-02T14:43:02.110+0000] {logging_mixin.py:188} INFO - 14:43:02    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+[2025-11-02T14:43:02.112+0000] {logging_mixin.py:188} INFO - 14:43:02    3. DB::TreeRewriterResult::collectUsedColumns(std::shared_ptr<DB::IAST> const&, bool, bool) @ 0x00000000186dceb0
+[2025-11-02T14:43:02.113+0000] {logging_mixin.py:188} INFO - 14:43:02    4. DB::TreeRewriter::analyze(std::shared_ptr<DB::IAST>&, DB::NamesAndTypesList const&, std::shared_ptr<DB::IStorage const>, std::shared_ptr<DB::StorageSnapshot> const&, bool, bool, bool, bool) const @ 0x00000000186e7c97
+[2025-11-02T14:43:02.115+0000] {logging_mixin.py:188} INFO - 14:43:02    5. DB::KeyDescription::getSortingKeyFromAST(std::shared_ptr<DB::IAST> const&, DB::ColumnsDescription const&, std::shared_ptr<DB::Context const>, std::optional<String> const&) @ 0x0000000018dd3bc1
+[2025-11-02T14:43:02.120+0000] {logging_mixin.py:188} INFO - 14:43:02    6. DB::create(DB::StorageFactory::Arguments const&) @ 0x0000000019a5f818
+[2025-11-02T14:43:02.122+0000] {logging_mixin.py:188} INFO - 14:43:02    7. DB::StorageFactory::get(DB::ASTCreateQuery const&, String const&, std::shared_ptr<DB::Context>, std::shared_ptr<DB::Context>, DB::ColumnsDescription const&, DB::ConstraintsDescription const&, DB::LoadingStrictnessLevel, bool) const @ 0x0000000018e40d7b
+[2025-11-02T14:43:02.123+0000] {logging_mixin.py:188} INFO - 14:43:02    8. DB::InterpreterCreateQuery::doCreateTable(DB::ASTCreateQuery&, DB::InterpreterCreateQuery::TableProperties const&, std::unique_ptr<DB::DDLGuard, std::default_delete<DB::DDLGuard>>&, DB::LoadingStrictnessLevel) @ 0x00000000182fb075
+[2025-11-02T14:43:02.126+0000] {logging_mixin.py:188} INFO - 14:43:02    9. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ef810
+[2025-11-02T14:43:02.127+0000] {logging_mixin.py:188} INFO - 14:43:02    10. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+[2025-11-02T14:43:02.127+0000] {logging_mixin.py:188} INFO - 14:43:02    11. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+[2025-11-02T14:43:02.128+0000] {logging_mixin.py:188} INFO - 14:43:02    12. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+[2025-11-02T14:43:02.129+0000] {logging_mixin.py:188} INFO - 14:43:02    13. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+[2025-11-02T14:43:02.130+0000] {logging_mixin.py:188} INFO - 14:43:02    14. DB::TCPHandler::run() @ 0x0000000019e4f119
+[2025-11-02T14:43:02.133+0000] {logging_mixin.py:188} INFO - 14:43:02    15. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+[2025-11-02T14:43:02.135+0000] {logging_mixin.py:188} INFO - 14:43:02    16. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+[2025-11-02T14:43:02.136+0000] {logging_mixin.py:188} INFO - 14:43:02    17. Poco::PooledThread::run() @ 0x000000001ef15b87
+[2025-11-02T14:43:02.138+0000] {logging_mixin.py:188} INFO - 14:43:02    18. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+[2025-11-02T14:43:02.139+0000] {logging_mixin.py:188} INFO - 14:43:02    19. ? @ 0x0000000000094ac3
+[2025-11-02T14:43:02.141+0000] {logging_mixin.py:188} INFO - 14:43:02    20. ? @ 0x0000000000125a74
+[2025-11-02T14:43:02.142+0000] {logging_mixin.py:188} INFO - 14:43:02
+[2025-11-02T14:43:02.143+0000] {logging_mixin.py:188} INFO - 14:43:02  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2025-11-02T14:43:02.949+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 129, in <lambda>
+    python_callable=lambda **_: _run_dbt("dim_payment_state"),
+  File "/opt/airflow/dags/gold_dag.py", line 90, in _run_dbt
+    raise RuntimeError(f"dbt failed (exit {ret}). See logs above.")
+RuntimeError: dbt failed (exit 1). See logs above.
+[2025-11-02T14:43:02.971+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=gold_dimensions_pipeline, task_id=dbt_dim_payment_state, execution_date=20251102T144252, start_date=20251102T144254, end_date=20251102T144302
+[2025-11-02T14:43:03.000+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 430 for task dbt_dim_payment_state (dbt failed (exit 1). See logs above.; 16838)
+[2025-11-02T14:43:03.050+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-02T14:43:03.092+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,52 @@
+[2025-11-01T11:50:24.798+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_merchants manual__2025-11-01T11:45:14.831987+00:00 [queued]>
+[2025-11-01T11:50:24.809+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_merchants manual__2025-11-01T11:45:14.831987+00:00 [queued]>
+[2025-11-01T11:50:24.810+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-11-01T11:50:24.824+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_run_merchants> on 2025-11-01 11:45:14.831987+00:00
+[2025-11-01T11:50:24.828+0000] {standard_task_runner.py:60} INFO - Started process 1589 to run task
+[2025-11-01T11:50:24.832+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_run_merchants', 'manual__2025-11-01T11:45:14.831987+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpkmlyza5a']
+[2025-11-01T11:50:24.835+0000] {standard_task_runner.py:88} INFO - Job 68: Subtask silver_dbt.dbt_run_merchants
+[2025-11-01T11:50:24.907+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_merchants manual__2025-11-01T11:45:14.831987+00:00 [running]> on host 6ac9b46937d1
+[2025-11-01T11:50:25.001+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T11:45:14.831987+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-01T11:45:14.831987+00:00'
+[2025-11-01T11:50:25.004+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-01T11:50:25.006+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "docker exec -i dbt bash -lc 'cd /dbt && dbt --no-use-colors run --profiles-dir /dbt --select silver_merchants --full-refresh'"]
+[2025-11-01T11:50:25.020+0000] {subprocess.py:86} INFO - Output:
+[2025-11-01T11:50:26.612+0000] {subprocess.py:93} INFO - 11:50:26  Running with dbt=1.10.13
+[2025-11-01T11:50:26.849+0000] {subprocess.py:93} INFO - 11:50:26  Registered adapter: clickhouse=1.9.5
+[2025-11-01T11:50:27.008+0000] {subprocess.py:93} INFO - 11:50:27  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2025-11-01T11:50:28.508+0000] {subprocess.py:93} INFO - 11:50:28  Found 3 models, 3 sources, 491 macros
+[2025-11-01T11:50:28.516+0000] {subprocess.py:93} INFO - 11:50:28
+[2025-11-01T11:50:28.517+0000] {subprocess.py:93} INFO - 11:50:28  Concurrency: 4 threads (target='dev')
+[2025-11-01T11:50:28.520+0000] {subprocess.py:93} INFO - 11:50:28
+[2025-11-01T11:50:28.781+0000] {subprocess.py:93} INFO - 11:50:28  1 of 1 START sql table model `silver`.`silver_merchants` ....................... [RUN]
+[2025-11-01T11:50:28.854+0000] {subprocess.py:93} INFO - 11:50:28  1 of 1 ERROR creating sql table model `silver`.`silver_merchants` .............. [ERROR in 0.07s]
+[2025-11-01T11:50:28.866+0000] {subprocess.py:93} INFO - 11:50:28
+[2025-11-01T11:50:28.867+0000] {subprocess.py:93} INFO - 11:50:28  Finished running 1 table model in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[2025-11-01T11:50:29.100+0000] {subprocess.py:93} INFO - 11:50:29
+[2025-11-01T11:50:29.104+0000] {subprocess.py:93} INFO - 11:50:29  Completed with 1 error, 0 partial successes, and 0 warnings:
+[2025-11-01T11:50:29.107+0000] {subprocess.py:93} INFO - 11:50:29
+[2025-11-01T11:50:29.111+0000] {subprocess.py:93} INFO - 11:50:29  Failure in model silver_merchants (models/silver/silver_merchants.sql)
+[2025-11-01T11:50:29.114+0000] {subprocess.py:93} INFO - 11:50:29    Compilation Error in model silver_merchants (models/silver/silver_merchants.sql)
+[2025-11-01T11:50:29.116+0000] {subprocess.py:93} INFO -   macro 'dbt_macro__clickhouse__create_table_as' takes not more than 2 argument(s)
+[2025-11-01T11:50:29.118+0000] {subprocess.py:93} INFO - 
+[2025-11-01T11:50:29.120+0000] {subprocess.py:93} INFO -   > in macro create_table_as (macros/relations/table/create.sql)
+[2025-11-01T11:50:29.121+0000] {subprocess.py:93} INFO -   > called by macro default__get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:50:29.122+0000] {subprocess.py:93} INFO -   > called by macro get_create_table_as_sql (macros/relations/table/create.sql)
+[2025-11-01T11:50:29.122+0000] {subprocess.py:93} INFO -   > called by macro statement (macros/etc/statement.sql)
+[2025-11-01T11:50:29.124+0000] {subprocess.py:93} INFO -   > called by macro materialization_table_clickhouse (macros/materializations/table.sql)
+[2025-11-01T11:50:29.125+0000] {subprocess.py:93} INFO -   > called by model silver_merchants (models/silver/silver_merchants.sql)
+[2025-11-01T11:50:29.126+0000] {subprocess.py:93} INFO - 11:50:29
+[2025-11-01T11:50:29.126+0000] {subprocess.py:93} INFO - 11:50:29    compiled code at target/compiled/ck_project/models/silver/silver_merchants.sql
+[2025-11-01T11:50:29.127+0000] {subprocess.py:93} INFO - 11:50:29
+[2025-11-01T11:50:29.128+0000] {subprocess.py:93} INFO - 11:50:29  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[2025-11-01T11:50:30.201+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-01T11:50:30.218+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-01T11:50:30.223+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_run_merchants, execution_date=20251101T114514, start_date=20251101T115024, end_date=20251101T115030
+[2025-11-01T11:50:30.240+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 68 for task silver_dbt.dbt_run_merchants (Bash command failed. The command returned a non-zero exit code 1.; 1589)
+[2025-11-01T11:50:30.281+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T11:50:30.302+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

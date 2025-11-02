@@ -1,0 +1,34 @@
+[2025-10-31T20:41:18.909+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T20:41:10.606505+00:00 [queued]>
+[2025-10-31T20:41:18.919+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T20:41:10.606505+00:00 [queued]>
+[2025-10-31T20:41:18.920+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T20:41:18.938+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_run_incrementals> on 2025-10-31 20:41:10.606505+00:00
+[2025-10-31T20:41:18.946+0000] {standard_task_runner.py:60} INFO - Started process 1199 to run task
+[2025-10-31T20:41:18.950+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_run_incrementals', 'manual__2025-10-31T20:41:10.606505+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp6_4cnkdx']
+[2025-10-31T20:41:18.954+0000] {standard_task_runner.py:88} INFO - Job 45: Subtask silver_dbt.dbt_run_incrementals
+[2025-10-31T20:41:19.032+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T20:41:10.606505+00:00 [running]> on host f865f80ec1e7
+[2025-10-31T20:41:19.138+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_run_incrementals' AIRFLOW_CTX_EXECUTION_DATE='2025-10-31T20:41:10.606505+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-31T20:41:10.606505+00:00'
+[2025-10-31T20:41:19.143+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T20:41:19.146+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i dbt bash -lc \'\nset -e\ncd /dbt\nDBT_VARS=$(python - <<"PY"\nfrom datetime import datetime, timedelta\nimport json\nds = "2025-10-31"\nlag_days = 29\nlagged = (datetime.strptime(ds, "%Y-%m-%d") - timedelta(days=lag_days)).strftime("%Y-%m-%d")\nprint(json.dumps({"ds_lagged": lagged}))\nPY\n)\necho "dbt vars => ${DBT_VARS}"\ndbt --no-use-colors run --profiles-dir /dbt --select silver_payments silver_link_transactions --vars "${DBT_VARS}"\n\'']
+[2025-10-31T20:41:19.157+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T20:41:19.305+0000] {subprocess.py:93} INFO - dbt vars => {"ds_lagged": "2025-10-02"}
+[2025-10-31T20:41:21.135+0000] {subprocess.py:93} INFO - 20:41:21  Running with dbt=1.10.13
+[2025-10-31T20:41:21.406+0000] {subprocess.py:93} INFO - 20:41:21  Registered adapter: clickhouse=1.9.5
+[2025-10-31T20:41:21.574+0000] {subprocess.py:93} INFO - 20:41:21  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2025-10-31T20:41:23.054+0000] {subprocess.py:93} INFO - 20:41:23  Found 3 models, 3 sources, 488 macros
+[2025-10-31T20:41:23.060+0000] {subprocess.py:93} INFO - 20:41:23
+[2025-10-31T20:41:23.063+0000] {subprocess.py:93} INFO - 20:41:23  Concurrency: 4 threads (target='dev')
+[2025-10-31T20:41:23.066+0000] {subprocess.py:93} INFO - 20:41:23
+[2025-10-31T20:41:23.385+0000] {subprocess.py:93} INFO - 20:41:23  1 of 2 START sql incremental model `silver`.`silver_link_transactions` ......... [RUN]
+[2025-10-31T20:41:23.386+0000] {subprocess.py:93} INFO - 20:41:23  2 of 2 START sql incremental model `silver`.`silver_payments` .................. [RUN]
+[2025-10-31T20:41:23.929+0000] {subprocess.py:93} INFO - 20:41:23  1 of 2 OK created sql incremental model `silver`.`silver_link_transactions` .... [OK in 0.53s]
+[2025-10-31T20:41:23.942+0000] {subprocess.py:93} INFO - 20:41:23  2 of 2 OK created sql incremental model `silver`.`silver_payments` ............. [OK in 0.55s]
+[2025-10-31T20:41:23.953+0000] {subprocess.py:93} INFO - 20:41:23
+[2025-10-31T20:41:23.954+0000] {subprocess.py:93} INFO - 20:41:23  Finished running 2 incremental models in 0 hours 0 minutes and 0.89 seconds (0.89s).
+[2025-10-31T20:41:24.010+0000] {subprocess.py:93} INFO - 20:41:24
+[2025-10-31T20:41:24.012+0000] {subprocess.py:93} INFO - 20:41:24  Completed successfully
+[2025-10-31T20:41:24.013+0000] {subprocess.py:93} INFO - 20:41:24
+[2025-10-31T20:41:24.015+0000] {subprocess.py:93} INFO - 20:41:24  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[2025-10-31T20:41:24.885+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-31T20:41:24.927+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_run_incrementals, execution_date=20251031T204110, start_date=20251031T204118, end_date=20251031T204124
+[2025-10-31T20:41:24.969+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-10-31T20:41:24.988+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

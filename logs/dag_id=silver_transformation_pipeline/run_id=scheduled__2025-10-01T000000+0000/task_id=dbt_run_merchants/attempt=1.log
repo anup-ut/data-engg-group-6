@@ -1,0 +1,163 @@
+[2025-11-01T20:08:07.971+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:08:07.981+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:08:07.982+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:08:07.996+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-10-01 00:00:00+00:00
+[2025-11-01T20:08:08.002+0000] {standard_task_runner.py:60} INFO - Started process 928 to run task
+[2025-11-01T20:08:08.008+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpvh7h1nh7']
+[2025-11-01T20:08:08.011+0000] {standard_task_runner.py:88} INFO - Job 129: Subtask dbt_run_merchants
+[2025-11-01T20:08:08.105+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [running]> on host 1a955fda0cfd
+[2025-11-01T20:08:08.224+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-01T20:08:14.847+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/silver_dag.py", line 192, in <lambda>
+    python_callable=lambda ds, **_: _run_dbt("silver_merchants", ds=ds, full_refresh=True, pass_ds_lagged=True),
+  File "/opt/airflow/dags/silver_dag.py", line 150, in _run_dbt
+    raise RuntimeError(f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}")
+RuntimeError: dbt failed (1).
+STDOUT:
+20:08:11  Running with dbt=1.5.9
+20:08:11  Registered adapter: clickhouse=1.5.2
+20:08:11  Unable to do partial parsing because config vars, config profile, or config target have changed
+20:08:13  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+20:08:13  
+20:08:13  Concurrency: 4 threads (target='dev')
+20:08:13  
+20:08:13  1 of 1 START sql incremental model silver.silver_merchants ..................... [RUN]
+20:08:13  1 of 1 ERROR creating sql incremental model silver.silver_merchants ............ [ERROR in 0.21s]
+20:08:13  
+20:08:13  Finished running 1 incremental model in 0 hours 0 minutes and 0.72 seconds (0.72s).
+20:08:13  
+20:08:13  Completed with 1 error and 0 warnings:
+20:08:13  
+20:08:13  Database Error in model silver_merchants (models/silver/silver_merchants.sql)
+20:08:13    Code: 44.
+20:08:13    DB::Exception: Sorting key contains nullable columns, but merge tree setting `allow_nullable_key` is disabled. Stack trace:
+20:08:13    
+20:08:13    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+20:08:13    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+20:08:13    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+20:08:13    3. DB::Exception::Exception<String const&>(int, FormatStringHelperImpl<std::type_identity<String const&>::type>, String const&) @ 0x000000000de374eb
+20:08:13    4. DB::checkKeyExpression(DB::ExpressionActions const&, DB::Block const&, String const&, bool) @ 0x00000000195d4ae2
+20:08:13    5. DB::MergeTreeData::checkProperties(DB::StorageInMemoryMetadata const&, DB::StorageInMemoryMetadata const&, bool, bool, bool, bool, std::shared_ptr<DB::Context const>) const @ 0x00000000195d36f0
+20:08:13    6. DB::MergeTreeData::setProperties(DB::StorageInMemoryMetadata const&, DB::StorageInMemoryMetadata const&, bool, std::shared_ptr<DB::Context const>) @ 0x00000000195c8fb8
+20:08:13    7. DB::MergeTreeData::MergeTreeData(DB::StorageID const&, DB::StorageInMemoryMetadata const&, std::shared_ptr<DB::Context>, String const&, DB::MergeTreeData::MergingParams const&, std::unique_ptr<DB::MergeTreeSettings, std::default_delete<DB::MergeTreeSettings>>, bool, DB::LoadingStrictnessLevel, std::function<void (String const&)>) @ 0x00000000195c61d2
+20:08:13    8. DB::StorageMergeTree::StorageMergeTree(DB::StorageID const&, String const&, DB::StorageInMemoryMetadata const&, DB::LoadingStrictnessLevel, std::shared_ptr<DB::Context>, String const&, DB::MergeTreeData::MergingParams const&, std::unique_ptr<DB::MergeTreeSettings, std::default_delete<DB::MergeTreeSettings>>) @ 0x0000000019572e26
+20:08:13    9. DB::create(DB::StorageFactory::Arguments const&) @ 0x0000000019a60f2d
+20:08:13    10. DB::StorageFactory::get(DB::ASTCreateQuery const&, String const&, std::shared_ptr<DB::Context>, std::shared_ptr<DB::Context>, DB::ColumnsDescription const&, DB::ConstraintsDescription const&, DB::LoadingStrictnessLevel, bool) const @ 0x0000000018e40d7b
+20:08:13    11. DB::InterpreterCreateQuery::doCreateTable(DB::ASTCreateQuery&, DB::InterpreterCreateQuery::TableProperties const&, std::unique_ptr<DB::DDLGuard, std::default_delete<DB::DDLGuard>>&, DB::LoadingStrictnessLevel) @ 0x00000000182fb075
+20:08:13    12. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ef810
+20:08:13    13. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+20:08:13    14. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+20:08:13    15. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+20:08:13    16. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+20:08:13    17. DB::TCPHandler::run() @ 0x0000000019e4f119
+20:08:13    18. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+20:08:13    19. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+20:08:13    20. Poco::PooledThread::run() @ 0x000000001ef15b87
+20:08:13    21. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+20:08:13    22. ? @ 0x0000000000094ac3
+20:08:13    23. ? @ 0x0000000000125a74
+20:08:13  
+20:08:13  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+
+[2025-11-01T20:08:14.869+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251001T000000, start_date=20251101T200807, end_date=20251101T200814
+[2025-11-01T20:08:14.889+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 129 for task dbt_run_merchants (dbt failed (1).
+STDOUT:
+20:08:11  Running with dbt=1.5.9
+20:08:11  Registered adapter: clickhouse=1.5.2
+20:08:11  Unable to do partial parsing because config vars, config profile, or config target have changed
+20:08:13  Found 3 models, 0 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics, 0 groups
+20:08:13  
+20:08:13  Concurrency: 4 threads (target='dev')
+20:08:13  
+20:08:13  1 of 1 START sql incremental model silver.silver_merchants ..................... [RUN]
+20:08:13  1 of 1 ERROR creating sql incremental model silver.silver_merchants ............ [ERROR in 0.21s]
+20:08:13  
+20:08:13  Finished running 1 incremental model in 0 hours 0 minutes and 0.72 seconds (0.72s).
+20:08:13  
+20:08:13  Completed with 1 error and 0 warnings:
+20:08:13  
+20:08:13  Database Error in model silver_merchants (models/silver/silver_merchants.sql)
+20:08:13    Code: 44.
+20:08:13    DB::Exception: Sorting key contains nullable columns, but merge tree setting `allow_nullable_key` is disabled. Stack trace:
+20:08:13    
+20:08:13    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+20:08:13    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+20:08:13    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+20:08:13    3. DB::Exception::Exception<String const&>(int, FormatStringHelperImpl<std::type_identity<String const&>::type>, String const&) @ 0x000000000de374eb
+20:08:13    4. DB::checkKeyExpression(DB::ExpressionActions const&, DB::Block const&, String const&, bool) @ 0x00000000195d4ae2
+20:08:13    5. DB::MergeTreeData::checkProperties(DB::StorageInMemoryMetadata const&, DB::StorageInMemoryMetadata const&, bool, bool, bool, bool, std::shared_ptr<DB::Context const>) const @ 0x00000000195d36f0
+20:08:13    6. DB::MergeTreeData::setProperties(DB::StorageInMemoryMetadata const&, DB::StorageInMemoryMetadata const&, bool, std::shared_ptr<DB::Context const>) @ 0x00000000195c8fb8
+20:08:13    7. DB::MergeTreeData::MergeTreeData(DB::StorageID const&, DB::StorageInMemoryMetadata const&, std::shared_ptr<DB::Context>, String const&, DB::MergeTreeData::MergingParams const&, std::unique_ptr<DB::MergeTreeSettings, std::default_delete<DB::MergeTreeSettings>>, bool, DB::LoadingStrictnessLevel, std::function<void (String const&)>) @ 0x00000000195c61d2
+20:08:13    8. DB::StorageMergeTree::StorageMergeTree(DB::StorageID const&, String const&, DB::StorageInMemoryMetadata const&, DB::LoadingStrictnessLevel, std::shared_ptr<DB::Context>, String const&, DB::MergeTreeData::MergingParams const&, std::unique_ptr<DB::MergeTreeSettings, std::default_delete<DB::MergeTreeSettings>>) @ 0x0000000019572e26
+20:08:13    9. DB::create(DB::StorageFactory::Arguments const&) @ 0x0000000019a60f2d
+20:08:13    10. DB::StorageFactory::get(DB::ASTCreateQuery const&, String const&, std::shared_ptr<DB::Context>, std::shared_ptr<DB::Context>, DB::ColumnsDescription const&, DB::ConstraintsDescription const&, DB::LoadingStrictnessLevel, bool) const @ 0x0000000018e40d7b
+20:08:13    11. DB::InterpreterCreateQuery::doCreateTable(DB::ASTCreateQuery&, DB::InterpreterCreateQuery::TableProperties const&, std::unique_ptr<DB::DDLGuard, std::default_delete<DB::DDLGuard>>&, DB::LoadingStrictnessLevel) @ 0x00000000182fb075
+20:08:13    12. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ef810
+20:08:13    13. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+20:08:13    14. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+20:08:13    15. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+20:08:13    16. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+20:08:13    17. DB::TCPHandler::run() @ 0x0000000019e4f119
+20:08:13    18. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+20:08:13    19. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+20:08:13    20. Poco::PooledThread::run() @ 0x000000001ef15b87
+20:08:13    21. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+20:08:13    22. ? @ 0x0000000000094ac3
+20:08:13    23. ? @ 0x0000000000125a74
+20:08:13  
+20:08:13  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+; 928)
+[2025-11-01T20:08:14.929+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-01T20:08:14.949+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-01T20:19:30.296+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:19:30.307+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-01T20:19:30.308+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-01T20:19:30.324+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-10-01 00:00:00+00:00
+[2025-11-01T20:19:30.332+0000] {standard_task_runner.py:60} INFO - Started process 928 to run task
+[2025-11-01T20:19:30.339+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '127', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpsgy2pt45']
+[2025-11-01T20:19:30.343+0000] {standard_task_runner.py:88} INFO - Job 127: Subtask dbt_run_merchants
+[2025-11-01T20:19:30.466+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-01T20:19:30.572+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-01T20:19:36.788+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-01T20:19:36.809+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251001T000000, start_date=20251101T201930, end_date=20251101T201936
+[2025-11-01T20:19:36.845+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-01T20:19:36.890+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T01:34:42.613+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T01:34:42.628+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T01:34:42.629+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T01:34:42.647+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-10-01 00:00:00+00:00
+[2025-11-02T01:34:42.655+0000] {standard_task_runner.py:60} INFO - Started process 1361 to run task
+[2025-11-02T01:34:42.661+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpvt8kkdtx']
+[2025-11-02T01:34:42.665+0000] {standard_task_runner.py:88} INFO - Job 133: Subtask dbt_run_merchants
+[2025-11-02T01:34:42.764+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [running]> on host 3b0074fa0b5e
+[2025-11-02T01:34:42.883+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-02T01:34:50.186+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T01:34:50.203+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251001T000000, start_date=20251102T013442, end_date=20251102T013450
+[2025-11-02T01:34:50.241+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T01:34:50.262+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T11:29:11.838+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T11:29:11.862+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T11:29:11.863+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-02T11:29:11.887+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_merchants> on 2025-10-01 00:00:00+00:00
+[2025-11-02T11:29:11.894+0000] {standard_task_runner.py:60} INFO - Started process 1275 to run task
+[2025-11-02T11:29:11.904+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_merchants', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpker6f_0l']
+[2025-11-02T11:29:11.907+0000] {standard_task_runner.py:88} INFO - Job 137: Subtask dbt_run_merchants
+[2025-11-02T11:29:12.033+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_merchants scheduled__2025-10-01T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T11:29:12.172+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-02T11:29:22.039+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T11:29:22.061+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=silver_transformation_pipeline, task_id=dbt_run_merchants, execution_date=20251001T000000, start_date=20251102T112911, end_date=20251102T112922
+[2025-11-02T11:29:22.135+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T11:29:22.159+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

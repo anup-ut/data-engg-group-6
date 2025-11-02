@@ -1,0 +1,80 @@
+[2025-10-31T22:05:27.477+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T22:00:11.870433+00:00 [queued]>
+[2025-10-31T22:05:27.486+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T22:00:11.870433+00:00 [queued]>
+[2025-10-31T22:05:27.487+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-10-31T22:05:27.503+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): silver_dbt.dbt_run_incrementals> on 2025-10-31 22:00:11.870433+00:00
+[2025-10-31T22:05:27.508+0000] {standard_task_runner.py:60} INFO - Started process 744 to run task
+[2025-10-31T22:05:27.513+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'silver_dbt.dbt_run_incrementals', 'manual__2025-10-31T22:00:11.870433+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp2qous05p']
+[2025-10-31T22:05:27.516+0000] {standard_task_runner.py:88} INFO - Job 18: Subtask silver_dbt.dbt_run_incrementals
+[2025-10-31T22:05:27.591+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.silver_dbt.dbt_run_incrementals manual__2025-10-31T22:00:11.870433+00:00 [running]> on host 9dbfb6fb81d8
+[2025-10-31T22:05:27.678+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='silver_dbt.dbt_run_incrementals' AIRFLOW_CTX_EXECUTION_DATE='2025-10-31T22:00:11.870433+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-31T22:00:11.870433+00:00'
+[2025-10-31T22:05:27.681+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-31T22:05:27.682+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec -i dbt bash -lc \'\nset -e\ncd /dbt\nDBT_VARS=$(python - <<"PY"\nfrom datetime import datetime, timedelta\nimport json\nds = "2025-10-31"\nlag_days = 0\nlagged = (datetime.strptime(ds, "%Y-%m-%d") - timedelta(days=lag_days)).strftime("%Y-%m-%d")\nprint(json.dumps({"ds_lagged": lagged}))\nPY\n)\necho "dbt vars => ${DBT_VARS}"\ndbt --no-use-colors run --profiles-dir /dbt --select silver_payments silver_link_transactions --vars "${DBT_VARS}"\n\'']
+[2025-10-31T22:05:27.692+0000] {subprocess.py:86} INFO - Output:
+[2025-10-31T22:05:27.819+0000] {subprocess.py:93} INFO - dbt vars => {"ds_lagged": "2025-10-31"}
+[2025-10-31T22:05:29.342+0000] {subprocess.py:93} INFO - 22:05:29  Running with dbt=1.10.13
+[2025-10-31T22:05:29.564+0000] {subprocess.py:93} INFO - 22:05:29  Registered adapter: clickhouse=1.9.5
+[2025-10-31T22:05:29.732+0000] {subprocess.py:93} INFO - 22:05:29  Unable to do partial parsing because config vars, config profile, or config target have changed
+[2025-10-31T22:05:31.293+0000] {subprocess.py:93} INFO - 22:05:31  Found 3 models, 3 sources, 488 macros
+[2025-10-31T22:05:31.301+0000] {subprocess.py:93} INFO - 22:05:31
+[2025-10-31T22:05:31.303+0000] {subprocess.py:93} INFO - 22:05:31  Concurrency: 4 threads (target='dev')
+[2025-10-31T22:05:31.306+0000] {subprocess.py:93} INFO - 22:05:31
+[2025-10-31T22:05:31.747+0000] {subprocess.py:93} INFO - 22:05:31  1 of 2 START sql incremental model `silver`.`silver_link_transactions` ......... [RUN]
+[2025-10-31T22:05:31.749+0000] {subprocess.py:93} INFO - 22:05:31  2 of 2 START sql incremental model `silver`.`silver_payments` .................. [RUN]
+[2025-10-31T22:05:32.085+0000] {subprocess.py:93} INFO - 22:05:32  2 of 2 ERROR creating sql incremental model `silver`.`silver_payments` ......... [ERROR in 0.33s]
+[2025-10-31T22:05:32.242+0000] {subprocess.py:93} INFO - 22:05:32  1 of 2 OK created sql incremental model `silver`.`silver_link_transactions` .... [OK in 0.49s]
+[2025-10-31T22:05:32.251+0000] {subprocess.py:93} INFO - 22:05:32
+[2025-10-31T22:05:32.252+0000] {subprocess.py:93} INFO - 22:05:32  Finished running 2 incremental models in 0 hours 0 minutes and 0.94 seconds (0.94s).
+[2025-10-31T22:05:32.390+0000] {subprocess.py:93} INFO - 22:05:32
+[2025-10-31T22:05:32.392+0000] {subprocess.py:93} INFO - 22:05:32  Completed with 1 error, 0 partial successes, and 0 warnings:
+[2025-10-31T22:05:32.394+0000] {subprocess.py:93} INFO - 22:05:32
+[2025-10-31T22:05:32.395+0000] {subprocess.py:93} INFO - 22:05:32  Failure in model silver_payments (models/silver/silver_payments.sql)
+[2025-10-31T22:05:32.397+0000] {subprocess.py:93} INFO - 22:05:32    Database Error in model silver_payments (models/silver/silver_payments.sql)
+[2025-10-31T22:05:32.398+0000] {subprocess.py:93} INFO -   Code: 60.
+[2025-10-31T22:05:32.399+0000] {subprocess.py:93} INFO -   DB::Exception: Unknown table expression identifier 'bronze.payments' in scope  raw. Stack trace:
+[2025-10-31T22:05:32.400+0000] {subprocess.py:93} INFO - 
+[2025-10-31T22:05:32.401+0000] {subprocess.py:93} INFO -   0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+[2025-10-31T22:05:32.401+0000] {subprocess.py:93} INFO -   1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+[2025-10-31T22:05:32.402+0000] {subprocess.py:93} INFO -   2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+[2025-10-31T22:05:32.402+0000] {subprocess.py:93} INFO -   3. DB::Exception::Exception<String const&, String>(int, FormatStringHelperImpl<std::type_identity<String const&>::type, std::type_identity<String>::type>, String const&, String&&) @ 0x000000000db773ab
+[2025-10-31T22:05:32.403+0000] {subprocess.py:93} INFO -   4. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x0000000017830745
+[2025-10-31T22:05:32.403+0000] {subprocess.py:93} INFO -   5. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+[2025-10-31T22:05:32.404+0000] {subprocess.py:93} INFO -   6. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+[2025-10-31T22:05:32.404+0000] {subprocess.py:93} INFO -   7. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+[2025-10-31T22:05:32.405+0000] {subprocess.py:93} INFO -   8. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+[2025-10-31T22:05:32.405+0000] {subprocess.py:93} INFO -   9. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+[2025-10-31T22:05:32.406+0000] {subprocess.py:93} INFO -   10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+[2025-10-31T22:05:32.406+0000] {subprocess.py:93} INFO -   11. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+[2025-10-31T22:05:32.408+0000] {subprocess.py:93} INFO -   12. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+[2025-10-31T22:05:32.409+0000] {subprocess.py:93} INFO -   13. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+[2025-10-31T22:05:32.409+0000] {subprocess.py:93} INFO -   14. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+[2025-10-31T22:05:32.410+0000] {subprocess.py:93} INFO -   15. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+[2025-10-31T22:05:32.411+0000] {subprocess.py:93} INFO -   16. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+[2025-10-31T22:05:32.411+0000] {subprocess.py:93} INFO -   17. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+[2025-10-31T22:05:32.412+0000] {subprocess.py:93} INFO -   18. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+[2025-10-31T22:05:32.412+0000] {subprocess.py:93} INFO -   19. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+[2025-10-31T22:05:32.412+0000] {subprocess.py:93} INFO -   20. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+[2025-10-31T22:05:32.413+0000] {subprocess.py:93} INFO -   21. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+[2025-10-31T22:05:32.413+0000] {subprocess.py:93} INFO -   22. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+[2025-10-31T22:05:32.413+0000] {subprocess.py:93} INFO -   23. DB::TCPHandler::run() @ 0x0000000019e4f119
+[2025-10-31T22:05:32.414+0000] {subprocess.py:93} INFO -   24. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+[2025-10-31T22:05:32.414+0000] {subprocess.py:93} INFO -   25. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+[2025-10-31T22:05:32.415+0000] {subprocess.py:93} INFO -   26. Poco::PooledThread::run() @ 0x000000001ef15b87
+[2025-10-31T22:05:32.416+0000] {subprocess.py:93} INFO -   27. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+[2025-10-31T22:05:32.416+0000] {subprocess.py:93} INFO -   28. ? @ 0x0000000000094ac3
+[2025-10-31T22:05:32.417+0000] {subprocess.py:93} INFO -   29. ? @ 0x0000000000125a74
+[2025-10-31T22:05:32.417+0000] {subprocess.py:93} INFO - 22:05:32
+[2025-10-31T22:05:32.418+0000] {subprocess.py:93} INFO - 22:05:32    compiled code at target/compiled/ck_project/models/silver/silver_payments.sql
+[2025-10-31T22:05:32.419+0000] {subprocess.py:93} INFO - 22:05:32
+[2025-10-31T22:05:32.419+0000] {subprocess.py:93} INFO - 22:05:32  Done. PASS=1 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=2
+[2025-10-31T22:05:33.387+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-10-31T22:05:33.416+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-10-31T22:05:33.421+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingestion_pipeline, task_id=silver_dbt.dbt_run_incrementals, execution_date=20251031T220011, start_date=20251031T220527, end_date=20251031T220533
+[2025-10-31T22:05:33.442+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 18 for task silver_dbt.dbt_run_incrementals (Bash command failed. The command returned a non-zero exit code 1.; 744)
+[2025-10-31T22:05:33.466+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-10-31T22:05:33.511+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,233 @@
+[2025-11-02T01:20:11.789+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_gold_dims manual__2025-11-02T01:11:05.446744+00:00 [queued]>
+[2025-11-02T01:20:11.811+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_gold_dims manual__2025-11-02T01:11:05.446744+00:00 [queued]>
+[2025-11-02T01:20:11.813+0000] {taskinstance.py:2170} INFO - Starting attempt 4 of 6
+[2025-11-02T01:20:11.851+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_gold_dims> on 2025-11-02 01:11:05.446744+00:00
+[2025-11-02T01:20:11.862+0000] {standard_task_runner.py:60} INFO - Started process 19693 to run task
+[2025-11-02T01:20:11.870+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_gold_dims', 'manual__2025-11-02T01:11:05.446744+00:00', '--job-id', '450', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpg5c_qqtx']
+[2025-11-02T01:20:11.874+0000] {standard_task_runner.py:88} INFO - Job 450: Subtask dbt_gold_dims
+[2025-11-02T01:20:12.059+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_gold_dims manual__2025-11-02T01:11:05.446744+00:00 [running]> on host 6335aa85b335
+[2025-11-02T01:20:12.504+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_gold_dims' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T01:11:05.446744+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-02T01:11:05.446744+00:00'
+[2025-11-02T01:20:24.576+0000] {logging_mixin.py:188} INFO - ==== DBT STDOUT ====
+[2025-11-02T01:20:24.579+0000] {logging_mixin.py:188} INFO - 01:20:19  Running with dbt=1.5.9
+01:20:19  Registered adapter: clickhouse=1.5.2
+01:20:20  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ck_project.gold.fact
+01:20:20  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+01:20:20  
+01:20:21  Concurrency: 4 threads (target='dev')
+01:20:21  
+01:20:21  1 of 4 START sql table model default.dim_date .................................. [RUN]
+01:20:21  2 of 4 START sql table model default.dim_merchants ............................. [RUN]
+01:20:21  3 of 4 START sql table model default.dim_payment_method ........................ [RUN]
+01:20:21  4 of 4 START sql table model default.dim_payment_state ......................... [RUN]
+01:20:22  1 of 4 ERROR creating sql table model default.dim_date ......................... [ERROR in 0.78s]
+01:20:22  2 of 4 ERROR creating sql table model default.dim_merchants .................... [ERROR in 1.07s]
+01:20:23  4 of 4 OK created sql table model default.dim_payment_state .................... [OK in 1.50s]
+01:20:23  3 of 4 OK created sql table model default.dim_payment_method ................... [OK in 1.50s]
+01:20:23  
+01:20:23  Finished running 4 table models in 0 hours 0 minutes and 2.18 seconds (2.18s).
+01:20:23  
+01:20:23  Completed with 2 errors and 0 warnings:
+01:20:23  
+01:20:23  Database Error in model dim_date (models/gold/dim/dim_date.sql)
+01:20:23    Code: 62.
+01:20:23    DB::Exception: Syntax error: failed at position 1256 (end of query) (line 46, col 18): ;
+01:20:23              )
+01:20:23            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+01:20:23    
+01:20:23    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+01:20:23    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+01:20:23    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+01:20:23    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+01:20:23    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+01:20:23    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+01:20:23    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+01:20:23    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+01:20:23    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+01:20:23    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+01:20:23    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+01:20:23    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+01:20:23    12. ? @ 0x0000000000094ac3
+01:20:23    13. ? @ 0x0000000000125a74
+01:20:23  
+01:20:23  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+01:20:23    Code: 62.
+01:20:23    DB::Exception: Syntax error: failed at position 1902 (end of query) (line 59, col 21): ;
+01:20:23              )
+01:20:23            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+01:20:23    
+01:20:23    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+01:20:23    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+01:20:23    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+01:20:23    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+01:20:23    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+01:20:23    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+01:20:23    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+01:20:23    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+01:20:23    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+01:20:23    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+01:20:23    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+01:20:23    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+01:20:23    12. ? @ 0x0000000000094ac3
+01:20:23    13. ? @ 0x0000000000125a74
+01:20:23  
+01:20:23  Done. PASS=2 WARN=0 ERROR=2 SKIP=0 TOTAL=4
+[2025-11-02T01:20:24.581+0000] {logging_mixin.py:188} INFO - ==== DBT STDERR ====
+[2025-11-02T01:20:24.582+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 112, in <lambda>
+    python_callable=lambda **_: _run_dbt("tag:gold_dim"),
+  File "/opt/airflow/dags/gold_dag.py", line 81, in _run_dbt
+    raise RuntimeError(
+RuntimeError: dbt failed (1).
+STDOUT:
+01:20:19  Running with dbt=1.5.9
+01:20:19  Registered adapter: clickhouse=1.5.2
+01:20:20  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ck_project.gold.fact
+01:20:20  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+01:20:20  
+01:20:21  Concurrency: 4 threads (target='dev')
+01:20:21  
+01:20:21  1 of 4 START sql table model default.dim_date .................................. [RUN]
+01:20:21  2 of 4 START sql table model default.dim_merchants ............................. [RUN]
+01:20:21  3 of 4 START sql table model default.dim_payment_method ........................ [RUN]
+01:20:21  4 of 4 START sql table model default.dim_payment_state ......................... [RUN]
+01:20:22  1 of 4 ERROR creating sql table model default.dim_date ......................... [ERROR in 0.78s]
+01:20:22  2 of 4 ERROR creating sql table model default.dim_merchants .................... [ERROR in 1.07s]
+01:20:23  4 of 4 OK created sql table model default.dim_payment_state .................... [OK in 1.50s]
+01:20:23  3 of 4 OK created sql table model default.dim_payment_method ................... [OK in 1.50s]
+01:20:23  
+01:20:23  Finished running 4 table models in 0 hours 0 minutes and 2.18 seconds (2.18s).
+01:20:23  
+01:20:23  Completed with 2 errors and 0 warnings:
+01:20:23  
+01:20:23  Database Error in model dim_date (models/gold/dim/dim_date.sql)
+01:20:23    Code: 62.
+01:20:23    DB::Exception: Syntax error: failed at position 1256 (end of query) (line 46, col 18): ;
+01:20:23              )
+01:20:23            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+01:20:23    
+01:20:23    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+01:20:23    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+01:20:23    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+01:20:23    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+01:20:23    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+01:20:23    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+01:20:23    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+01:20:23    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+01:20:23    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+01:20:23    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+01:20:23    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+01:20:23    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+01:20:23    12. ? @ 0x0000000000094ac3
+01:20:23    13. ? @ 0x0000000000125a74
+01:20:23  
+01:20:23  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+01:20:23    Code: 62.
+01:20:23    DB::Exception: Syntax error: failed at position 1902 (end of query) (line 59, col 21): ;
+01:20:23              )
+01:20:23            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+01:20:23    
+01:20:23    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+01:20:23    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+01:20:23    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+01:20:23    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+01:20:23    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+01:20:23    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+01:20:23    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+01:20:23    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+01:20:23    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+01:20:23    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+01:20:23    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+01:20:23    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+01:20:23    12. ? @ 0x0000000000094ac3
+01:20:23    13. ? @ 0x0000000000125a74
+01:20:23  
+01:20:23  Done. PASS=2 WARN=0 ERROR=2 SKIP=0 TOTAL=4
+
+
+STDERR:
+
+[2025-11-02T01:20:24.621+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=gold_dimensions_pipeline, task_id=dbt_gold_dims, execution_date=20251102T011105, start_date=20251102T012011, end_date=20251102T012024
+[2025-11-02T01:20:24.652+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 450 for task dbt_gold_dims (dbt failed (1).
+STDOUT:
+01:20:19  Running with dbt=1.5.9
+01:20:19  Registered adapter: clickhouse=1.5.2
+01:20:20  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ck_project.gold.fact
+01:20:20  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+01:20:20  
+01:20:21  Concurrency: 4 threads (target='dev')
+01:20:21  
+01:20:21  1 of 4 START sql table model default.dim_date .................................. [RUN]
+01:20:21  2 of 4 START sql table model default.dim_merchants ............................. [RUN]
+01:20:21  3 of 4 START sql table model default.dim_payment_method ........................ [RUN]
+01:20:21  4 of 4 START sql table model default.dim_payment_state ......................... [RUN]
+01:20:22  1 of 4 ERROR creating sql table model default.dim_date ......................... [ERROR in 0.78s]
+01:20:22  2 of 4 ERROR creating sql table model default.dim_merchants .................... [ERROR in 1.07s]
+01:20:23  4 of 4 OK created sql table model default.dim_payment_state .................... [OK in 1.50s]
+01:20:23  3 of 4 OK created sql table model default.dim_payment_method ................... [OK in 1.50s]
+01:20:23  
+01:20:23  Finished running 4 table models in 0 hours 0 minutes and 2.18 seconds (2.18s).
+01:20:23  
+01:20:23  Completed with 2 errors and 0 warnings:
+01:20:23  
+01:20:23  Database Error in model dim_date (models/gold/dim/dim_date.sql)
+01:20:23    Code: 62.
+01:20:23    DB::Exception: Syntax error: failed at position 1256 (end of query) (line 46, col 18): ;
+01:20:23              )
+01:20:23            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+01:20:23    
+01:20:23    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+01:20:23    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+01:20:23    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+01:20:23    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+01:20:23    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+01:20:23    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+01:20:23    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+01:20:23    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+01:20:23    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+01:20:23    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+01:20:23    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+01:20:23    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+01:20:23    12. ? @ 0x0000000000094ac3
+01:20:23    13. ? @ 0x0000000000125a74
+01:20:23  
+01:20:23  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+01:20:23    Code: 62.
+01:20:23    DB::Exception: Syntax error: failed at position 1902 (end of query) (line 59, col 21): ;
+01:20:23              )
+01:20:23            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+01:20:23    
+01:20:23    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+01:20:23    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+01:20:23    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+01:20:23    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+01:20:23    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+01:20:23    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+01:20:23    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+01:20:23    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+01:20:23    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+01:20:23    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+01:20:23    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+01:20:23    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+01:20:23    12. ? @ 0x0000000000094ac3
+01:20:23    13. ? @ 0x0000000000125a74
+01:20:23  
+01:20:23  Done. PASS=2 WARN=0 ERROR=2 SKIP=0 TOTAL=4
+
+
+STDERR:
+; 19693)
+[2025-11-02T01:20:24.669+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-02T01:20:24.707+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

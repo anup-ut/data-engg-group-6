@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: silver_src
+    database: silver     # ClickHouse database
+    schema: silver       # keep equal for portability
+    tables:
+      - name: silver_merchants
+      - name: silver_payments
+      - name: silver_link_transactions
