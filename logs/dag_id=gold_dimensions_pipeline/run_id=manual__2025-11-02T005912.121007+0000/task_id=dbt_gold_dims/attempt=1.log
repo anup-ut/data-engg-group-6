@@ -1,0 +1,371 @@
+[2025-11-02T00:59:12.791+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_gold_dims manual__2025-11-02T00:59:12.121007+00:00 [queued]>
+[2025-11-02T00:59:12.805+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_gold_dims manual__2025-11-02T00:59:12.121007+00:00 [queued]>
+[2025-11-02T00:59:12.805+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-11-02T00:59:12.825+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_gold_dims> on 2025-11-02 00:59:12.121007+00:00
+[2025-11-02T00:59:12.833+0000] {standard_task_runner.py:60} INFO - Started process 18217 to run task
+[2025-11-02T00:59:12.836+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_gold_dims', 'manual__2025-11-02T00:59:12.121007+00:00', '--job-id', '444', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmp_0e60mag']
+[2025-11-02T00:59:12.839+0000] {standard_task_runner.py:88} INFO - Job 444: Subtask dbt_gold_dims
+[2025-11-02T00:59:12.932+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_gold_dims manual__2025-11-02T00:59:12.121007+00:00 [running]> on host 6335aa85b335
+[2025-11-02T00:59:13.048+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_gold_dims' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T00:59:12.121007+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-02T00:59:12.121007+00:00'
+[2025-11-02T00:59:19.749+0000] {logging_mixin.py:188} INFO - ==== DBT STDOUT ====
+[2025-11-02T00:59:19.750+0000] {logging_mixin.py:188} INFO - 00:59:15  Running with dbt=1.5.9
+00:59:15  Registered adapter: clickhouse=1.5.2
+00:59:15  Unable to do partial parsing because config vars, config profile, or config target have changed
+00:59:15  Unable to do partial parsing because a project config has changed
+00:59:17  [WARNING]: Did not find matching node for patch with name 'link_transactions' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Did not find matching node for patch with name 'payments' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Did not find matching node for patch with name 'merchants' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_link_transactions_tx_id.af37a213bb' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_link_transactions_tx_id.20bd045cb9' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_link_transactions_event_date.9cf003fc37' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_payments_payment_id.581e6708cd' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_payments_payment_id.a01e74ab12' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_payments_event_date.894b1fe106' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_merchants_merchant_sk.bc8e36337a' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_merchants_merchant_sk.e898fd0a65' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_merchants_merchant_id.f660e9b8cc' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ck_project.gold.fact
+00:59:17  Found 7 models, 8 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+00:59:17  
+00:59:18  Concurrency: 4 threads (target='dev')
+00:59:18  
+00:59:18  1 of 4 START sql table model default.dim_date .................................. [RUN]
+00:59:18  2 of 4 START sql table model default.dim_merchants ............................. [RUN]
+00:59:18  3 of 4 START sql table model default.dim_payment_method ........................ [RUN]
+00:59:18  4 of 4 START sql table model default.dim_payment_state ......................... [RUN]
+00:59:18  1 of 4 ERROR creating sql table model default.dim_date ......................... [ERROR in 0.21s]
+00:59:18  2 of 4 ERROR creating sql table model default.dim_merchants .................... [ERROR in 0.24s]
+00:59:18  3 of 4 OK created sql table model default.dim_payment_method ................... [OK in 0.40s]
+00:59:18  4 of 4 OK created sql table model default.dim_payment_state .................... [OK in 0.40s]
+00:59:18  
+00:59:18  Finished running 4 table models in 0 hours 0 minutes and 0.72 seconds (0.72s).
+00:59:18  
+00:59:18  Completed with 2 errors and 0 warnings:
+00:59:18  
+00:59:18  Database Error in model dim_date (models/gold/dim/dim_date.sql)
+00:59:18    Code: 42.
+00:59:18    DB::Exception: Number of arguments for function plus doesn't match: passed 3, should be 2: In scope  days. Stack trace:
+00:59:18    
+00:59:18    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+00:59:18    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+00:59:18    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+00:59:18    3. DB::Exception::Exception<String, unsigned long&, unsigned long&>(int, FormatStringHelperImpl<std::type_identity<String>::type, std::type_identity<unsigned long&>::type, std::type_identity<unsigned long&>::type>, String&&, unsigned long&, unsigned long&) @ 0x0000000009a7a82b
+00:59:18    4. DB::IFunctionOverloadResolver::checkNumberOfArguments(unsigned long) const @ 0x0000000016421e6f
+00:59:18    5. DB::IFunctionOverloadResolver::build(std::vector<DB::ColumnWithTypeAndName, std::allocator<DB::ColumnWithTypeAndName>> const&) const @ 0x0000000016422a85
+00:59:18    6. DB::QueryAnalyzer::resolveFunction(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017aabd41
+00:59:18    7. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x00000000178372f3
+00:59:18    8. DB::QueryAnalyzer::resolveExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool) @ 0x00000000178366c0
+00:59:18    9. DB::QueryAnalyzer::resolveProjectionExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017859ea7
+00:59:18    10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d06b
+00:59:18    11. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    12. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    13. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    14. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+00:59:18    15. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+00:59:18    16. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+00:59:18    17. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+00:59:18    18. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+00:59:18    19. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+00:59:18    20. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+00:59:18    21. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+00:59:18    22. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+00:59:18    23. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+00:59:18    24. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+00:59:18    25. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+00:59:18    26. DB::TCPHandler::run() @ 0x0000000019e4f119
+00:59:18    27. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+00:59:18    28. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+00:59:18    29. Poco::PooledThread::run() @ 0x000000001ef15b87
+00:59:18    30. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+00:59:18    31. ? @ 0x0000000000094ac3
+00:59:18  
+00:59:18  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+00:59:18    Code: 60.
+00:59:18    DB::Exception: Unknown table expression identifier 'default.merchants' in scope  src. Stack trace:
+00:59:18    
+00:59:18    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+00:59:18    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+00:59:18    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+00:59:18    3. DB::Exception::Exception<String const&, String>(int, FormatStringHelperImpl<std::type_identity<String const&>::type, std::type_identity<String>::type>, String const&, String&&) @ 0x000000000db773ab
+00:59:18    4. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x0000000017830745
+00:59:18    5. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    6. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    7. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    8. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    9. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    11. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    12. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    13. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    14. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    15. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    16. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    17. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+00:59:18    18. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+00:59:18    19. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+00:59:18    20. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+00:59:18    21. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+00:59:18    22. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+00:59:18    23. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+00:59:18    24. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+00:59:18    25. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+00:59:18    26. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+00:59:18    27. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+00:59:18    28. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+00:59:18    29. DB::TCPHandler::run() @ 0x0000000019e4f119
+00:59:18    30. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+00:59:18    31. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+00:59:18  
+00:59:18  Done. PASS=2 WARN=0 ERROR=2 SKIP=0 TOTAL=4
+[2025-11-02T00:59:19.751+0000] {logging_mixin.py:188} INFO - ==== DBT STDERR ====
+[2025-11-02T00:59:19.752+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 112, in <lambda>
+    python_callable=lambda **_: _run_dbt("tag:gold_dim"),
+  File "/opt/airflow/dags/gold_dag.py", line 81, in _run_dbt
+    raise RuntimeError(
+RuntimeError: dbt failed (1).
+STDOUT:
+00:59:15  Running with dbt=1.5.9
+00:59:15  Registered adapter: clickhouse=1.5.2
+00:59:15  Unable to do partial parsing because config vars, config profile, or config target have changed
+00:59:15  Unable to do partial parsing because a project config has changed
+00:59:17  [WARNING]: Did not find matching node for patch with name 'link_transactions' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Did not find matching node for patch with name 'payments' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Did not find matching node for patch with name 'merchants' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_link_transactions_tx_id.af37a213bb' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_link_transactions_tx_id.20bd045cb9' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_link_transactions_event_date.9cf003fc37' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_payments_payment_id.581e6708cd' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_payments_payment_id.a01e74ab12' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_payments_event_date.894b1fe106' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_merchants_merchant_sk.bc8e36337a' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_merchants_merchant_sk.e898fd0a65' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_merchants_merchant_id.f660e9b8cc' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ck_project.gold.fact
+00:59:17  Found 7 models, 8 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+00:59:17  
+00:59:18  Concurrency: 4 threads (target='dev')
+00:59:18  
+00:59:18  1 of 4 START sql table model default.dim_date .................................. [RUN]
+00:59:18  2 of 4 START sql table model default.dim_merchants ............................. [RUN]
+00:59:18  3 of 4 START sql table model default.dim_payment_method ........................ [RUN]
+00:59:18  4 of 4 START sql table model default.dim_payment_state ......................... [RUN]
+00:59:18  1 of 4 ERROR creating sql table model default.dim_date ......................... [ERROR in 0.21s]
+00:59:18  2 of 4 ERROR creating sql table model default.dim_merchants .................... [ERROR in 0.24s]
+00:59:18  3 of 4 OK created sql table model default.dim_payment_method ................... [OK in 0.40s]
+00:59:18  4 of 4 OK created sql table model default.dim_payment_state .................... [OK in 0.40s]
+00:59:18  
+00:59:18  Finished running 4 table models in 0 hours 0 minutes and 0.72 seconds (0.72s).
+00:59:18  
+00:59:18  Completed with 2 errors and 0 warnings:
+00:59:18  
+00:59:18  Database Error in model dim_date (models/gold/dim/dim_date.sql)
+00:59:18    Code: 42.
+00:59:18    DB::Exception: Number of arguments for function plus doesn't match: passed 3, should be 2: In scope  days. Stack trace:
+00:59:18    
+00:59:18    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+00:59:18    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+00:59:18    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+00:59:18    3. DB::Exception::Exception<String, unsigned long&, unsigned long&>(int, FormatStringHelperImpl<std::type_identity<String>::type, std::type_identity<unsigned long&>::type, std::type_identity<unsigned long&>::type>, String&&, unsigned long&, unsigned long&) @ 0x0000000009a7a82b
+00:59:18    4. DB::IFunctionOverloadResolver::checkNumberOfArguments(unsigned long) const @ 0x0000000016421e6f
+00:59:18    5. DB::IFunctionOverloadResolver::build(std::vector<DB::ColumnWithTypeAndName, std::allocator<DB::ColumnWithTypeAndName>> const&) const @ 0x0000000016422a85
+00:59:18    6. DB::QueryAnalyzer::resolveFunction(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017aabd41
+00:59:18    7. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x00000000178372f3
+00:59:18    8. DB::QueryAnalyzer::resolveExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool) @ 0x00000000178366c0
+00:59:18    9. DB::QueryAnalyzer::resolveProjectionExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017859ea7
+00:59:18    10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d06b
+00:59:18    11. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    12. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    13. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    14. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+00:59:18    15. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+00:59:18    16. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+00:59:18    17. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+00:59:18    18. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+00:59:18    19. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+00:59:18    20. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+00:59:18    21. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+00:59:18    22. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+00:59:18    23. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+00:59:18    24. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+00:59:18    25. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+00:59:18    26. DB::TCPHandler::run() @ 0x0000000019e4f119
+00:59:18    27. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+00:59:18    28. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+00:59:18    29. Poco::PooledThread::run() @ 0x000000001ef15b87
+00:59:18    30. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+00:59:18    31. ? @ 0x0000000000094ac3
+00:59:18  
+00:59:18  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+00:59:18    Code: 60.
+00:59:18    DB::Exception: Unknown table expression identifier 'default.merchants' in scope  src. Stack trace:
+00:59:18    
+00:59:18    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+00:59:18    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+00:59:18    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+00:59:18    3. DB::Exception::Exception<String const&, String>(int, FormatStringHelperImpl<std::type_identity<String const&>::type, std::type_identity<String>::type>, String const&, String&&) @ 0x000000000db773ab
+00:59:18    4. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x0000000017830745
+00:59:18    5. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    6. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    7. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    8. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    9. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    11. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    12. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    13. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    14. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    15. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    16. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    17. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+00:59:18    18. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+00:59:18    19. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+00:59:18    20. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+00:59:18    21. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+00:59:18    22. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+00:59:18    23. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+00:59:18    24. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+00:59:18    25. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+00:59:18    26. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+00:59:18    27. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+00:59:18    28. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+00:59:18    29. DB::TCPHandler::run() @ 0x0000000019e4f119
+00:59:18    30. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+00:59:18    31. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+00:59:18  
+00:59:18  Done. PASS=2 WARN=0 ERROR=2 SKIP=0 TOTAL=4
+
+
+STDERR:
+
+[2025-11-02T00:59:19.776+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=gold_dimensions_pipeline, task_id=dbt_gold_dims, execution_date=20251102T005912, start_date=20251102T005912, end_date=20251102T005919
+[2025-11-02T00:59:19.803+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 444 for task dbt_gold_dims (dbt failed (1).
+STDOUT:
+00:59:15  Running with dbt=1.5.9
+00:59:15  Registered adapter: clickhouse=1.5.2
+00:59:15  Unable to do partial parsing because config vars, config profile, or config target have changed
+00:59:15  Unable to do partial parsing because a project config has changed
+00:59:17  [WARNING]: Did not find matching node for patch with name 'link_transactions' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Did not find matching node for patch with name 'payments' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Did not find matching node for patch with name 'merchants' in the 'models' section of file 'models/silver/_schema.yml'
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_link_transactions_tx_id.af37a213bb' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_link_transactions_tx_id.20bd045cb9' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_link_transactions_event_date.9cf003fc37' (models/silver/_schema.yml) depends on a node named 'link_transactions' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_payments_payment_id.581e6708cd' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_payments_payment_id.a01e74ab12' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_payments_event_date.894b1fe106' (models/silver/_schema.yml) depends on a node named 'payments' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_merchants_merchant_sk.bc8e36337a' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.unique_merchants_merchant_sk.e898fd0a65' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Test 'test.ck_project.not_null_merchants_merchant_id.f660e9b8cc' (models/silver/_schema.yml) depends on a node named 'merchants' in package '' which was not found
+00:59:17  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.ck_project.gold.fact
+00:59:17  Found 7 models, 8 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+00:59:17  
+00:59:18  Concurrency: 4 threads (target='dev')
+00:59:18  
+00:59:18  1 of 4 START sql table model default.dim_date .................................. [RUN]
+00:59:18  2 of 4 START sql table model default.dim_merchants ............................. [RUN]
+00:59:18  3 of 4 START sql table model default.dim_payment_method ........................ [RUN]
+00:59:18  4 of 4 START sql table model default.dim_payment_state ......................... [RUN]
+00:59:18  1 of 4 ERROR creating sql table model default.dim_date ......................... [ERROR in 0.21s]
+00:59:18  2 of 4 ERROR creating sql table model default.dim_merchants .................... [ERROR in 0.24s]
+00:59:18  3 of 4 OK created sql table model default.dim_payment_method ................... [OK in 0.40s]
+00:59:18  4 of 4 OK created sql table model default.dim_payment_state .................... [OK in 0.40s]
+00:59:18  
+00:59:18  Finished running 4 table models in 0 hours 0 minutes and 0.72 seconds (0.72s).
+00:59:18  
+00:59:18  Completed with 2 errors and 0 warnings:
+00:59:18  
+00:59:18  Database Error in model dim_date (models/gold/dim/dim_date.sql)
+00:59:18    Code: 42.
+00:59:18    DB::Exception: Number of arguments for function plus doesn't match: passed 3, should be 2: In scope  days. Stack trace:
+00:59:18    
+00:59:18    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+00:59:18    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+00:59:18    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+00:59:18    3. DB::Exception::Exception<String, unsigned long&, unsigned long&>(int, FormatStringHelperImpl<std::type_identity<String>::type, std::type_identity<unsigned long&>::type, std::type_identity<unsigned long&>::type>, String&&, unsigned long&, unsigned long&) @ 0x0000000009a7a82b
+00:59:18    4. DB::IFunctionOverloadResolver::checkNumberOfArguments(unsigned long) const @ 0x0000000016421e6f
+00:59:18    5. DB::IFunctionOverloadResolver::build(std::vector<DB::ColumnWithTypeAndName, std::allocator<DB::ColumnWithTypeAndName>> const&) const @ 0x0000000016422a85
+00:59:18    6. DB::QueryAnalyzer::resolveFunction(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017aabd41
+00:59:18    7. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x00000000178372f3
+00:59:18    8. DB::QueryAnalyzer::resolveExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool) @ 0x00000000178366c0
+00:59:18    9. DB::QueryAnalyzer::resolveProjectionExpressionNodeList(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&) @ 0x0000000017859ea7
+00:59:18    10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d06b
+00:59:18    11. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    12. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    13. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    14. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+00:59:18    15. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+00:59:18    16. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+00:59:18    17. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+00:59:18    18. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+00:59:18    19. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+00:59:18    20. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+00:59:18    21. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+00:59:18    22. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+00:59:18    23. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+00:59:18    24. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+00:59:18    25. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+00:59:18    26. DB::TCPHandler::run() @ 0x0000000019e4f119
+00:59:18    27. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+00:59:18    28. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+00:59:18    29. Poco::PooledThread::run() @ 0x000000001ef15b87
+00:59:18    30. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+00:59:18    31. ? @ 0x0000000000094ac3
+00:59:18  
+00:59:18  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+00:59:18    Code: 60.
+00:59:18    DB::Exception: Unknown table expression identifier 'default.merchants' in scope  src. Stack trace:
+00:59:18    
+00:59:18    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+00:59:18    1. DB::Exception::Exception(String&&, int, String, bool) @ 0x000000000cae7e8e
+00:59:18    2. DB::Exception::Exception(PreformattedMessage&&, int) @ 0x000000000cae7940
+00:59:18    3. DB::Exception::Exception<String const&, String>(int, FormatStringHelperImpl<std::type_identity<String const&>::type, std::type_identity<String>::type>, String const&, String&&) @ 0x000000000db773ab
+00:59:18    4. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x0000000017830745
+00:59:18    5. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    6. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    7. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    8. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    9. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    10. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    11. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    12. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    13. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    14. DB::QueryAnalyzer::resolveExpressionNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, bool, bool, bool) @ 0x0000000017837221
+00:59:18    15. DB::QueryAnalyzer::resolveQueryJoinTreeNode(std::shared_ptr<DB::IQueryTreeNode>&, DB::IdentifierResolveScope&, DB::QueryExpressionsAliasVisitor&) @ 0x000000001785ae58
+00:59:18    16. DB::QueryAnalyzer::resolveQuery(std::shared_ptr<DB::IQueryTreeNode> const&, DB::IdentifierResolveScope&) @ 0x000000001782d021
+00:59:18    17. DB::QueryAnalyzer::resolve(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::IQueryTreeNode> const&, std::shared_ptr<DB::Context const>) @ 0x000000001782a87a
+00:59:18    18. DB::QueryAnalysisPass::run(std::shared_ptr<DB::IQueryTreeNode>&, std::shared_ptr<DB::Context const>) @ 0x0000000017829edc
+00:59:18    19. DB::QueryTreePassManager::run(std::shared_ptr<DB::IQueryTreeNode>) @ 0x000000001787d276
+00:59:18    20. DB::buildQueryTreeAndRunPasses(std::shared_ptr<DB::IAST> const&, DB::SelectQueryOptions const&, std::shared_ptr<DB::Context const> const&, std::shared_ptr<DB::IStorage> const&) (.llvm.8096503222789336007) @ 0x00000000183bd40d
+00:59:18    21. DB::InterpreterSelectQueryAnalyzer::InterpreterSelectQueryAnalyzer(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&, std::vector<String, std::allocator<String>> const&) @ 0x00000000183bb32a
+00:59:18    22. DB::InterpreterSelectQueryAnalyzer::getSampleBlock(std::shared_ptr<DB::IAST> const&, std::shared_ptr<DB::Context const> const&, DB::SelectQueryOptions const&) @ 0x00000000183bd86a
+00:59:18    23. DB::InterpreterCreateQuery::getTablePropertiesAndNormalizeCreateQuery(DB::ASTCreateQuery&, DB::LoadingStrictnessLevel) const @ 0x00000000182e49d3
+00:59:18    24. DB::InterpreterCreateQuery::createTable(DB::ASTCreateQuery&) @ 0x00000000182ed2c5
+00:59:18    25. DB::InterpreterCreateQuery::execute() @ 0x0000000018303978
+00:59:18    26. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018780440
+00:59:18    27. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+00:59:18    28. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+00:59:18    29. DB::TCPHandler::run() @ 0x0000000019e4f119
+00:59:18    30. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+00:59:18    31. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+00:59:18  
+00:59:18  Done. PASS=2 WARN=0 ERROR=2 SKIP=0 TOTAL=4
+
+
+STDERR:
+; 18217)
+[2025-11-02T00:59:19.823+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-02T00:59:19.844+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,54 @@
+[2025-11-02T00:17:48.390+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T00:17:48.406+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T00:17:48.408+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2025-11-02T00:17:48.433+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_dim_payment_state> on 2025-10-01 00:00:00+00:00
+[2025-11-02T00:17:48.442+0000] {standard_task_runner.py:60} INFO - Started process 13686 to run task
+[2025-11-02T00:17:48.452+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_dim_payment_state', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '277', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmp_edvj2w8']
+[2025-11-02T00:17:48.455+0000] {standard_task_runner.py:88} INFO - Job 277: Subtask dbt_dim_payment_state
+[2025-11-02T00:17:48.568+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_dim_payment_state scheduled__2025-10-01T00:00:00+00:00 [running]> on host 6335aa85b335
+[2025-11-02T00:17:48.720+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_dim_payment_state' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-02T00:17:56.049+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 175, in <lambda>
+    python_callable=lambda ds, **_: _run_dbt(
+  File "/opt/airflow/dags/gold_dag.py", line 112, in _run_dbt
+    raise RuntimeError(f"dbt failed ({proc.returncode}).\nSTDOUT:\n{proc.stdout}\n\nSTDERR:\n{proc.stderr}")
+RuntimeError: dbt failed (2).
+STDOUT:
+00:17:52  Running with dbt=1.5.9
+00:17:52  Registered adapter: clickhouse=1.5.2
+00:17:52  Unable to do partial parsing because config vars, config profile, or config target have changed
+00:17:52  Unable to do partial parsing because a project config has changed
+00:17:55  Encountered an error:
+Compilation Error
+  dbt found two schema.yml entries for the same resource named dim_date. Resources and their associated columns may only be described a single time. To fix this, remove one of the resource entries for dim_date in this file:
+   - models/gold/dim/_schema.yml
+  
+
+
+STDERR:
+
+[2025-11-02T00:17:56.071+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=gold_dimensions_pipeline, task_id=dbt_dim_payment_state, execution_date=20251001T000000, start_date=20251102T001748, end_date=20251102T001756
+[2025-11-02T00:17:56.100+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 277 for task dbt_dim_payment_state (dbt failed (2).
+STDOUT:
+00:17:52  Running with dbt=1.5.9
+00:17:52  Registered adapter: clickhouse=1.5.2
+00:17:52  Unable to do partial parsing because config vars, config profile, or config target have changed
+00:17:52  Unable to do partial parsing because a project config has changed
+00:17:55  Encountered an error:
+Compilation Error
+  dbt found two schema.yml entries for the same resource named dim_date. Resources and their associated columns may only be described a single time. To fix this, remove one of the resource entries for dim_date in this file:
+   - models/gold/dim/_schema.yml
+  
+
+
+STDERR:
+; 13686)
+[2025-11-02T00:17:56.116+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-02T00:17:56.149+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

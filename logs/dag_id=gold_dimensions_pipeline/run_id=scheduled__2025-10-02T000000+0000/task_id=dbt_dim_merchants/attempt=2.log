@@ -1,0 +1,158 @@
+[2025-11-02T10:12:07.778+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_merchants scheduled__2025-10-02T00:00:00+00:00 [queued]>
+[2025-11-02T10:12:07.806+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_dim_merchants scheduled__2025-10-02T00:00:00+00:00 [queued]>
+[2025-11-02T10:12:07.808+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2025-11-02T10:12:07.836+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_dim_merchants> on 2025-10-02 00:00:00+00:00
+[2025-11-02T10:12:07.848+0000] {standard_task_runner.py:60} INFO - Started process 6385 to run task
+[2025-11-02T10:12:07.856+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_dim_merchants', 'scheduled__2025-10-02T00:00:00+00:00', '--job-id', '289', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpv4ri9iov']
+[2025-11-02T10:12:07.860+0000] {standard_task_runner.py:88} INFO - Job 289: Subtask dbt_dim_merchants
+[2025-11-02T10:12:08.003+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_dim_merchants scheduled__2025-10-02T00:00:00+00:00 [running]> on host 3b0074fa0b5e
+[2025-11-02T10:12:08.142+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_dim_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-02T00:00:00+00:00'
+[2025-11-02T10:12:13.507+0000] {logging_mixin.py:188} INFO - ==== DBT STDOUT ====
+[2025-11-02T10:12:13.508+0000] {logging_mixin.py:188} INFO - 10:12:10  Running with dbt=1.5.9
+10:12:10  Registered adapter: clickhouse=1.5.2
+10:12:10  Unable to do partial parsing because config vars, config profile, or config target have changed
+10:12:12  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ck_project.bronze
+- models.ck_project.gold.fact
+10:12:12  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+10:12:12  
+10:12:12  Concurrency: 4 threads (target='dev')
+10:12:12  
+10:12:12  1 of 1 START sql table model default.dim_merchants ............................. [RUN]
+10:12:12  1 of 1 ERROR creating sql table model default.dim_merchants .................... [ERROR in 0.08s]
+10:12:12  
+10:12:12  Finished running 1 table model in 0 hours 0 minutes and 0.36 seconds (0.36s).
+10:12:12  
+10:12:12  Completed with 1 error and 0 warnings:
+10:12:12  
+10:12:12  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+10:12:12    Code: 62.
+10:12:12    DB::Exception: Syntax error: failed at position 1866 (end of query) (line 59, col 21): ;
+10:12:12              )
+10:12:12            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+10:12:12    
+10:12:12    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+10:12:12    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+10:12:12    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+10:12:12    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+10:12:12    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+10:12:12    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+10:12:12    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+10:12:12    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+10:12:12    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+10:12:12    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+10:12:12    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+10:12:12    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+10:12:12    12. ? @ 0x0000000000094ac3
+10:12:12    13. ? @ 0x0000000000125a74
+10:12:12  
+10:12:12  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2025-11-02T10:12:13.509+0000] {logging_mixin.py:188} INFO - ==== DBT STDERR ====
+[2025-11-02T10:12:13.509+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 132, in <lambda>
+    python_callable=lambda **_: _run_dbt("dim_merchants"),
+  File "/opt/airflow/dags/gold_dag.py", line 85, in _run_dbt
+    raise RuntimeError(
+RuntimeError: dbt failed (1).
+STDOUT:
+10:12:10  Running with dbt=1.5.9
+10:12:10  Registered adapter: clickhouse=1.5.2
+10:12:10  Unable to do partial parsing because config vars, config profile, or config target have changed
+10:12:12  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ck_project.bronze
+- models.ck_project.gold.fact
+10:12:12  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+10:12:12  
+10:12:12  Concurrency: 4 threads (target='dev')
+10:12:12  
+10:12:12  1 of 1 START sql table model default.dim_merchants ............................. [RUN]
+10:12:12  1 of 1 ERROR creating sql table model default.dim_merchants .................... [ERROR in 0.08s]
+10:12:12  
+10:12:12  Finished running 1 table model in 0 hours 0 minutes and 0.36 seconds (0.36s).
+10:12:12  
+10:12:12  Completed with 1 error and 0 warnings:
+10:12:12  
+10:12:12  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+10:12:12    Code: 62.
+10:12:12    DB::Exception: Syntax error: failed at position 1866 (end of query) (line 59, col 21): ;
+10:12:12              )
+10:12:12            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+10:12:12    
+10:12:12    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+10:12:12    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+10:12:12    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+10:12:12    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+10:12:12    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+10:12:12    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+10:12:12    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+10:12:12    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+10:12:12    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+10:12:12    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+10:12:12    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+10:12:12    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+10:12:12    12. ? @ 0x0000000000094ac3
+10:12:12    13. ? @ 0x0000000000125a74
+10:12:12  
+10:12:12  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+
+[2025-11-02T10:12:13.526+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=gold_dimensions_pipeline, task_id=dbt_dim_merchants, execution_date=20251002T000000, start_date=20251102T101207, end_date=20251102T101213
+[2025-11-02T10:12:13.548+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 289 for task dbt_dim_merchants (dbt failed (1).
+STDOUT:
+10:12:10  Running with dbt=1.5.9
+10:12:10  Registered adapter: clickhouse=1.5.2
+10:12:10  Unable to do partial parsing because config vars, config profile, or config target have changed
+10:12:12  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ck_project.bronze
+- models.ck_project.gold.fact
+10:12:12  Found 7 models, 17 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+10:12:12  
+10:12:12  Concurrency: 4 threads (target='dev')
+10:12:12  
+10:12:12  1 of 1 START sql table model default.dim_merchants ............................. [RUN]
+10:12:12  1 of 1 ERROR creating sql table model default.dim_merchants .................... [ERROR in 0.08s]
+10:12:12  
+10:12:12  Finished running 1 table model in 0 hours 0 minutes and 0.36 seconds (0.36s).
+10:12:12  
+10:12:12  Completed with 1 error and 0 warnings:
+10:12:12  
+10:12:12  Database Error in model dim_merchants (models/gold/dim/dim_merchants.sql)
+10:12:12    Code: 62.
+10:12:12    DB::Exception: Syntax error: failed at position 1866 (end of query) (line 59, col 21): ;
+10:12:12              )
+10:12:12            . Expected one of: token sequence, Dot, token, OR, AND, IS NOT DISTINCT FROM, IS NULL, IS NOT NULL, BETWEEN, NOT BETWEEN, LIKE, ILIKE, NOT LIKE, NOT ILIKE, REGEXP, IN, NOT IN, GLOBAL IN, GLOBAL NOT IN, MOD, DIV, alias, AS, DESCENDING, DESC, ASCENDING, ASC, NULLS, COLLATE, WITH FILL, Comma, LIMIT, OFFSET, FETCH, SETTINGS, UNION, EXCEPT, INTERSECT. Stack trace:
+10:12:12    
+10:12:12    0. DB::Exception::Exception(DB::Exception::MessageMasked&&, int, bool) @ 0x00000000137a855f
+10:12:12    1. DB::Exception::Exception(String const&, int, String, bool) @ 0x0000000012423c8e
+10:12:12    2. DB::Exception::createDeprecated(String const&, int, bool) @ 0x0000000013a54f9f
+10:12:12    3. DB::parseQueryAndMovePosition(DB::IParser&, char const*&, char const*, String const&, bool, unsigned long, unsigned long, unsigned long) @ 0x000000001aace132
+10:12:12    4. DB::executeQueryImpl(char const*, char const*, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum, std::unique_ptr<DB::ReadBuffer, std::default_delete<DB::ReadBuffer>>&, std::shared_ptr<DB::IAST>&, std::shared_ptr<DB::ImplicitTransactionControlExecutor>) @ 0x0000000018779652
+10:12:12    5. DB::executeQuery(String const&, std::shared_ptr<DB::Context>, DB::QueryFlags, DB::QueryProcessingStage::Enum) @ 0x00000000187786cb
+10:12:12    6. DB::TCPHandler::runImpl() @ 0x0000000019e2d3db
+10:12:12    7. DB::TCPHandler::run() @ 0x0000000019e4f119
+10:12:12    8. Poco::Net::TCPServerConnection::start() @ 0x000000001ef4ed07
+10:12:12    9. Poco::Net::TCPServerDispatcher::run() @ 0x000000001ef4f199
+10:12:12    10. Poco::PooledThread::run() @ 0x000000001ef15b87
+10:12:12    11. Poco::ThreadImpl::runnableEntry(void*) @ 0x000000001ef13f81
+10:12:12    12. ? @ 0x0000000000094ac3
+10:12:12    13. ? @ 0x0000000000125a74
+10:12:12  
+10:12:12  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+
+STDERR:
+; 6385)
+[2025-11-02T10:12:13.592+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-11-02T10:12:13.613+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

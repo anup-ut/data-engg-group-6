@@ -5,6 +5,6 @@ sources:
     database: silver     # ClickHouse database
     schema: silver       # keep equal for portability
     tables:
-      - name: merchants
-      - name: payments
-      - name: link_transactions
+      - name: silver_merchants
+      - name: silver_payments
+      - name: silver_link_transactions
