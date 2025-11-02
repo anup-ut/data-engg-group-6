@@ -1,1 +1,0 @@
-[2025-11-01T15:24:07.606+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: silver_transformation_pipeline.create_silver_db manual__2025-11-01T15:24:06.489027+00:00 [queued]> finished (success) although the task says it's queued. (Info: None) Was the task killed externally?
