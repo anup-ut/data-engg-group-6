@@ -115,29 +115,29 @@ gold_layer_pipeline DAG's Graph
 
 1. How many initiated payments never reach a payment service provider?
 
-<img width="800" height="336" alt="image" src="https://github.com/user-attachments/assets/f875ad30-f6e1-4084-b083-c844b3547a0f" />
+<img width="800" height="336" alt="image" src="./docs/images/sql1.png" />
 
 2. How many initiated payments reach a provider but are abandoned before completion?
    
-<img width="800" height="343" alt="image" src="https://github.com/user-attachments/assets/1a18a307-d5e0-4420-9ec3-ed9345f99535" />
+<img width="800" height="343" alt="image" src="./docs/images/sql2.png" />
 
 3. What is the abandonment rate by payment method?
    
-<img width="800" height="404" alt="image" src="https://github.com/user-attachments/assets/445f8768-8563-4aaf-a3a3-b34f1795426e" />
+<img width="800" height="404" alt="image" src="./docs/images/sql3.png" />
 
 4. Which payment methods or providers show the highest share of initiated payments that never complete?
    
 a)By payment method
 
-<img width="800" height="392" alt="image" src="https://github.com/user-attachments/assets/b4f73794-1a88-4c76-9915-d768056ceaba" />
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
 
 b)By merchant
 
-<img width="800" height="495" alt="image" src="https://github.com/user-attachments/assets/7a742a1d-b230-4b0d-b1e1-fd47cfc45501" />
+<img width="800" height="495" alt="image" src="./docs/images/sql4b.png" />
 
 c)By both
 
-<img width="800" height="794" alt="image" src="https://github.com/user-attachments/assets/405cc34f-748c-42be-ab2a-d162fbcf8f65" />
+<img width="800" height="794" alt="image" src="./docs/images/sql4c.png" />
 
 
 
