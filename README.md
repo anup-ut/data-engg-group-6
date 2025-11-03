@@ -99,15 +99,15 @@ P.S. As our data took from October 01.10.2025, we put start time for dags as Oct
 
 ### **DAG's Graph**
 
-<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/44d52f9d-2d61-46a9-b3e6-ba3db77a647e" />
+<img width="800" height="300" alt="image" src="./docs/images/dag1 (1).png" />
 
 ingestion_pipeline DAG's Graph
 
-<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/dde420c6-c9e5-41b6-a0fb-dd557e1f56e3" />
+<img width="800" height="300" alt="image" src="./docs/images/dag1 (2).png" />
 
 silver_transformations_pipeline DAG's Graph
 
-<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/33080f6c-2ecd-4ad7-851e-932de8cebdb0" />
+<img width="800" height="300" alt="image" src="./docs/images/dag1 (3).png" />
 
 gold_layer_pipeline DAG's Graph
 
