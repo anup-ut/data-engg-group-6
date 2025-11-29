@@ -1,0 +1,59 @@
+[2025-11-26T19:22:59.549+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-11-20T00:00:00+00:00 [queued]>
+[2025-11-26T19:22:59.600+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-11-20T00:00:00+00:00 [queued]>
+[2025-11-26T19:22:59.602+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-26T19:22:59.656+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_link_transactions_bronze_from_mongo> on 2025-11-20 00:00:00+00:00
+[2025-11-26T19:22:59.677+0000] {standard_task_runner.py:60} INFO - Started process 468 to run task
+[2025-11-26T19:22:59.691+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_link_transactions_bronze_from_mongo', 'scheduled__2025-11-20T00:00:00+00:00', '--job-id', '568', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp5fkr8pyx']
+[2025-11-26T19:22:59.707+0000] {standard_task_runner.py:88} INFO - Job 568: Subtask load_link_transactions_bronze_from_mongo
+[2025-11-26T19:22:59.973+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_link_transactions_bronze_from_mongo scheduled__2025-11-20T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-26T19:23:00.683+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_link_transactions_bronze_from_mongo' AIRFLOW_CTX_EXECUTION_DATE='2025-11-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-20T00:00:00+00:00'
+[2025-11-26T19:23:02.833+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-11-26T19:23:02.892+0000] {process_utils.py:131} INFO - Sending 15 to group 468. PIDs of all processes in the group: [468]
+[2025-11-26T19:23:02.959+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 468
+[2025-11-26T19:23:02.995+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-11-26T19:23:03.211+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/pipelines/mongo_to_clickhouse.py", line 67, in _callable
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/__init__.py", line 48, in <module>
+    from pandas.core.api import (
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/api.py", line 47, in <module>
+    from pandas.core.groupby import (
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/groupby/__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/groupby/generic.py", line 77, in <module>
+    from pandas.core.frame import DataFrame
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 182, in <module>
+    from pandas.core.generic import NDFrame
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 138, in <module>
+    from pandas.core import (
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexing.py", line 77, in <module>
+    from pandas.core.indexes.api import (
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/api.py", line 27, in <module>
+    from pandas.core.indexes.interval import IntervalIndex
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/interval.py", line 89, in <module>
+    from pandas.core.indexes.multi import MultiIndex
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/multi.py", line 216, in <module>
+    class MultiIndex(Index):
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/multi.py", line 1217, in MultiIndex
+    def __contains__(self, key: Any) -> bool:
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 384, in decorator
+    [
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 387, in <listcomp>
+    else dedent(component.__doc__ or "")
+  File "/usr/local/lib/python3.8/textwrap.py", line 438, in dedent
+    elif indent.startswith(margin):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-11-26T19:23:03.469+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingestion_pipeline, task_id=load_link_transactions_bronze_from_mongo, execution_date=20251120T000000, start_date=20251126T192259, end_date=20251126T192303
+[2025-11-26T19:23:03.555+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 568 for task load_link_transactions_bronze_from_mongo (Task received SIGTERM signal; 468)
+[2025-11-26T19:23:03.986+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=468, status='terminated', exitcode=1, started='19:22:58') (468) terminated with exit code 1
+[2025-11-26T19:23:04.035+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-11-26T19:23:04.284+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,38 @@
+[2025-11-07T05:07:23.619+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-11-06T00:00:00+00:00 [queued]>
+[2025-11-07T05:07:23.662+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-11-06T00:00:00+00:00 [queued]>
+[2025-11-07T05:07:23.665+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-07T05:07:23.701+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_run_linktx> on 2025-11-06 00:00:00+00:00
+[2025-11-07T05:07:23.734+0000] {standard_task_runner.py:60} INFO - Started process 48400 to run task
+[2025-11-07T05:07:23.762+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'silver_transformation_pipeline', 'dbt_run_linktx', 'scheduled__2025-11-06T00:00:00+00:00', '--job-id', '493', '--raw', '--subdir', 'DAGS_FOLDER/silver_dag.py', '--cfg-path', '/tmp/tmpyl2b9bxd']
+[2025-11-07T05:07:23.779+0000] {standard_task_runner.py:88} INFO - Job 493: Subtask dbt_run_linktx
+[2025-11-07T05:07:23.986+0000] {task_command.py:423} INFO - Running <TaskInstance: silver_transformation_pipeline.dbt_run_linktx scheduled__2025-11-06T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-07T05:07:24.234+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_transformation_pipeline' AIRFLOW_CTX_TASK_ID='dbt_run_linktx' AIRFLOW_CTX_EXECUTION_DATE='2025-11-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-06T00:00:00+00:00'
+[2025-11-07T09:17:09.062+0000] {local_task_job_runner.py:211} ERROR - Heartbeat time limit exceeded!
+[2025-11-07T09:17:09.206+0000] {process_utils.py:131} INFO - Sending 15 to group 48400. PIDs of all processes in the group: [48403, 48400]
+[2025-11-07T09:17:09.281+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 48400
+[2025-11-07T09:17:09.335+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-11-07T09:17:09.837+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=48403, status='terminated', started='05:07:23') (48403) terminated with exit code None
+[2025-11-07T09:17:09.506+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/silver_dag.py", line 148, in _run_dbt
+    proc = subprocess.run(args, text=True, capture_output=True)
+  File "/usr/local/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/local/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/local/lib/python3.8/subprocess.py", line 1884, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/local/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-11-07T09:17:10.142+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=silver_transformation_pipeline, task_id=dbt_run_linktx, execution_date=20251106T000000, start_date=20251107T050723, end_date=20251107T091710
+[2025-11-07T09:17:10.849+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 493 for task dbt_run_linktx (Task received SIGTERM signal; 48400)
+[2025-11-07T09:17:10.921+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=48400, status='terminated', exitcode=1, started='05:07:22') (48400) terminated with exit code 1

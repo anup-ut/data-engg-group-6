@@ -1,0 +1,30 @@
+[2025-11-02T17:33:35.820+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T14:42:52.499830+00:00 [queued]>
+[2025-11-02T17:33:35.841+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T14:42:52.499830+00:00 [queued]>
+[2025-11-02T17:33:35.843+0000] {taskinstance.py:2170} INFO - Starting attempt 9 of 11
+[2025-11-02T17:33:35.867+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_fact_transactions> on 2025-11-02 14:42:52.499830+00:00
+[2025-11-02T17:33:35.877+0000] {standard_task_runner.py:60} INFO - Started process 23776 to run task
+[2025-11-02T17:33:35.883+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_dimensions_pipeline', 'dbt_fact_transactions', 'manual__2025-11-02T14:42:52.499830+00:00', '--job-id', '445', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpp166x8bt']
+[2025-11-02T17:33:35.886+0000] {standard_task_runner.py:88} INFO - Job 445: Subtask dbt_fact_transactions
+[2025-11-02T17:33:36.037+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_dimensions_pipeline.dbt_fact_transactions manual__2025-11-02T14:42:52.499830+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T17:33:36.265+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_dimensions_pipeline' AIRFLOW_CTX_TASK_ID='dbt_fact_transactions' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T14:42:52.499830+00:00' AIRFLOW_CTX_TRY_NUMBER='9' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-02T14:42:52.499830+00:00'
+[2025-11-02T17:33:42.536+0000] {logging_mixin.py:188} INFO - 17:33:42  Running with dbt=1.5.9
+[2025-11-02T17:33:42.753+0000] {logging_mixin.py:188} INFO - 17:33:42  Registered adapter: clickhouse=1.5.2
+[2025-11-02T17:33:46.444+0000] {logging_mixin.py:188} INFO - 17:33:46  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-11-02T17:33:46.445+0000] {logging_mixin.py:188} INFO - There are 1 unused configuration paths:
+[2025-11-02T17:33:46.446+0000] {logging_mixin.py:188} INFO - - models.ck_project.bronze
+[2025-11-02T17:33:46.512+0000] {logging_mixin.py:188} INFO - 17:33:46  Found 8 models, 20 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+[2025-11-02T17:33:46.523+0000] {logging_mixin.py:188} INFO - 17:33:46
+[2025-11-02T17:33:47.108+0000] {logging_mixin.py:188} INFO - 17:33:47  Concurrency: 4 threads (target='dev')
+[2025-11-02T17:33:47.110+0000] {logging_mixin.py:188} INFO - 17:33:47
+[2025-11-02T17:33:47.144+0000] {logging_mixin.py:188} INFO - 17:33:47  1 of 1 START sql incremental model gold.fact_transactions ...................... [RUN]
+[2025-11-02T17:33:47.757+0000] {logging_mixin.py:188} INFO - 17:33:47  1 of 1 OK created sql incremental model gold.fact_transactions ................. [OK in 0.61s]
+[2025-11-02T17:33:47.773+0000] {logging_mixin.py:188} INFO - 17:33:47
+[2025-11-02T17:33:47.774+0000] {logging_mixin.py:188} INFO - 17:33:47  Finished running 1 incremental model in 0 hours 0 minutes and 1.25 seconds (1.25s).
+[2025-11-02T17:33:47.821+0000] {logging_mixin.py:188} INFO - 17:33:47
+[2025-11-02T17:33:47.823+0000] {logging_mixin.py:188} INFO - 17:33:47  Completed successfully
+[2025-11-02T17:33:47.825+0000] {logging_mixin.py:188} INFO - 17:33:47
+[2025-11-02T17:33:47.826+0000] {logging_mixin.py:188} INFO - 17:33:47  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2025-11-02T17:33:48.838+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T17:33:48.863+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=gold_dimensions_pipeline, task_id=dbt_fact_transactions, execution_date=20251102T144252, start_date=20251102T173335, end_date=20251102T173348
+[2025-11-02T17:33:48.932+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T17:33:48.965+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

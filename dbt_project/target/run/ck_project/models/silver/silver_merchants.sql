@@ -18,6 +18,8 @@ with day_rows as (
       toDate(_snapshot_date)                     as _snapshot_date
   from bronze.merchants
   
+    where toDate(_snapshot_date) = toDate('2025-11-08')
+  
 ),
 agg as (
   select
@@ -51,6 +53,8 @@ select
     )
   ) as dim_fingerprint
 from agg
+
+where _snapshot_date = toDate('2025-11-08')
 
   
     

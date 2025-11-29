@@ -1,0 +1,30 @@
+[2025-11-02T19:15:03.007+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_layer_pipeline.dbt_dim_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T19:15:03.028+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_layer_pipeline.dbt_dim_merchants scheduled__2025-10-01T00:00:00+00:00 [queued]>
+[2025-11-02T19:15:03.029+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-11-02T19:15:03.083+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_dim_merchants> on 2025-10-01 00:00:00+00:00
+[2025-11-02T19:15:03.104+0000] {standard_task_runner.py:60} INFO - Started process 29403 to run task
+[2025-11-02T19:15:03.114+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_layer_pipeline', 'dbt_dim_merchants', 'scheduled__2025-10-01T00:00:00+00:00', '--job-id', '448', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmp94s9igqn']
+[2025-11-02T19:15:03.123+0000] {standard_task_runner.py:88} INFO - Job 448: Subtask dbt_dim_merchants
+[2025-11-02T19:15:03.311+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_layer_pipeline.dbt_dim_merchants scheduled__2025-10-01T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-02T19:15:03.501+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_layer_pipeline' AIRFLOW_CTX_TASK_ID='dbt_dim_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-01T00:00:00+00:00'
+[2025-11-02T19:15:07.461+0000] {logging_mixin.py:188} INFO - 19:15:07  Running with dbt=1.5.9
+[2025-11-02T19:15:07.616+0000] {logging_mixin.py:188} INFO - 19:15:07  Registered adapter: clickhouse=1.5.2
+[2025-11-02T19:15:09.591+0000] {logging_mixin.py:188} INFO - 19:15:09  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-11-02T19:15:09.592+0000] {logging_mixin.py:188} INFO - There are 1 unused configuration paths:
+[2025-11-02T19:15:09.593+0000] {logging_mixin.py:188} INFO - - models.ck_project.bronze
+[2025-11-02T19:15:09.653+0000] {logging_mixin.py:188} INFO - 19:15:09  Found 8 models, 20 tests, 0 snapshots, 0 analyses, 349 macros, 0 operations, 0 seed files, 6 sources, 0 exposures, 0 metrics, 0 groups
+[2025-11-02T19:15:09.661+0000] {logging_mixin.py:188} INFO - 19:15:09
+[2025-11-02T19:15:10.129+0000] {logging_mixin.py:188} INFO - 19:15:10  Concurrency: 4 threads (target='dev')
+[2025-11-02T19:15:10.130+0000] {logging_mixin.py:188} INFO - 19:15:10
+[2025-11-02T19:15:10.159+0000] {logging_mixin.py:188} INFO - 19:15:10  1 of 1 START sql table model gold.dim_merchants ................................ [RUN]
+[2025-11-02T19:15:10.519+0000] {logging_mixin.py:188} INFO - 19:15:10  1 of 1 OK created sql table model gold.dim_merchants ........................... [OK in 0.36s]
+[2025-11-02T19:15:10.530+0000] {logging_mixin.py:188} INFO - 19:15:10
+[2025-11-02T19:15:10.532+0000] {logging_mixin.py:188} INFO - 19:15:10  Finished running 1 table model in 0 hours 0 minutes and 0.87 seconds (0.87s).
+[2025-11-02T19:15:10.587+0000] {logging_mixin.py:188} INFO - 19:15:10
+[2025-11-02T19:15:10.589+0000] {logging_mixin.py:188} INFO - 19:15:10  Completed successfully
+[2025-11-02T19:15:10.590+0000] {logging_mixin.py:188} INFO - 19:15:10
+[2025-11-02T19:15:10.591+0000] {logging_mixin.py:188} INFO - 19:15:10  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2025-11-02T19:15:11.574+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-11-02T19:15:11.593+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=gold_layer_pipeline, task_id=dbt_dim_merchants, execution_date=20251001T000000, start_date=20251102T191503, end_date=20251102T191511
+[2025-11-02T19:15:11.663+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-11-02T19:15:11.712+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,34 @@
+[2025-11-29T01:23:51.537+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gold_layer_pipeline.dbt_dim_merchants scheduled__2025-10-10T00:00:00+00:00 [queued]>
+[2025-11-29T01:23:51.571+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gold_layer_pipeline.dbt_dim_merchants scheduled__2025-10-10T00:00:00+00:00 [queued]>
+[2025-11-29T01:23:51.575+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2025-11-29T01:23:51.636+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): dbt_dim_merchants> on 2025-10-10 00:00:00+00:00
+[2025-11-29T01:23:51.675+0000] {standard_task_runner.py:60} INFO - Started process 14687 to run task
+[2025-11-29T01:23:51.702+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'gold_layer_pipeline', 'dbt_dim_merchants', 'scheduled__2025-10-10T00:00:00+00:00', '--job-id', '725', '--raw', '--subdir', 'DAGS_FOLDER/gold_dag.py', '--cfg-path', '/tmp/tmpkqqadnvc']
+[2025-11-29T01:23:51.724+0000] {standard_task_runner.py:88} INFO - Job 725: Subtask dbt_dim_merchants
+[2025-11-29T01:23:52.134+0000] {task_command.py:423} INFO - Running <TaskInstance: gold_layer_pipeline.dbt_dim_merchants scheduled__2025-10-10T00:00:00+00:00 [running]> on host b34d3694f5a7
+[2025-11-29T01:23:52.580+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gold_layer_pipeline' AIRFLOW_CTX_TASK_ID='dbt_dim_merchants' AIRFLOW_CTX_EXECUTION_DATE='2025-10-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-10T00:00:00+00:00'
+[2025-11-29T02:10:28.965+0000] {logging_mixin.py:188} INFO - 02:10:28  Running with dbt=1.5.9
+[2025-11-29T02:10:29.873+0000] {logging_mixin.py:188} INFO - 02:10:29  Registered adapter: clickhouse=1.5.2
+[2025-11-29T02:10:35.478+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2025-11-29T02:10:35.493+0000] {process_utils.py:131} INFO - Sending 15 to group 14687. PIDs of all processes in the group: [14691, 14687]
+[2025-11-29T02:10:35.494+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 14687
+[2025-11-29T02:10:35.495+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-11-29T02:10:35.554+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=14691, status='terminated', started='01:23:52') (14691) terminated with exit code None
+[2025-11-29T02:10:35.572+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/gold_dag.py", line 136, in <lambda>
+    python_callable=lambda **_: _run_dbt("dim_merchants"),
+  File "/opt/airflow/dags/gold_dag.py", line 84, in _run_dbt
+    for line in proc.stdout:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-11-29T02:10:35.588+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=gold_layer_pipeline, task_id=dbt_dim_merchants, execution_date=20251010T000000, start_date=20251129T012351, end_date=20251129T021035
+[2025-11-29T02:10:35.620+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 725 for task dbt_dim_merchants (Task received SIGTERM signal; 14687)
+[2025-11-29T02:10:35.689+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=14687, status='terminated', exitcode=1, started='01:23:51') (14687) terminated with exit code 1

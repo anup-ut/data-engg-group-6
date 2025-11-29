@@ -1,0 +1,210 @@
+[2025-11-03T15:30:03.609+0000] {processor.py:161} INFO - Started process (PID=33255) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:30:03.679+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:30:03.708+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:30:03.697+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:30:04.060+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:30:04.391+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:30:04.390+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:30:04.731+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 1.205 seconds
+[2025-11-03T15:30:37.565+0000] {processor.py:161} INFO - Started process (PID=33316) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:30:37.578+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:30:37.581+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:30:37.580+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:30:37.792+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:30:37.931+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:30:37.921+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:30:38.159+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.603 seconds
+[2025-11-03T15:31:08.389+0000] {processor.py:161} INFO - Started process (PID=33402) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:31:08.391+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:31:08.393+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:31:08.392+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:31:08.442+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:31:08.533+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:31:08.532+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:31:08.679+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.298 seconds
+[2025-11-03T15:31:39.020+0000] {processor.py:161} INFO - Started process (PID=33437) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:31:39.023+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:31:39.025+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:31:39.024+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:31:39.069+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:31:39.145+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:31:39.145+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:31:39.224+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.212 seconds
+[2025-11-03T15:32:09.686+0000] {processor.py:161} INFO - Started process (PID=33472) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:32:09.688+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:32:09.690+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:32:09.689+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:32:09.726+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:32:09.774+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:32:09.774+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:32:09.821+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.140 seconds
+[2025-11-03T15:32:40.238+0000] {processor.py:161} INFO - Started process (PID=33507) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:32:40.239+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:32:40.244+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:32:40.243+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:32:40.281+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:32:40.317+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:32:40.317+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:32:40.372+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.138 seconds
+[2025-11-03T15:33:10.756+0000] {processor.py:161} INFO - Started process (PID=33542) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:33:10.757+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:33:10.760+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:33:10.759+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:33:10.804+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:33:10.849+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:33:10.849+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:33:10.900+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.150 seconds
+[2025-11-03T15:33:41.267+0000] {processor.py:161} INFO - Started process (PID=33577) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:33:41.272+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:33:41.274+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:33:41.274+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:33:41.314+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:33:41.360+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:33:41.359+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:33:41.417+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.157 seconds
+[2025-11-03T15:34:11.740+0000] {processor.py:161} INFO - Started process (PID=33612) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:34:11.745+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:34:11.747+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:34:11.746+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:34:11.786+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:34:11.827+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:34:11.826+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:34:11.895+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.160 seconds
+[2025-11-03T15:34:42.118+0000] {processor.py:161} INFO - Started process (PID=33647) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:34:42.120+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:34:42.124+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:34:42.123+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:34:42.158+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:34:42.204+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:34:42.203+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:34:42.277+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.163 seconds
+[2025-11-03T15:35:12.853+0000] {processor.py:161} INFO - Started process (PID=33682) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:35:12.856+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:35:12.858+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:35:12.857+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:35:12.894+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:35:12.944+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:35:12.943+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:35:13.016+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.170 seconds
+[2025-11-03T15:35:43.161+0000] {processor.py:161} INFO - Started process (PID=33717) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:35:43.164+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:35:43.166+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:35:43.165+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:35:43.215+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:35:43.260+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:35:43.259+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:35:43.329+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.174 seconds
+[2025-11-03T15:36:13.658+0000] {processor.py:161} INFO - Started process (PID=33752) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:36:13.661+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:36:13.663+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:36:13.662+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:36:13.704+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:36:13.746+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:36:13.745+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:36:13.798+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.145 seconds
+[2025-11-03T15:36:44.020+0000] {processor.py:161} INFO - Started process (PID=33787) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:36:44.022+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:36:44.024+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:36:44.024+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:36:44.059+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:36:44.104+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:36:44.103+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:36:44.158+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.145 seconds
+[2025-11-03T15:37:14.416+0000] {processor.py:161} INFO - Started process (PID=33822) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:37:14.418+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:37:14.420+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:37:14.419+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:37:14.458+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:37:14.496+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:37:14.495+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:37:14.548+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.138 seconds
+[2025-11-03T15:37:44.846+0000] {processor.py:161} INFO - Started process (PID=33857) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:37:44.849+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:37:44.850+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:37:44.850+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:37:44.892+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:37:44.938+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:37:44.937+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:37:44.997+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.157 seconds
+[2025-11-03T15:38:15.205+0000] {processor.py:161} INFO - Started process (PID=33892) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:38:15.207+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:38:15.210+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:38:15.209+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:38:15.257+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:38:15.311+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:38:15.309+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:38:15.367+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.169 seconds
+[2025-11-03T15:38:45.667+0000] {processor.py:161} INFO - Started process (PID=33927) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:38:45.669+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:38:45.671+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:38:45.670+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:38:45.709+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:38:45.753+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:38:45.753+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:38:45.808+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.146 seconds
+[2025-11-03T15:39:16.091+0000] {processor.py:161} INFO - Started process (PID=33962) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:39:16.095+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:39:16.104+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:39:16.103+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:39:16.176+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:39:16.250+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:39:16.250+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:39:16.354+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.270 seconds
+[2025-11-03T15:39:46.563+0000] {processor.py:161} INFO - Started process (PID=33997) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:39:46.565+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:39:46.567+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:39:46.566+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:39:46.599+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:39:46.641+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:39:46.640+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:39:46.695+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.137 seconds
+[2025-11-03T15:40:16.973+0000] {processor.py:161} INFO - Started process (PID=34032) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:40:16.975+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:40:16.976+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:40:16.976+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:40:17.017+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:40:17.057+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:40:17.057+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:40:17.114+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.147 seconds
+[2025-11-03T15:40:47.302+0000] {processor.py:161} INFO - Started process (PID=34067) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:40:47.304+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:40:47.307+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:40:47.306+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:40:47.346+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:40:47.391+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:40:47.390+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:40:47.460+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.165 seconds
+[2025-11-03T15:41:17.667+0000] {processor.py:161} INFO - Started process (PID=34107) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:41:17.668+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:41:17.670+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:41:17.669+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:41:17.710+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:41:17.756+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:41:17.755+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:41:17.811+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.149 seconds
+[2025-11-03T15:41:48.773+0000] {processor.py:161} INFO - Started process (PID=34142) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:41:48.778+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:41:48.782+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:41:48.781+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:41:48.826+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:41:48.899+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:41:48.898+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:41:48.967+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.200 seconds
+[2025-11-03T15:42:19.114+0000] {processor.py:161} INFO - Started process (PID=34177) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:42:19.116+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:42:19.117+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:42:19.117+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:42:19.153+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:42:19.190+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:42:19.189+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:42:19.250+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.141 seconds
+[2025-11-03T15:42:49.444+0000] {processor.py:161} INFO - Started process (PID=34217) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:42:49.447+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:42:49.448+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:42:49.448+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:42:49.488+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:42:49.544+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:42:49.543+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:42:49.600+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.163 seconds
+[2025-11-03T15:43:19.715+0000] {processor.py:161} INFO - Started process (PID=34247) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:43:19.716+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:43:19.718+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:43:19.717+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:43:19.756+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:43:19.799+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:43:19.799+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:43:19.862+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.152 seconds
+[2025-11-03T15:43:50.168+0000] {processor.py:161} INFO - Started process (PID=34282) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:43:50.170+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:43:50.173+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:43:50.173+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:43:50.208+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:43:50.257+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:43:50.257+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:43:50.318+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.156 seconds
+[2025-11-03T15:44:20.627+0000] {processor.py:161} INFO - Started process (PID=34317) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:44:20.630+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:44:20.632+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:44:20.631+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:44:20.680+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:44:20.721+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:44:20.720+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:44:20.778+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.155 seconds
+[2025-11-03T15:44:51.355+0000] {processor.py:161} INFO - Started process (PID=34352) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:44:51.357+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:44:51.359+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:44:51.358+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:44:51.400+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:44:51.444+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:44:51.443+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:44:51.645+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.295 seconds
+[2025-11-03T15:45:21.726+0000] {processor.py:161} INFO - Started process (PID=34390) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:45:21.728+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:45:21.731+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:45:21.730+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:45:21.772+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:45:21.806+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:45:21.805+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:45:21.996+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.275 seconds
+[2025-11-03T15:45:52.138+0000] {processor.py:161} INFO - Started process (PID=34422) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:45:52.141+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:45:52.143+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:45:52.142+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:45:52.184+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:45:52.230+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:45:52.229+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:45:52.286+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.152 seconds
+[2025-11-03T15:46:22.623+0000] {processor.py:161} INFO - Started process (PID=34457) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:46:22.624+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:46:22.625+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:46:22.625+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:46:22.668+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:46:22.716+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:46:22.715+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:46:22.767+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.150 seconds
+[2025-11-03T15:46:52.985+0000] {processor.py:161} INFO - Started process (PID=34492) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:46:52.987+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T15:46:52.989+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:46:52.988+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:46:53.023+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T15:46:53.255+0000] {logging_mixin.py:188} INFO - [2025-11-03T15:46:53.255+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T15:46:53.312+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.333 seconds
+[2025-11-03T20:41:24.241+0000] {processor.py:161} INFO - Started process (PID=34519) to work on /opt/airflow/dags/gold_dag.py
+[2025-11-03T20:41:24.244+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/gold_dag.py for tasks to queue
+[2025-11-03T20:41:24.246+0000] {logging_mixin.py:188} INFO - [2025-11-03T20:41:24.245+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/gold_dag.py
+[2025-11-03T20:41:24.339+0000] {processor.py:840} INFO - DAG(s) 'gold_layer_pipeline' retrieved from /opt/airflow/dags/gold_dag.py
+[2025-11-03T20:41:24.440+0000] {logging_mixin.py:188} INFO - [2025-11-03T20:41:24.439+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-03T20:41:24.577+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/gold_dag.py took 0.364 seconds

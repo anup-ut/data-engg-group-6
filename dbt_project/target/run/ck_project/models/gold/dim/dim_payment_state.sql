@@ -4,7 +4,7 @@
     
     
         
-        insert into gold.dim_payment_state
+        insert into gold.dim_payment_state__dbt_backup
         ("payment_state_sk", "payment_state_name", "is_final_state", "is_payment_reached_provider")
 
 WITH st AS (

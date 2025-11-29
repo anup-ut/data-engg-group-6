@@ -1,0 +1,17 @@
+[2025-11-26T19:23:01.771+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-11-23T00:00:00+00:00 [queued]>
+[2025-11-26T19:23:01.820+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-11-23T00:00:00+00:00 [queued]>
+[2025-11-26T19:23:01.828+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-26T19:23:02.010+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-11-23 00:00:00+00:00
+[2025-11-26T19:23:02.064+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-11-23T00:00:00+00:00', '--job-id', '577', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpi8b8me3t']
+[2025-11-26T19:23:02.072+0000] {standard_task_runner.py:88} INFO - Job 577: Subtask load_payments_bronze
+[2025-11-26T19:23:02.048+0000] {standard_task_runner.py:60} INFO - Started process 492 to run task
+[2025-11-26T19:23:02.697+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-11-23T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-26T19:23:02.747+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-11-26T19:23:02.767+0000] {process_utils.py:131} INFO - Sending 15 to group 492. PIDs of all processes in the group: [492]
+[2025-11-26T19:23:02.787+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 492
+[2025-11-26T19:23:02.923+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=492, status='terminated', exitcode=<Negsignal.SIGTERM: -15>, started='19:23:01') (492) terminated with exit code -15
+[2025-11-26T19:23:02.937+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-11-26T19:23:03.069+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-26T19:23:04.773+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-11-26T19:23:04.776+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-11-26T19:23:04.836+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

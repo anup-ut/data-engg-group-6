@@ -4,7 +4,7 @@
     
     
         
-        insert into gold.dim_merchants
+        insert into gold.dim_merchants__dbt_backup
         ("merchant_sk", "merchant_id", "merchant_name", "merchant_state", "acquirer_id", "scd_start_date", "scd_end_date", "updated_at_raw")
 
 -- Build a current (Type-0/1 style) merchant dimension from Silver.

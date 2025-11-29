@@ -1,0 +1,50 @@
+[2025-11-26T19:23:00.878+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-11-22T00:00:00+00:00 [queued]>
+[2025-11-26T19:23:00.993+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-11-22T00:00:00+00:00 [queued]>
+[2025-11-26T19:23:01.011+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-11-26T19:23:01.109+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load_payments_bronze> on 2025-11-22 00:00:00+00:00
+[2025-11-26T19:23:01.173+0000] {standard_task_runner.py:60} INFO - Started process 483 to run task
+[2025-11-26T19:23:01.199+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ingestion_pipeline', 'load_payments_bronze', 'scheduled__2025-11-22T00:00:00+00:00', '--job-id', '572', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmpb7uqzpa9']
+[2025-11-26T19:23:01.220+0000] {standard_task_runner.py:88} INFO - Job 572: Subtask load_payments_bronze
+[2025-11-26T19:23:01.762+0000] {task_command.py:423} INFO - Running <TaskInstance: ingestion_pipeline.load_payments_bronze scheduled__2025-11-22T00:00:00+00:00 [running]> on host 0d39d4365eb9
+[2025-11-26T19:23:02.936+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ingestion_pipeline' AIRFLOW_CTX_TASK_ID='load_payments_bronze' AIRFLOW_CTX_EXECUTION_DATE='2025-11-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-22T00:00:00+00:00'
+[2025-11-26T19:23:02.939+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-11-26T19:23:02.964+0000] {process_utils.py:131} INFO - Sending 15 to group 483. PIDs of all processes in the group: [483]
+[2025-11-26T19:23:03.031+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 483
+[2025-11-26T19:23:03.048+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-11-26T19:23:03.301+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/pipelines/payments_to_clickhouse.py", line 63, in _callable
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/compat/__init__.py", line 16, in <module>
+    from pandas._typing import F
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/_typing.py", line 183, in <module>
+    AggObjType = Union[
+  File "/usr/local/lib/python3.8/typing.py", line 258, in inner
+    return cached(*args, **kwds)
+  File "/usr/local/lib/python3.8/typing.py", line 358, in __getitem__
+    parameters = tuple(_type_check(p, msg) for p in parameters)
+  File "/usr/local/lib/python3.8/typing.py", line 358, in <genexpr>
+    parameters = tuple(_type_check(p, msg) for p in parameters)
+  File "/usr/local/lib/python3.8/typing.py", line 139, in _type_check
+    return ForwardRef(arg)
+  File "/usr/local/lib/python3.8/typing.py", line 500, in __init__
+    code = compile(arg, '<string>', 'eval')
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-11-26T19:23:03.503+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=ingestion_pipeline, task_id=load_payments_bronze, execution_date=20251122T000000, start_date=20251126T192300, end_date=20251126T192303
+[2025-11-26T19:23:03.873+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 572 for task load_payments_bronze (Task received SIGTERM signal; 483)
+[2025-11-26T19:23:04.004+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=483, status='terminated', exitcode=1, started='19:23:00') (483) terminated with exit code 1
+[2025-11-26T19:23:04.024+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-11-26T19:23:04.255+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-26T19:23:04.756+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-11-26T19:23:04.771+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-11-26T19:23:04.911+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

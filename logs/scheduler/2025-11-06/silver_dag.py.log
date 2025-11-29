@@ -1,0 +1,698 @@
+[2025-11-06T18:27:19.223+0000] {processor.py:161} INFO - Started process (PID=44750) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:27:19.247+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:27:19.260+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:27:19.259+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:27:21.520+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:27:21.973+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:27:21.972+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:27:23.328+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 4.112 seconds
+[2025-11-06T18:27:55.738+0000] {processor.py:161} INFO - Started process (PID=44815) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:27:55.765+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:27:55.773+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:27:55.772+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:27:57.883+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:27:58.015+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:27:58.015+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:27:58.327+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 2.607 seconds
+[2025-11-06T18:28:29.239+0000] {processor.py:161} INFO - Started process (PID=44904) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:28:29.245+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:28:29.250+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:28:29.249+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:28:30.065+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:28:30.120+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:28:30.120+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:28:30.185+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:28:30.184+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:28:30.243+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 1.012 seconds
+[2025-11-06T18:29:00.928+0000] {processor.py:161} INFO - Started process (PID=44944) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:29:00.930+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:29:00.932+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:29:00.932+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:29:01.152+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:29:01.171+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:29:01.170+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:29:01.196+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:29:01.196+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:29:01.237+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.314 seconds
+[2025-11-06T18:29:32.215+0000] {processor.py:161} INFO - Started process (PID=44979) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:29:32.217+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:29:32.218+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:29:32.218+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:29:32.436+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:29:32.457+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:29:32.457+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:29:32.494+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:29:32.494+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:29:32.522+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.311 seconds
+[2025-11-06T18:30:02.645+0000] {processor.py:161} INFO - Started process (PID=45019) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:30:02.646+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:30:02.648+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:30:02.647+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:30:02.897+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:30:02.956+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:30:02.955+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:30:02.995+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:30:02.994+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:30:03.023+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.382 seconds
+[2025-11-06T18:30:33.933+0000] {processor.py:161} INFO - Started process (PID=45054) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:30:33.937+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:30:33.941+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:30:33.939+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:30:34.319+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:30:34.361+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:30:34.361+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:30:34.400+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:30:34.399+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:30:34.460+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.539 seconds
+[2025-11-06T18:31:04.594+0000] {processor.py:161} INFO - Started process (PID=45092) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:31:04.597+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:31:04.600+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:31:04.599+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:31:04.931+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:31:04.980+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:31:04.979+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:31:05.034+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:31:05.034+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:31:05.073+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.490 seconds
+[2025-11-06T18:31:35.235+0000] {processor.py:161} INFO - Started process (PID=45127) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:31:35.238+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:31:35.239+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:31:35.239+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:31:35.438+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:31:35.458+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:31:35.458+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:31:35.488+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:31:35.488+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:31:35.514+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.285 seconds
+[2025-11-06T18:32:05.645+0000] {processor.py:161} INFO - Started process (PID=45162) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:32:05.647+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:32:05.648+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:32:05.648+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:32:05.882+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:32:05.908+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:32:05.907+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:32:05.943+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:32:05.943+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:32:05.969+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.331 seconds
+[2025-11-06T18:32:36.463+0000] {processor.py:161} INFO - Started process (PID=45194) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:32:36.465+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:32:36.468+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:32:36.468+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:32:36.714+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:32:36.738+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:32:36.738+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:32:36.768+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:32:36.768+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:32:36.794+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.339 seconds
+[2025-11-06T18:33:07.176+0000] {processor.py:161} INFO - Started process (PID=45229) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:33:07.186+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:33:07.193+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:33:07.189+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:33:07.744+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:33:07.808+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:33:07.807+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:33:07.881+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:33:07.881+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:33:07.972+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.804 seconds
+[2025-11-06T18:33:38.473+0000] {processor.py:161} INFO - Started process (PID=45269) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:33:38.475+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:33:38.476+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:33:38.476+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:33:38.716+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:33:38.745+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:33:38.744+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:33:38.784+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:33:38.783+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:33:38.820+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.353 seconds
+[2025-11-06T18:34:09.791+0000] {processor.py:161} INFO - Started process (PID=45304) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:34:09.793+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:34:09.795+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:34:09.795+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:34:10.056+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:34:10.080+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:34:10.079+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:34:10.108+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:34:10.107+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:34:10.140+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.355 seconds
+[2025-11-06T18:34:40.277+0000] {processor.py:161} INFO - Started process (PID=45339) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:34:40.278+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:34:40.280+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:34:40.280+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:34:40.504+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:34:40.524+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:34:40.523+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:34:40.549+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:34:40.549+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:34:40.573+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.301 seconds
+[2025-11-06T18:35:10.961+0000] {processor.py:161} INFO - Started process (PID=45379) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:35:10.963+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:35:10.965+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:35:10.964+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:35:11.173+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:35:11.196+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:35:11.196+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:35:11.223+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:35:11.223+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:35:11.248+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.292 seconds
+[2025-11-06T18:35:41.366+0000] {processor.py:161} INFO - Started process (PID=45414) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:35:41.367+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:35:41.369+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:35:41.369+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:35:41.581+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:35:41.598+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:35:41.598+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:35:41.622+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:35:41.622+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:35:41.653+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.294 seconds
+[2025-11-06T18:36:11.814+0000] {processor.py:161} INFO - Started process (PID=45454) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:36:11.816+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:36:11.817+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:36:11.817+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:36:12.020+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:36:12.046+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:36:12.045+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:36:12.072+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:36:12.072+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:36:12.096+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.286 seconds
+[2025-11-06T18:36:42.915+0000] {processor.py:161} INFO - Started process (PID=45489) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:36:42.917+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:36:42.918+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:36:42.918+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:36:43.151+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:36:43.179+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:36:43.179+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:36:43.210+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:36:43.210+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:36:43.235+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.324 seconds
+[2025-11-06T18:37:13.325+0000] {processor.py:161} INFO - Started process (PID=45524) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:37:13.327+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:37:13.330+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:37:13.329+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:37:13.531+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:37:13.558+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:37:13.558+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:37:13.584+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:37:13.584+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:37:13.610+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.293 seconds
+[2025-11-06T18:37:44.383+0000] {processor.py:161} INFO - Started process (PID=45559) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:37:44.385+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:37:44.387+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:37:44.386+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:37:44.601+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:37:44.624+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:37:44.623+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:37:44.654+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:37:44.654+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:37:44.693+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.316 seconds
+[2025-11-06T18:38:14.870+0000] {processor.py:161} INFO - Started process (PID=45594) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:38:14.872+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:38:14.873+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:38:14.873+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:38:15.072+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:38:15.091+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:38:15.090+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:38:15.117+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:38:15.116+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:38:15.147+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.280 seconds
+[2025-11-06T18:38:45.256+0000] {processor.py:161} INFO - Started process (PID=45629) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:38:45.258+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:38:45.259+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:38:45.259+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:38:45.467+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:38:45.490+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:38:45.490+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:38:45.516+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:38:45.516+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:38:45.549+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.299 seconds
+[2025-11-06T18:39:15.688+0000] {processor.py:161} INFO - Started process (PID=45664) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:39:15.691+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:39:15.692+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:39:15.692+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:39:15.965+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:39:15.990+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:39:15.989+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:39:16.019+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:39:16.019+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:39:16.049+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.366 seconds
+[2025-11-06T18:39:46.214+0000] {processor.py:161} INFO - Started process (PID=45699) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:39:46.216+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:39:46.217+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:39:46.217+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:39:46.404+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:39:46.423+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:39:46.422+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:39:46.448+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:39:46.448+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:39:46.481+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.271 seconds
+[2025-11-06T18:40:16.591+0000] {processor.py:161} INFO - Started process (PID=45734) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:40:16.592+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:40:16.594+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:40:16.594+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:40:16.800+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:40:16.824+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:40:16.824+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:40:16.848+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:40:16.848+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:40:16.882+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.296 seconds
+[2025-11-06T18:40:47.853+0000] {processor.py:161} INFO - Started process (PID=45769) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:40:47.855+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:40:47.856+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:40:47.856+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:40:48.050+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:40:48.068+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:40:48.067+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:40:48.095+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:40:48.094+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:40:48.120+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.271 seconds
+[2025-11-06T18:41:18.220+0000] {processor.py:161} INFO - Started process (PID=45804) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:41:18.221+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:41:18.222+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:41:18.222+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:41:18.415+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:41:18.437+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:41:18.437+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:41:18.466+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:41:18.466+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:41:18.502+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.287 seconds
+[2025-11-06T18:41:49.300+0000] {processor.py:161} INFO - Started process (PID=45839) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:41:49.302+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:41:49.304+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:41:49.303+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:41:49.482+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:41:49.505+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:41:49.505+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:41:49.530+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:41:49.530+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:41:49.564+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.268 seconds
+[2025-11-06T18:42:19.845+0000] {processor.py:161} INFO - Started process (PID=45874) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:42:19.847+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:42:19.849+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:42:19.849+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:42:20.115+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:42:20.158+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:42:20.157+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:42:20.208+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:42:20.207+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:42:20.245+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.404 seconds
+[2025-11-06T18:42:51.008+0000] {processor.py:161} INFO - Started process (PID=45909) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:42:51.010+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:42:51.012+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:42:51.011+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:42:51.207+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:42:51.226+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:42:51.226+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:42:51.252+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:42:51.252+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:42:51.286+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.283 seconds
+[2025-11-06T18:43:21.463+0000] {processor.py:161} INFO - Started process (PID=45944) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:43:21.465+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:43:21.467+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:43:21.466+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:43:21.673+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:43:21.696+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:43:21.696+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:43:21.722+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:43:21.722+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:43:21.745+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.287 seconds
+[2025-11-06T18:43:51.844+0000] {processor.py:161} INFO - Started process (PID=45979) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:43:51.846+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:43:51.847+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:43:51.847+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:43:52.029+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:43:52.051+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:43:52.051+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:43:52.073+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:43:52.073+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:43:52.104+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.266 seconds
+[2025-11-06T18:44:22.310+0000] {processor.py:161} INFO - Started process (PID=46014) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:44:22.313+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:44:22.314+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:44:22.314+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:44:22.509+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:44:22.531+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:44:22.531+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:44:22.558+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:44:22.558+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:44:22.588+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.282 seconds
+[2025-11-06T18:44:52.716+0000] {processor.py:161} INFO - Started process (PID=46049) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:44:52.719+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:44:52.720+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:44:52.720+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:44:52.929+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:44:52.948+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:44:52.948+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:44:52.973+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:44:52.972+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:44:53.006+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.294 seconds
+[2025-11-06T18:45:23.463+0000] {processor.py:161} INFO - Started process (PID=46084) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:45:23.465+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:45:23.467+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:45:23.467+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:45:23.702+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:45:23.728+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:45:23.727+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:45:23.756+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:45:23.756+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:45:23.783+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.324 seconds
+[2025-11-06T18:45:54.525+0000] {processor.py:161} INFO - Started process (PID=46119) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:45:54.528+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:45:54.530+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:45:54.529+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:45:54.722+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:45:54.741+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:45:54.740+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:45:54.764+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:45:54.763+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:45:54.799+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.278 seconds
+[2025-11-06T18:46:25.013+0000] {processor.py:161} INFO - Started process (PID=46154) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:46:25.015+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:46:25.016+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:46:25.016+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:46:25.188+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:46:25.209+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:46:25.209+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:46:25.231+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:46:25.231+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:46:25.264+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.254 seconds
+[2025-11-06T18:46:55.511+0000] {processor.py:161} INFO - Started process (PID=46189) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:46:55.513+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:46:55.515+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:46:55.514+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:46:55.729+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:46:55.750+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:46:55.750+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:46:55.778+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:46:55.778+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:46:55.804+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.297 seconds
+[2025-11-06T18:47:26.087+0000] {processor.py:161} INFO - Started process (PID=46224) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:47:26.089+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:47:26.091+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:47:26.091+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:47:26.288+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:47:26.308+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:47:26.308+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:47:26.334+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:47:26.334+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:47:26.365+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.284 seconds
+[2025-11-06T18:47:56.569+0000] {processor.py:161} INFO - Started process (PID=46259) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:47:56.571+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:47:56.572+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:47:56.572+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:47:56.799+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:47:56.821+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:47:56.821+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:47:56.848+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:47:56.848+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:47:56.878+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.312 seconds
+[2025-11-06T18:48:27.106+0000] {processor.py:161} INFO - Started process (PID=46294) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:48:27.110+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:48:27.112+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:48:27.111+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:48:27.346+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:48:27.367+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:48:27.367+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:48:27.399+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:48:27.398+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:48:27.442+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.342 seconds
+[2025-11-06T18:48:58.032+0000] {processor.py:161} INFO - Started process (PID=46329) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:48:58.034+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:48:58.037+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:48:58.036+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:48:58.224+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:48:58.243+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:48:58.243+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:48:58.269+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:48:58.269+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:48:58.296+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.268 seconds
+[2025-11-06T18:49:28.521+0000] {processor.py:161} INFO - Started process (PID=46364) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:49:28.523+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:49:28.524+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:49:28.524+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:49:28.739+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:49:28.762+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:49:28.762+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:49:28.792+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:49:28.792+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:49:28.820+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.304 seconds
+[2025-11-06T18:49:59.564+0000] {processor.py:161} INFO - Started process (PID=46399) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:49:59.567+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:49:59.569+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:49:59.569+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:49:59.774+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:49:59.797+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:49:59.796+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:49:59.825+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:49:59.825+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:49:59.861+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.301 seconds
+[2025-11-06T18:50:30.152+0000] {processor.py:161} INFO - Started process (PID=46434) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:50:30.154+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:50:30.156+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:50:30.156+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:50:30.353+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:50:30.373+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:50:30.373+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:50:30.397+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:50:30.397+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:50:30.431+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.284 seconds
+[2025-11-06T18:51:01.066+0000] {processor.py:161} INFO - Started process (PID=46469) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:51:01.068+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:51:01.069+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:51:01.069+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:51:01.268+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:51:01.291+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:51:01.290+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:51:01.317+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:51:01.316+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:51:01.348+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.288 seconds
+[2025-11-06T18:51:31.587+0000] {processor.py:161} INFO - Started process (PID=46504) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:51:31.589+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:51:31.591+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:51:31.590+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:51:31.790+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:51:31.808+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:51:31.807+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:51:31.831+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:51:31.831+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:51:31.867+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.284 seconds
+[2025-11-06T18:52:01.963+0000] {processor.py:161} INFO - Started process (PID=46539) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:52:01.965+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:52:01.966+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:52:01.966+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:52:02.152+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:52:02.171+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:52:02.171+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:52:02.202+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:52:02.202+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:52:02.231+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.272 seconds
+[2025-11-06T18:52:32.361+0000] {processor.py:161} INFO - Started process (PID=46574) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:52:32.363+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:52:32.365+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:52:32.364+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:52:32.552+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:52:32.572+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:52:32.572+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:52:32.600+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:52:32.600+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:52:32.627+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.270 seconds
+[2025-11-06T18:53:02.904+0000] {processor.py:161} INFO - Started process (PID=46609) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:53:02.906+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:53:02.908+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:53:02.907+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:53:03.120+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:53:03.142+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:53:03.141+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:53:03.168+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:53:03.168+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:53:03.204+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.303 seconds
+[2025-11-06T18:53:33.948+0000] {processor.py:161} INFO - Started process (PID=46644) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:53:33.950+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:53:33.951+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:53:33.951+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:53:34.142+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:53:34.166+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:53:34.166+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:53:34.190+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:53:34.189+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:53:34.224+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.280 seconds
+[2025-11-06T18:54:04.450+0000] {processor.py:161} INFO - Started process (PID=46679) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:54:04.452+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:54:04.453+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:54:04.453+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:54:04.640+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:54:04.663+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:54:04.663+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:54:04.702+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:54:04.702+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:54:04.731+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.286 seconds
+[2025-11-06T18:54:35.088+0000] {processor.py:161} INFO - Started process (PID=46714) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:54:35.090+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:54:35.092+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:54:35.091+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:54:35.278+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:54:35.297+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:54:35.297+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:54:35.319+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:54:35.319+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:54:35.353+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.269 seconds
+[2025-11-06T18:55:06.042+0000] {processor.py:161} INFO - Started process (PID=46749) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:55:06.044+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:55:06.045+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:55:06.045+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:55:06.216+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:55:06.235+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:55:06.235+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:55:06.259+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:55:06.258+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:55:06.288+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.250 seconds
+[2025-11-06T18:55:36.481+0000] {processor.py:161} INFO - Started process (PID=46784) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:55:36.483+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:55:36.485+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:55:36.485+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:55:36.704+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:55:36.726+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:55:36.726+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:55:36.752+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:55:36.752+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:55:36.785+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.309 seconds
+[2025-11-06T18:56:06.923+0000] {processor.py:161} INFO - Started process (PID=46819) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:56:06.926+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:56:06.928+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:56:06.927+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:56:07.128+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:56:07.151+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:56:07.151+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:56:07.187+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:56:07.186+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:56:07.216+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.297 seconds
+[2025-11-06T18:56:37.308+0000] {processor.py:161} INFO - Started process (PID=46854) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:56:37.310+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:56:37.311+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:56:37.311+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:56:37.514+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:56:37.539+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:56:37.538+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:56:37.565+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:56:37.565+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:56:37.589+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.285 seconds
+[2025-11-06T18:57:07.711+0000] {processor.py:161} INFO - Started process (PID=46889) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:57:07.713+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:57:07.715+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:57:07.714+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:57:07.923+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:57:07.942+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:57:07.942+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:57:07.971+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:57:07.970+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:57:07.998+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.293 seconds
+[2025-11-06T18:57:38.343+0000] {processor.py:161} INFO - Started process (PID=46924) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:57:38.345+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:57:38.346+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:57:38.346+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:57:38.573+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:57:38.595+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:57:38.595+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:57:38.626+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:57:38.626+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:57:38.654+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.320 seconds
+[2025-11-06T18:58:09.424+0000] {processor.py:161} INFO - Started process (PID=46959) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:58:09.427+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:58:09.428+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:58:09.428+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:58:09.654+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:58:09.674+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:58:09.673+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:58:09.711+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:58:09.711+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:58:10.390+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.972 seconds
+[2025-11-06T18:58:40.619+0000] {processor.py:161} INFO - Started process (PID=46994) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:58:40.621+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:58:40.623+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:58:40.622+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:58:40.846+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:58:40.878+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:58:40.878+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:58:40.948+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:58:40.947+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:58:41.025+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.411 seconds
+[2025-11-06T18:59:11.143+0000] {processor.py:161} INFO - Started process (PID=47029) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:59:11.145+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:59:11.146+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:59:11.146+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:59:11.328+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:59:11.346+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:59:11.346+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:59:11.370+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:59:11.370+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:59:11.400+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.260 seconds
+[2025-11-06T18:59:42.132+0000] {processor.py:161} INFO - Started process (PID=47064) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:59:42.135+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T18:59:42.136+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:59:42.136+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:59:42.325+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T18:59:42.342+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:59:42.342+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T18:59:42.367+0000] {logging_mixin.py:188} INFO - [2025-11-06T18:59:42.367+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T18:59:42.396+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.268 seconds
+[2025-11-06T19:00:12.944+0000] {processor.py:161} INFO - Started process (PID=47099) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:00:12.946+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:00:12.948+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:00:12.947+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:00:13.168+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:00:13.364+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:00:13.364+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:00:13.386+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:00:13.386+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:00:13.410+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.471 seconds
+[2025-11-06T19:00:43.845+0000] {processor.py:161} INFO - Started process (PID=47134) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:00:43.847+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:00:43.849+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:00:43.849+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:00:44.062+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:00:44.277+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:00:44.276+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:00:44.301+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:00:44.301+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:00:44.329+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.487 seconds
+[2025-11-06T19:01:14.875+0000] {processor.py:161} INFO - Started process (PID=47169) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:01:14.877+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:01:14.879+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:01:14.879+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:01:15.084+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:01:15.270+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:01:15.270+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:01:15.294+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:01:15.293+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:01:15.327+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.457 seconds
+[2025-11-06T19:01:46.104+0000] {processor.py:161} INFO - Started process (PID=47204) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:01:46.106+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:01:46.107+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:01:46.107+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:01:46.313+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:01:46.338+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:01:46.338+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:01:46.369+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:01:46.368+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:01:46.406+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.305 seconds
+[2025-11-06T19:02:16.596+0000] {processor.py:161} INFO - Started process (PID=47239) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:02:16.598+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:02:16.600+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:02:16.600+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:02:16.820+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:02:16.843+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:02:16.843+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:02:16.868+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:02:16.868+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:02:16.900+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.309 seconds
+[2025-11-06T19:02:47.025+0000] {processor.py:161} INFO - Started process (PID=47274) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:02:47.027+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:02:47.029+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:02:47.029+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:02:47.238+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:02:47.259+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:02:47.259+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:02:47.287+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:02:47.286+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:02:47.327+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.307 seconds
+[2025-11-06T19:03:17.448+0000] {processor.py:161} INFO - Started process (PID=47309) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:03:17.449+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:03:17.451+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:03:17.451+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:03:17.671+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:03:17.692+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:03:17.692+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:03:17.722+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:03:17.721+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:03:17.759+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.315 seconds
+[2025-11-06T19:03:48.079+0000] {processor.py:161} INFO - Started process (PID=47344) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:03:48.081+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:03:48.083+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:03:48.083+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:03:48.308+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:03:48.328+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:03:48.328+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:03:48.354+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:03:48.353+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:03:48.389+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.314 seconds
+[2025-11-06T19:04:19.026+0000] {processor.py:161} INFO - Started process (PID=47379) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:04:19.028+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:04:19.031+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:04:19.030+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:04:19.259+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:04:19.280+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:04:19.280+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:04:19.309+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:04:19.308+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:04:19.345+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.322 seconds
+[2025-11-06T19:04:49.463+0000] {processor.py:161} INFO - Started process (PID=47414) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:04:49.489+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:04:49.497+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:04:49.496+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:04:49.695+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:04:49.719+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:04:49.719+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:04:49.749+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:04:49.749+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:04:49.793+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.336 seconds
+[2025-11-06T19:05:20.162+0000] {processor.py:161} INFO - Started process (PID=47449) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:05:20.163+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:05:20.166+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:05:20.165+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:05:20.363+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:05:20.383+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:05:20.383+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:05:20.408+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:05:20.408+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:05:20.444+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.287 seconds
+[2025-11-06T19:05:51.076+0000] {processor.py:161} INFO - Started process (PID=47484) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:05:51.078+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:05:51.080+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:05:51.079+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:05:51.359+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:05:51.392+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:05:51.391+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:05:51.425+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:05:51.425+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:05:51.450+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.378 seconds
+[2025-11-06T19:06:21.731+0000] {processor.py:161} INFO - Started process (PID=47519) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:06:21.735+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:06:21.737+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:06:21.737+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:06:21.955+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:06:21.974+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:06:21.973+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:06:21.996+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:06:21.995+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:06:22.026+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.302 seconds
+[2025-11-06T19:06:52.124+0000] {processor.py:161} INFO - Started process (PID=47554) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:06:52.126+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:06:52.128+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:06:52.127+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:06:52.324+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:06:52.351+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:06:52.350+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:06:52.381+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:06:52.381+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:06:52.411+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.291 seconds
+[2025-11-06T19:07:22.603+0000] {processor.py:161} INFO - Started process (PID=47589) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:07:22.605+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:07:22.606+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:07:22.606+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:07:22.792+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:07:22.812+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:07:22.812+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:07:22.838+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:07:22.838+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:07:22.872+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.273 seconds
+[2025-11-06T19:07:53.485+0000] {processor.py:161} INFO - Started process (PID=47624) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:07:53.486+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:07:53.488+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:07:53.488+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:07:53.681+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:07:53.700+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:07:53.700+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:07:53.724+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:07:53.724+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:07:53.759+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.278 seconds
+[2025-11-06T19:08:24.104+0000] {processor.py:161} INFO - Started process (PID=47659) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:08:24.106+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:08:24.107+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:08:24.107+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:08:24.350+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:08:24.370+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:08:24.370+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:08:24.400+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:08:24.400+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:08:24.427+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.327 seconds
+[2025-11-06T19:08:55.163+0000] {processor.py:161} INFO - Started process (PID=47694) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:08:55.165+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:08:55.167+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:08:55.166+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:08:55.344+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:08:55.367+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:08:55.367+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:08:55.391+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:08:55.390+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:08:55.422+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.262 seconds
+[2025-11-06T19:09:25.539+0000] {processor.py:161} INFO - Started process (PID=47729) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:09:25.542+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:09:25.543+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:09:25.543+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:09:25.754+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:09:25.777+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:09:25.777+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:09:25.807+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:09:25.807+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:09:25.847+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.313 seconds
+[2025-11-06T19:09:56.159+0000] {processor.py:161} INFO - Started process (PID=47764) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:09:56.162+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:09:56.164+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:09:56.164+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:09:56.384+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:09:56.406+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:09:56.405+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:09:56.441+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:09:56.441+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:09:56.477+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.323 seconds
+[2025-11-06T19:10:27.150+0000] {processor.py:161} INFO - Started process (PID=47799) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:10:27.152+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:10:27.154+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:10:27.154+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:10:27.348+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:10:27.368+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:10:27.368+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:10:27.391+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:10:27.391+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:10:27.426+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.280 seconds
+[2025-11-06T19:10:57.522+0000] {processor.py:161} INFO - Started process (PID=47834) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:10:57.524+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:10:57.526+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:10:57.525+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:10:57.745+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:10:57.770+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:10:57.769+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:10:57.798+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:10:57.797+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:10:57.841+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.323 seconds
+[2025-11-06T19:11:28.006+0000] {processor.py:161} INFO - Started process (PID=47869) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:11:28.008+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:11:28.010+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:11:28.010+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:11:28.223+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:11:28.242+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:11:28.241+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:11:28.264+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:11:28.264+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:11:28.297+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.295 seconds
+[2025-11-06T19:11:58.441+0000] {processor.py:161} INFO - Started process (PID=47904) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:11:58.443+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:11:58.445+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:11:58.444+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:11:58.680+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:11:58.703+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:11:58.703+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:11:58.733+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:11:58.733+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:11:58.774+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.340 seconds
+[2025-11-06T19:12:29.143+0000] {processor.py:161} INFO - Started process (PID=47939) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:12:29.145+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:12:29.147+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:12:29.146+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:12:29.434+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:12:29.454+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:12:29.454+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:12:29.491+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:12:29.491+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:12:29.538+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.398 seconds
+[2025-11-06T19:12:59.759+0000] {processor.py:161} INFO - Started process (PID=47974) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:12:59.761+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:12:59.763+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:12:59.762+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:12:59.961+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:12:59.980+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:12:59.979+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:13:00.009+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:13:00.008+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:13:00.044+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.288 seconds
+[2025-11-06T19:13:30.754+0000] {processor.py:161} INFO - Started process (PID=48009) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:13:30.756+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:13:30.757+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:13:30.757+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:13:30.948+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:13:30.975+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:13:30.974+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:13:31.004+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:13:31.004+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:13:31.030+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.280 seconds
+[2025-11-06T19:14:01.225+0000] {processor.py:161} INFO - Started process (PID=48044) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:14:01.226+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:14:01.228+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:14:01.227+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:14:01.411+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:14:01.442+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:14:01.441+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:14:01.473+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:14:01.473+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:14:01.503+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.281 seconds
+[2025-11-06T19:14:31.812+0000] {processor.py:161} INFO - Started process (PID=48079) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:14:31.813+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:14:31.815+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:14:31.814+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:14:32.049+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:14:32.073+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:14:32.072+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:14:32.096+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:14:32.096+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:14:32.120+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.314 seconds
+[2025-11-06T19:15:02.784+0000] {processor.py:161} INFO - Started process (PID=48114) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:15:02.786+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:15:02.788+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:15:02.787+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:15:03.041+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:15:03.064+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:15:03.064+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:15:03.104+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:15:03.104+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:15:03.143+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.363 seconds
+[2025-11-06T19:15:33.283+0000] {processor.py:161} INFO - Started process (PID=48149) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:15:33.287+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:15:33.291+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:15:33.290+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:15:33.650+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:15:33.686+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:15:33.686+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:15:33.723+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:15:33.723+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:15:33.768+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.491 seconds
+[2025-11-06T19:16:03.981+0000] {processor.py:161} INFO - Started process (PID=48184) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:16:03.982+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:16:03.984+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:16:03.983+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:16:04.194+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:16:04.219+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:16:04.218+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:16:04.241+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:16:04.241+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:16:04.266+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.290 seconds
+[2025-11-06T19:16:34.938+0000] {processor.py:161} INFO - Started process (PID=48219) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:16:34.941+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:16:34.943+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:16:34.942+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:16:35.136+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:16:35.155+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:16:35.155+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:16:35.180+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:16:35.180+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:16:35.213+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.280 seconds
+[2025-11-06T19:17:05.549+0000] {processor.py:161} INFO - Started process (PID=48257) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:17:05.551+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:17:05.553+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:17:05.553+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:17:05.756+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:17:05.772+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:17:05.772+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:17:05.794+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:17:05.793+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:17:05.834+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.290 seconds
+[2025-11-06T19:17:36.007+0000] {processor.py:161} INFO - Started process (PID=48292) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:17:36.009+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:17:36.010+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:17:36.010+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:17:36.265+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:17:36.285+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:17:36.284+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:17:36.311+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:17:36.310+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:17:36.338+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 0.335 seconds
+[2025-11-06T19:19:15.593+0000] {processor.py:161} INFO - Started process (PID=48329) to work on /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:19:15.614+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/silver_dag.py for tasks to queue
+[2025-11-06T19:19:15.619+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:19:15.618+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:19:16.566+0000] {processor.py:840} INFO - DAG(s) 'silver_transformation_pipeline' retrieved from /opt/airflow/dags/silver_dag.py
+[2025-11-06T19:19:16.659+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:19:16.658+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-11-06T19:19:16.761+0000] {logging_mixin.py:188} INFO - [2025-11-06T19:19:16.761+0000] {dag.py:3823} INFO - Setting next_dagrun for silver_transformation_pipeline to 2025-11-06 00:00:00+00:00, run_after=2025-11-07 00:00:00+00:00
+[2025-11-06T19:19:16.854+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/silver_dag.py took 1.277 seconds

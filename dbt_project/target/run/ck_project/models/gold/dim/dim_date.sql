@@ -4,7 +4,7 @@
     
     
         
-        insert into gold.dim_date
+        insert into gold.dim_date__dbt_backup
         ("date_key", "full_date", "year", "month", "day", "day_of_week", "is_weekend", "is_holiday")
 
 -- Generate dates from start..end using system.numbers.

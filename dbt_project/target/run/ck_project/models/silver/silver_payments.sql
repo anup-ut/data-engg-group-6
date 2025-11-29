@@ -3,6 +3,8 @@
         ("transaction_id", "merchant_id", "acquirer_id", "payment_state", "card_type", "reference", "order_reference", "details", "created_at", "updated_at", "_snapshot_date")
 
 
+  
+
 
 
 
@@ -24,6 +26,8 @@ with base as (
   from bronze.payments
   where id is not null
   
+    and _snapshot_date = toDate('2025-11-08')
+  
 ),
 
 agg_day as (
@@ -44,7 +48,12 @@ agg_day as (
 )
 
 
-select * from agg_day
+select a.*
+from agg_day a
+left join silver.payments s
+  on s.transaction_id = a.transaction_id
+ and s._snapshot_date = a._snapshot_date
+where s.transaction_id is null
 
   
     
