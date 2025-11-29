@@ -14,11 +14,11 @@ CREATE ROLE IF NOT EXISTS analyst_full;
 CREATE ROLE IF NOT EXISTS analyst_limited;
 
 -- Users who will use these roles
-CREATE USER IF NOT EXISTS analyst_john IDENTIFIED BY 'password123';
-CREATE USER IF NOT EXISTS intern_mary IDENTIFIED BY 'password456';
+CREATE USER IF NOT EXISTS analyst_hardi IDENTIFIED BY 'password123';
+CREATE USER IF NOT EXISTS intern_anup IDENTIFIED BY 'password456';
 
-GRANT analyst_full    TO analyst_john;
-GRANT analyst_limited TO intern_mary;
+GRANT analyst_full    TO analyst_hardi;
+GRANT analyst_limited TO intern_anup;
 
 -- Service user that will own the views and have access to gold schema
 CREATE USER IF NOT EXISTS view_definer IDENTIFIED BY 'view_secret';
