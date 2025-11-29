@@ -187,7 +187,93 @@ services:
     depends_on:
       - mongodb
 
+ # --- 9. Superset Services ---
+  superset-db:
+    image: postgres:16
+    container_name: superset_db
+    environment:
+      POSTGRES_DB: ${SUPERSET_DB_NAME:-superset}
+      POSTGRES_USER: ${SUPERSET_DB_USER:-superset}
+      POSTGRES_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+    volumes:
+      - superset_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${SUPERSET_DB_USER:-superset}"]
+      interval: 10s
+      retries: 5
+
+  superset-redis:
+    image: redis:7
+    container_name: superset_redis
+    volumes:
+      - superset_redis_data:/data
+
+  superset-init:
+    image: apachesuperset.docker.scarf.sh/apache/superset:${SUPERSET_TAG:-latest}
+    container_name: superset_init
+    command: ["/app/docker/docker-init.sh"]
+    user: "root"   # ← same
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:-your-secret-key-here}
+      DATABASE_DB: ${SUPERSET_DB_NAME:-superset}
+      DATABASE_HOST: superset-db
+      DATABASE_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+      DATABASE_USER: ${SUPERSET_DB_USER:-superset}
+      # _PIP_ADDITIONAL_REQUIREMENTS is NOT used by Superset, safe to drop
+    depends_on:
+      - superset-db
+    volumes:
+      - superset_data:/app/superset_home
+      - ./superset-docker:/app/docker   # ← teacher-style docker folder
+
+  superset:
+    image: apachesuperset.docker.scarf.sh/apache/superset:${SUPERSET_TAG:-latest}
+    container_name: superset
+    command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
+    user: "root"   # ← same
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:-your-secret-key-here}
+      DATABASE_DB: ${SUPERSET_DB_NAME:-superset}
+      DATABASE_HOST: superset-db
+      DATABASE_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+      DATABASE_USER: ${SUPERSET_DB_USER:-superset}
+      REDIS_HOST: superset-redis
+      # _PIP_ADDITIONAL_REQUIREMENTS not needed here either
+    ports:
+      - "${SUPERSET_PORT:-8088}:8088"
+    depends_on:
+      - superset-db
+      - superset-redis
+      - superset-init
+    volumes:
+      - superset_data:/app/superset_home
+      - ./superset-docker:/app/docker   # ← mount local docker folder
+
+  superset-worker:
+    image: apachesuperset.docker.scarf.sh/apache/superset:${SUPERSET_TAG:-latest}
+    container_name: superset_worker
+    command: ["/app/docker/docker-bootstrap.sh", "worker"]
+    user: "root"   # ← same
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:-your-secret-key-here}
+      DATABASE_DB: ${SUPERSET_DB_NAME:-superset}
+      DATABASE_HOST: superset-db
+      DATABASE_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+      DATABASE_USER: ${SUPERSET_DB_USER:-superset}
+      REDIS_HOST: superset-redis
+      # _PIP_ADDITIONAL_REQUIREMENTS not needed
+    depends_on:
+      - superset-db
+      - superset-redis
+      - superset-init
+    volumes:
+      - superset_data:/app/superset_home
+      - ./superset-docker:/app/docker   # ← same mount
+
 volumes:
   pgdata_airflow:
   clickhouse_data:
   mongodb_data:
+  superset_db_data:
+  superset_redis_data:
+  superset_data:
