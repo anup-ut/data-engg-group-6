@@ -1,2 +1,80 @@
-.env
+# Python
+pipelines/__pycache__/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Airflow
 logs/
+airflow.db
+airflow.cfg
+
+# PostgreSQL data
+pgdata_airflow/
+
+# MongoDB data
+mongodb_data/
+data/db/
+data/configdb/
+
+# ClickHouse data
+clickhouse_data/
+
+# Docker volumes (if created locally)
+*.sqlite
+*.db
+
+# dbt
+dbt_project/logs/
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/profiles.yml  # May contain sensitive connection info
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+*.env
+
+# Data files (optional - uncomment if you don't want to commit CSV files)
+# data/
+# datasets/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.log

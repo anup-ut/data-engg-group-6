@@ -1,4 +1,4 @@
-# 🧠  Mapping Initial Status Payments
+ # 🧠  Mapping Initial Status Payments
 
 ## 📘 Project Overview
 
@@ -57,6 +57,7 @@ This project aims to **join the IGW initial payment data with the main DataLake 
 ---
 
 ## 🧱 Data Architecture
+![architecture diagram](https://github.com/user-attachments/assets/ba6a8007-5d32-4fda-8c03-ba2edd1f1d3a)
 
 ### **Data Flow**
 
@@ -80,6 +81,65 @@ This project aims to **join the IGW initial payment data with the main DataLake 
 * **Timestamp logic:** `created_at` < `updated_at`
 
 ---
+### **Instructions to run**
+1. Write in docker CLI: docker compose up -d
+2. Wait the start of each services:
+[localhost:8080](http://localhost:8080) for airflow webserver, [localhost:8123](http://localhost:8123/) for clickhouse and [localhost:8081](http://localhost:8081/) for MongoDB. (It can take up to 1 minutes)
+3. Log in into Airflow and MongoDB. (Airflow's username and passwords:airflow and MongoDB's username is 'admin' and password is 'password')
+4. In Airflow webserver, we will see three separate DAGS: ingestion_pipeline, silver_transformations_pipeline and gold_layer_pipeline.
+   * By running ingestion_pipeline, we start three operations: ingestion of link_transactions csv files into MongoDB and then ingestion from MongoDB to ClickHouse bronze layer; payment csv files into ClickHouse bronze layer; and merchants to ClickHouse bronze layer.
+   * By running silver_transformations_pipeline, we start transformation and data quality check of three tables(link_transactions, payments and merchants) and ingestion them in silver layer.
+   * By running gold_layer_pipeline, we created analytical models by creating dim_date, dim_merchants, dim_payment_state, dim_payment_method and fact_transactions.
+5. As three dags files are responsible each layer data ingestion, we should wait the end of one to run another. The workflow for running dags:
+run ingestion_dag and wait for its finish* $\quad\rightarrow$ run silver_transformation_pipeline and wait for its finish* $\quad\rightarrow$ run gold_layer_pipeline and wait its finish*.
+
+P.S. As our data took from October 01.10.2025, we put start time for dags as October 1, 2025 so it will have all our data.
+
+*wait until the finish means that last run should show previous day. 
+
+### **DAG's Graph**
+
+<img width="800" height="300" alt="image" src="./docs/images/dag1 (1).png" />
+
+ingestion_pipeline DAG's Graph
+
+<img width="800" height="300" alt="image" src="./docs/images/dag1 (2).png" />
+
+silver_transformations_pipeline DAG's Graph
+
+<img width="800" height="300" alt="image" src="./docs/images/dag1 (3).png" />
+
+gold_layer_pipeline DAG's Graph
+
+### **Analytical Queries**
+
+1. How many initiated payments never reach a payment service provider?
+
+<img width="800" height="336" alt="image" src="./docs/images/sql1.png" />
+
+2. How many initiated payments reach a provider but are abandoned before completion?
+   
+<img width="800" height="343" alt="image" src="./docs/images/sql2.png" />
+
+3. What is the abandonment rate by payment method?
+   
+<img width="800" height="404" alt="image" src="./docs/images/sql3.png" />
+
+4. Which payment methods or providers show the highest share of initiated payments that never complete?
+   
+a)By payment method
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+b)By merchant
+
+<img width="800" height="495" alt="image" src="./docs/images/sql4b.png" />
+
+c)By both
+
+<img width="800" height="794" alt="image" src="./docs/images/sql4c.png" />
+
+
 
 
 
@@ -90,4 +150,3 @@ This project aims to **join the IGW initial payment data with the main DataLake 
 | **Anup Kumar**       | Tooling & Data Architecture             |
 | **Bekarys Toleshov** | Data Model & Data Dictionary            |
 | **Hardi Teder**      | Business Brief & Dataset Documentation  |
-| **Robert Sarnet**    | Demo Queries & Documentation Formatting |
