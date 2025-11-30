@@ -1,14 +1,16 @@
 # dbt_project/profiles.yml
+# dbt_project/profiles.yml
+
 ck_project:
   target: dev
   outputs:
     dev:
       type: clickhouse
-      host: clickhouse-server
-      port: 9000
-      user: default
-      password: ""
+      host: "{{ env_var('CLICKHOUSE_HOST', 'clickhouse-server') }}"
+      port: "{{ env_var('CLICKHOUSE_PORT', '9000') | int }}"
+      user: "{{ env_var('CLICKHOUSE_USER', 'admin') }}"
+      password: "{{ env_var('CLICKHOUSE_PASSWORD', 'password') }}"
       secure: False
-      database: default
-      schema: default         # <- neutral; adapter may concatenate, so keep it simple
+      database: "{{ env_var('CLICKHOUSE_DB', 'default') }}"
+      schema: "{{ env_var('CLICKHOUSE_DB', 'default') }}"
       threads: 4
