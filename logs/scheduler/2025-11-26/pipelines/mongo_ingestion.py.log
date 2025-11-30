@@ -1,5 +1,0 @@
-[2025-11-26T19:22:32.117+0000] {processor.py:161} INFO - Started process (PID=244) to work on /opt/airflow/dags/pipelines/mongo_ingestion.py
-[2025-11-26T19:22:32.138+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_ingestion.py for tasks to queue
-[2025-11-26T19:22:32.141+0000] {logging_mixin.py:188} INFO - [2025-11-26T19:22:32.140+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_ingestion.py
-[2025-11-26T19:22:32.281+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_ingestion.py
-[2025-11-26T19:22:32.326+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_ingestion.py took 0.255 seconds
