@@ -1,5 +1,0 @@
-[2025-11-26T19:22:31.545+0000] {processor.py:161} INFO - Started process (PID=229) to work on /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
-[2025-11-26T19:22:31.576+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pipelines/mongo_to_clickhouse.py for tasks to queue
-[2025-11-26T19:22:31.588+0000] {logging_mixin.py:188} INFO - [2025-11-26T19:22:31.587+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
-[2025-11-26T19:22:31.809+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/pipelines/mongo_to_clickhouse.py
-[2025-11-26T19:22:31.968+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pipelines/mongo_to_clickhouse.py took 0.470 seconds
