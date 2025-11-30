@@ -34,8 +34,8 @@ def _get_ch():
     return CHClient(
         host=conn.host or "clickhouse-server",
         port=conn.port or 9000,
-        user=conn.login or "default",
-        password=conn.password or "",
+        user=conn.login or os.environ.get("CLICKHOUSE_USER", "default"),
+        password=conn.password or os.environ.get("CLICKHOUSE_PASSWORD", ""),
         database=(conn.schema or "default"),
         settings=(conn.extra_dejson.get("settings", {}) if isinstance(conn.extra_dejson.get("settings", {}), dict) else {}),
     )

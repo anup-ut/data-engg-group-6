@@ -1,0 +1,2 @@
+*.sh text eol=lf
+superset-docker/* text eol=lf
