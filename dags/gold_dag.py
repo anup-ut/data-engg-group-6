@@ -93,9 +93,9 @@ def _run_dbt(select_expr: str, full_refresh: bool = False) -> None:
 
 
 with DAG(
-    dag_id="gold_dimensions_pipeline",
+    dag_id="gold_layer_pipeline",
     description="Build ClickHouse GOLD dimension models with dbt.",
-    start_date=timezone.datetime(2025, 10, 1),
+    start_date=timezone.datetime(2025, 11, 28),
     schedule_interval="@daily",
     catchup=True,
     tags=["dbt", "gold", "clickhouse"],

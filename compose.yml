@@ -6,18 +6,18 @@ services:
     container_name: airflow-db
     image: postgres:16.4
     environment:
-      POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: airflow
-      POSTGRES_DB: airflow
-      PGUSER: airflow
-      PGPASSWORD: airflow
-      PGDATABASE: airflow
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      PGUSER: ${PGUSER}
+      PGPASSWORD: ${PGPASSWORD}
+      PGDATABASE: ${PGDATABASE}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT}:5432"
     volumes:
       - pgdata_airflow:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 10s
       retries: 5
     restart: always
@@ -28,13 +28,13 @@ services:
     container_name: clickhouse-server
     environment:
       # Credentials for Airflow/dbt connection
-      CLICKHOUSE_USER: default
-      CLICKHOUSE_PASSWORD: ""
-      CLICKHOUSE_DB: default
-      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: ${CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT}
     ports:
-      - "8123:8123" # HTTP interface
-      - "9000:9000" # Native client interface
+      - "${CLICKHOUSE_HTTP_PORT}:8123" # HTTP interface
+      - "${CLICKHOUSE_NATIVE_PORT}:9000" # Native client interface
     volumes:
       - clickhouse_data:/var/lib/clickhouse/
       # Shared folders for data ingestion and scripts
@@ -63,20 +63,20 @@ services:
         sleep 10
         airflow db init
         airflow users create \
-          --username airflow \
-          --password airflow \
+          --username ${POSTGRES_USER} \
+          --password ${POSTGRES_PASSWORD} \
           --firstname Admin \
           --lastname User \
           --role Admin \
           --email admin@example.com
     environment:
-      AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      AIRFLOW__CORE__EXECUTOR: ${AIRFLOW__CORE__EXECUTOR}
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: ${AIRFLOW__DATABASE__SQL_ALCHEMY_CONN}
       # Define the ClickHouse connection for Airflow
-      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
+      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: ${AIRFLOW_CONN_CLICKHOUSE_DEFAULT}
       # Define the MongoDB connection for Airflow (if used)
-      AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
-      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
+      AIRFLOW_CONN_MONGO_DEFAULT: ${AIRFLOW_CONN_MONGO_DEFAULT}
+      _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS} dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
@@ -95,15 +95,15 @@ services:
     command: webserver
     environment:
       PATH: /home/airflow/.local/bin:/usr/local/bin:/usr/bin:/bin
-      AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
-      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
-      AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth"
-      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
-      AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
-      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
+      AIRFLOW__CORE__EXECUTOR: ${AIRFLOW__CORE__EXECUTOR}
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: ${AIRFLOW__DATABASE__SQL_ALCHEMY_CONN}
+      AIRFLOW__CORE__LOAD_EXAMPLES: ${AIRFLOW__CORE__LOAD_EXAMPLES}
+      AIRFLOW__API__AUTH_BACKENDS: ${AIRFLOW__API__AUTH_BACKENDS}
+      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: ${AIRFLOW_CONN_CLICKHOUSE_DEFAULT}
+      AIRFLOW_CONN_MONGO_DEFAULT: ${AIRFLOW_CONN_MONGO_DEFAULT}
+      _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS} dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
     ports:
-      - "8080:8080"
+      - "${AIRFLOW_WEBSERVER_PORT}:8080"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
@@ -123,13 +123,12 @@ services:
     command: scheduler
     environment:
       PATH: /home/airflow/.local/bin:/usr/local/bin:/usr/bin:/bin
-      AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
-      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
-      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: clickhouse://default:@clickhouse-server:9000/default?driver=native
-      AIRFLOW_CONN_MONGO_DEFAULT: mongodb://admin:password@mongodb:27017/?authSource=admin
-      _PIP_ADDITIONAL_REQUIREMENTS: pandas pymongo apache-airflow-providers-mongo clickhouse-driver dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
-    # --- FIX APPLIED HERE: Moved volumes out of environment ---
+      AIRFLOW__CORE__EXECUTOR: ${AIRFLOW__CORE__EXECUTOR}
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: ${AIRFLOW__DATABASE__SQL_ALCHEMY_CONN}
+      AIRFLOW__CORE__LOAD_EXAMPLES: ${AIRFLOW__CORE__LOAD_EXAMPLES}
+      AIRFLOW_CONN_CLICKHOUSE_DEFAULT: ${AIRFLOW_CONN_CLICKHOUSE_DEFAULT}
+      AIRFLOW_CONN_MONGO_DEFAULT: ${AIRFLOW_CONN_MONGO_DEFAULT}
+      _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS} dbt-core==1.5.9 dbt-clickhouse==1.5.2 clickhouse-connect==0.6.22 typing-extensions==4.9.0
     volumes: 
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
@@ -162,10 +161,10 @@ services:
     container_name: mongodb
     restart: always
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     ports:
-      - "27017:27017"
+      - "${MONGODB_PORT}:27017"
     volumes:
       - mongodb_data:/data/db
       - ./data:/data # Shared data directory for sample files
@@ -176,20 +175,105 @@ services:
     container_name: mongo-express
     restart: always
     ports:
-      - "8081:8081"
+      - "${MONGO_EXPRESS_PORT}:8081"
     environment:
-      ME_CONFIG_MONGODB_SERVER: mongodb
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
-      ME_CONFIG_MONGODB_ADMINPASSWORD: password
-      ME_CONFIG_MONGODB_AUTH_DATABASE: admin
-      ME_CONFIG_MONGODB_ENABLE_ADMIN: 'true'
-      # FIX: Explicitly setting the HTTP Basic Auth for the web UI login
-      ME_CONFIG_BASICAUTH_USERNAME: admin
-      ME_CONFIG_BASICAUTH_PASSWORD: password
+      ME_CONFIG_MONGODB_SERVER: ${ME_CONFIG_MONGODB_SERVER}
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${ME_CONFIG_MONGODB_ADMINUSERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${ME_CONFIG_MONGODB_ADMINPASSWORD}
+      ME_CONFIG_MONGODB_AUTH_DATABASE: ${ME_CONFIG_MONGODB_AUTH_DATABASE}
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: ${ME_CONFIG_MONGODB_ENABLE_ADMIN}
+      ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
     depends_on:
       - mongodb
+
+ # --- 9. Superset Services ---
+  superset-db:
+    image: postgres:16
+    container_name: superset_db
+    environment:
+      POSTGRES_DB: ${SUPERSET_DB_NAME:-superset}
+      POSTGRES_USER: ${SUPERSET_DB_USER:-superset}
+      POSTGRES_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+    volumes:
+      - superset_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${SUPERSET_DB_USER:-superset}"]
+      interval: 10s
+      retries: 5
+
+  superset-redis:
+    image: redis:7
+    container_name: superset_redis
+    volumes:
+      - superset_redis_data:/data
+
+  superset-init:
+    image: apachesuperset.docker.scarf.sh/apache/superset:${SUPERSET_TAG:-latest}
+    container_name: superset_init
+    command: ["/app/docker/docker-init.sh"]
+    user: "root"   # ← same
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:-your-secret-key-here}
+      DATABASE_DB: ${SUPERSET_DB_NAME:-superset}
+      DATABASE_HOST: superset-db
+      DATABASE_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+      DATABASE_USER: ${SUPERSET_DB_USER:-superset}
+      # _PIP_ADDITIONAL_REQUIREMENTS is NOT used by Superset, safe to drop
+    depends_on:
+      - superset-db
+    volumes:
+      - superset_data:/app/superset_home
+      - ./superset-docker:/app/docker   # ← teacher-style docker folder
+
+  superset:
+    image: apachesuperset.docker.scarf.sh/apache/superset:${SUPERSET_TAG:-latest}
+    container_name: superset
+    command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
+    user: "root"   # ← same
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:-your-secret-key-here}
+      DATABASE_DB: ${SUPERSET_DB_NAME:-superset}
+      DATABASE_HOST: superset-db
+      DATABASE_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+      DATABASE_USER: ${SUPERSET_DB_USER:-superset}
+      REDIS_HOST: superset-redis
+      # _PIP_ADDITIONAL_REQUIREMENTS not needed here either
+    ports:
+      - "${SUPERSET_PORT:-8088}:8088"
+    depends_on:
+      - superset-db
+      - superset-redis
+      - superset-init
+    volumes:
+      - superset_data:/app/superset_home
+      - ./superset-docker:/app/docker   # ← mount local docker folder
+
+  superset-worker:
+    image: apachesuperset.docker.scarf.sh/apache/superset:${SUPERSET_TAG:-latest}
+    container_name: superset_worker
+    command: ["/app/docker/docker-bootstrap.sh", "worker"]
+    user: "root"   # ← same
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY:-your-secret-key-here}
+      DATABASE_DB: ${SUPERSET_DB_NAME:-superset}
+      DATABASE_HOST: superset-db
+      DATABASE_PASSWORD: ${SUPERSET_DB_PASSWORD:-superset}
+      DATABASE_USER: ${SUPERSET_DB_USER:-superset}
+      REDIS_HOST: superset-redis
+      # _PIP_ADDITIONAL_REQUIREMENTS not needed
+    depends_on:
+      - superset-db
+      - superset-redis
+      - superset-init
+    volumes:
+      - superset_data:/app/superset_home
+      - ./superset-docker:/app/docker   # ← same mount
 
 volumes:
   pgdata_airflow:
   clickhouse_data:
   mongodb_data:
+  superset_db_data:
+  superset_redis_data:
+  superset_data:
