@@ -57,8 +57,8 @@ This project aims to **join the IGW initial payment data with the main DataLake 
 ---
 
 ## 🧱 Data Architecture
-![architecture diagram](https://github.com/user-attachments/assets/ba6a8007-5d32-4fda-8c03-ba2edd1f1d3a)
-<img width="800" height="343" alt="image" src="./docs/images/dataeng_project_arhitecture_containers_v2.jpg" />
+
+<img width="800" alt="image" src="./docs/images/dataeng_project_arhitecture_containers_v2.jpg" />
 
 
 ### **Data Flow**
@@ -148,11 +148,11 @@ Iceberg tables ar implemented inside the AWS S3 bucket and the tables were creat
 
 The first screenshot is showing the table format is Iceberg 
 
-<img width="800" height="336" alt="image" src="./docs/images/iceberg_table1.png" />
+<img width="800" alt="image" src="./docs/images/iceberg_table1.png" />
 
 The second screenshot is showing the iceberg table data 
 
-<img width="800" height="336" alt="image" src="./docs/images/iceberg_table2.png" />
+<img width="800" alt="image" src="./docs/images/iceberg_table2.png" />
 
 
 ## 👩‍💻 Contributors
