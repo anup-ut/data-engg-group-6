@@ -1,0 +1,67 @@
+# Docker Compose Environment Variables
+# =====================================
+
+# --- Airflow Database (PostgreSQL) ---
+POSTGRES_USER=airflow
+POSTGRES_PASSWORD=airflow
+POSTGRES_DB=airflow
+PGUSER=airflow
+PGPASSWORD=airflow
+PGDATABASE=airflow
+
+# --- ClickHouse Configuration ---
+CLICKHOUSE_USER=admin
+CLICKHOUSE_PASSWORD=password
+CLICKHOUSE_DB=default
+CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
+
+# --- Airflow Core Configuration ---
+AIRFLOW__CORE__EXECUTOR=LocalExecutor
+AIRFLOW__CORE__LOAD_EXAMPLES=false
+AIRFLOW__CORE__FERNET_KEY=your_fernet_key_here
+
+# --- Airflow Database Connection ---
+AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+
+# --- Airflow API Configuration ---
+AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth
+
+# --- Airflow Connections ---
+# ClickHouse Connection
+AIRFLOW_CONN_CLICKHOUSE_DEFAULT=clickhouse://default:@clickhouse-server:9000/default?driver=native
+
+# MongoDB Connection
+AIRFLOW_CONN_MONGO_DEFAULT=mongodb://admin:password@mongodb:27017/?authSource=admin
+
+# --- Airflow Additional Packages ---
+_PIP_ADDITIONAL_REQUIREMENTS=pandas pymongo apache-airflow-providers-mongo clickhouse-driver
+
+# --- MongoDB Configuration ---
+MONGO_INITDB_ROOT_USERNAME=admin
+MONGO_INITDB_ROOT_PASSWORD=password
+
+# --- Mongo Express Configuration ---
+ME_CONFIG_MONGODB_SERVER=mongodb
+ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+ME_CONFIG_MONGODB_ADMINPASSWORD=password
+ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+ME_CONFIG_BASICAUTH_USERNAME=admin
+ME_CONFIG_BASICAUTH_PASSWORD=password
+
+# Superset Configuration
+SUPERSET_PORT=8088
+SUPERSET_DB_NAME=superset
+SUPERSET_DB_USER=superset
+SUPERSET_DB_PASSWORD=superset
+SUPERSET_SECRET_KEY=your-super-secret-key-change-this
+SUPERSET_TAG=latest
+
+# --- Port Configurations ---
+AIRFLOW_WEBSERVER_PORT=8080
+MONGO_EXPRESS_PORT=8081
+CLICKHOUSE_HTTP_PORT=8123
+CLICKHOUSE_NATIVE_PORT=9000
+POSTGRES_PORT=5432
+MONGODB_PORT=27017
+
