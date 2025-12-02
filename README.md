@@ -191,30 +191,53 @@ docker-compose exec clickhouse-server bash -c "clickhouse-client --user admin --
 and wrote the password to execute the roles and get those tables.
 
 The results:
+Intern Anup's visible tables from analytics:
+   
+<img width="800" height="392" alt="image" src="./docs/images/anup_overall.png" />
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+1. Anup's view for payment failure rate(payment_failure_rate_limited):
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/anup_1.png" />
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+2. Anup's view for overall count of failure payment:
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/anup_2.png" />
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+3. Anup's view for payment failure rate by provider (failure_rate_by_provider_limited):
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/anup_3.png" />
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+4. Anup's view for payment failure rate by payment method (failure_rate_by_payment_method_limited):
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/anup_4.png" />
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+5. Anup's view for payment that reached and then failed (abondoned_by_merchant_limited):
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/anup_5.png" />
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+Hardi's analyst(full analyst) overall structure:
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/hardi_overall.png" />
+
+1. Hardi's view for payment failure rate(payment_failure_rate):
+
+<img width="800" height="392" alt="image" src="./docs/images/hardi_1.png" />
+
+2. Hardi's view for overall count of failure payment:
+
+<img width="800" height="392" alt="image" src="./docs/images/hardi_2.png" />
+
+3. Hardi's view for payment failure rate by provider (failure_rate_by_provider):
+
+<img width="800" height="392" alt="image" src="./docs/images/hardi_3.png" />
+
+4. Hardi's view for payment failure rate by payment method (failure_rate_by_payment_method):
+
+<img width="800" height="392" alt="image" src="./docs/images/hardi_4.png" />
+
+5. Hardi's view for payment that reached and then failed (abondoned_by_merchant):
+
+<img width="800" height="392" alt="image" src="./docs/images/hardi_5.png" />
 
 ---
 
@@ -240,9 +263,17 @@ Fill out:
 	Display Name: ClickHouse Connect (Superset)
 
 
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
-<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+Unfiltered dashboard using failure_rate_by_provider and failure_rate_by_payment_method:
+
+<img width="800" height="392" alt="image" src="./docs/images/unfiltered.jpg" />
+
+Filtering settings (payment method should have more than zero):
+
+<img width="800" height="392" alt="image" src="./docs/images/filter.png" />
+
+Filtered dashboard failure_rate_by_provider and failure_rate_by_payment_method:
+
+<img width="800" height="392" alt="image" src="./docs/images/filtered.jpg" />
 
 
 
