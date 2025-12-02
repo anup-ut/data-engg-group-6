@@ -99,6 +99,8 @@ P.S. As our data took from October 01.10.2025, we put start time for dags as Oct
 
 *wait until the finish means that last run should show previous day. 
 
+---
+
 ### **DAG's Graph**
 
 <img width="800" height="300" alt="image" src="./docs/images/dag1 (1).png" />
@@ -112,6 +114,8 @@ silver_transformations_pipeline DAG's Graph
 <img width="800" height="300" alt="image" src="./docs/images/dag1 (3).png" />
 
 gold_layer_pipeline DAG's Graph
+
+---
 
 ### **Analytical Queries**
 
@@ -141,6 +145,20 @@ c)By both
 
 <img width="800" height="794" alt="image" src="./docs/images/sql4c.png" />
 
+---
+
+### **Project 3**
+
+In Project 3, each part is dependent on each other, so it was inefficient to wait until the Iceberg part was finished. The creating the roles and Superset were done using Project 2 Star Schema and data.
+Iceberg table part was also done independently.
+
+---
+### **What's new**
+
+We changed compose.yml in the way that it took value from the .env file to improve security. 
+We added Superset, Metadata and other changes in project. It is important to note that there was an issue with Superset, because .sh in superset compose were in crlf format, while they should be in lf. So be careful with that. 
+
+---
 
 ### **Iceberg tables**
 
@@ -153,6 +171,80 @@ The first screenshot is showing the table format is Iceberg
 The second screenshot is showing the iceberg table data 
 
 <img width="800" alt="image" src="./docs/images/iceberg_table2.png" />
+
+---
+
+### **ClickHouse user's creation**
+
+Two roles were created: two roles analyst_full and analyst_limited. Two users, intern_anup and analyst_hardi were created with passwords. The user intern_anup were assigned analyst_limited role, while analyst_hardi were assigned to analyst_full. Passwords are hard-coded in SQL for simplicity; in production we would externalize them to secrets / env vars and avoid committing them to Git.
+
+There were 5 analytical views that answered our questions in the analytics database. Each of user have own version table:
+analyst_limited has masked merchant name, provider name and bucket the reached provider number for each merchant and provider. 
+!!! We have reached provider columns in other tables, but we did not bucket it because it is aggregated by provider or merchant, while we bucket reached provider number for each provider and merchant.
+
+With Payment methods, I changed real names Visa, Mastercard and ACH transfer with Payment_Method_A, Payment_Method_B and Other_Method.
+With Merchants, I replaced real merchant names with hashed codes.
+With reached_provider, we bucketed it instead of exact counts with Low_Volume, Medium_Volume and High_Volume.
+
+I run in docker console:
+docker-compose exec clickhouse-server bash -c "clickhouse-client --user admin --password ${CLICKHOUSE_PASSWORD} --multiquery < /sql/user_create.sql
+and wrote the password to execute the roles and get those tables.
+
+The results:
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+---
+
+### **Superset**
+
+If you want to use Superset:
+
+Go to url: http://localhost:8088
+
+Log in with default settings: admin as username and admin as password
+
+Go to Settings -> Database Connection;
+
+In new page, click on + Database button and in new pop-up window under “Or choose from a list of other databases we support:” choose ClickHouse Connect (Superset)
+
+Fill out:
+
+	Host: clickhouse-server
+	Port: 8123
+	Database Name: default
+	Username: “Write here your clickhouse admin or user”
+	Password: “Write here your clickhouse admin or user”
+	Display Name: ClickHouse Connect (Superset)
+
+
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+<img width="800" height="392" alt="image" src="./docs/images/sql4a.png" />
+
+
 
 
 ## 👩‍💻 Contributors
